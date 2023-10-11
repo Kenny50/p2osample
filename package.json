@@ -1,0 +1,19 @@
+{
+  "name": "p2osample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "doc": "p2o ./Api.postman_collection.json -f ./swagger.yml -o ./options.json; echo -e \"\\033[1;31m Api 格式有更動要去 notion 紀錄，並通知前端開發者\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "swagger-ui-express": "^5.0.0",
+    "yaml": "^2.3.2"
+  }
+}

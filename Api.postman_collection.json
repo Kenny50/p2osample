@@ -1,0 +1,1900 @@
+{
+	"info": {
+		"_postman_id": "d4c9bc2b-1dbd-48d1-9deb-140a951fd07b",
+		"name": "Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30381842"
+	},
+	"item": [
+		{
+			"name": "會員",
+			"item": [
+				{
+					"name": "google login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/auth/google",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"auth",
+								"google"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "google login reponse",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://gnim.com.tw/api/auth/google",
+									"protocol": "https",
+									"host": [
+										"gnim",
+										"com",
+										"tw"
+									],
+									"path": [
+										"api",
+										"auth",
+										"google"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "line login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/auth/line",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"auth",
+								"line"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "line login reponse",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"auth",
+										"line"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "refreshToken",
+									"value": " \"YOUR_REFRESH_TOKEN\"",
+									"description": "[required]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/refresh-token",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "refresh token response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "refreshToken",
+											"value": " \"YOUR_REFRESH_TOKEN\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://gnim.com.tw/api/refresh-token",
+									"protocol": "https",
+									"host": [
+										"gnim",
+										"com",
+										"tw"
+									],
+									"path": [
+										"api",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update personal information",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "google",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hello@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/update-information",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"update-information"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "google",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hello@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"update-information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"name\": \"new name\",\n    \"email\": \"youremail@gmail.com\",\n    \"isEmailValidate\": false\n}"
+						},
+						{
+							"name": "mail conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "google",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "hello@gmail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"update-information"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\":\"此電子郵箱已被使用\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sent email validate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/validate-email",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"validate-email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"validate-email"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"validate mail has sent, please check out your mailbox\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"validate-email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"message\": \"your email is already validated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "個人資訊，請等待訂閱格式出來",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/information",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"information"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "個人資訊",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"name\":\"Lisa\",\n    \"email\":\"lisa@gmail.com\",\n    \"isEmailValidate\":true,\n    \"avatar\":null,\n    \"loginType\":\"google\",\n    \"thirdPartyIdentifier\":\"lisa@gmail.com\",\n    \"role\":\"user\",\n    \"subscriptionPlan\":0,\n    \"enableAutoSubscribe\":true\n}"
+						}
+					]
+				},
+				{
+					"name": "delete account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/delete-account",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"delete-account"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"delete-account"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\":\"succcess\"\n}"
+						},
+						{
+							"name": "refund is processing",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"delete-account"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"error\": \"Cannot delete account while refund is processing.\"\n}"
+						},
+						{
+							"name": "reject, subscription plan period",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"delete-account"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"error\": \"Cannot delete account while in your subscription plan period.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "文章",
+			"item": [
+				{
+					"name": "首頁文章各主題最新清單",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/article/all-topic-latest",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"article",
+								"all-topic-latest"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "首頁文章",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/all-topic-latest",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										"all-topic-latest"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":\"article\",\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":\"article\",\n            \"isLimited\":false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get article content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/article/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"article",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "123",
+									"description": "[required] article id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get article content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "123",
+											"description": "[required] article id"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"id\":123,\n\t\"title\":\"你好，世界\",\n\t\"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n\t\"topic\":{\n        \"name\":\"基本面\",\n        \"id\":1\n    },\n\t\"author\":{\n        \"name\":\"Rick\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n\t\"publishDate\":\"2023-05-02T00:00:00.000Z\",\n\t\"previewImage\":null,\n\t\"type\":\"article\", \n\t\"isLimited\":true\n}"
+						}
+					]
+				},
+				{
+					"name": "get podcast content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/podcast/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"podcast",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "[required] podcast id, not the one from spotify"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get podcast content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/podcast/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"podcast",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] podcast id, not the one from spotify"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n    \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\",\"soundOnLink\":\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n    \"topic\": {\n        \"name\": \"基本面\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n    \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n    \"previewImage\": null,\n    \"type\": \"podcast\",\n    \"isLimited\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "get latest articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/article-latest",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"article-latest"
+							],
+							"query": [
+								{
+									"key": "topic",
+									"value": "0",
+									"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get latest articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article-latest",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article-latest"
+									],
+									"query": [
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"topic\":null,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":\"article\",\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":\"article\",\n            \"isLimited\":false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/article/authors",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"article",
+								"authors"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Authors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/authors",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										"authors"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"authors\": [\n        {\n            \"name\":\"Rick\",\n            \"id\":1,\n            \"avatar\":\"https://path/to/img\"\n        },\n        {\n            \"name\":\"Riick\",\n            \"id\":2,\n            \"avatar\":\"https://path/to/img\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "related articles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/article/:id/related",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"article",
+								":id",
+								"related"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "123",
+									"description": "[required] article id"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "related articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/:id/related",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										":id",
+										"related"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "123",
+											"description": "[required] article id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":\"article\",\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":\"article\",\n            \"isLimited\":false\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "後台",
+			"item": [
+				{
+					"name": "文章",
+					"item": [
+						{
+							"name": "publish article",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "你好，世界",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+											"description": "[required] json stringtify",
+											"type": "text"
+										},
+										{
+											"key": "html",
+											"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "isLimited",
+											"value": "false",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/publish",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										"publish"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "publish article",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "你好，世界",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "content",
+													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+													"description": "[required] json stringtify",
+													"type": "text"
+												},
+												{
+													"key": "html",
+													"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "topic",
+													"value": "1",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "tags",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "tags",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "isLimited",
+													"value": "false",
+													"description": "[required]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/article/publish",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"article",
+												"publish"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"id\": 123\n}"
+								}
+							]
+						},
+						{
+							"name": "save article draft",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "你好，世界",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "content",
+											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+											"description": "[required] json stringtify",
+											"type": "text"
+										},
+										{
+											"key": "html",
+											"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "tags",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "isLimited",
+											"value": "false",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/draft",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										"draft"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "save article draft",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "你好，世界",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "content",
+													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+													"description": "[required] json stringtify",
+													"type": "text"
+												},
+												{
+													"key": "html",
+													"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "topic",
+													"value": "1",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "tags",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "tags",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "isLimited",
+													"value": "false",
+													"description": "[required]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/article/publish",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"article",
+												"publish"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"id\": 123\n}"
+								}
+							]
+						},
+						{
+							"name": "upload image for article",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"description": "[required]",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/article/image/upload",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"article",
+										"image",
+										"upload"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "upload image for article",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "image",
+													"description": "[required]",
+													"type": "file",
+													"src": []
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{internalPrefix}}/article/image/upload",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{internalPrefix}}",
+												"article",
+												"image",
+												"upload"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"url\": \"https://path/to/img\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete article by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] article id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete article by id",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{internalPrefix}}",
+												"article",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1",
+													"description": "[required] article id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "創建內部帳戶",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account",
+									"value": "Voss",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vosssssssss",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/create",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/create",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\":\"success\"\n}"
+						},
+						{
+							"name": "permission deny",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/create",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"create"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"error\":\"permission denied\"\n}"
+						}
+					]
+				},
+				{
+					"name": "登入內部帳戶",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account",
+									"value": "Voss",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "vosssssssss",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/login",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+						},
+						{
+							"name": "wrong name or password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"error\": \"Invalid username or password.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "刪除內部帳戶",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "accountId",
+									"value": "999",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/delete",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"delete"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/delete",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"delete"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\":\"success\"\n}"
+						},
+						{
+							"name": "permission deny",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "account",
+											"value": "Voss",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "vosssssssss",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/delete",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"delete"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"error\":\"permission denied\"\n}"
+						}
+					]
+				},
+				{
+					"name": "內部帳戶更新個人資訊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Voss Muscle",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/update-information",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"update-information"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "內部帳戶更新個人資訊",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Voss Muscle",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/update-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"update-information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"name\": \"Voss Muscle\"\n}"
+						}
+					]
+				},
+				{
+					"name": "內部帳戶更新個人頭像",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"description": "user avatar",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/update-avatar",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"update-avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "內部帳戶更新個人頭像",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"description": "user avatar",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/update-avatar",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"url\": \"https://path/to/avatar\"\n}"
+						}
+					]
+				},
+				{
+					"name": "內部帳戶更新密碼",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "Passw0rd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/member/update-password",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"member",
+								"update-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "內部帳戶更新個人密碼",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"description": "user avatar",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/member/update-password",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"member",
+										"update-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\":\"success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "標籤、主題",
+			"item": [
+				{
+					"name": "前臺 get tags with topics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/topic-tag",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"topic-tag"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "前臺 get tags with topics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/topic-tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"topic-tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"topics\": [\n        {\n            \"id\":1,\n            \"name\":\"基礎面\",\n            \"tags\": [\n                {\n                    \"id\":1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 get all topic with tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/topic-all",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"topic-all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 get all topic with tag",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/topic-all",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"topic-all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "搜尋",
+			"item": [
+				{
+					"name": "search articles by tag, optional with topic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "https://gnim.com.tw",
+			"type": "string"
+		},
+		{
+			"key": "prefix",
+			"value": "api",
+			"type": "string"
+		},
+		{
+			"key": "internalPrefix",
+			"value": "internal",
+			"type": "string"
+		}
+	]
+}

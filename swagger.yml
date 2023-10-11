@@ -1,0 +1,794 @@
+openapi: 3.0.0
+info:
+  title: Api
+  version: 1.0.0
+servers:
+  - url: https://gnim.com.tw
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
+tags:
+  - name: 會員
+  - name: 文章
+  - name: 後台
+  - name: 後台 > 文章
+  - name: 標籤、主題
+  - name: 搜尋
+paths:
+  /api/auth/google:
+    get:
+      tags:
+        - 會員
+      summary: google login
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                accessToken: YOUR_ACCESS_TOKEN
+                refreshToken: YOUR_REFRESH_TOKEN
+  /api/auth/line:
+    get:
+      tags:
+        - 會員
+      summary: line login
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                accessToken: YOUR_ACCESS_TOKEN
+                refreshToken: YOUR_REFRESH_TOKEN
+  /api/member/refresh-token:
+    post:
+      tags:
+        - 會員
+      summary: refresh token
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - refreshToken
+              properties:
+                refreshToken:
+                  type: string
+                  description: ''
+                  example: ' "YOUR_REFRESH_TOKEN"'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                accessToken: YOUR_ACCESS_TOKEN
+  /api/member/update-information:
+    post:
+      tags:
+        - 會員
+      summary: update personal information
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: google
+                email:
+                  type: string
+                  example: hello@gmail.com
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: new name
+                email: youremail@gmail.com
+                isEmailValidate: false
+        '409':
+          description: Conflict
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "message":"此電子郵箱已被使用"
+                }
+  /api/member/validate-email:
+    post:
+      tags:
+        - 會員
+      summary: sent email validate
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: your email is already validated
+        '202':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: validate mail has sent, please check out your mailbox
+  /api/member/information:
+    get:
+      tags:
+        - 會員
+      summary: 個人資訊，請等待訂閱格式出來
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Lisa
+                email: lisa@gmail.com
+                isEmailValidate: true
+                avatar: null
+                loginType: google
+                thirdPartyIdentifier: lisa@gmail.com
+                role: user
+                subscriptionPlan: 0
+                enableAutoSubscribe: true
+  /api/member/delete-account:
+    post:
+      tags:
+        - 會員
+      summary: delete account
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "status":"succcess"
+                }
+        '409':
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: refund is processing
+                  value:
+                    error: Cannot delete account while refund is processing.
+                example-1:
+                  summary: reject, subscription plan period
+                  value:
+                    error: >-
+                      Cannot delete account while in your subscription plan
+                      period.
+  /api/article/all-topic-latest:
+    get:
+      tags:
+        - 文章
+      summary: 首頁文章各主題最新清單
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: article
+                    isLimited: true
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: article
+                    isLimited: false
+  /api/article/{id}:
+    get:
+      tags:
+        - 文章
+      summary: get article content
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '123'
+      responses:
+        undefined:
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 123
+                title: 你好，世界
+                content: >-
+                  {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                  this editor instance exports its content as JSON."}]}]}
+                topic:
+                  name: 基本面
+                  id: 1
+                author:
+                  name: Rick
+                  id: 1
+                tags:
+                  - name: 毛利
+                    id: 1
+                publishDate: '2023-05-02T00:00:00.000Z'
+                previewImage: null
+                type: article
+                isLimited: true
+  /api/podcast/{id}:
+    get:
+      tags:
+        - 文章
+      summary: get podcast content
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] podcast id, not the one from spotify'
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 1
+                title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
+                content: >-
+                  {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
+                soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
+                topic:
+                  name: 基本面
+                  id: 1
+                tags:
+                  - name: 毛利
+                    id: 1
+                publishDate: '2023-05-02T00:00:00.000Z'
+                previewImage: null
+                type: podcast
+                isLimited: false
+  /api/article-latest:
+    get:
+      tags:
+        - 文章
+      summary: get latest articles
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                topic: null
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: article
+                    isLimited: true
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: article
+                    isLimited: false
+  /api/article/authors:
+    get:
+      tags:
+        - 文章
+      summary: Authors
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                authors:
+                  - name: Rick
+                    id: 1
+                    avatar: https://path/to/img
+                  - name: Riick
+                    id: 2
+                    avatar: https://path/to/img
+  /api/article/{id}/related:
+    get:
+      tags:
+        - 文章
+      summary: related articles
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '123'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: article
+                    isLimited: true
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: article
+                    isLimited: false
+  /api/article/publish:
+    post:
+      tags:
+        - 後台 > 文章
+      summary: publish article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - content
+                - html
+                - topic
+                - isLimited
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 你好，世界
+                content:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                html:
+                  type: string
+                  description: ''
+                  example: >-
+                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                topic:
+                  type: integer
+                  description: ''
+                  example: '1'
+                tags:
+                  type: integer
+                  example: '2'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 123
+  /api/article/draft:
+    post:
+      tags:
+        - 後台 > 文章
+      summary: save article draft
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - content
+                - html
+                - topic
+                - isLimited
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 你好，世界
+                content:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                html:
+                  type: string
+                  description: ''
+                  example: >-
+                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                topic:
+                  type: integer
+                  description: ''
+                  example: '1'
+                tags:
+                  type: integer
+                  example: '2'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 123
+  /internal/article/image/upload:
+    post:
+      tags:
+        - 後台 > 文章
+      summary: upload image for article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - image
+              properties:
+                image:
+                  type: string
+                  description: ''
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                url: https://path/to/img
+  /internal/article/{id}:
+    delete:
+      tags:
+        - 後台 > 文章
+      summary: delete article by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+  /internal/member/create:
+    post:
+      tags:
+        - 後台
+      summary: 創建內部帳戶
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                  example: Voss
+                password:
+                  type: string
+                  example: vosssssssss
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: permission denied
+  /internal/member/login:
+    post:
+      tags:
+        - 後台
+      summary: 登入內部帳戶
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                account:
+                  type: string
+                  example: Voss
+                password:
+                  type: string
+                  example: vosssssssss
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                accessToken: YOUR_ACCESS_TOKEN
+                refreshToken: YOUR_REFRESH_TOKEN
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: Invalid username or password.
+  /internal/member/delete:
+    delete:
+      tags:
+        - 後台
+      summary: 刪除內部帳戶
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: permission denied
+  /internal/member/update-information:
+    post:
+      tags:
+        - 後台
+      summary: 內部帳戶更新個人資訊
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Voss Muscle
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Voss Muscle
+  /internal/member/update-avatar:
+    post:
+      tags:
+        - 後台
+      summary: 內部帳戶更新個人頭像
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                avatar:
+                  type: string
+                  description: user avatar
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                url: https://path/to/avatar
+  /internal/member/update-password:
+    post:
+      tags:
+        - 後台
+      summary: 內部帳戶更新密碼
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: Passw0rd
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+  /api/topic-tag:
+    get:
+      tags:
+        - 標籤、主題
+      summary: 前臺 get tags with topics
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                topics:
+                  - id: 1
+                    name: 基礎面
+                    tags:
+                      - id: 1
+                        name: 毛利
+  /internal/topic-all:
+    get:
+      tags:
+        - 標籤、主題
+      summary: 後台 get all topic with tag
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                topics:
+                  - id: 1
+                    name: 基礎面
+                    tags:
+                      - id: 1
+                        name: 毛利
+  /api/:
+    get:
+      tags:
+        - 搜尋
+      summary: search articles by tag, optional with topic
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
