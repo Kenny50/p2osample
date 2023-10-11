@@ -6,6 +6,4 @@ COPY ./package*.json ./
 RUN npm ci
 COPY . .
 
-# CMD ["sh", "-c", "npm start"]
-
-CMD ["npm", "dev"]
+CMD ["npm", "run", "dev"]
