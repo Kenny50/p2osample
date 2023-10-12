@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: Api 格式釋出：會員、文章，其餘僅供參考
-  version: 10.12.1603
+  version: 10.12.1628
 servers:
   - url: https://gnim.com.tw
 components:
@@ -337,6 +337,11 @@ paths:
       tags:
         - 文章
       summary: get article content
+      description: |-
+        article type  
+        0 -> podcast
+
+        1 -> tiptap article
       security:
         - bearerAuth: []
       parameters:
@@ -377,6 +382,7 @@ paths:
       tags:
         - 文章
       summary: get podcast content
+      description: "article type  \n0 ->\_podcast\n\n1 ->\_tiptap article"
       parameters:
         - name: id
           in: path
@@ -413,6 +419,18 @@ paths:
       tags:
         - 文章
       summary: get latest articles
+      description: "article type  \n0 -> podcast\n\n1 -> tiptap article\n\ntopic query value\n\n不傳 ->\_全部  \n1 ->\_基本面（基本面、總經）  \n2 ->\_技術面  \n3 ->\_籌碼面  \n4 ->\_其他"
+      parameters:
+        - name: topic
+          in: query
+          schema:
+            type: string
+          description: |-
+            不傳 -> 全部
+            1 -> 基本面（基本面、總經）
+            2 -> 技術面
+            3 -> 籌碼面
+            4 -> 其他
       responses:
         '200':
           description: OK

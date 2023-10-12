@@ -790,7 +790,8 @@
 									"description": "[required] article id"
 								}
 							]
-						}
+						},
+						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article"
 					},
 					"response": [
 						{
@@ -846,7 +847,8 @@
 									"description": "[required] podcast id, not the one from spotify"
 								}
 							]
-						}
+						},
+						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article"
 					},
 					"response": [
 						{
@@ -888,7 +890,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article",
+							"raw": "{{domain}}/{{prefix}}/article?topic=",
 							"host": [
 								"{{domain}}"
 							],
@@ -899,12 +901,12 @@
 							"query": [
 								{
 									"key": "topic",
-									"value": "0",
-									"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他",
-									"disabled": true
+									"value": "",
+									"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
 								}
 							]
-						}
+						},
+						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article\n\ntopic query value\n\n不傳 -> 全部  \n1 -> 基本面（基本面、總經）  \n2 -> 技術面  \n3 -> 籌碼面  \n4 -> 其他"
 					},
 					"response": [
 						{
