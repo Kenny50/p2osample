@@ -1,7 +1,7 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "10.12.0809",
+        "version": "10.12.1603",
         "description": "Api 格式釋出：會員、文章，其餘僅供參考"
     },
     "replaceVars": true
