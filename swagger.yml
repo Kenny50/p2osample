@@ -1,7 +1,8 @@
 openapi: 3.0.0
 info:
-  title: Api
-  version: 1.0.0
+  title: 金玉峰投顧 api
+  description: Api 格式釋出：會員、文章，其餘僅供參考
+  version: 10.12.0809
 servers:
   - url: https://gnim.com.tw
 components:
@@ -417,7 +418,7 @@ paths:
                     previewImage: https://path/to/image
                     type: article
                     isLimited: false
-  /api/article/publish:
+  /internal/article/publish:
     post:
       tags:
         - 後台 > 文章
@@ -476,7 +477,7 @@ paths:
                 type: object
               example:
                 id: 123
-  /api/article/draft:
+  /internal/article/draft:
     post:
       tags:
         - 後台 > 文章

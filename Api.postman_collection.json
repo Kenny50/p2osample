@@ -868,12 +868,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article/publish",
+									"raw": "{{domain}}/{{internalPrefix}}/article/publish",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{prefix}}",
+										"{{internalPrefix}}",
 										"article",
 										"publish"
 									]
@@ -931,12 +931,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/article/publish",
+											"raw": "{{domain}}/{{internalPrefix}}/article/publish",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
-												"{{prefix}}",
+												"{{internalPrefix}}",
 												"article",
 												"publish"
 											]
@@ -1002,12 +1002,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article/draft",
+									"raw": "{{domain}}/{{internalPrefix}}/article/draft",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{prefix}}",
+										"{{internalPrefix}}",
 										"article",
 										"draft"
 									]
@@ -1065,12 +1065,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/article/publish",
+											"raw": "{{domain}}/{{internalPrefix}}/article/publish",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
-												"{{prefix}}",
+												"{{internalPrefix}}",
 												"article",
 												"publish"
 											]
