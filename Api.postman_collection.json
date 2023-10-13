@@ -3,7 +3,8 @@
 		"_postman_id": "d4c9bc2b-1dbd-48d1-9deb-140a951fd07b",
 		"name": "Api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -761,7 +762,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false\n        }\n    ]\n}"
+							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -790,8 +791,7 @@
 									"description": "[required] article id"
 								}
 							]
-						},
-						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article"
+						}
 					},
 					"response": [
 						{
@@ -821,7 +821,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n\t\"id\":123,\n\t\"title\":\"你好，世界\",\n\t\"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n\t\"topic\":{\n        \"name\":\"基本面\",\n        \"id\":1\n    },\n\t\"author\":{\n        \"name\":\"Rick\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n\t\"publishDate\":\"2023-05-02T00:00:00.000Z\",\n\t\"previewImage\":null,\n\t\"type\":1, \n\t\"isLimited\":true\n}"
+							"body": "{\n\t\"id\":123,\n\t\"title\":\"你好，世界\",\n\t\"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n\t\"topic\":{\n        \"name\":\"基本面\",\n        \"id\":1\n    },\n\t\"author\":{\n        \"name\":\"Rick\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n\t\"publishDate\":\"2023-05-02T00:00:00.000Z\",\n\t\"previewImage\":null,\n\t\"type\":1, \n\t\"isLimited\":true,\n    \"source\": null\n}"
 						}
 					]
 				},
@@ -847,8 +847,7 @@
 									"description": "[required] podcast id, not the one from spotify"
 								}
 							]
-						},
-						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article"
+						}
 					},
 					"response": [
 						{
@@ -880,7 +879,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n    \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\",\"soundOnLink\":\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n    \"topic\": {\n        \"name\": \"基本面\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n    \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n    \"previewImage\": null,\n    \"type\": 0,\n    \"isLimited\": false\n}"
+							"body": "{\n    \"id\": 1,\n    \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n    \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\",\"soundOnLink\":\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n    \"topic\": {\n        \"name\": \"基本面\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n    \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n    \"previewImage\": null,\n    \"type\": 0,\n    \"isLimited\": false,\n    \"source\": null\n}"
 						}
 					]
 				},
@@ -906,7 +905,7 @@
 								}
 							]
 						},
-						"description": "article type  \n0 -> podcast\n\n1 -> tiptap article\n\ntopic query value\n\n不傳 -> 全部  \n1 -> 基本面（基本面、總經）  \n2 -> 技術面  \n3 -> 籌碼面  \n4 -> 其他"
+						"description": "topic query value\n\n不傳 -> 全部  \n1 -> 基本面（基本面、總經）  \n2 -> 技術面  \n3 -> 籌碼面  \n4 -> 其他"
 					},
 					"response": [
 						{
@@ -938,7 +937,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false\n        }\n    ]\n}"
+							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -996,7 +995,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false\n        }\n    ]\n}"
+							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1100,11 +1099,12 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false\n        }\n    ]\n}"
+							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				}
-			]
+			],
+			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道"
 		},
 		{
 			"name": "後台",
@@ -3006,6 +3006,54 @@
 							"header": null,
 							"cookie": [],
 							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "get Banner content",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/banner",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"banner"
+							]
+						},
+						"description": "type 是指資料類型， source 指某類型的來源(yt type source from which channel)\n\narticle type:  \n0 -> podcast\n\n1 -> tiptap article\n\n2 -> youtube\n\nsource:  \nnull -> 文章、podcast\n\n1 -> 金玉峰 yt 頻道\n\n2 -> 股耐 yt 頻道"
+					},
+					"response": [
+						{
+							"name": "get Banner content",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/banner",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"banner"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "\n[\n    {\n        \"id\": 1,\n        \"title\": \"你好，世界\",\n        \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n        \"topic\": {\n            \"name\": \"基本面\",\n            \"id\": 1\n        },\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 1\n        },\n        \"tags\": [\n            {\n                \"name\": \"毛利\",\n                \"id\": 1\n            }\n        ],\n        \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n        \"previewImage\": null,\n        \"type\": 1,\n        \"isLimited\": true,\n        \"source\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"雪烏龍\",\n        \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n        \"topic\": {\n            \"name\": \"總經\",\n            \"id\": 2\n        },\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 1\n        },\n        \"tags\": [\n            {\n                \"name\": \"毛利\",\n                \"id\": 1\n            }\n        ],\n        \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n        \"previewImage\": \"https://path/to/image\",\n        \"type\": 1,\n        \"isLimited\": false,\n        \"source\": 1\n    }\n]\n\n"
 						}
 					]
 				}
