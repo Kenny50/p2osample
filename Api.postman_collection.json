@@ -937,7 +937,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"topic\": 0,\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -995,7 +995,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"topic\": 0,\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -2963,7 +2963,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topics\": [\n        {\n            \"id\":1,\n            \"name\":\"基礎面\",\n            \"tags\": [\n                {\n                    \"id\":1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"技術面面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -3005,7 +3005,440 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\",\n                    \"sort\":1,\n                    \"hide\":true\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"技術面面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\",\n                    \"sort\":1,\n                    \"hide\":false\n\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 新增標籤",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "布林通道",
+									"description": "[required]",
+									"type": "text"
+								},
+								{
+									"key": "topic",
+									"value": "1",
+									"description": "[required] topic 類的 id",
+									"type": "text"
+								},
+								{
+									"key": "hide",
+									"value": "true",
+									"description": "[required]",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/tag",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"tag"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 新增標籤",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\"\n}"
+						},
+						{
+							"name": "topic not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 刪除標籤",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "[required] 標籤的 id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/tag",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"tag"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 刪除標籤",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "標籤的 id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\"\n}"
+						},
+						{
+							"name": "not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "標籤的 id",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "後台  edit tags display setting",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tags[0][id]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tags[0][name]",
+									"value": "a tag",
+									"type": "text"
+								},
+								{
+									"key": "tags[0][hide]",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "tags[1][id]",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "tags[1][name]",
+									"value": "c tag",
+									"type": "text"
+								},
+								{
+									"key": "tags[1][hide]",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "tags[2][id]",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "tags[2][name]",
+									"value": "b tag",
+									"type": "text"
+								},
+								{
+									"key": "tags[2][hide]",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"edit-tags-display-setting"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "edit tags display setting",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "tags",
+											"value": "",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"edit-tags-display-setting"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 update tag",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "new name",
+									"description": "[required]",
+									"type": "text"
+								},
+								{
+									"key": "hide",
+									"value": "true",
+									"description": "[required] boolean",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{internalPrefix}}/tag/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{internalPrefix}}",
+								"tag",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update tag",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "new name",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "hide",
+											"value": "true",
+											"description": "[required] boolean",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\":\"success\"\n}"
 						}
 					]
 				}
@@ -3058,6 +3491,302 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "新聞",
+			"item": [
+				{
+					"name": "新聞列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/news",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"news"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "新聞列表-if db",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"news"
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "123",
+											"description": "tag id, optional"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\":\"2023-05-02T00:00:00.000Z\",\n        \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\":0,\n        \"tag\":{\n            \"name\":\"半導體\",\n            \"id\": 123\n        }\n    },\n    {\n        \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\":\"2023-05-02T00:00:00.000Z\",\n        \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\":0,\n        \"tag\":{\n            \"name\":\"半導體\",\n            \"id\": 123\n        }\n    }\n]"
+						},
+						{
+							"name": "新聞列表 -if not save in db",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/news",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"news"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\": \"2023-05-02T00:00:00.000Z\",\n        \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\": 0,\n        \"tag\": \"半導體\"\n    },\n    {\n        \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\": \"2023-05-02T00:00:00.000Z\",\n        \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\": 0,\n        \"tag\": \"半導體\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "rate, 1 -> positive, 0 -> neutral, -1 -> negative"
+		},
+		{
+			"name": "搜尋",
+			"item": [
+				{
+					"name": "query",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/search/query?q=hello&page=0&size=30&topic=0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"search",
+								"query"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "hello",
+									"description": "[required]"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[required]"
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"description": "[required]"
+								},
+								{
+									"key": "topic",
+									"value": "0",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1&type=article",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "你好",
+											"description": "[required]"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										},
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "[required]"
+										},
+										{
+											"key": "type",
+											"value": "article",
+											"description": "[required] article, podcast"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get by tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"search",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "1",
+									"description": "[required] tag id"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[required]"
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"description": "[required]"
+								},
+								{
+									"key": "topic",
+									"value": "0",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get by tag",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"search",
+										"tag"
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "1",
+											"description": "[required] tag id"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										},
+										{
+											"key": "topic",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "topic,0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
 		}
 	],
 	"event": [
