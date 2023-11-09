@@ -1,9 +1,10 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: Api 格式釋出：會員、文章，其餘僅供參考
-  version: 10.13.1943
+  description: 權限設計已完成，另後台員工帳戶，除去上傳頭像，其他皆可測試
+  version: 11.09.2238
 servers:
+  - url: http://{{domain}}
   - url: https://gnim.com.tw
 components:
   securitySchemes:
@@ -17,22 +18,39 @@ tags:
       type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)
 
       article type:  
-      0 -> podcast, 1 -> tiptap article, 2 -> youtube
+      0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news
 
       source:  
       null -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道
+
+      topic:
+
+      0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
   - name: 後台
   - name: 後台 > 文章
   - name: 後台 > 帳戶
   - name: 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
+  - name: 後台 > 訂閱 & 發票
   - name: 搜尋
-    description: topic,0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
+    description: |-
+      type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)
+
+      article type:  
+      0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news
+
+      source:  
+      null -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道
+
+      topic:
+
+      0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
     description: rate, 1 -> positive, 0 -> neutral, -1 -> negative
+  - name: 訂閱
 paths:
-  /dev/auth/google:
+  /api/auth/google:
     post:
       tags:
         - 會員
@@ -61,7 +79,7 @@ paths:
                 email: null
                 accessToken: YOUR_ACCESS_TOKEN
                 refreshToken: YOUR_REFRESH_TOKEN
-  /dev/auth/line:
+  /api/auth/line:
     post:
       tags:
         - 會員
@@ -90,7 +108,7 @@ paths:
                 email: null
                 accessToken: YOUR_ACCESS_TOKEN
                 refreshToken: YOUR_REFRESH_TOKEN
-  /dev/member/refresh-token:
+  /api/member/refresh-token:
     post:
       tags:
         - 會員
@@ -118,7 +136,7 @@ paths:
                 type: object
               example:
                 accessToken: YOUR_ACCESS_TOKEN
-  /dev/member/update-information:
+  /api/member/update-information:
     post:
       tags:
         - 會員
@@ -156,7 +174,7 @@ paths:
                 type: object
               example:
                 message: 此電子郵箱已被使用
-  /dev/member/sent-validate-email:
+  /api/member/sent-validate-email:
     get:
       tags:
         - 會員
@@ -188,7 +206,7 @@ paths:
                 type: object
               example:
                 message: email field is empty
-  /dev/member/information:
+  /api/member/information:
     get:
       tags:
         - 會員
@@ -210,7 +228,7 @@ paths:
                 loginType: google
                 thirdPartyIdentifier: lisa@gmail.com
                 isSubscribing: false
-  /dev/member/delete-account:
+  /api/member/delete-account:
     delete:
       tags:
         - 會員
@@ -243,7 +261,7 @@ paths:
                     message: >-
                       Cannot delete account while in your subscription plan
                       period.
-  /dev/member/validate-email:
+  /api/member/validate-email:
     get:
       tags:
         - 會員
@@ -275,7 +293,7 @@ paths:
                 type: object
               example:
                 message: 信箱驗證成功
-  /dev/member/term/{term}:
+  /api/member/term/{term}:
     post:
       tags:
         - 會員
@@ -301,7 +319,7 @@ paths:
                 type: object
               example:
                 message: success
-  /dev/article/all-topic-latest:
+  /api/article/all-topic-latest:
     get:
       tags:
         - 文章
@@ -346,7 +364,7 @@ paths:
                     type: 1
                     isLimited: false
                     source: null
-  /dev/article/{id}:
+  /api/article/{id}:
     get:
       tags:
         - 文章
@@ -387,342 +405,6 @@ paths:
                 type: 1
                 isLimited: true
                 source: null
-  /dev/podcast/{id}:
-    get:
-      tags:
-        - 文章
-      summary: get podcast content
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] podcast id, not the one from spotify'
-          example: '1'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                id: 1
-                title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
-                content: >-
-                  {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
-                soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
-                topic:
-                  name: 基本面
-                  id: 1
-                tags:
-                  - name: 毛利
-                    id: 1
-                publishDate: '2023-05-02T00:00:00.000Z'
-                previewImage: null
-                type: 0
-                isLimited: false
-                source: null
-  /dev/article:
-    get:
-      tags:
-        - 文章
-      summary: get latest articles
-      description: |-
-        topic query value
-
-        不傳 -> 全部  
-        1 -> 基本面（基本面、總經）  
-        2 -> 技術面  
-        3 -> 籌碼面  
-        4 -> 其他
-      parameters:
-        - name: topic
-          in: query
-          schema:
-            type: string
-          description: |-
-            不傳 -> 全部
-            1 -> 基本面（基本面、總經）
-            2 -> 技術面
-            3 -> 籌碼面
-            4 -> 其他
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                topic: 0
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
-  /dev/podcast:
-    get:
-      tags:
-        - 文章
-      summary: get latest podcasts
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                topic: 0
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
-  /dev/article/authors:
-    get:
-      tags:
-        - 文章
-      summary: Authors
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                authors:
-                  - name: Rick
-                    id: 1
-                    avatar: https://path/to/img
-                  - name: Riick
-                    id: 2
-                    avatar: https://path/to/img
-  /dev/article/{id}/related:
-    get:
-      tags:
-        - 文章
-      summary: related articles
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] article id'
-          example: '123'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
-  /dev-internal/image/upload:
-    post:
-      tags:
-        - 後台 > 文章
-      summary: upload image for article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - image
-              properties:
-                image:
-                  type: string
-                  description: ''
-                  format: binary
-                '':
-                  type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                url: https://path/to/img
-  /dev-internal/article:
-    post:
-      tags:
-        - 後台 > 文章
-      summary: create an article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - title
-                - content
-                - html
-                - topic
-                - isLimited
-                - clipedContent
-                - isDraft
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: 你好，世界
-                content:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                html:
-                  type: string
-                  description: ''
-                  example: >-
-                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
-                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
-                    width="500"
-                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
-                topic:
-                  type: integer
-                  description: ''
-                  example: '1'
-                tags[]:
-                  type: integer
-                  example: '2'
-                isLimited:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                clipedContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                isDraft:
-                  type: boolean
-                  description: ''
-                  example: 'true'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                id: 123
-  /dev-internal/article/{id}:
     put:
       tags:
         - 後台 > 文章
@@ -815,38 +497,367 @@ paths:
                 type: object
               example:
                 status: success
-  /dev-internal/member:
+  /api/podcast/{id}:
     get:
       tags:
-        - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
-      summary: 後台帳號 list
-      security:
-        - bearerAuth: []
+        - 文章
+      summary: get podcast content
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] podcast id, not the one from spotify'
+          example: '1'
       responses:
         '200':
           description: OK
           content:
-            text/plain:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 1
+                title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
+                content: >-
+                  {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
+                soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
+                topic:
+                  name: 基本面
+                  id: 1
+                tags:
+                  - name: 毛利
+                    id: 1
+                publishDate: '2023-05-02T00:00:00.000Z'
+                previewImage: null
+                type: 0
+                isLimited: false
+                source: null
+  /api/article:
+    get:
+      tags:
+        - 文章
+      summary: get latest articles
+      description: |-
+        topic query value
+
+        不傳 -> 全部  
+        1 -> 基本面（基本面、總經）  
+        2 -> 技術面  
+        3 -> 籌碼面  
+        4 -> 其他
+      parameters:
+        - name: topic
+          in: query
+          schema:
+            type: string
+          description: |-
+            不傳 -> 全部
+            1 -> 基本面（基本面、總經）
+            2 -> 技術面
+            3 -> 籌碼面
+            4 -> 其他
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                topic: 0
+                currentPage: 0
+                pageSize: 30
+                totalCount: 515
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: true
+                    source: null
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: 1
+                    isLimited: false
+                    source: null
+    post:
+      tags:
+        - 後台 > 文章
+      summary: create an article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - content
+                - html
+                - topic
+                - isLimited
+                - clipedContent
+                - isDraft
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 你好，世界
+                content:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                html:
+                  type: string
+                  description: ''
+                  example: >-
+                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                topic:
+                  type: integer
+                  description: ''
+                  example: '1'
+                tags[]:
+                  type: integer
+                  example: '2'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                clipedContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                isDraft:
+                  type: boolean
+                  description: ''
+                  example: 'true'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 123
+  /api/podcast:
+    get:
+      tags:
+        - 文章
+      summary: get latest podcasts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                topic: 0
+                currentPage: 0
+                pageSize: 30
+                totalCount: 515
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: true
+                    source: null
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: 1
+                    isLimited: false
+                    source: null
+  /api/article/authors:
+    get:
+      tags:
+        - 文章
+      summary: Authors
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                authors:
+                  - name: Rick
+                    id: 1
+                    avatar: https://path/to/img
+                  - name: Riick
+                    id: 2
+                    avatar: https://path/to/img
+  /api/article/{id}/related:
+    get:
+      tags:
+        - 文章
+      summary: related articles
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '123'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                articles:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
+                      id: 1
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: true
+                    source: null
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: 1
+                    isLimited: false
+                    source: null
+  /api/image/upload:
+    post:
+      tags:
+        - 後台 > 文章
+      summary: upload image for article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - image
+              properties:
+                image:
+                  type: string
+                  description: ''
+                  format: binary
+                '':
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                url: https://path/to/img
+  /api/users:
+    get:
+      tags:
+        - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
+      summary: 後台帳號 list
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    {
-                        'id': 1,
-                        'name': 'VossA',
-                        "avatar": "https://path/to/avatar"
-                    },
-                    {
-                        'id': 2,
-                        'name': 'VossB',
-                        "avatar": "https://path/to/avatar"
-                    },
-                    {
-                        'id': 3,
-                        'name': 'VossC',
-                        "avatar": "https://path/to/avatar"
-                    }
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: 1
+                  name: VossA
+                  avatar: https://path/to/avatar
+                - id: 1
+                  name: VossB
+                  avatar: https://path/to/avatar
+                - id: 1
+                  name: VossC
+                  avatar: https://path/to/avatar
         '403':
           description: Forbidden
           content:
@@ -855,52 +866,35 @@ paths:
                 type: object
               example:
                 error: permission denied
-    delete:
-      tags:
-        - 後台 > 帳戶
-      summary: 刪除自己內部帳戶
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                status: success
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                message: permission denied
-  /dev-internal/member/{id}:
+  /api/user/{id}:
     get:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
       summary: 檢視指定後台帳號
-      security:
-        - bearerAuth: []
       parameters:
         - name: id
           in: path
           schema:
-            type: string
+            type: integer
           required: true
+          description: '[ required ] 用戶 id'
+          example: '12'
       responses:
         '200':
           description: OK
-          content:
-            text/plain:
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    "name": "Voss",
-                    "avatar": "https://path/to/avatar"
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Voss
+                avatar: https://path/to/avatar
+                permissions: []
         '403':
           description: Forbidden
           content:
@@ -913,14 +907,13 @@ paths:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
       summary: 刪除指定後台帳號
-      security:
-        - bearerAuth: []
       parameters:
         - name: id
           in: path
           schema:
-            type: string
+            type: integer
           required: true
+          example: '23'
       responses:
         '200':
           description: OK
@@ -942,91 +935,7 @@ paths:
                 {
                     "message": "permission denied"
                 }
-  /dev-internal/member/{id}/update-information:
-    post:
-      tags:
-        - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
-      summary: 更新指定後台帳號名稱
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: VossVVV
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-              example: |-
-                {
-                    "name": "Voss Muscle"
-                }
-        '403':
-          description: Forbidden
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                message: permission denied
-  /dev-internal/member/{id}/update-avatar:
-    post:
-      tags:
-        - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
-      summary: 更新指定後台帳號頭像
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                avatar:
-                  type: string
-                  format: binary
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            text/plain:
-              schema:
-                type: string
-              example: |-
-                {
-                    "url": "https://path/to/avatar"
-                }
-        '403':
-          description: Forbidden
-          content:
-            text/plain:
-              schema:
-                type: string
-              example: |-
-                {
-                    "message": "permission denied"
-                }
-  /dev-internal/member/{id}/update-password:
+  /api/user/{id}/update-password:
     post:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1037,20 +946,16 @@ paths:
             schema:
               type: object
               properties:
-                oldPassword:
-                  type: string
-                  example: oldPassword
                 password:
                   type: string
                   example: password
-      security:
-        - bearerAuth: []
       parameters:
         - name: id
           in: path
           schema:
-            type: string
+            type: integer
           required: true
+          example: '23'
       responses:
         '200':
           description: OK
@@ -1072,7 +977,7 @@ paths:
                 {
                     "message": "permission denied"
                 }
-  /dev-internal/member/create:
+  /api/user/create:
     post:
       tags:
         - 後台 > 帳戶
@@ -1085,10 +990,10 @@ paths:
               properties:
                 account:
                   type: string
-                  example: Voss
+                  example: Vossvoss
                 password:
                   type: string
-                  example: vosssssssss
+                  example: Vossvoss
       responses:
         '200':
           description: OK
@@ -1106,7 +1011,7 @@ paths:
                 type: object
               example:
                 message: permission denied
-  /dev-internal/member/login:
+  /api/user/login:
     post:
       tags:
         - 後台 > 帳戶
@@ -1116,13 +1021,18 @@ paths:
           multipart/form-data:
             schema:
               type: object
+              required:
+                - account
+                - password
               properties:
                 account:
                   type: string
-                  example: Voss
+                  description: 最少六位英數
+                  example: Remus88888
                 password:
                   type: string
-                  example: vosssssssss
+                  description: 最少六位英數
+                  example: hashpassword123
       responses:
         '200':
           description: OK
@@ -1141,7 +1051,62 @@ paths:
                 type: object
               example:
                 error: Invalid username or password.
-  /dev-internal/member/update-information:
+  /api/user/refresh:
+    post:
+      tags:
+        - 後台 > 帳戶
+      summary: 刷新內部帳戶
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                refreshToken:
+                  type: string
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5ODczODAyNywiZXhwIjoxNjk5MzQyODI3fQ.U8kbeGcjZlk5whNj7q0nroGS9oW-pCIOH84QP6sAy4I
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                accessToken: YOUR_ACCESS_TOKEN
+                refreshToken: YOUR_REFRESH_TOKEN
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: Invalid username or password.
+  /api/user:
+    get:
+      tags:
+        - 後台 > 帳戶
+      summary: 檢視自己後台帳號資料
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                message: permission denied
+  /api/user/update-information:
     post:
       tags:
         - 後台 > 帳戶
@@ -1154,7 +1119,7 @@ paths:
               properties:
                 name:
                   type: string
-                  example: Voss Muscle
+                  example: Remus88888
       responses:
         '200':
           description: OK
@@ -1163,8 +1128,8 @@ paths:
               schema:
                 type: object
               example:
-                name: Voss Muscle
-  /dev-internal/member/update-avatar:
+                status: success
+  /api/user/update-avatar:
     post:
       tags:
         - 後台 > 帳戶
@@ -1188,7 +1153,7 @@ paths:
                 type: object
               example:
                 url: https://path/to/avatar
-  /dev-internal/member/update-password:
+  /api/user/update-password:
     post:
       tags:
         - 後台 > 帳戶
@@ -1201,10 +1166,10 @@ paths:
               properties:
                 password:
                   type: string
-                  example: Passw0rd
+                  example: hashpassword123
                 oldPassword:
                   type: string
-                  example: vosssssssss
+                  example: hashpassword
       responses:
         '200':
           description: OK
@@ -1214,7 +1179,150 @@ paths:
                 type: object
               example:
                 status: success
-  /dev/:
+  /dashboard/subscriptions:
+    get:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 取得訂閱 & 交易紀錄
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 0
+                pageSize: 30
+                totalCount: 515
+                data:
+                  - id: 4
+                    memberId: 6
+                    status: subscription-status-string
+                    plan: month
+                    autoRenewal: true
+                    amount: 6888
+                    email: test@gnim.com
+                    nextRenewalDate: '2023-12-04'
+                    startAt: '2023-11-04T10:10:47.000Z'
+                    endAt: null
+                    companyUniformSerialNo: '12345678'
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-11-04T10:05:47.000Z'
+                    updatedAt: '2023-11-04T10:05:47.000Z'
+                    bills:
+                      - id: 10
+                        memberId: 6
+                        subscriptionId: 4
+                        type: payment
+                        startAt: '2023-10-04T10:10:47.000Z'
+                        endAt: '2023-11-04T10:10:47.000Z'
+                        amount: 6888
+                        taxAmount: 300
+                        maskedCreditCardNo: 400022******1111
+                        createdAt: '2023-10-04T10:05:47.000Z'
+                  - id: 3
+                    memberId: 5
+                    status: subscription-status-string
+                    plan: month
+                    autoRenewal: true
+                    amount: 6888
+                    email: test@gnim.com
+                    nextRenewalDate: '2023-12-04'
+                    startAt: '2023-11-04T10:10:47.000Z'
+                    endAt: null
+                    companyUniformSerialNo: '12345678'
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-11-04T10:05:47.000Z'
+                    updatedAt: '2023-11-04T10:05:47.000Z'
+                    bills:
+                      - id: 14
+                        memberId: 5
+                        subscriptionId: 3
+                        type: payment
+                        startAt: '2023-11-04T10:10:47.000Z'
+                        endAt: '2023-12-04T10:10:47.000Z'
+                        amount: 6888
+                        taxAmount: 300
+                        maskedCreditCardNo: 400022******1111
+                        createdAt: '2023-11-04T10:05:47.000Z'
+                      - id: 6
+                        memberId: 5
+                        subscriptionId: 3
+                        type: payment
+                        startAt: '2023-10-04T10:10:47.000Z'
+                        endAt: '2023-11-04T10:10:47.000Z'
+                        amount: 6888
+                        taxAmount: 300
+                        maskedCreditCardNo: 400022******1111
+                        createdAt: '2023-10-04T10:05:47.000Z'
+  /dashboard/invoices:
+    get:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 取得發票開立紀錄
+      description: |-
+        回傳欄位  
+        \* 代表必定有值的欄位  
+          
+        \* memberId INT, 會員 ID  
+        \* subscriptionId INT, 訂閱資料 ID  
+        \* billId INT, 交易 ID  
+        \* status STRING  
+        \* amount INT, 交易金額  
+        \* taxAmount INT, 稅金金額  
+        \* uniformInvoiceNo STRING, 發票號碼  
+        \* uniformInvoiceRandomNo STRING, 發票防偽隨機碼  
+        \* email  
+        eInvoicePlatformNo STRING, 發票平台自訂編號  
+        companyUniformSerialNo STRING, 公司統一編號
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 0
+                pageSize: 30
+                totalCount: 515
+                data:
+                  - id: 10
+                    memberId: 5
+                    subscriptionId: 3
+                    billId: 6
+                    status: invoice-status-string
+                    amount: 6888
+                    taxAmount: 300
+                    uniformInvoiceNo: AB00000001
+                    uniformInvoiceRandomNo: '1234'
+                    email: test@gnim.com.tw
+                    eInvoicePlatformNo: abab222222
+                    companyUniformSerialNo: '12345678'
+                    createdAt: '2023-11-04T10:05:47.000Z'
+                    updatedAt: '2023-11-04T10:05:47.000Z'
+  /dashboard/upsert-refund-amount:
+    post:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 完成退費 (i.e. 編輯已退款金額)
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/:
     get:
       tags:
         - 搜尋
@@ -1224,7 +1332,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /dev/topic-tag:
+  /api/topic-tag:
     get:
       tags:
         - 標籤、主題
@@ -1248,7 +1356,7 @@ paths:
                     tags:
                       - id: 1
                         name: 毛利
-  /dev-internal/topic-all:
+  /api/topic-all:
     get:
       tags:
         - 標籤、主題
@@ -1276,7 +1384,7 @@ paths:
                         name: 毛利
                         sort: 1
                         hide: false
-  /dev-internal/tag:
+  /api/tag:
     post:
       tags:
         - 標籤、主題
@@ -1363,7 +1471,7 @@ paths:
                 type: object
               example:
                 message: not found
-  /dev-internal/edit-tags-display-setting:
+  /api/edit-tags-display-setting:
     post:
       tags:
         - 標籤、主題
@@ -1415,7 +1523,7 @@ paths:
                 type: object
               example:
                 message: success
-  /dev-internal/tag/{id}:
+  /api/tag/{id}:
     put:
       tags:
         - 標籤、主題
@@ -1457,7 +1565,7 @@ paths:
                 type: object
               example:
                 message: success
-  /dev/banner:
+  /api/banner:
     get:
       tags:
         - Banner
@@ -1520,7 +1628,7 @@ paths:
                   type: 1
                   isLimited: false
                   source: 1
-  /dev/news:
+  /api/news:
     get:
       tags:
         - 新聞
@@ -1572,7 +1680,7 @@ paths:
                         https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
                       rate: 0
                       tag: 半導體
-  /dev/search/query:
+  /api/search/query:
     get:
       tags:
         - 搜尋
@@ -1654,7 +1762,7 @@ paths:
                     type: 1
                     isLimited: false
                     source: null
-  /dev/search/tag:
+  /api/search/tag:
     get:
       tags:
         - 搜尋
@@ -1736,3 +1844,247 @@ paths:
                     type: 1
                     isLimited: false
                     source: null
+  /api/subscription/current-plan:
+    get:
+      tags:
+        - 訂閱
+      summary: 取得會員訂閱狀態
+      responses:
+        '200':
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: 使用者訂閱中
+                  value:
+                    data:
+                      id: 3
+                      memberId: 5
+                      status: subscription-status-string
+                      plan: month
+                      autoRenewal: true
+                      amount: 6888
+                      email: test@gnim.com
+                      nextRenewalDate: '2023-12-04'
+                      startAt: '2023-11-04T10:10:47.000Z'
+                      endAt: null
+                      companyUniformSerialNo: '12345678'
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-11-04T10:05:47.000Z'
+                      updatedAt: '2023-11-04T10:05:47.000Z'
+                example-1:
+                  summary: 使用者目前未訂閱
+                  value:
+                    data: null
+  /api/subscription/bills:
+    get:
+      tags:
+        - 訂閱
+      summary: 取得付款紀錄
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 0
+                pageSize: 30
+                totalCount: 515
+                data:
+                  - id: 14
+                    memberId: 5
+                    subscriptionId: 3
+                    type: payment
+                    startAt: '2023-11-04T10:10:47.000Z'
+                    endAt: '2023-12-04T10:10:47.000Z'
+                    amount: 6888
+                    taxAmount: 300
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-11-04T10:05:47.000Z'
+                  - id: 6
+                    memberId: 5
+                    subscriptionId: 3
+                    type: payment
+                    startAt: '2023-10-04T10:10:47.000Z'
+                    endAt: '2023-11-04T10:10:47.000Z'
+                    amount: 6888
+                    taxAmount: 300
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-10-04T10:05:47.000Z'
+  /api/subscription/request-payment-payload:
+    post:
+      tags:
+        - 訂閱
+      summary: 要求藍新付款  (使用者確認付款)
+      description: >-
+        Request 參數：
+
+
+        1. \* plan: 訂閱方案, valid inputs: \["month", "quarter", "year"\]
+
+        2. \* returnUrl: 完成藍新付款後要前往的前端 URL
+
+        3. \* backUrl: 取消付款後要前往的前端 URL
+            
+
+        Response：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  
+
+        藍新測試站：[https://ccore.newebpay.com/MPG/period](https://ccore.newebpay.com/MPG/period)  
+
+        藍新正式站：[https://core.newebpay.com/MPG/period](https://core.newebpay.com/MPG/period)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plan: month
+                returnUrl: https://gnim.com.tw/payment-completed
+                backUrl: https://gnim.com.tw/payment-canceled
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                MerchantID_: MS350610354
+                PostData_: >-
+                  fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e
+  /api/subscription/re-request-payment-payload:
+    post:
+      tags:
+        - 訂閱
+      summary: 重新要求藍新付款 (更新付款資料)
+      description: |-
+        參數幾乎同「要求藍新付款」，
+
+        此 API 不同的地方在於用途，  
+        當使用者已經有一筆有效的訂閱資格，但要更改付款資訊、Email 時，使用此 API，  
+        更新付款資訊不允許更換方案，因此 Request 不需傳入 `plan` 參數。
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                returnUrl: https://gnim.com.tw/payment-completed
+                backUrl: https://gnim.com.tw/payment-canceled
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/subscription/change-plan:
+    post:
+      tags:
+        - 訂閱
+      summary: 更換方案
+      description: 用來讓使用者更換方案，更換後回傳新的訂閱資訊。
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                newPlan: quarter
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 3
+                  memberId: 5
+                  status: subscription-status-string
+                  plan: quarter
+                  autoRenewal: true
+                  amount: 16888
+                  email: test@gnim.com
+                  nextRenewalDate: '2024-02-04'
+                  startAt: '2023-11-04T10:10:47.000Z'
+                  endAt: null
+                  companyUniformSerialNo: '12345678'
+                  maskedCreditCardNo: 400022******1111
+                  createdAt: '2023-11-04T10:05:47.000Z'
+                  updatedAt: '2023-11-04T10:05:47.000Z'
+  /api/subscription/configure-auto-renewal:
+    post:
+      tags:
+        - 訂閱
+      summary: 啟用或關閉自動續訂
+      description: |-
+        參數：
+
+        1. `active`: boolean，是否啟用自動續訂
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                active: true
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 3
+                  memberId: 5
+                  status: subscription-status-string
+                  plan: month
+                  autoRenewal: false
+                  amount: 6888
+                  email: test@gnim.com
+                  nextRenewalDate: '2023-12-04'
+                  startAt: '2023-11-04T10:10:47.000Z'
+                  endAt: null
+                  companyUniformSerialNo: '12345678'
+                  maskedCreditCardNo: 400022******1111
+                  createdAt: '2023-11-04T10:05:47.000Z'
+                  updatedAt: '2023-11-04T10:05:47.000Z'
+  /api/subscription/cancel-and-request-refund:
+    post:
+      tags:
+        - 訂閱
+      summary: 取消訂閱
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
