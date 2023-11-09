@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "d4c9bc2b-1dbd-48d1-9deb-140a951fd07b",
 		"name": "Api",
+		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30381842",
 		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
@@ -1104,7 +1105,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道"
+			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
 		},
 		{
 			"name": "後台",
@@ -1577,19 +1578,16 @@
 								{
 									"name": "後台帳號 list",
 									"request": {
-										"auth": {
-											"type": "bearer"
-										},
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member",
+											"raw": "{{domain}}/{{internalPrefix}}/users",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{internalPrefix}}",
-												"member"
+												"users"
 											]
 										}
 									},
@@ -1600,22 +1598,30 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/member",
+													"raw": "{{domain}}/{{internalPrefix}}/user",
 													"host": [
 														"{{domain}}"
 													],
 													"path": [
 														"{{internalPrefix}}",
-														"member"
+														"user"
 													]
 												}
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    {\n        'id': 1,\n        'name': 'VossA',\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        'id': 2,\n        'name': 'VossB',\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        'id': 3,\n        'name': 'VossC',\n        \"avatar\": \"https://path/to/avatar\"\n    }\n}"
+											"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"VossA\",\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"VossB\",\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"VossC\",\n        \"avatar\": \"https://path/to/avatar\"\n    }\n]"
 										},
 										{
 											"name": "permission deny",
@@ -1660,25 +1666,23 @@
 								{
 									"name": "檢視指定後台帳號",
 									"request": {
-										"auth": {
-											"type": "bearer"
-										},
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member/:id",
+											"raw": "{{domain}}/{{internalPrefix}}/user/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{internalPrefix}}",
-												"member",
+												"user",
 												":id"
 											],
 											"variable": [
 												{
 													"key": "id",
-													"value": null
+													"value": "12",
+													"description": "[ required ] 用戶 id"
 												}
 											]
 										}
@@ -1709,10 +1713,18 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    \"name\": \"Voss\",\n    \"avatar\": \"https://path/to/avatar\"\n}"
+											"body": "{\n    \"name\": \"Voss\",\n    \"avatar\": \"https://path/to/avatar\",\n    \"permissions\": [\n        \n    ]\n}"
 										},
 										{
 											"name": "permission deny",
@@ -1762,270 +1774,13 @@
 									]
 								},
 								{
-									"name": "更新指定後台帳號名稱",
-									"request": {
-										"auth": {
-											"type": "bearer"
-										},
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "name",
-													"value": "VossVVV",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-information",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"{{internalPrefix}}",
-												"member",
-												":id",
-												"update-information"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "name",
-															"value": "Voss Muscle",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-information",
-													"host": [
-														"{{domain}}"
-													],
-													"path": [
-														"{{internalPrefix}}",
-														"member",
-														":id",
-														"update-information"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": null
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
-											"cookie": [],
-											"body": "{\n    \"name\": \"Voss Muscle\"\n}"
-										},
-										{
-											"name": "permission deny",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "account",
-															"value": "Voss",
-															"type": "text"
-														},
-														{
-															"key": "password",
-															"value": "vosssssssss",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-information",
-													"host": [
-														"{{domain}}"
-													],
-													"path": [
-														"{{internalPrefix}}",
-														"member",
-														":id",
-														"update-information"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": null
-														}
-													]
-												}
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": "json",
-											"header": null,
-											"cookie": [],
-											"body": "{\n    \"message\": \"permission denied\"\n}"
-										}
-									]
-								},
-								{
-									"name": "更新指定後台帳號頭像",
-									"request": {
-										"auth": {
-											"type": "bearer"
-										},
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "avatar",
-													"type": "file",
-													"src": []
-												}
-											]
-										},
-										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-avatar",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"{{internalPrefix}}",
-												"member",
-												":id",
-												"update-avatar"
-											],
-											"variable": [
-												{
-													"key": "id",
-													"value": null
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "avatar",
-															"type": "file",
-															"src": []
-														}
-													]
-												},
-												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-avatar",
-													"host": [
-														"{{domain}}"
-													],
-													"path": [
-														"{{internalPrefix}}",
-														"member",
-														":id",
-														"update-avatar"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": null
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
-											"cookie": [],
-											"body": "{\n    \"url\": \"https://path/to/avatar\"\n}"
-										},
-										{
-											"name": "permission deny",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "avatar",
-															"type": "file",
-															"src": []
-														}
-													]
-												},
-												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-avatar",
-													"host": [
-														"{{domain}}"
-													],
-													"path": [
-														"{{internalPrefix}}",
-														"member",
-														":id",
-														"update-avatar"
-													],
-													"variable": [
-														{
-															"key": "id",
-															"value": null
-														}
-													]
-												}
-											},
-											"status": "Forbidden",
-											"code": 403,
-											"_postman_previewlanguage": null,
-											"header": null,
-											"cookie": [],
-											"body": "{\n    \"message\": \"permission denied\"\n}"
-										}
-									]
-								},
-								{
 									"name": "更新指定後台帳號密碼",
 									"request": {
-										"auth": {
-											"type": "bearer"
-										},
 										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "formdata",
 											"formdata": [
-												{
-													"key": "oldPassword",
-													"value": "oldPassword",
-													"type": "text"
-												},
 												{
 													"key": "password",
 													"value": "password",
@@ -2034,20 +1789,20 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member/:id/update-password",
+											"raw": "{{domain}}/{{internalPrefix}}/user/:id/update-password",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{internalPrefix}}",
-												"member",
+												"user",
 												":id",
 												"update-password"
 											],
 											"variable": [
 												{
 													"key": "id",
-													"value": null
+													"value": "23"
 												}
 											]
 										}
@@ -2150,25 +1905,22 @@
 								{
 									"name": "刪除指定後台帳號",
 									"request": {
-										"auth": {
-											"type": "bearer"
-										},
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member/:id",
+											"raw": "{{domain}}/{{internalPrefix}}/user/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{internalPrefix}}",
-												"member",
+												"user",
 												":id"
 											],
 											"variable": [
 												{
 													"key": "id",
-													"value": null
+													"value": "23"
 												}
 											]
 										}
@@ -2248,24 +2000,24 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Voss",
+											"value": "Vossvoss",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "vosssssssss",
+											"value": "Vossvoss",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member/create",
+									"raw": "{{domain}}/{{internalPrefix}}/user/create",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
-										"member",
+										"user",
 										"create"
 									]
 								}
@@ -2353,6 +2105,36 @@
 						},
 						{
 							"name": "登入內部帳戶",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"let jsonResponse = pm.response.json();",
+											"",
+											"pm.test(\"Response should be a parsable JSON\", function() {",
+											"    pm.expect(jsonResponse).to.be.ok;",
+											"});",
+											"",
+											"pm.test(\"Response body should be an object\", function() {",
+											"    pm.expect(jsonResponse).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"Response body should be in the correct format\", function() {",
+											"    pm.expect(jsonResponse.accessToken).to.be.a('string');",
+											"    pm.expect(jsonResponse.refreshToken).to.be.a('string');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -2361,24 +2143,26 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Voss",
+											"value": "Remus88888",
+											"description": "[required] 最少六位英數",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "vosssssssss",
+											"value": "hashpassword123",
+											"description": "[required] 最少六位英數",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member/login",
+									"raw": "{{domain}}/{{internalPrefix}}/user/login",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
-										"member",
+										"user",
 										"login"
 									]
 								}
@@ -2465,10 +2249,190 @@
 							]
 						},
 						{
+							"name": "刷新內部帳戶",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"let jsonResponse = pm.response.json();",
+											"",
+											"pm.test(\"Response should be a parsable JSON\", function() {",
+											"    pm.expect(jsonResponse).to.be.ok;",
+											"});",
+											"",
+											"pm.test(\"Response body should be an object\", function() {",
+											"    pm.expect(jsonResponse).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"Response body should be in the correct format\", function() {",
+											"    pm.expect(jsonResponse.accessToken).to.be.a('string');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "refreshToken",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5ODczODAyNywiZXhwIjoxNjk5MzQyODI3fQ.U8kbeGcjZlk5whNj7q0nroGS9oW-pCIOH84QP6sAy4I",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/user/refresh",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"user",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "account",
+													"value": "Voss",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "vosssssssss",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{internalPrefix}}/member/login",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{internalPrefix}}",
+												"member",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+								},
+								{
+									"name": "wrong name or password",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "account",
+													"value": "Voss",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "vosssssssss",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{internalPrefix}}/member/login",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{internalPrefix}}",
+												"member",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n  \"error\": \"Invalid username or password.\"\n}"
+								}
+							]
+						},
+						{
 							"name": "檢視自己後台帳號資料",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"response is ok\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"let jsonResponse = pm.response.json();",
+											"",
+											"pm.test(\"Response should be a parsable JSON\", function() {",
+											"    pm.expect(jsonResponse).to.be.ok;",
+											"});",
+											"",
+											"pm.test(\"Response body should be an object\", function() {",
+											"    pm.expect(jsonResponse).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"Response body should be in the correct format\", function() {",
+											"    pm.expect(jsonResponse.id).to.be.a('number');",
+											"    pm.expect(jsonResponse.account).to.be.a('string');",
+											"    pm.expect(jsonResponse.name).to.be.a('string');",
+											"    pm.expect(jsonResponse.avatar).to.be.a('string');",
+											"    // pm.expect(jsonResponse.UserRole).to.be.a('object');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/user",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"user"
+									]
+								}
 							},
 							"response": [
 								{
@@ -2509,108 +2473,6 @@
 									"name": "permission deny",
 									"originalRequest": {
 										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "account",
-													"value": "Voss",
-													"type": "text"
-												},
-												{
-													"key": "password",
-													"value": "vosssssssss",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"{{internalPrefix}}",
-												"member"
-											]
-										}
-									},
-									"status": "Forbidden",
-									"code": 403,
-									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": "{\n    \"message\": \"permission denied\"\n}"
-								}
-							]
-						},
-						{
-							"name": "刪除自己內部帳戶",
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "accountId",
-											"value": "123",
-											"description": "[required] 內部帳戶的哀低",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{internalPrefix}}",
-										"member"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "success",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "accountId",
-													"value": "123",
-													"description": "[required] 內部帳戶的哀低",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/member",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"{{internalPrefix}}",
-												"member"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": "{\n    \"status\":\"success\"\n}"
-								},
-								{
-									"name": "permission deny",
-									"originalRequest": {
-										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "formdata",
@@ -2657,19 +2519,19 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "Voss Muscle",
+											"value": "Remus88888",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member/update-information",
+									"raw": "{{domain}}/{{internalPrefix}}/user/update-information",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
-										"member",
+										"user",
 										"update-information"
 									]
 								}
@@ -2707,7 +2569,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"name\": \"Voss Muscle\"\n}"
+									"body": "{\n    \"status\":\"success\"\n}"
 								}
 							]
 						},
@@ -2728,13 +2590,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member/update-avatar",
+									"raw": "{{domain}}/{{internalPrefix}}/user/update-avatar",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
-										"member",
+										"user",
 										"update-avatar"
 									]
 								}
@@ -2787,24 +2649,24 @@
 									"formdata": [
 										{
 											"key": "password",
-											"value": "Passw0rd",
+											"value": "hashpassword123",
 											"type": "text"
 										},
 										{
 											"key": "oldPassword",
-											"value": "vosssssssss",
+											"value": "hashpassword",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/member/update-password",
+									"raw": "{{domain}}/{{internalPrefix}}/user/update-password",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
-										"member",
+										"user",
 										"update-password"
 									]
 								}
@@ -2873,10 +2735,143 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "訂閱 & 發票",
+					"item": [
+						{
+							"name": "取得訂閱 & 交易紀錄",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/dashboard/subscriptions",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"dashboard",
+										"subscriptions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "取得訂閱 & 交易紀錄",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/dashboard/subscriptions?isWaitingRefund=true / false",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"dashboard",
+												"subscriptions"
+											],
+											"query": [
+												{
+													"key": "isWaitingRefund",
+													"value": "true / false"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"memberId\": 6,\n\t\t\t\"status\": \"subscription-status-string\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"autoRenewal\": true,\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 10,\n\t\t\t\t\t\"memberId\": 6,\n\t\t\t\t\t\"subscriptionId\": 4,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"memberId\": 5,\n\t\t\t\"status\": \"subscription-status-string\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"autoRenewal\": true,\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 14,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+								}
+							]
+						},
+						{
+							"name": "取得發票開立紀錄",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/dashboard/invoices",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"dashboard",
+										"invoices"
+									]
+								},
+								"description": "回傳欄位  \n\\* 代表必定有值的欄位  \n  \n\\* memberId INT, 會員 ID  \n\\* subscriptionId INT, 訂閱資料 ID  \n\\* billId INT, 交易 ID  \n\\* status STRING  \n\\* amount INT, 交易金額  \n\\* taxAmount INT, 稅金金額  \n\\* uniformInvoiceNo STRING, 發票號碼  \n\\* uniformInvoiceRandomNo STRING, 發票防偽隨機碼  \n\\* email  \neInvoicePlatformNo STRING, 發票平台自訂編號  \ncompanyUniformSerialNo STRING, 公司統一編號"
+							},
+							"response": [
+								{
+									"name": "取得發票開立紀錄",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/dashboard/invoices",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"dashboard",
+												"invoices"
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 10,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n\t\t\t\"billId\": 6,\n\t\t\t\"status\": \"invoice-status-string\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"uniformInvoiceNo\": \"AB00000001\",\n\t\t\t\"uniformInvoiceRandomNo\": \"1234\",\n\t\t\t\"email\": \"test@gnim.com.tw\",\n\t\t\t\"eInvoicePlatformNo\": \"abab222222\",\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t}\n\t]\n}\n"
+								}
+							]
+						},
+						{
+							"name": "完成退費 (i.e. 編輯已退款金額)",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/dashboard/upsert-refund-amount",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"dashboard",
+										"upsert-refund-amount"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
-				"type": "bearer"
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTUzOTg5NywiZXhwIjoxNjk5NTQzNDk3fQ.JsOD-TdR5u2aD6edQnta-YnIIxwg2D__70IiLuXXcV4",
+						"type": "string"
+					}
+				]
 			},
 			"event": [
 				{
@@ -3786,7 +3781,406 @@
 					]
 				}
 			],
-			"description": "topic,0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+		},
+		{
+			"name": "訂閱",
+			"item": [
+				{
+					"name": "取得會員訂閱狀態",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/current-plan",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"current-plan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "使用者訂閱中",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/subscription/current-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"current-plan"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n\t\t\"status\": \"subscription-status-string\",\n\t\t\"plan\": \"month\",\n\t\t\"autoRenewal\": true,\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+						},
+						{
+							"name": "使用者目前未訂閱",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/subscription/current-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"current-plan"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "取得付款紀錄",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/bills",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"bills"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "取得付款紀錄",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/subscription/bills",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"bills"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 14,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n\t\t\t\"type\": \"payment\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n\t\t\t\"type\": \"payment\",\n\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t}\n\t]\n}"
+						}
+					]
+				},
+				{
+					"name": "要求藍新付款  (使用者確認付款)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"plan\": \"month\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/request-payment-payload",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"request-payment-payload"
+							]
+						},
+						"description": "Request 參數：\n\n1. \\* plan: 訂閱方案, valid inputs: \\[\"month\", \"quarter\", \"year\"\\]\n2. \\* returnUrl: 完成藍新付款後要前往的前端 URL\n3. \\* backUrl: 取消付款後要前往的前端 URL\n    \n\nResponse：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  \n藍新測試站：[https://ccore.newebpay.com/MPG/period](https://ccore.newebpay.com/MPG/period)  \n藍新正式站：[https://core.newebpay.com/MPG/period](https://core.newebpay.com/MPG/period)"
+					},
+					"response": [
+						{
+							"name": "要求藍新付款  (使用者確認付款)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"plan\": \"month\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/request-payment-payload",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"request-payment-payload"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"MerchantID_\": \"MS350610354\",\n    \"PostData_\": \"fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e\"\n}"
+						}
+					]
+				},
+				{
+					"name": "重新要求藍新付款 (更新付款資料)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/re-request-payment-payload",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"re-request-payment-payload"
+							]
+						},
+						"description": "參數幾乎同「要求藍新付款」，\n\n此 API 不同的地方在於用途，  \n當使用者已經有一筆有效的訂閱資格，但要更改付款資訊、Email 時，使用此 API，  \n更新付款資訊不允許更換方案，因此 Request 不需傳入 `plan` 參數。"
+					},
+					"response": []
+				},
+				{
+					"name": "更換方案",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPlan\": \"quarter\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/change-plan",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"change-plan"
+							]
+						},
+						"description": "用來讓使用者更換方案，更換後回傳新的訂閱資訊。"
+					},
+					"response": [
+						{
+							"name": "更換方案",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newPlan\": \"quarter\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/change-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"change-plan"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"memberId\": 5,\n        \"status\": \"subscription-status-string\",\n        \"plan\": \"quarter\",\n        \"autoRenewal\": true,\n        \"amount\": 16888,\n        \"email\": \"test@gnim.com\",\n        \"nextRenewalDate\": \"2024-02-04\",\n        \"startAt\": \"2023-11-04T10:10:47.000Z\",\n        \"endAt\": null,\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-04T10:05:47.000Z\",\n        \"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "啟用或關閉自動續訂",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/configure-auto-renewal",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"configure-auto-renewal"
+							]
+						},
+						"description": "參數：\n\n1. `active`: boolean，是否啟用自動續訂"
+					},
+					"response": [
+						{
+							"name": "啟用或關閉自動續訂",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"active\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/configure-auto-renewal",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"configure-auto-renewal"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n\t\t\"status\": \"subscription-status-string\",\n\t\t\"plan\": \"month\",\n\t\t\"autoRenewal\": false,\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+						}
+					]
+				},
+				{
+					"name": "取消訂閱",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/cancel-and-request-refund",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"cancel-and-request-refund"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [
@@ -3817,12 +4211,12 @@
 		},
 		{
 			"key": "prefix",
-			"value": "dev",
+			"value": "api",
 			"type": "string"
 		},
 		{
 			"key": "internalPrefix",
-			"value": "dev-internal",
+			"value": "api",
 			"type": "string"
 		}
 	]

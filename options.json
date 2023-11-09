@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "10.17.2234",
-        "description": "Api 格式釋出：會員、文章、標籤、搜尋、Banner、後台、新聞"
+        "version": "11.09.2238",
+        "description": "權限設計已完成，另後台員工帳戶，除去上傳頭像，其他皆可測試"
     },
     "replaceVars": true
 }
