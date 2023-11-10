@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 權限設計已完成，另後台員工帳戶，除去上傳頭像，其他皆可測試
-  version: 11.09.2238
+  description: google login
+  version: 11.10.1111
 servers:
   - url: http://{{domain}}
   - url: https://gnim.com.tw
@@ -51,22 +51,10 @@ tags:
   - name: 訂閱
 paths:
   /api/auth/google:
-    post:
+    get:
       tags:
         - 會員
       summary: google login
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - idToken
-              properties:
-                idToken:
-                  type: string
-                  description: google access token
-                  example: token
       responses:
         '200':
           description: OK
