@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.10.1111",
-        "description": "google login"
+        "version": "11.10.1623",
+        "description": "會員，除了上傳頭像、驗證信箱、驗證電話號碼，其他皆可測試"
     },
     "replaceVars": true
 }

@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: google login
-  version: 11.10.1111
+  description: 會員，除了上傳頭像、驗證信箱、驗證電話號碼，其他皆可測試
+  version: 11.10.1623
 servers:
   - url: http://{{domain}}
   - url: https://gnim.com.tw
@@ -11,6 +11,9 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 tags:
   - name: 會員
   - name: 文章
@@ -50,11 +53,24 @@ tags:
     description: rate, 1 -> positive, 0 -> neutral, -1 -> negative
   - name: 訂閱
 paths:
-  /api/auth/google:
-    get:
+  /api/login/google:
+    post:
       tags:
         - 會員
       summary: google login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - idToken
+              properties:
+                idToken:
+                  type: string
+                  description: google response code in query
+                  example: >-
+                    4/0AfJohXn_P6y41BkvjePTqLs4fck-P5bAe4HnY19tSgfY6akJEEgvtyVaL9R9RmnOEKSxZg
       responses:
         '200':
           description: OK
@@ -67,6 +83,17 @@ paths:
                 email: null
                 accessToken: YOUR_ACCESS_TOKEN
                 refreshToken: YOUR_REFRESH_TOKEN
+  /api/auth/google:
+    get:
+      tags:
+        - 會員
+      summary: get auth google url
+      description: 會重導向，沒有 response
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/auth/line:
     post:
       tags:
@@ -112,7 +139,8 @@ paths:
                 refreshToken:
                   type: string
                   description: ''
-                  example: ' "YOUR_REFRESH_TOKEN"'
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMzVmNWQwZTEtYWU1OS00YTA0LWFlOGMtODAzZTFmZmNlYmQ5IiwiaWF0IjoxNjk5NTk0MTgyLCJleHAiOjE3MDAxOTg5ODJ9.xTyPTchxOtm-8yjJ57elRlYgQD-DLbCYqLnUHmJh2Gg
       security:
         - bearerAuth: []
       responses:
@@ -137,10 +165,13 @@ paths:
               properties:
                 name:
                   type: string
-                  example: google
+                  example: 永翰
                 email:
                   type: string
                   example: hello@gmail.com
+                phone:
+                  type: integer
+                  example: '0936965814'
       security:
         - bearerAuth: []
       responses:
@@ -151,9 +182,19 @@ paths:
               schema:
                 type: object
               example:
-                name: new name
-                email: youremail@gmail.com
+                name: 永翰
+                email: hello@gmail.com
+                id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                avatar: >-
+                  https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
+                loginType: google
+                thirdPartyIdentifier: '112345303661950802160'
                 isEmailValidate: false
+                isSubscribing: false
+                phone: '0936965814'
+                isPhoneValidate: false
+                createdAt: '2023-11-10T07:37:42.000Z'
+                updatedAt: '2023-11-10T08:04:32.407Z'
         '409':
           description: Conflict
           content:
@@ -209,13 +250,19 @@ paths:
               schema:
                 type: object
               example:
-                name: Lisa
-                email: lisa@gmail.com
-                isEmailValidate: true
-                avatar: null
+                name: Chang Kenneth
+                email: kennethchangla@gmail.com
+                id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                avatar: >-
+                  https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
                 loginType: google
-                thirdPartyIdentifier: lisa@gmail.com
+                thirdPartyIdentifier: '112345303661950802160'
+                isEmailValidate: true
                 isSubscribing: false
+                phone: ''
+                isPhoneValidate: false
+                createdAt: '2023-11-10T07:37:42.000Z'
+                updatedAt: '2023-11-10T07:37:42.000Z'
   /api/member/delete-account:
     delete:
       tags:
@@ -285,7 +332,7 @@ paths:
     post:
       tags:
         - 會員
-      summary: privacy policy
+      summary: sign policy
       requestBody:
         content: {}
       security:
@@ -307,6 +354,33 @@ paths:
                 type: object
               example:
                 message: success
+    get:
+      tags:
+        - 會員
+      summary: get policy
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: term
+          in: path
+          schema:
+            type: string
+          required: true
+          description: '[required] privacy, user, subscribe'
+          example: privacy
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 4
+                type: privacy
+                content: Privacy Policy content goes here.
+                createdAt: '2023-11-10T07:09:32.000Z'
+                updatedAt: '2023-11-10T07:09:32.000Z'
   /api/article/all-topic-latest:
     get:
       tags:
