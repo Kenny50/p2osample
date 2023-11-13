@@ -1,11 +1,11 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 會員，除了上傳頭像、驗證信箱、驗證電話號碼，其他皆可測試
-  version: 11.10.1623
+  description: 更新 api 網域
+  version: 11.13.2148
 servers:
   - url: http://{{domain}}
-  - url: https://gnim.com.tw
+  - url: https://jinyufeng-dev-api.jinyufeng.com.tw
 components:
   securitySchemes:
     bearerAuth:
@@ -70,7 +70,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXn_P6y41BkvjePTqLs4fck-P5bAe4HnY19tSgfY6akJEEgvtyVaL9R9RmnOEKSxZg
+                    4/0AfJohXm56bRXhrLRz1bPeuLz7qPCktXLQJsUz42R9D2dcOr67wJLUanRlEfp2kXHEnY7DA
       responses:
         '200':
           description: OK
@@ -168,7 +168,7 @@ paths:
                   example: 永翰
                 email:
                   type: string
-                  example: hello@gmail.com
+                  example: ssshello@gmail.com
                 phone:
                   type: integer
                   example: '0936965814'
@@ -940,7 +940,7 @@ paths:
             type: integer
           required: true
           description: '[ required ] 用戶 id'
-          example: '12'
+          example: '13'
       responses:
         '200':
           description: OK
@@ -975,7 +975,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '23'
+          example: '26'
       responses:
         '200':
           description: OK
@@ -1017,7 +1017,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '23'
+          example: '26'
       responses:
         '200':
           description: OK
@@ -1052,10 +1052,14 @@ paths:
               properties:
                 account:
                   type: string
-                  example: Vossvoss
+                  description: '[ required ] '
+                  example: Vossvosscc
                 password:
                   type: string
+                  description: '[ required ] '
                   example: Vossvoss
+                name:
+                  type: string
       responses:
         '200':
           description: OK
@@ -1127,7 +1131,7 @@ paths:
                 refreshToken:
                   type: string
                   example: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5ODczODAyNywiZXhwIjoxNjk5MzQyODI3fQ.U8kbeGcjZlk5whNj7q0nroGS9oW-pCIOH84QP6sAy4I
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTY3NjE3NSwiZXhwIjoxNzAwMjgwOTc1fQ.EFTzz54PvXLCFDXItjLclBNnxdDZcPIIKDkAQ5CmMQk
       responses:
         '200':
           description: OK

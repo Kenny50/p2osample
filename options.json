@@ -1,8 +1,11 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.10.1623",
-        "description": "會員，除了上傳頭像、驗證信箱、驗證電話號碼，其他皆可測試"
+        "version": "11.13.2200",
+        "description": "更新 api 網域"
+    },
+    "additionalVars": {
+        "domain" : "https://jinyufeng-dev-api.jinyufeng.com.tw"
     },
     "replaceVars": true
 }

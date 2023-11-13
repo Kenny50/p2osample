@@ -21,7 +21,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXn_P6y41BkvjePTqLs4fck-P5bAe4HnY19tSgfY6akJEEgvtyVaL9R9RmnOEKSxZg",
+									"value": "4/0AfJohXm56bRXhrLRz1bPeuLz7qPCktXLQJsUz42R9D2dcOr67wJLUanRlEfp2kXHEnY7DA",
 									"description": "[required] google response code in query",
 									"type": "text"
 								}
@@ -269,7 +269,7 @@
 								},
 								{
 									"key": "email",
-									"value": "hello@gmail.com",
+									"value": "ssshello@gmail.com",
 									"type": "text"
 								},
 								{
@@ -1811,7 +1811,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "12",
+													"value": "13",
 													"description": "[ required ] 用戶 id"
 												}
 											]
@@ -1932,7 +1932,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "23"
+													"value": "26"
 												}
 											]
 										}
@@ -2050,7 +2050,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "23"
+													"value": "26"
 												}
 											]
 										}
@@ -2130,13 +2130,21 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Vossvoss",
+											"value": "Vossvosscc",
+											"description": "[ required ] ",
 											"type": "text"
 										},
 										{
 											"key": "password",
 											"value": "Vossvoss",
+											"description": "[ required ] ",
 											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -2417,7 +2425,7 @@
 									"formdata": [
 										{
 											"key": "refreshToken",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5ODczODAyNywiZXhwIjoxNjk5MzQyODI3fQ.U8kbeGcjZlk5whNj7q0nroGS9oW-pCIOH84QP6sAy4I",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTY3NjE3NSwiZXhwIjoxNzAwMjgwOTc1fQ.EFTzz54PvXLCFDXItjLclBNnxdDZcPIIKDkAQ5CmMQk",
 											"type": "text"
 										}
 									]
@@ -2998,7 +3006,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTUzOTg5NywiZXhwIjoxNjk5NTQzNDk3fQ.JsOD-TdR5u2aD6edQnta-YnIIxwg2D__70IiLuXXcV4",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTY3NjE3NSwiZXhwIjoxNjk5Njc5Nzc1fQ.FBSFi7ZEY0lstCFv3DPF93K1Cd9J9vgWf7PlK8YqFnQ",
 						"type": "string"
 					}
 				]
@@ -4334,11 +4342,6 @@
 		}
 	],
 	"variable": [
-		{
-			"key": "domain",
-			"value": "https://gnim.com.tw",
-			"type": "string"
-		},
 		{
 			"key": "prefix",
 			"value": "api",
