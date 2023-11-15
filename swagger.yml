@@ -1,19 +1,19 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 更新 api 網域
-  version: 11.13.2148
+  description: '新增，寄驗證信 api '
+  version: 11.15.2041
 servers:
   - url: http://{{domain}}
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
 components:
   securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
     noauthAuth:
       type: http
       scheme: noauth
+    bearerAuth:
+      type: http
+      scheme: bearer
 tags:
   - name: 會員
   - name: 文章
@@ -70,7 +70,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXm56bRXhrLRz1bPeuLz7qPCktXLQJsUz42R9D2dcOr67wJLUanRlEfp2kXHEnY7DA
+                    4/0AfJohXk9x2EKbQRm5SOUDJHovEBlJaJZkvv7zZfd8bK3uFnwFp1FhSjwqPmz7pKbc6ES9A
       responses:
         '200':
           description: OK
@@ -110,7 +110,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: token
+                  example: OLLNPSKK2Df8r3Amox7y
       responses:
         '200':
           description: OK
@@ -140,9 +140,9 @@ paths:
                   type: string
                   description: ''
                   example: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMzVmNWQwZTEtYWU1OS00YTA0LWFlOGMtODAzZTFmZmNlYmQ5IiwiaWF0IjoxNjk5NTk0MTgyLCJleHAiOjE3MDAxOTg5ODJ9.xTyPTchxOtm-8yjJ57elRlYgQD-DLbCYqLnUHmJh2Gg
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMDE0NDM2OTItZTE0ZS00MDAwLWFiN2QtMzg1M2Q0YTJhOWQ1IiwiaWF0IjoxNjk5OTY2NzE0LCJleHAiOjE3MDA1NzE1MTR9.pThn2zfUouHYn6Aq_TQWwZhpwv7hZ4gvC07-GD3-4Os
       security:
-        - bearerAuth: []
+        - noauthAuth: []
       responses:
         '200':
           description: OK
@@ -235,6 +235,28 @@ paths:
                 type: object
               example:
                 message: email field is empty
+    post:
+      tags:
+        - 會員
+      summary: sent validate email
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: success
   /api/member/information:
     get:
       tags:
@@ -307,10 +329,10 @@ paths:
         - name: signature
           in: query
           schema:
-            type: string
+            type: integer
           required: true
           description: link from email, 要有個前端專門處理驗證的畫面
-          example: string
+          example: '179623'
       responses:
         '200':
           description: OK

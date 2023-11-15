@@ -21,7 +21,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXm56bRXhrLRz1bPeuLz7qPCktXLQJsUz42R9D2dcOr67wJLUanRlEfp2kXHEnY7DA",
+									"value": "4/0AfJohXk9x2EKbQRm5SOUDJHovEBlJaJZkvv7zZfd8bK3uFnwFp1FhSjwqPmz7pKbc6ES9A",
 									"description": "[required] google response code in query",
 									"type": "text"
 								}
@@ -114,7 +114,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "token",
+									"value": "OLLNPSKK2Df8r3Amox7y",
 									"description": "[required] line id token",
 									"type": "text"
 								}
@@ -174,14 +174,7 @@
 					"name": "refresh token",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
@@ -190,7 +183,7 @@
 							"formdata": [
 								{
 									"key": "refreshToken",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMzVmNWQwZTEtYWU1OS00YTA0LWFlOGMtODAzZTFmZmNlYmQ5IiwiaWF0IjoxNjk5NTk0MTgyLCJleHAiOjE3MDAxOTg5ODJ9.xTyPTchxOtm-8yjJ57elRlYgQD-DLbCYqLnUHmJh2Gg",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMDE0NDM2OTItZTE0ZS00MDAwLWFiN2QtMzg1M2Q0YTJhOWQ1IiwiaWF0IjoxNjk5OTY2NzE0LCJleHAiOjE3MDA1NzE1MTR9.pThn2zfUouHYn6Aq_TQWwZhpwv7hZ4gvC07-GD3-4Os",
 									"description": "[required]",
 									"type": "text"
 								}
@@ -627,12 +620,19 @@
 					"name": "mail validate",
 					"request": {
 						"auth": {
-							"type": "bearer"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=179623",
 							"host": [
 								"{{domain}}"
 							],
@@ -644,7 +644,7 @@
 							"query": [
 								{
 									"key": "signature",
-									"value": "string",
+									"value": "179623",
 									"description": "[required] link from email, 要有個前端專門處理驗證的畫面"
 								}
 							]
@@ -845,6 +845,68 @@
 							"header": null,
 							"cookie": [],
 							"body": "{\n    \"id\": 4,\n    \"type\": \"privacy\",\n    \"content\": \"Privacy Policy content goes here.\",\n    \"createdAt\": \"2023-11-10T07:09:32.000Z\",\n    \"updatedAt\": \"2023-11-10T07:09:32.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "sent validate email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"sent-validate-email"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sent validate email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"sent-validate-email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\"\n}"
 						}
 					]
 				}

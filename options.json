@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.13.2200",
-        "description": "更新 api 網域"
+        "version": "11.15.2041",
+        "description": "新增，寄驗證信 api "
     },
     "additionalVars": {
         "domain" : "https://jinyufeng-dev-api.jinyufeng.com.tw"
