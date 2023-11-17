@@ -4,8 +4,15 @@
         "version": "11.17.1655",
         "description": "fix api domain prefix "
     },
-    "additionalVars": {
-        "domain" : "https://jinyufeng-dev-api.jinyufeng.com.tw"
-    },
+    "servers": [
+        {
+            "url": "https://jinyufeng-dev-api.jinyufeng.com.tw",
+            "description": "dev"
+        },
+        {
+            "url": "http://localhost:3020",
+            "description": "local"
+        }
+    ],
     "replaceVars": true
 }

@@ -4,8 +4,10 @@ info:
   description: 'fix api domain prefix '
   version: 11.17.1655
 servers:
-  - url: http://{{domain}}
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
+    description: dev
+  - url: http://localhost:3020
+    description: local
 components:
   securitySchemes:
     noauthAuth:
