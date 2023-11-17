@@ -16,5 +16,8 @@
     "fs": "^0.0.1-security",
     "swagger-ui-express": "^5.0.0",
     "yaml": "^2.3.2"
+  },
+  "devDependencies": {
+    "postman-to-openapi": "^3.0.1"
   }
 }
