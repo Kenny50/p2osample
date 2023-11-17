@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: '新增，寄驗證信 api '
-  version: 11.15.2041
+  description: 'fix api domain prefix '
+  version: 11.17.0935
 servers:
   - url: http://{{domain}}
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
@@ -1995,6 +1995,7 @@ paths:
                   - id: 14
                     memberId: 5
                     subscriptionId: 3
+                    plan: month
                     type: payment
                     startAt: '2023-11-04T10:10:47.000Z'
                     endAt: '2023-12-04T10:10:47.000Z'
@@ -2005,6 +2006,7 @@ paths:
                   - id: 6
                     memberId: 5
                     subscriptionId: 3
+                    plan: month
                     type: payment
                     startAt: '2023-10-04T10:10:47.000Z'
                     endAt: '2023-11-04T10:10:47.000Z'
