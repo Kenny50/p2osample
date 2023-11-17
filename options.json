@@ -1,7 +1,7 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.17.0935",
+        "version": "11.17.1655",
         "description": "fix api domain prefix "
     },
     "additionalVars": {
