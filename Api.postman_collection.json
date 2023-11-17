@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -3992,16 +3992,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/api/subscription/current-plan",
+							"raw": "{{domain}}/api/subscription/latest-plan",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"api",
 								"subscription",
-								"current-plan"
+								"latest-plan"
 							]
-						}
+						},
+						"description": "1\\. 訂閱狀態 `status`:\n\n- 訂閱中 `active`\n- 已取消 `canceled`\n- 已關閉自動續訂 `renewal_disabled`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
 					},
 					"response": [
 						{
@@ -4010,14 +4011,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/current-plan",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"api",
 										"subscription",
-										"current-plan"
+										"latest-plan"
 									]
 								}
 							},
@@ -4033,7 +4034,69 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n\t\t\"status\": \"subscription-status-string\",\n\t\t\"plan\": \"month\",\n\t\t\"autoRenewal\": true,\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n        \"isSubscribing\": true,\n\t\t\"status\": \"active\",\n\t\t\"plan\": \"month\",\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+						},
+						{
+							"name": "使用者取消訂閱，未退款未到期",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/subscription/latest-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"latest-plan"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n        \"isSubscribing\": true,\n        \"isRefunded\": false,\n\t\t\"status\": \"canceled\",\n\t\t\"plan\": \"month\",\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n        \"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n        \"refundedAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+						},
+						{
+							"name": "使用者取消訂閱，已退款已到期",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/subscription/latest-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"latest-plan"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n        \"isSubscribing\": false,\n        \"isRefunded\": true,\n\t\t\"status\": \"canceled\",\n\t\t\"plan\": \"month\",\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n        \"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n        \"refundedAt\": \"2023-11-11T10:10:47.000Z\",\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
 						},
 						{
 							"name": "使用者目前未訂閱",
@@ -4041,14 +4104,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/current-plan",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"api",
 										"subscription",
-										"current-plan"
+										"latest-plan"
 									]
 								}
 							},
@@ -4125,7 +4188,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"plan\": \"month\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n\t\"plan\": \"month\",\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4143,7 +4206,7 @@
 								"request-payment-payload"
 							]
 						},
-						"description": "Request 參數：\n\n1. \\* plan: 訂閱方案, valid inputs: \\[\"month\", \"quarter\", \"year\"\\]\n2. \\* returnUrl: 完成藍新付款後要前往的前端 URL\n3. \\* backUrl: 取消付款後要前往的前端 URL\n    \n\nResponse：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  \n藍新測試站：[https://ccore.newebpay.com/MPG/period](https://ccore.newebpay.com/MPG/period)  \n藍新正式站：[https://core.newebpay.com/MPG/period](https://core.newebpay.com/MPG/period)"
+						"description": "Request 參數：\n\n1. \\* plan: 訂閱方案, valid inputs: \\[\"month\", \"quarter\", \"year\"\\]\n2. \\* returnUrl: 完成藍新付款後要前往的前端 URL\n3. \\* backUrl: 取消付款後要前往的前端 URL\n    \n4. companyUniformSerialNo: 公司發票統編\n    \n\nResponse：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  \n藍新測試站：[https://ccore.newebpay.com/MPG/period](https://ccore.newebpay.com/MPG/period)  \n藍新正式站：[https://core.newebpay.com/MPG/period](https://core.newebpay.com/MPG/period)"
 					},
 					"response": [
 						{
@@ -4194,7 +4257,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4212,7 +4275,7 @@
 								"re-request-payment-payload"
 							]
 						},
-						"description": "參數幾乎同「要求藍新付款」，\n\n此 API 不同的地方在於用途，  \n當使用者已經有一筆有效的訂閱資格，但要更改付款資訊、Email 時，使用此 API，  \n更新付款資訊不允許更換方案，因此 Request 不需傳入 `plan` 參數。"
+						"description": "參數幾乎同「要求藍新付款」，\n\n此 API 不同的地方在於用途，  \n當使用者已經有一筆有效的訂閱資格，但要更改付款資訊、Email 時，使用此 API，  \n更新付款資訊不允許更換方案，因此 Request 不需傳入 `plan` 參數。\n\ncompanyUniformSerialNo 統編欄位，如不傳入，預設沿用上一筆訂閱設定，如傳入 null，代表新的訂閱資料不使用統編。"
 					},
 					"response": []
 				},

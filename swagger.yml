@@ -2,10 +2,12 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 'fix api domain prefix '
-  version: 11.17.0935
+  version: 11.17.1655
 servers:
-  - url: http://{{domain}}
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
+    description: dev
+  - url: http://localhost:3020
+    description: local
 components:
   securitySchemes:
     noauthAuth:
@@ -1932,11 +1934,22 @@ paths:
                     type: 1
                     isLimited: false
                     source: null
-  /api/subscription/current-plan:
+  /api/subscription/latest-plan:
     get:
       tags:
         - 訂閱
       summary: 取得會員訂閱狀態
+      description: |-
+        1\. 訂閱狀態 `status`:
+
+        - 訂閱中 `active`
+        - 已取消 `canceled`
+        - 已關閉自動續訂 `renewal_disabled`
+            
+
+        2\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準
+
+        3\. 是否已退款：以 `isRefunded` 欄位為準
       responses:
         '200':
           headers:
@@ -1955,9 +1968,9 @@ paths:
                     data:
                       id: 3
                       memberId: 5
-                      status: subscription-status-string
+                      isSubscribing: true
+                      status: active
                       plan: month
-                      autoRenewal: true
                       amount: 6888
                       email: test@gnim.com
                       nextRenewalDate: '2023-12-04'
@@ -1968,6 +1981,48 @@ paths:
                       createdAt: '2023-11-04T10:05:47.000Z'
                       updatedAt: '2023-11-04T10:05:47.000Z'
                 example-1:
+                  summary: 使用者取消訂閱，未退款未到期
+                  value:
+                    data:
+                      id: 3
+                      memberId: 5
+                      isSubscribing: true
+                      isRefunded: false
+                      status: canceled
+                      plan: month
+                      amount: 6888
+                      email: test@gnim.com
+                      nextRenewalDate: '2023-12-04'
+                      startAt: '2023-11-04T10:10:47.000Z'
+                      endAt: null
+                      canceledAt: '2023-11-10T10:10:47.000Z'
+                      refundedAt: null
+                      companyUniformSerialNo: '12345678'
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-11-04T10:05:47.000Z'
+                      updatedAt: '2023-11-04T10:05:47.000Z'
+                example-2:
+                  summary: 使用者取消訂閱，已退款已到期
+                  value:
+                    data:
+                      id: 3
+                      memberId: 5
+                      isSubscribing: false
+                      isRefunded: true
+                      status: canceled
+                      plan: month
+                      amount: 6888
+                      email: test@gnim.com
+                      nextRenewalDate: '2023-12-04'
+                      startAt: '2023-11-04T10:10:47.000Z'
+                      endAt: '2023-11-04T10:10:47.000Z'
+                      canceledAt: '2023-11-10T10:10:47.000Z'
+                      refundedAt: '2023-11-11T10:10:47.000Z'
+                      companyUniformSerialNo: '12345678'
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-11-04T10:05:47.000Z'
+                      updatedAt: '2023-11-04T10:05:47.000Z'
+                example-3:
                   summary: 使用者目前未訂閱
                   value:
                     data: null
@@ -2029,6 +2084,8 @@ paths:
 
         3. \* backUrl: 取消付款後要前往的前端 URL
             
+        4. companyUniformSerialNo: 公司發票統編
+            
 
         Response：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  
 
@@ -2042,6 +2099,7 @@ paths:
               type: object
               example:
                 plan: month
+                companyUniformSerialNo: '12345678'
                 returnUrl: https://gnim.com.tw/payment-completed
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
@@ -2070,12 +2128,15 @@ paths:
         此 API 不同的地方在於用途，  
         當使用者已經有一筆有效的訂閱資格，但要更改付款資訊、Email 時，使用此 API，  
         更新付款資訊不允許更換方案，因此 Request 不需傳入 `plan` 參數。
+
+        companyUniformSerialNo 統編欄位，如不傳入，預設沿用上一筆訂閱設定，如傳入 null，代表新的訂閱資料不使用統編。
       requestBody:
         content:
           application/json:
             schema:
               type: object
               example:
+                companyUniformSerialNo: '12345678'
                 returnUrl: https://gnim.com.tw/payment-completed
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
