@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.18.1555",
-        "description": "all response all data field"
+        "version": "11.19.0003",
+        "description": "upload article field html -> rawContent"
     },
     "servers": [
         {

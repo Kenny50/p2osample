@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: all response all data field
-  version: 11.18.1555
+  description: upload article field html -> rawContent
+  version: 11.19.0003
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -36,6 +36,10 @@ tags:
   - name: 後台 > 帳戶
   - name: 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
   - name: 後台 > 訂閱 & 發票
+  - name: 標籤、主題
+  - name: Banner
+  - name: 新聞
+    description: rate, 1 -> positive, 0 -> neutral, -1 -> negative
   - name: 搜尋
     description: |-
       type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)
@@ -49,10 +53,6 @@ tags:
       topic:
 
       0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
-  - name: 標籤、主題
-  - name: Banner
-  - name: 新聞
-    description: rate, 1 -> positive, 0 -> neutral, -1 -> negative
   - name: 訂閱
 paths:
   /api/login/google:
@@ -730,26 +730,26 @@ paths:
               type: object
               required:
                 - title
-                - content
-                - html
+                - fullContent
+                - rawContent
+                - clipedContent
                 - topic
                 - isLimited
-                - clipedContent
                 - isDraft
               properties:
                 title:
                   type: string
                   description: ''
                   example: 你好，世界
-                content:
+                fullContent:
                   type: string
                   description: json stringtify
                   example: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                html:
+                rawContent:
                   type: string
-                  description: ''
+                  description: 一般文章上傳，請用 html 格式
                   example: >-
                     <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
                     src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
@@ -759,6 +759,12 @@ paths:
                     簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                     List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
                     團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                clipedContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
                 topic:
                   type: integer
                   description: ''
@@ -770,12 +776,6 @@ paths:
                   type: boolean
                   description: ''
                   example: 'false'
-                clipedContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
                 isDraft:
                   type: boolean
                   description: ''
@@ -1536,16 +1536,6 @@ paths:
                       taxAmount: 300
                       maskedCreditCardNo: 400022******1111
                       createdAt: '2023-10-04T10:05:47.000Z'
-  /api/:
-    get:
-      tags:
-        - 搜尋
-      summary: search articles by tag, optional with topic
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /api/topic-tag:
     get:
       tags:

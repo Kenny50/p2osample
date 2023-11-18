@@ -1404,15 +1404,21 @@
 											"type": "text"
 										},
 										{
-											"key": "content",
+											"key": "fullContent",
 											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
 											"description": "[required] json stringtify",
 											"type": "text"
 										},
 										{
-											"key": "html",
+											"key": "rawContent",
 											"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
-											"description": "[required]",
+											"description": "[required] 一般文章上傳，請用 html 格式",
+											"type": "text"
+										},
+										{
+											"key": "clipedContent",
+											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+											"description": "[required] json stringtify",
 											"type": "text"
 										},
 										{
@@ -1435,12 +1441,6 @@
 											"key": "isLimited",
 											"value": "false",
 											"description": "[required]",
-											"type": "text"
-										},
-										{
-											"key": "clipedContent",
-											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
-											"description": "[required] json stringtify",
 											"type": "text"
 										},
 										{
@@ -3186,29 +3186,6 @@
 							""
 						]
 					}
-				}
-			]
-		},
-		{
-			"name": "搜尋",
-			"item": [
-				{
-					"name": "search articles by tag, optional with topic",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								""
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
