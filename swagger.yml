@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: upload article field html -> rawContent
-  version: 11.19.0003
+  description: ‘/article/authors’ → ‘/authors’
+  version: 11.19.0522
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -478,8 +478,6 @@ paths:
       tags:
         - 文章
       summary: get article content
-      security:
-        - bearerAuth: []
       parameters:
         - name: id
           in: path
@@ -487,7 +485,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '123'
+          example: '12'
       responses:
         undefined:
           content:
@@ -540,20 +538,20 @@ paths:
                   type: string
                   description: json stringtify
                   example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
                 rawContent:
                   type: string
                   description: ''
                   example: >-
-                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    <h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
                     src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
                     width="500"
                     height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
                     Collection 有關。Collection
                     簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                     List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
                 clippedContent:
                   type: string
                   example: >-
@@ -562,7 +560,7 @@ paths:
                 topic:
                   type: integer
                   description: ''
-                  example: '1'
+                  example: '27'
                 tags[]:
                   type: integer
                   example: '2'
@@ -581,7 +579,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '123'
+          example: '9'
       responses:
         '200':
           description: OK
@@ -603,7 +601,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '1'
+          example: '9'
       responses:
         '200':
           description: OK
@@ -639,8 +637,7 @@ paths:
                   id: 1
                   title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
                   content: >-
-                    {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
-                  soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
+                    {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","soundOnLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
                   topic:
                     name: 基本面
                     id: 1
@@ -669,13 +666,24 @@ paths:
         - name: topic
           in: query
           schema:
-            type: string
+            type: integer
           description: |-
             不傳 -> 全部
             1 -> 基本面（基本面、總經）
             2 -> 技術面
             3 -> 籌碼面
             4 -> 其他
+          example: '0'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '30'
       responses:
         '200':
           description: OK
@@ -685,7 +693,6 @@ paths:
                 type: object
               example:
                 data:
-                  topic: 0
                   currentPage: 0
                   pageSize: 30
                   totalCount: 515
@@ -773,7 +780,7 @@ paths:
                 topic:
                   type: integer
                   description: ''
-                  example: '1'
+                  example: '27'
                 tags[]:
                   type: integer
                   example: '2'
@@ -784,7 +791,7 @@ paths:
                 isDraft:
                   type: boolean
                   description: ''
-                  example: 'true'
+                  example: 'false'
       responses:
         '200':
           description: OK
@@ -800,6 +807,28 @@ paths:
       tags:
         - 文章
       summary: get latest podcasts
+      parameters:
+        - name: topic
+          in: query
+          schema:
+            type: integer
+          description: |-
+            不傳 -> 全部
+            1 -> 基本面（基本面、總經）
+            2 -> 技術面
+            3 -> 籌碼面
+            4 -> 其他
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '30'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: '0'
       responses:
         '200':
           description: OK
@@ -809,7 +838,6 @@ paths:
                 type: object
               example:
                 data:
-                  topic: 0
                   currentPage: 0
                   pageSize: 30
                   totalCount: 515
@@ -848,7 +876,7 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
-  /api/article/authors:
+  /api/authors:
     get:
       tags:
         - 文章
@@ -1217,7 +1245,7 @@ paths:
                 refreshToken:
                   type: string
                   example: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTY5OTY3NjE3NSwiZXhwIjoxNzAwMjgwOTc1fQ.EFTzz54PvXLCFDXItjLclBNnxdDZcPIIKDkAQ5CmMQk
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDMyNTY3MywiZXhwIjoxNzAwOTMwNDczfQ.iD5yBg9pp2KGlzuYff902Eoz8SJ8LJ8utuU3GIH2aKg
       responses:
         '200':
           description: OK
