@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 'fix api domain prefix '
-  version: 11.17.1655
+  description: all response all data field
+  version: 11.18.1555
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -81,10 +81,11 @@ paths:
               schema:
                 type: object
               example:
-                name: uuid
-                email: null
-                accessToken: YOUR_ACCESS_TOKEN
-                refreshToken: YOUR_REFRESH_TOKEN
+                data:
+                  name: uuid
+                  email: null
+                  accessToken: YOUR_ACCESS_TOKEN
+                  refreshToken: YOUR_REFRESH_TOKEN
   /api/auth/google:
     get:
       tags:
@@ -121,10 +122,25 @@ paths:
               schema:
                 type: object
               example:
-                name: uuid
-                email: null
-                accessToken: YOUR_ACCESS_TOKEN
-                refreshToken: YOUR_REFRESH_TOKEN
+                data:
+                  name: uuid
+                  email: null
+                  accessToken: YOUR_ACCESS_TOKEN
+                  refreshToken: YOUR_REFRESH_TOKEN
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: Request failed with status code 400
   /api/member/refresh-token:
     post:
       tags:
@@ -153,7 +169,8 @@ paths:
               schema:
                 type: object
               example:
-                accessToken: YOUR_ACCESS_TOKEN
+                data:
+                  accessToken: YOUR_ACCESS_TOKEN
   /api/member/update-information:
     post:
       tags:
@@ -184,19 +201,20 @@ paths:
               schema:
                 type: object
               example:
-                name: 永翰
-                email: hello@gmail.com
-                id: ea514474-4ed6-4e08-b59d-e7158c08fe92
-                avatar: >-
-                  https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
-                loginType: google
-                thirdPartyIdentifier: '112345303661950802160'
-                isEmailValidate: false
-                isSubscribing: false
-                phone: '0936965814'
-                isPhoneValidate: false
-                createdAt: '2023-11-10T07:37:42.000Z'
-                updatedAt: '2023-11-10T08:04:32.407Z'
+                data:
+                  name: 永翰
+                  email: hello@gmail.com
+                  id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                  avatar: >-
+                    https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
+                  loginType: google
+                  thirdPartyIdentifier: '112345303661950802160'
+                  isEmailValidate: false
+                  isSubscribing: false
+                  phone: '0936965814'
+                  isPhoneValidate: false
+                  createdAt: '2023-11-10T07:37:42.000Z'
+                  updatedAt: '2023-11-10T08:04:32.407Z'
         '409':
           description: Conflict
           content:
@@ -204,7 +222,8 @@ paths:
               schema:
                 type: object
               example:
-                message: 此電子郵箱已被使用
+                data:
+                  message: 此電子郵箱已被使用
   /api/member/sent-validate-email:
     get:
       tags:
@@ -220,7 +239,8 @@ paths:
               schema:
                 type: object
               example:
-                message: your email is already validated
+                data:
+                  message: your email is already validated
         '202':
           description: Accepted
           content:
@@ -228,7 +248,8 @@ paths:
               schema:
                 type: object
               example:
-                message: validate mail has sent, please check out your mailbox
+                data:
+                  message: validate mail has sent, please check out your mailbox
         '400':
           description: Bad Request
           content:
@@ -236,7 +257,8 @@ paths:
               schema:
                 type: object
               example:
-                message: email field is empty
+                data:
+                  message: email field is empty
     post:
       tags:
         - 會員
@@ -258,7 +280,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
   /api/member/information:
     get:
       tags:
@@ -274,19 +297,20 @@ paths:
               schema:
                 type: object
               example:
-                name: Chang Kenneth
-                email: kennethchangla@gmail.com
-                id: ea514474-4ed6-4e08-b59d-e7158c08fe92
-                avatar: >-
-                  https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
-                loginType: google
-                thirdPartyIdentifier: '112345303661950802160'
-                isEmailValidate: true
-                isSubscribing: false
-                phone: ''
-                isPhoneValidate: false
-                createdAt: '2023-11-10T07:37:42.000Z'
-                updatedAt: '2023-11-10T07:37:42.000Z'
+                data:
+                  name: Chang Kenneth
+                  email: kennethchangla@gmail.com
+                  id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                  avatar: >-
+                    https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
+                  loginType: google
+                  thirdPartyIdentifier: '112345303661950802160'
+                  isEmailValidate: true
+                  isSubscribing: false
+                  phone: ''
+                  isPhoneValidate: false
+                  createdAt: '2023-11-10T07:37:42.000Z'
+                  updatedAt: '2023-11-10T07:37:42.000Z'
   /api/member/delete-account:
     delete:
       tags:
@@ -302,7 +326,8 @@ paths:
               schema:
                 type: object
               example:
-                message: succcess
+                data:
+                  message: succcess
         '409':
           description: Conflict
           content:
@@ -313,13 +338,15 @@ paths:
                 example-0:
                   summary: refund is processing
                   value:
-                    message: Cannot delete account while refund is processing.
+                    data:
+                      message: Cannot delete account while refund is processing.
                 example-1:
                   summary: reject, subscription plan period
                   value:
-                    message: >-
-                      Cannot delete account while in your subscription plan
-                      period.
+                    data:
+                      message: >-
+                        Cannot delete account while in your subscription plan
+                        period.
   /api/member/validate-email:
     get:
       tags:
@@ -343,15 +370,8 @@ paths:
               schema:
                 type: object
               example:
-                message: 信箱驗證成功
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                message: 信箱驗證成功
+                data:
+                  message: 信箱驗證成功
   /api/member/term/{term}:
     post:
       tags:
@@ -377,7 +397,8 @@ paths:
               schema:
                 type: object
               example:
-                message: success
+                data:
+                  message: success
     get:
       tags:
         - 會員
@@ -400,11 +421,12 @@ paths:
               schema:
                 type: object
               example:
-                id: 4
-                type: privacy
-                content: Privacy Policy content goes here.
-                createdAt: '2023-11-10T07:09:32.000Z'
-                updatedAt: '2023-11-10T07:09:32.000Z'
+                data:
+                  id: 4
+                  type: privacy
+                  content: Privacy Policy content goes here.
+                  createdAt: '2023-11-10T07:09:32.000Z'
+                  updatedAt: '2023-11-10T07:09:32.000Z'
   /api/article/all-topic-latest:
     get:
       tags:
@@ -418,38 +440,39 @@ paths:
               schema:
                 type: object
               example:
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
   /api/article/{id}:
     get:
       tags:
@@ -472,25 +495,26 @@ paths:
               schema:
                 type: object
               example:
-                id: 123
-                title: 你好，世界
-                content: >-
-                  {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                  this editor instance exports its content as JSON."}]}]}
-                topic:
-                  name: 基本面
-                  id: 1
-                author:
-                  name: Rick
-                  id: 1
-                tags:
-                  - name: 毛利
+                data:
+                  id: 123
+                  title: 你好，世界
+                  content: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                  topic:
+                    name: 基本面
                     id: 1
-                publishDate: '2023-05-02T00:00:00.000Z'
-                previewImage: null
-                type: 1
-                isLimited: true
-                source: null
+                  author:
+                    name: Rick
+                    id: 1
+                  tags:
+                    - name: 毛利
+                      id: 1
+                  publishDate: '2023-05-02T00:00:00.000Z'
+                  previewImage: null
+                  type: 1
+                  isLimited: true
+                  source: null
     put:
       tags:
         - 後台 > 文章
@@ -561,7 +585,8 @@ paths:
               schema:
                 type: object
               example:
-                id: 123
+                data:
+                  id: 123
     delete:
       tags:
         - 後台 > 文章
@@ -582,7 +607,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
   /api/podcast/{id}:
     get:
       tags:
@@ -604,22 +630,23 @@ paths:
               schema:
                 type: object
               example:
-                id: 1
-                title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
-                content: >-
-                  {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
-                soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
-                topic:
-                  name: 基本面
+                data:
                   id: 1
-                tags:
-                  - name: 毛利
+                  title: EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長
+                  content: >-
+                    {"description":"你知道嗎？博恩可能把「信度」講錯了喔","spotifyId":"2WJBISLc7sVsJFrSv3hVLk","spotifyLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk","applePodcastLink":"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk
+                  soundOnLink: https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk"}
+                  topic:
+                    name: 基本面
                     id: 1
-                publishDate: '2023-05-02T00:00:00.000Z'
-                previewImage: null
-                type: 0
-                isLimited: false
-                source: null
+                  tags:
+                    - name: 毛利
+                      id: 1
+                  publishDate: '2023-05-02T00:00:00.000Z'
+                  previewImage: null
+                  type: 0
+                  isLimited: false
+                  source: null
   /api/article:
     get:
       tags:
@@ -652,45 +679,46 @@ paths:
               schema:
                 type: object
               example:
-                topic: 0
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  topic: 0
+                  currentPage: 0
+                  pageSize: 30
+                  totalCount: 515
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                      author:
+                        name: Rick
                         id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
     post:
       tags:
         - 後台 > 文章
@@ -760,7 +788,8 @@ paths:
               schema:
                 type: object
               example:
-                id: 123
+                data:
+                  id: 123
   /api/podcast:
     get:
       tags:
@@ -774,45 +803,46 @@ paths:
               schema:
                 type: object
               example:
-                topic: 0
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  topic: 0
+                  currentPage: 0
+                  pageSize: 30
+                  totalCount: 515
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                      author:
+                        name: Rick
                         id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
   /api/article/authors:
     get:
       tags:
@@ -826,13 +856,14 @@ paths:
               schema:
                 type: object
               example:
-                authors:
-                  - name: Rick
-                    id: 1
-                    avatar: https://path/to/img
-                  - name: Riick
-                    id: 2
-                    avatar: https://path/to/img
+                data:
+                  authors:
+                    - name: Rick
+                      id: 1
+                      avatar: https://path/to/img
+                    - name: Riick
+                      id: 2
+                      avatar: https://path/to/img
   /api/article/{id}/related:
     get:
       tags:
@@ -854,41 +885,42 @@ paths:
               schema:
                 type: object
               example:
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                      author:
+                        name: Rick
                         id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
   /api/image/upload:
     post:
       tags:
@@ -916,7 +948,8 @@ paths:
               schema:
                 type: object
               example:
-                url: https://path/to/img
+                data:
+                  url: https://path/to/img
   /api/users:
     get:
       tags:
@@ -935,15 +968,16 @@ paths:
               schema:
                 type: object
               example:
-                - id: 1
-                  name: VossA
-                  avatar: https://path/to/avatar
-                - id: 1
-                  name: VossB
-                  avatar: https://path/to/avatar
-                - id: 1
-                  name: VossC
-                  avatar: https://path/to/avatar
+                data:
+                  - id: 1
+                    name: VossA
+                    avatar: https://path/to/avatar
+                  - id: 1
+                    name: VossB
+                    avatar: https://path/to/avatar
+                  - id: 1
+                    name: VossC
+                    avatar: https://path/to/avatar
         '403':
           description: Forbidden
           content:
@@ -951,7 +985,8 @@ paths:
               schema:
                 type: object
               example:
-                error: permission denied
+                data:
+                  error: permission denied
   /api/user/{id}:
     get:
       tags:
@@ -978,9 +1013,10 @@ paths:
               schema:
                 type: object
               example:
-                name: Voss
-                avatar: https://path/to/avatar
-                permissions: []
+                data:
+                  name: Voss
+                  avatar: https://path/to/avatar
+                  permissions: []
         '403':
           description: Forbidden
           content:
@@ -988,7 +1024,8 @@ paths:
               schema:
                 type: object
               example:
-                error: permission denied
+                data:
+                  error: permission denied
     delete:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1003,24 +1040,32 @@ paths:
       responses:
         '200':
           description: OK
-          content:
-            text/plain:
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    "status":"success"
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  status: success
         '403':
           description: Forbidden
-          content:
-            text/plain:
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    "message": "permission denied"
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: permission denied
   /api/user/{id}/update-password:
     post:
       tags:
@@ -1045,24 +1090,32 @@ paths:
       responses:
         '200':
           description: OK
-          content:
-            text/plain:
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    "status":"success"
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  status: success
         '403':
           description: Forbidden
-          content:
-            text/plain:
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: |-
-                {
-                    "message": "permission denied"
-                }
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: permission denied
   /api/user/create:
     post:
       tags:
@@ -1092,7 +1145,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
         '403':
           description: Forbidden
           content:
@@ -1100,7 +1154,8 @@ paths:
               schema:
                 type: object
               example:
-                message: permission denied
+                data:
+                  message: permission denied
   /api/user/login:
     post:
       tags:
@@ -1131,8 +1186,9 @@ paths:
               schema:
                 type: object
               example:
-                accessToken: YOUR_ACCESS_TOKEN
-                refreshToken: YOUR_REFRESH_TOKEN
+                data:
+                  accessToken: YOUR_ACCESS_TOKEN
+                  refreshToken: YOUR_REFRESH_TOKEN
         '401':
           description: Unauthorized
           content:
@@ -1140,7 +1196,8 @@ paths:
               schema:
                 type: object
               example:
-                error: Invalid username or password.
+                data:
+                  message: Invalid username or password.
   /api/user/refresh:
     post:
       tags:
@@ -1164,8 +1221,9 @@ paths:
               schema:
                 type: object
               example:
-                accessToken: YOUR_ACCESS_TOKEN
-                refreshToken: YOUR_REFRESH_TOKEN
+                data:
+                  accessToken: YOUR_ACCESS_TOKEN
+                  refreshToken: YOUR_REFRESH_TOKEN
         '401':
           description: Unauthorized
           content:
@@ -1173,7 +1231,8 @@ paths:
               schema:
                 type: object
               example:
-                error: Invalid username or password.
+                data:
+                  message: Invalid username or password.
   /api/user:
     get:
       tags:
@@ -1187,7 +1246,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
         '403':
           description: Forbidden
           content:
@@ -1195,7 +1255,8 @@ paths:
               schema:
                 type: object
               example:
-                message: permission denied
+                data:
+                  message: permission denied
   /api/user/update-information:
     post:
       tags:
@@ -1218,7 +1279,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
   /api/user/update-avatar:
     post:
       tags:
@@ -1242,7 +1304,8 @@ paths:
               schema:
                 type: object
               example:
-                url: https://path/to/avatar
+                data:
+                  url: https://path/to/avatar
   /api/user/update-password:
     post:
       tags:
@@ -1268,7 +1331,8 @@ paths:
               schema:
                 type: object
               example:
-                status: success
+                data:
+                  status: success
   /api/dashboard/subscriptions:
     get:
       tags:
@@ -1495,17 +1559,18 @@ paths:
               schema:
                 type: object
               example:
-                topics:
-                  - id: 1
-                    name: 基礎面
-                    tags:
-                      - id: 1
-                        name: 毛利
-                  - id: 2
-                    name: 技術面面
-                    tags:
-                      - id: 1
-                        name: 毛利
+                data:
+                  topics:
+                    - id: 1
+                      name: 基礎面
+                      tags:
+                        - id: 1
+                          name: 毛利
+                    - id: 2
+                      name: 技術面面
+                      tags:
+                        - id: 1
+                          name: 毛利
   /api/topic-all:
     get:
       tags:
@@ -1519,21 +1584,22 @@ paths:
               schema:
                 type: object
               example:
-                topics:
-                  - id: 1
-                    name: 基礎面
-                    tags:
-                      - id: 1
-                        name: 毛利
-                        sort: 1
-                        hide: true
-                  - id: 2
-                    name: 技術面面
-                    tags:
-                      - id: 1
-                        name: 毛利
-                        sort: 1
-                        hide: false
+                data:
+                  topics:
+                    - id: 1
+                      name: 基礎面
+                      tags:
+                        - id: 1
+                          name: 毛利
+                          sort: 1
+                          hide: true
+                    - id: 2
+                      name: 技術面面
+                      tags:
+                        - id: 1
+                          name: 毛利
+                          sort: 1
+                          hide: false
   /api/tag:
     post:
       tags:
@@ -1576,7 +1642,8 @@ paths:
               schema:
                 type: object
               example:
-                message: success
+                data:
+                  message: success
         '404':
           description: Not Found
           headers:
@@ -1589,7 +1656,8 @@ paths:
               schema:
                 type: object
               example:
-                message: not found
+                data:
+                  message: not found
     delete:
       tags:
         - 標籤、主題
@@ -1607,7 +1675,8 @@ paths:
               schema:
                 type: object
               example:
-                message: success
+                data:
+                  message: success
         '404':
           description: Not Found
           headers:
@@ -1620,7 +1689,8 @@ paths:
               schema:
                 type: object
               example:
-                message: not found
+                data:
+                  message: not found
   /api/edit-tags-display-setting:
     post:
       tags:
@@ -1672,7 +1742,8 @@ paths:
               schema:
                 type: object
               example:
-                message: success
+                data:
+                  message: success
   /api/tag/{id}:
     put:
       tags:
@@ -1714,7 +1785,8 @@ paths:
               schema:
                 type: object
               example:
-                message: success
+                data:
+                  message: success
   /api/banner:
     get:
       tags:
@@ -1744,40 +1816,41 @@ paths:
               schema:
                 type: object
               example:
-                - id: 1
-                  title: 你好，世界
-                  description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                  topic:
-                    name: 基本面
-                    id: 1
-                  author:
-                    name: Rick
-                    id: 1
-                  tags:
-                    - name: 毛利
+                data:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 基本面
                       id: 1
-                  publishDate: '2023-11-11T00:00:00.000Z'
-                  previewImage: null
-                  type: 1
-                  isLimited: true
-                  source: null
-                - id: 2
-                  title: 雪烏龍
-                  description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                  topic:
-                    name: 總經
-                    id: 2
-                  author:
-                    name: Rick
-                    id: 1
-                  tags:
-                    - name: 毛利
+                    author:
+                      name: Rick
                       id: 1
-                  publishDate: '2023-11-10T00:00:00.000Z'
-                  previewImage: https://path/to/image
-                  type: 1
-                  isLimited: false
-                  source: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: true
+                    source: null
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    topic:
+                      name: 總經
+                      id: 2
+                    author:
+                      name: Rick
+                      id: 1
+                    tags:
+                      - name: 毛利
+                        id: 1
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage: https://path/to/image
+                    type: 1
+                    isLimited: false
+                    source: 1
   /api/news:
     get:
       tags:
@@ -1799,37 +1872,39 @@ paths:
                 example-0:
                   summary: 新聞列表-if db
                   value:
-                    - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
-                      time: '2023-05-02T00:00:00.000Z'
-                      link: >-
-                        https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
-                      rate: 0
-                      tag:
-                        name: 半導體
-                        id: 123
-                    - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
-                      time: '2023-05-02T00:00:00.000Z'
-                      link: >-
-                        https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
-                      rate: 0
-                      tag:
-                        name: 半導體
-                        id: 123
+                    data:
+                      - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
+                        time: '2023-05-02T00:00:00.000Z'
+                        link: >-
+                          https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
+                        rate: 0
+                        tag:
+                          name: 半導體
+                          id: 123
+                      - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
+                        time: '2023-05-02T00:00:00.000Z'
+                        link: >-
+                          https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
+                        rate: 0
+                        tag:
+                          name: 半導體
+                          id: 123
                 example-1:
                   summary: 新聞列表 -if not save in db
                   value:
-                    - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
-                      time: '2023-05-02T00:00:00.000Z'
-                      link: >-
-                        https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
-                      rate: 0
-                      tag: 半導體
-                    - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
-                      time: '2023-05-02T00:00:00.000Z'
-                      link: >-
-                        https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
-                      rate: 0
-                      tag: 半導體
+                    data:
+                      - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
+                        time: '2023-05-02T00:00:00.000Z'
+                        link: >-
+                          https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
+                        rate: 0
+                        tag: 半導體
+                      - title: 中碳躋身半導體鏈 中鋼小金雞變身大金鵬
+                        time: '2023-05-02T00:00:00.000Z'
+                        link: >-
+                          https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'
+                        rate: 0
+                        tag: 半導體
   /api/search/query:
     get:
       tags:
@@ -1877,41 +1952,42 @@ paths:
               schema:
                 type: object
               example:
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  currentPage: 0
+                  pageSize: 30
+                  totalCount: 515
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
   /api/search/tag:
     get:
       tags:
@@ -1959,41 +2035,42 @@ paths:
               schema:
                 type: object
               example:
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                articles:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
-                    author:
-                      name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
+                data:
+                  currentPage: 0
+                  pageSize: 30
+                  totalCount: 515
+                  articles:
+                    - id: 1
+                      title: 你好，世界
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 基本面
                         id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
-                    previewImage: null
-                    type: 1
-                    isLimited: true
-                    source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
-                    author:
-                      name: Rick
-                      id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
-                    type: 1
-                    isLimited: false
-                    source: null
+                      author:
+                        name: Rick
+                        id: 1
+                      tags:
+                        - name: 毛利
+                          id: 1
+                      publishDate: '2023-11-11T00:00:00.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: true
+                      source: null
+                    - id: 2
+                      title: 雪烏龍
+                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                      topic:
+                        name: 總經
+                        id: 2
+                      author:
+                        name: Rick
+                        id: 1
+                      publishDate: '2023-11-10T00:00:00.000Z'
+                      previewImage: https://path/to/image
+                      type: 1
+                      isLimited: false
+                      source: null
   /api/subscription/latest-plan:
     get:
       tags:

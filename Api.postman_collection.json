@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -73,7 +73,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"name\":\"uuid\",\n    \"email\":null,\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+							"body": "{\n    \"data\": {\n        \"name\":\"uuid\",\n        \"email\":null,\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
 						}
 					]
 				},
@@ -166,7 +166,50 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"name\": \"uuid\",\n    \"email\": null,\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+							"body": "{\n    \"data\": {\n        \"name\": \"uuid\",\n        \"email\": null,\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
+						},
+						{
+							"name": "line login fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "idToken",
+											"value": "OLLNPSKK2Df8r3Amox7y",
+											"description": "[required] line id token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"auth",
+										"line"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"Request failed with status code 400\"\n    }\n}"
 						}
 					]
 				},
@@ -233,7 +276,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\"\n}"
+							"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\"\n    }\n}"
 						}
 					]
 				},
@@ -322,7 +365,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"name\": \"永翰\",\n    \"email\": \"hello@gmail.com\",\n    \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n    \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n    \"loginType\": \"google\",\n    \"thirdPartyIdentifier\": \"112345303661950802160\",\n    \"isEmailValidate\": false,\n    \"isSubscribing\": false,\n    \"phone\": \"0936965814\",\n    \"isPhoneValidate\": false,\n    \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n    \"updatedAt\": \"2023-11-10T08:04:32.407Z\"\n}"
+							"body": "{\n    \"data\": {\n        \"name\": \"永翰\",\n        \"email\": \"hello@gmail.com\",\n        \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n        \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n        \"loginType\": \"google\",\n        \"thirdPartyIdentifier\": \"112345303661950802160\",\n        \"isEmailValidate\": false,\n        \"isSubscribing\": false,\n        \"phone\": \"0936965814\",\n        \"isPhoneValidate\": false,\n        \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n        \"updatedAt\": \"2023-11-10T08:04:32.407Z\"\n    }\n}"
 						},
 						{
 							"name": "mail conflict",
@@ -361,7 +404,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"此電子郵箱已被使用\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"此電子郵箱已被使用\"\n    }\n}"
 						}
 					]
 				},
@@ -408,7 +451,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"validate mail has sent, please check out your mailbox\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"validate mail has sent, please check out your mailbox\"\n    }\n}"
 						},
 						{
 							"name": "success",
@@ -432,7 +475,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"your email is already validated\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"your email is already validated\"\n    }\n}"
 						},
 						{
 							"name": "email 空白",
@@ -456,7 +499,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"email field is empty\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"email field is empty\"\n    }\n}"
 						}
 					]
 				},
@@ -510,7 +553,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"name\": \"Chang Kenneth\",\n    \"email\": \"kennethchangla@gmail.com\",\n    \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n    \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n    \"loginType\": \"google\",\n    \"thirdPartyIdentifier\": \"112345303661950802160\",\n    \"isEmailValidate\": true,\n    \"isSubscribing\": false,\n    \"phone\": \"\",\n    \"isPhoneValidate\": false,\n    \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n    \"updatedAt\": \"2023-11-10T07:37:42.000Z\"\n}"
+							"body": "{\n    \"data\": {\n        \"name\": \"Chang Kenneth\",\n        \"email\": \"kennethchangla@gmail.com\",\n        \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n        \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n        \"loginType\": \"google\",\n        \"thirdPartyIdentifier\": \"112345303661950802160\",\n        \"isEmailValidate\": true,\n        \"isSubscribing\": false,\n        \"phone\": \"\",\n        \"isPhoneValidate\": false,\n        \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n        \"updatedAt\": \"2023-11-10T07:37:42.000Z\"\n    }\n}"
 						}
 					]
 				},
@@ -564,7 +607,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"succcess\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"succcess\"\n    }\n}"
 						},
 						{
 							"name": "refund is processing",
@@ -588,7 +631,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"Cannot delete account while refund is processing.\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"Cannot delete account while refund is processing.\"\n    }\n}"
 						},
 						{
 							"name": "reject, subscription plan period",
@@ -612,7 +655,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"Cannot delete account while in your subscription plan period.\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"Cannot delete account while in your subscription plan period.\"\n    }\n}"
 						}
 					]
 				},
@@ -680,38 +723,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\": \"信箱驗證成功\"\n}"
-						},
-						{
-							"name": "mail validate",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"validate-email"
-									],
-									"query": [
-										{
-											"key": "signature",
-											"value": "string",
-											"description": "[required] link from email, 要有個前端專門處理驗證的畫面"
-										}
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"message\": \"信箱驗證成功\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"信箱驗證成功\"\n    }\n}"
 						}
 					]
 				},
@@ -781,7 +793,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"message\":\"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\":\"success\"\n    }\n}"
 						}
 					]
 				},
@@ -844,7 +856,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"id\": 4,\n    \"type\": \"privacy\",\n    \"content\": \"Privacy Policy content goes here.\",\n    \"createdAt\": \"2023-11-10T07:09:32.000Z\",\n    \"updatedAt\": \"2023-11-10T07:09:32.000Z\"\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"type\": \"privacy\",\n        \"content\": \"Privacy Policy content goes here.\",\n        \"createdAt\": \"2023-11-10T07:09:32.000Z\",\n        \"updatedAt\": \"2023-11-10T07:09:32.000Z\"\n    }\n}"
 						}
 					]
 				},
@@ -906,7 +918,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"status\": \"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
 						}
 					]
 				}
@@ -955,7 +967,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1014,7 +1026,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n\t\"id\":123,\n\t\"title\":\"你好，世界\",\n\t\"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n\t\"topic\":{\n        \"name\":\"基本面\",\n        \"id\":1\n    },\n\t\"author\":{\n        \"name\":\"Rick\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n\t\"publishDate\":\"2023-05-02T00:00:00.000Z\",\n\t\"previewImage\":null,\n\t\"type\":1, \n\t\"isLimited\":true,\n    \"source\": null\n}"
+							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topic\":{\n            \"name\":\"基本面\",\n            \"id\":1\n        },\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":null,\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
 						}
 					]
 				},
@@ -1072,7 +1084,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n    \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\",\"soundOnLink\":\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n    \"topic\": {\n        \"name\": \"基本面\",\n        \"id\": 1\n    },\n    \"tags\":[\n        {\n            \"name\":\"毛利\",\n            \"id\":1\n        }\n    ],\n    \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n    \"previewImage\": null,\n    \"type\": 0,\n    \"isLimited\": false,\n    \"source\": null\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n        \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\",\"soundOnLink\":\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n        \"topic\": {\n            \"name\": \"基本面\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n        \"previewImage\": null,\n        \"type\": 0,\n        \"isLimited\": false,\n        \"source\": null\n    }\n}"
 						}
 					]
 				},
@@ -1130,7 +1142,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"topic\": 0,\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1188,7 +1200,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topic\": 0,\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"topic\": 0,\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1232,7 +1244,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"authors\": [\n        {\n            \"name\":\"Rick\",\n            \"id\":1,\n            \"avatar\":\"https://path/to/img\"\n        },\n        {\n            \"name\":\"Riick\",\n            \"id\":2,\n            \"avatar\":\"https://path/to/img\"\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"authors\": [\n            {\n                \"name\":\"Rick\",\n                \"id\":1,\n                \"avatar\":\"https://path/to/img\"\n            },\n            {\n                \"name\":\"Riick\",\n                \"id\":2,\n                \"avatar\":\"https://path/to/img\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1292,7 +1304,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"articles\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"基本面\",\n                \"id\":1\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\":null,\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\":\"總經\",\n                \"id\":2\n            },\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\":\"https://path/to/image\",\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -1373,7 +1385,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"url\": \"https://path/to/img\"\n}"
+									"body": "{\n    \"data\": {\n        \"url\": \"https://path/to/img\"\n    }\n}"
 								}
 							]
 						},
@@ -1517,7 +1529,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"id\": 123\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 123\n    }\n}"
 								}
 							]
 						},
@@ -1677,7 +1689,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"id\": 123\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 123\n    }\n}"
 								}
 							]
 						},
@@ -1735,7 +1747,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"status\": \"success\"\n}"
+									"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
 								}
 							]
 						}
@@ -1813,7 +1825,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"VossA\",\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"VossB\",\n        \"avatar\": \"https://path/to/avatar\"\n    },\n    {\n        \"id\": 1,\n        \"name\": \"VossC\",\n        \"avatar\": \"https://path/to/avatar\"\n    }\n]"
+											"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"VossA\",\n            \"avatar\": \"https://path/to/avatar\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"VossB\",\n            \"avatar\": \"https://path/to/avatar\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"VossC\",\n            \"avatar\": \"https://path/to/avatar\"\n        }\n    ]\n}"
 										},
 										{
 											"name": "permission deny",
@@ -1851,7 +1863,7 @@
 											"_postman_previewlanguage": "json",
 											"header": null,
 											"cookie": [],
-											"body": "{\n    \"error\":\"permission denied\"\n}"
+											"body": "{\n    \"data\": {\n        \"error\":\"permission denied\"\n    }\n}"
 										}
 									]
 								},
@@ -1916,7 +1928,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"name\": \"Voss\",\n    \"avatar\": \"https://path/to/avatar\",\n    \"permissions\": [\n        \n    ]\n}"
+											"body": "{\n    \"data\": {\n        \"name\": \"Voss\",\n        \"avatar\": \"https://path/to/avatar\",\n        \"permissions\": [\n            \n        ]\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -1961,7 +1973,7 @@
 											"_postman_previewlanguage": "json",
 											"header": null,
 											"cookie": [],
-											"body": "{\n    \"error\":\"permission denied\"\n}"
+											"body": "{\n    \"data\": {\n        \"error\":\"permission denied\"\n    }\n}"
 										}
 									]
 								},
@@ -2041,10 +2053,18 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    \"status\":\"success\"\n}"
+											"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -2087,10 +2107,18 @@
 											},
 											"status": "Forbidden",
 											"code": 403,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    \"message\": \"permission denied\"\n}"
+											"body": "{\n    \"data\": {\n        \"message\": \"permission denied\"\n    }\n}"
 										}
 									]
 								},
@@ -2143,10 +2171,18 @@
 											},
 											"status": "OK",
 											"code": 200,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    \"status\":\"success\"\n}"
+											"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -2173,10 +2209,18 @@
 											},
 											"status": "Forbidden",
 											"code": 403,
-											"_postman_previewlanguage": null,
-											"header": null,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"name": "Content-Type",
+													"description": "",
+													"type": "text"
+												}
+											],
 											"cookie": [],
-											"body": "{\n    \"message\": \"permission denied\"\n}"
+											"body": "{\n    \"data\": {\n        \"message\": \"permission denied\"\n    }\n}"
 										}
 									]
 								}
@@ -2260,7 +2304,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"status\":\"success\"\n}"
+									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
 								},
 								{
 									"name": "permission deny",
@@ -2299,7 +2343,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"message\": \"permission denied\"\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"permission denied\"\n    }\n}"
 								}
 							]
 						},
@@ -2405,7 +2449,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+									"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
 								},
 								{
 									"name": "wrong name or password",
@@ -2444,7 +2488,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n  \"error\": \"Invalid username or password.\"\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"Invalid username or password.\"\n    }\n}"
 								}
 							]
 						},
@@ -2542,7 +2586,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}"
+									"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
 								},
 								{
 									"name": "wrong name or password",
@@ -2581,7 +2625,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n  \"error\": \"Invalid username or password.\"\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"Invalid username or password.\"\n    }\n}"
 								}
 							]
 						},
@@ -2667,7 +2711,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"status\":\"success\"\n}"
+									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
 								},
 								{
 									"name": "permission deny",
@@ -2705,7 +2749,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"message\": \"permission denied\"\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"permission denied\"\n    }\n}"
 								}
 							]
 						},
@@ -2769,7 +2813,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"status\":\"success\"\n}"
+									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
 								}
 							]
 						},
@@ -2835,7 +2879,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"url\": \"https://path/to/avatar\"\n}"
+									"body": "{\n    \"data\": {\n        \"url\": \"https://path/to/avatar\"\n    }\n}"
 								}
 							]
 						},
@@ -2910,7 +2954,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"status\":\"success\"\n}"
+									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
 								}
 							]
 						}
@@ -3209,7 +3253,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"技術面面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\"\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"topics\": [\n            {\n                \"id\": 1,\n                \"name\": \"基礎面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"name\": \"技術面面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -3251,7 +3295,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"topics\": [\n        {\n            \"id\": 1,\n            \"name\": \"基礎面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\",\n                    \"sort\":1,\n                    \"hide\":true\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"技術面面\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"毛利\",\n                    \"sort\":1,\n                    \"hide\":false\n\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"topics\": [\n            {\n                \"id\": 1,\n                \"name\": \"基礎面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\",\n                        \"sort\":1,\n                        \"hide\":true\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"name\": \"技術面面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\",\n                        \"sort\":1,\n                        \"hide\":false\n\n                    }\n                ]\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -3330,7 +3374,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						},
 						{
 							"name": "topic not found",
@@ -3361,7 +3405,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"not found\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"not found\"\n    }\n}"
 						}
 					]
 				},
@@ -3433,7 +3477,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						},
 						{
 							"name": "not found",
@@ -3475,7 +3519,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"not found\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"not found\"\n    }\n}"
 						}
 					]
 				},
@@ -3586,7 +3630,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						}
 					]
 				},
@@ -3684,7 +3728,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\":\"success\"\n}"
+							"body": "{\n    \"data\": {\n        \"message\":\"success\"\n    }\n}"
 						}
 					]
 				}
@@ -3732,7 +3776,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "\n[\n    {\n        \"id\": 1,\n        \"title\": \"你好，世界\",\n        \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n        \"topic\": {\n            \"name\": \"基本面\",\n            \"id\": 1\n        },\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 1\n        },\n        \"tags\": [\n            {\n                \"name\": \"毛利\",\n                \"id\": 1\n            }\n        ],\n        \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n        \"previewImage\": null,\n        \"type\": 1,\n        \"isLimited\": true,\n        \"source\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"雪烏龍\",\n        \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n        \"topic\": {\n            \"name\": \"總經\",\n            \"id\": 2\n        },\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 1\n        },\n        \"tags\": [\n            {\n                \"name\": \"毛利\",\n                \"id\": 1\n            }\n        ],\n        \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n        \"previewImage\": \"https://path/to/image\",\n        \"type\": 1,\n        \"isLimited\": false,\n        \"source\": 1\n    }\n]\n\n"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": 1\n        }\n    ]\n}\n"
 						}
 					]
 				}
@@ -3794,7 +3838,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\":\"2023-05-02T00:00:00.000Z\",\n        \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\":0,\n        \"tag\":{\n            \"name\":\"半導體\",\n            \"id\": 123\n        }\n    },\n    {\n        \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\":\"2023-05-02T00:00:00.000Z\",\n        \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\":0,\n        \"tag\":{\n            \"name\":\"半導體\",\n            \"id\": 123\n        }\n    }\n]"
+							"body": "{\n    \"data\": [\n        {\n            \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n            \"time\":\"2023-05-02T00:00:00.000Z\",\n            \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n            \"rate\":0,\n            \"tag\":{\n                \"name\":\"半導體\",\n                \"id\": 123\n            }\n        },\n        {\n            \"title\":\"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n            \"time\":\"2023-05-02T00:00:00.000Z\",\n            \"link\":\"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n            \"rate\":0,\n            \"tag\":{\n                \"name\":\"半導體\",\n                \"id\": 123\n            }\n        }\n    ]\n}"
 						},
 						{
 							"name": "新聞列表 -if not save in db",
@@ -3825,7 +3869,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\": \"2023-05-02T00:00:00.000Z\",\n        \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\": 0,\n        \"tag\": \"半導體\"\n    },\n    {\n        \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n        \"time\": \"2023-05-02T00:00:00.000Z\",\n        \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n        \"rate\": 0,\n        \"tag\": \"半導體\"\n    }\n]"
+							"body": "{\n    \"data\": [\n        {\n            \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n            \"time\": \"2023-05-02T00:00:00.000Z\",\n            \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n            \"rate\": 0,\n            \"tag\": \"半導體\"\n        },\n        {\n            \"title\": \"中碳躋身半導體鏈 中鋼小金雞變身大金鵬\",\n            \"time\": \"2023-05-02T00:00:00.000Z\",\n            \"link\": \"https://money.udn.com/money/story/5612/7495944?from=edn_newestlist_rank'\",\n            \"rate\": 0,\n            \"tag\": \"半導體\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -3932,7 +3976,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -4027,7 +4071,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n    \"articles\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
