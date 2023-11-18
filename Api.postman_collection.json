@@ -2945,11 +2945,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/dashboard/subscriptions",
+									"raw": "{{domain}}/api/dashboard/subscriptions",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"api",
 										"dashboard",
 										"subscriptions"
 									]
@@ -2962,22 +2963,18 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/dashboard/subscriptions?isWaitingRefund=true / false",
+											"raw": "{{domain}}/api/dashboard/subscriptions",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"api",
 												"dashboard",
 												"subscriptions"
-											],
-											"query": [
-												{
-													"key": "isWaitingRefund",
-													"value": "true / false"
-												}
 											]
 										}
 									},
+									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -2989,7 +2986,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"memberId\": 6,\n\t\t\t\"status\": \"subscription-status-string\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"autoRenewal\": true,\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 10,\n\t\t\t\t\t\"memberId\": 6,\n\t\t\t\t\t\"subscriptionId\": 4,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"memberId\": 5,\n\t\t\t\"status\": \"subscription-status-string\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"autoRenewal\": true,\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 14,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"memberId\": 6,\n\t\t\t\"isSubscribing\": false,\n\t\t\t\"status\": \"canceled\",\n\t\t\t\"isRefunded\": false,\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n\t\t\t\"refundedAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 10,\n\t\t\t\t\t\"memberId\": 6,\n\t\t\t\t\t\"subscriptionId\": 4,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"memberId\": 5,\n\t\t\t\"isSubscribing\": true,\n\t\t\t\"status\": \"active\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 14,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
 								}
 							]
 						},
@@ -2999,11 +2996,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/dashboard/invoices",
+									"raw": "{{domain}}/api/dashboard/invoices",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"api",
 										"dashboard",
 										"invoices"
 									]
@@ -3017,16 +3015,18 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/dashboard/invoices",
+											"raw": "{{domain}}/api/dashboard/invoices",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"api",
 												"dashboard",
 												"invoices"
 											]
 										}
 									},
+									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -3047,18 +3047,69 @@
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"memberId\": 1,\n    \"subscriptionId\": 15,\n    \"amount\": 2888\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{domain}}/dashboard/upsert-refund-amount",
+									"raw": "{{domain}}/api/dashboard/upsert-refund-amount",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"api",
 										"dashboard",
 										"upsert-refund-amount"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "完成退費 (i.e. 編輯已退款金額)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"memberId\": 1,\n    \"subscriptionId\": 15,\n    \"amount\": 2888\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{domain}}/api/dashboard/upsert-refund-amount",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"dashboard",
+												"upsert-refund-amount"
+											]
+										}
+									},
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"memberId\": 6,\n        \"isSubscribing\": false,\n        \"status\": \"canceled\",\n        \"isRefunded\": true,\n        \"plan\": \"month\",\n        \"amount\": 6888,\n        \"email\": \"test@gnim.com\",\n        \"nextRenewalDate\": \"2023-12-04\",\n        \"startAt\": \"2023-11-04T10:10:47.000Z\",\n        \"endAt\": null,\n        \"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n        \"refundedAt\": \"2023-11-12T10:10:47.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-04T10:05:47.000Z\",\n        \"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n        \"bills\": [\n            {\n                \"id\": 12,\n                \"memberId\": 6,\n                \"subscriptionId\": 4,\n                \"type\": \"refund\",\n                \"plan\": \"month\",\n                \"startAt\": null,\n                \"endAt\": null,\n                \"amount\": 2888,\n                \"taxAmount\": 300,\n                \"createdAt\": \"2023-10-04T10:05:47.000Z\"\n            },\n            {\n                \"id\": 10,\n                \"memberId\": 6,\n                \"subscriptionId\": 4,\n                \"type\": \"payment\",\n                \"plan\": \"month\",\n                \"startAt\": \"2023-10-04T10:10:47.000Z\",\n                \"endAt\": \"2023-11-04T10:10:47.000Z\",\n                \"amount\": 6888,\n                \"taxAmount\": 300,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"createdAt\": \"2023-10-04T10:05:47.000Z\"\n            }\n        ]\n    }\n}"
+								}
+							]
 						}
 					]
 				}
@@ -4166,6 +4217,7 @@
 									]
 								}
 							},
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -4216,7 +4268,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"plan\": \"month\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+									"raw": "{\n\t\"plan\": \"month\",\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4235,6 +4287,7 @@
 									]
 								}
 							},
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -4246,7 +4299,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"MerchantID_\": \"MS350610354\",\n    \"PostData_\": \"fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e\"\n}"
+							"body": "{\n    \"data\": {\n        \"MerchantID_\": \"MS350610354\",\n        \"PostData_\": \"fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e\"\n    }\n}"
 						}
 					]
 				},
@@ -4340,6 +4393,7 @@
 									]
 								}
 							},
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -4409,6 +4463,7 @@
 									]
 								}
 							},
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{

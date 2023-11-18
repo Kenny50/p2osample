@@ -1269,13 +1269,13 @@ paths:
                 type: object
               example:
                 status: success
-  /dashboard/subscriptions:
+  /api/dashboard/subscriptions:
     get:
       tags:
         - 後台 > 訂閱 & 發票
       summary: 取得訂閱 & 交易紀錄
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
@@ -1292,14 +1292,17 @@ paths:
                 data:
                   - id: 4
                     memberId: 6
-                    status: subscription-status-string
+                    isSubscribing: false
+                    status: canceled
+                    isRefunded: false
                     plan: month
-                    autoRenewal: true
                     amount: 6888
                     email: test@gnim.com
                     nextRenewalDate: '2023-12-04'
                     startAt: '2023-11-04T10:10:47.000Z'
                     endAt: null
+                    canceledAt: '2023-11-10T10:10:47.000Z'
+                    refundedAt: null
                     companyUniformSerialNo: '12345678'
                     maskedCreditCardNo: 400022******1111
                     createdAt: '2023-11-04T10:05:47.000Z'
@@ -1309,6 +1312,7 @@ paths:
                         memberId: 6
                         subscriptionId: 4
                         type: payment
+                        plan: month
                         startAt: '2023-10-04T10:10:47.000Z'
                         endAt: '2023-11-04T10:10:47.000Z'
                         amount: 6888
@@ -1317,9 +1321,9 @@ paths:
                         createdAt: '2023-10-04T10:05:47.000Z'
                   - id: 3
                     memberId: 5
-                    status: subscription-status-string
+                    isSubscribing: true
+                    status: active
                     plan: month
-                    autoRenewal: true
                     amount: 6888
                     email: test@gnim.com
                     nextRenewalDate: '2023-12-04'
@@ -1334,6 +1338,7 @@ paths:
                         memberId: 5
                         subscriptionId: 3
                         type: payment
+                        plan: month
                         startAt: '2023-11-04T10:10:47.000Z'
                         endAt: '2023-12-04T10:10:47.000Z'
                         amount: 6888
@@ -1344,13 +1349,14 @@ paths:
                         memberId: 5
                         subscriptionId: 3
                         type: payment
+                        plan: month
                         startAt: '2023-10-04T10:10:47.000Z'
                         endAt: '2023-11-04T10:10:47.000Z'
                         amount: 6888
                         taxAmount: 300
                         maskedCreditCardNo: 400022******1111
                         createdAt: '2023-10-04T10:05:47.000Z'
-  /dashboard/invoices:
+  /api/dashboard/invoices:
     get:
       tags:
         - 後台 > 訂閱 & 發票
@@ -1371,7 +1377,7 @@ paths:
         eInvoicePlatformNo STRING, 發票平台自訂編號  
         companyUniformSerialNo STRING, 公司統一編號
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
@@ -1400,18 +1406,72 @@ paths:
                     companyUniformSerialNo: '12345678'
                     createdAt: '2023-11-04T10:05:47.000Z'
                     updatedAt: '2023-11-04T10:05:47.000Z'
-  /dashboard/upsert-refund-amount:
+  /api/dashboard/upsert-refund-amount:
     post:
       tags:
         - 後台 > 訂閱 & 發票
       summary: 完成退費 (i.e. 編輯已退款金額)
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                memberId: 1
+                subscriptionId: 15
+                amount: 2888
       responses:
         '200':
-          description: Successful response
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 4
+                  memberId: 6
+                  isSubscribing: false
+                  status: canceled
+                  isRefunded: true
+                  plan: month
+                  amount: 6888
+                  email: test@gnim.com
+                  nextRenewalDate: '2023-12-04'
+                  startAt: '2023-11-04T10:10:47.000Z'
+                  endAt: null
+                  canceledAt: '2023-11-10T10:10:47.000Z'
+                  refundedAt: '2023-11-12T10:10:47.000Z'
+                  companyUniformSerialNo: '12345678'
+                  maskedCreditCardNo: 400022******1111
+                  createdAt: '2023-11-04T10:05:47.000Z'
+                  updatedAt: '2023-11-04T10:05:47.000Z'
+                  bills:
+                    - id: 12
+                      memberId: 6
+                      subscriptionId: 4
+                      type: refund
+                      plan: month
+                      startAt: null
+                      endAt: null
+                      amount: 2888
+                      taxAmount: 300
+                      createdAt: '2023-10-04T10:05:47.000Z'
+                    - id: 10
+                      memberId: 6
+                      subscriptionId: 4
+                      type: payment
+                      plan: month
+                      startAt: '2023-10-04T10:10:47.000Z'
+                      endAt: '2023-11-04T10:10:47.000Z'
+                      amount: 6888
+                      taxAmount: 300
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-10-04T10:05:47.000Z'
   /api/:
     get:
       tags:
@@ -2032,7 +2092,7 @@ paths:
         - 訂閱
       summary: 取得付款紀錄
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
@@ -2103,7 +2163,7 @@ paths:
                 returnUrl: https://gnim.com.tw/payment-completed
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
@@ -2114,9 +2174,10 @@ paths:
               schema:
                 type: object
               example:
-                MerchantID_: MS350610354
-                PostData_: >-
-                  fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e
+                data:
+                  MerchantID_: MS350610354
+                  PostData_: >-
+                    fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e
   /api/subscription/re-request-payment-payload:
     post:
       tags:
@@ -2158,7 +2219,7 @@ paths:
               example:
                 newPlan: quarter
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
@@ -2201,7 +2262,7 @@ paths:
               example:
                 active: true
       responses:
-        undefined:
+        '200':
           headers:
             Content-Type:
               schema:
