@@ -526,8 +526,8 @@ paths:
               type: object
               required:
                 - title
-                - content
-                - html
+                - fullContent
+                - rawContent
                 - topic
                 - isLimited
                 - isDraft
@@ -536,13 +536,13 @@ paths:
                   type: string
                   description: ''
                   example: 你好，世界
-                content:
+                fullContent:
                   type: string
                   description: json stringtify
                   example: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                html:
+                rawContent:
                   type: string
                   description: ''
                   example: >-
@@ -554,6 +554,11 @@ paths:
                     簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                     List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
                     團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                clippedContent:
+                  type: string
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
                 topic:
                   type: integer
                   description: ''
@@ -732,7 +737,7 @@ paths:
                 - title
                 - fullContent
                 - rawContent
-                - clipedContent
+                - clippedContent
                 - topic
                 - isLimited
                 - isDraft
@@ -759,7 +764,7 @@ paths:
                     簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                     List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
                     團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
-                clipedContent:
+                clippedContent:
                   type: string
                   description: json stringtify
                   example: >-
