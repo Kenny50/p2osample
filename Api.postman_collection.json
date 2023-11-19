@@ -114,7 +114,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "OLLNPSKK2Df8r3Amox7y",
+									"value": "jvAD3wX9RTesrBuoSoad",
 									"description": "[required] line id token",
 									"type": "text"
 								}
@@ -216,9 +216,6 @@
 				{
 					"name": "refresh token",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -226,7 +223,7 @@
 							"formdata": [
 								{
 									"key": "refreshToken",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiMDE0NDM2OTItZTE0ZS00MDAwLWFiN2QtMzg1M2Q0YTJhOWQ1IiwiaWF0IjoxNjk5OTY2NzE0LCJleHAiOjE3MDA1NzE1MTR9.pThn2zfUouHYn6Aq_TQWwZhpwv7hZ4gvC07-GD3-4Os",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDA5NjgxODV9.W2RoyxsgSLSFJI6Ie6qJCi3nWdNhQYxXV_FUrMYm6og",
 									"description": "[required]",
 									"type": "text"
 								}
@@ -288,7 +285,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -412,7 +409,14 @@
 					"name": "補寄驗證信件",
 					"request": {
 						"auth": {
-							"type": "bearer"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -504,6 +508,108 @@
 					]
 				},
 				{
+					"name": "寄驗證簡訊",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/sent-validate-sms",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"sent-validate-sms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sent",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"sent-validate-email"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"validate sms has sent, please check out your phone\"\n    }\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"sent-validate-email"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"your email is already validated\"\n    }\n}"
+						},
+						{
+							"name": "email 空白",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"sent-validate-email"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"email field is empty\"\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "個人資訊，請等待訂閱格式出來",
 					"request": {
 						"auth": {
@@ -511,7 +617,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -565,7 +671,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -667,7 +773,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -728,6 +834,74 @@
 					]
 				},
 				{
+					"name": "sms validate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member/validate-sms?signature=214557",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member",
+								"validate-sms"
+							],
+							"query": [
+								{
+									"key": "signature",
+									"value": "214557",
+									"description": "[required] code for sms"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "mail validate",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"validate-email"
+									],
+									"query": [
+										{
+											"key": "signature",
+											"value": "string",
+											"description": "[required] link from email"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"手機號碼驗證成功\"\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "sign policy",
 					"request": {
 						"auth": {
@@ -735,7 +909,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -800,9 +974,6 @@
 				{
 					"name": "get policy",
 					"request": {
-						"auth": {
-							"type": "noauth"
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -868,7 +1039,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
 									"type": "string"
 								}
 							]
@@ -921,6 +1092,26 @@
 							"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
 						}
 					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -3877,7 +4068,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=hello&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=手&page=0&size=30&topic=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -3889,7 +4080,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "hello",
+									"value": "手",
 									"description": "[required]"
 								},
 								{
@@ -3925,6 +4116,107 @@
 										"{{prefix}}",
 										"search",
 										"query"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "你好",
+											"description": "[required]"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										},
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "[required]"
+										},
+										{
+											"key": "type",
+											"value": "article",
+											"description": "[required] article, podcast"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/search/author?author=1&page=0&size=30&topic=0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"search",
+								"author"
+							],
+							"query": [
+								{
+									"key": "author",
+									"value": "1",
+									"description": "[required]"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[required]"
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"description": "[required]"
+								},
+								{
+									"key": "topic",
+									"value": "0",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "author",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"search",
+										"author"
 									],
 									"query": [
 										{
