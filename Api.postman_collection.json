@@ -21,9 +21,15 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXk9x2EKbQRm5SOUDJHovEBlJaJZkvv7zZfd8bK3uFnwFp1FhSjwqPmz7pKbc6ES9A",
+									"value": "4/0AfJohXkeFgsRqesCmF8ZPGf8AYYPxH6zsrFtinUWYzGM6wZQoAISddaE9wi2aF0rdF2_EA",
 									"description": "[required] google response code in query",
 									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -36,8 +42,17 @@
 								"{{prefix}}",
 								"login",
 								"google"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"description": "[required] ",
+									"disabled": true
+								}
 							]
-						}
+						},
+						"description": "```\nGOOGLE_CLIENT_SECRET=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\nGOOGLE_CLIENT_ID=286825346535-u9i330mtainbb3cog1ctdjm15htvekjv.apps.googleusercontent.com\n\n ```"
 					},
 					"response": [
 						{
@@ -114,8 +129,13 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "jvAD3wX9RTesrBuoSoad",
+									"value": "fj8aAuQksi2Ddqut8lKL",
 									"description": "[required] line id token",
+									"type": "text"
+								},
+								{
+									"key": "redirectUrl",
+									"value": "https://www.google.com",
 									"type": "text"
 								}
 							]
@@ -129,8 +149,16 @@
 								"{{prefix}}",
 								"auth",
 								"line"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "https://www.google.com",
+									"disabled": true
+								}
 							]
-						}
+						},
+						"description": "project id : 2001662721"
 					},
 					"response": [
 						{
@@ -285,7 +313,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzg1NTA2LCJleHAiOjE3MDAzODkxMDZ9.L4v0sgD4NuA9L2Mh7Anrf31_Eu6jGhYnIRZXLhUn_dY",
 									"type": "string"
 								}
 							]
@@ -303,12 +331,14 @@
 								{
 									"key": "email",
 									"value": "ssshello@gmail.com",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "phone",
 									"value": "0936965814",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -617,7 +647,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzg1NTA2LCJleHAiOjE3MDAzODkxMDZ9.L4v0sgD4NuA9L2Mh7Anrf31_Eu6jGhYnIRZXLhUn_dY",
 									"type": "string"
 								}
 							]

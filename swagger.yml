@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 試閱 pdf api
-  version: 11.19.1643
+  description: login rediect api, project id, token, secret
+  version: 11.19.2219
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -59,6 +59,14 @@ paths:
       tags:
         - 會員
       summary: google login
+      description: >-
+        ```
+
+        GOOGLE_CLIENT_SECRET=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
+
+        GOOGLE_CLIENT_ID=286825346535-u9i330mtainbb3cog1ctdjm15htvekjv.apps.googleusercontent.com
+
+         ```
       requestBody:
         content:
           multipart/form-data:
@@ -71,7 +79,9 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXk9x2EKbQRm5SOUDJHovEBlJaJZkvv7zZfd8bK3uFnwFp1FhSjwqPmz7pKbc6ES9A
+                    4/0AfJohXkeFgsRqesCmF8ZPGf8AYYPxH6zsrFtinUWYzGM6wZQoAISddaE9wi2aF0rdF2_EA
+                '':
+                  type: string
       responses:
         '200':
           description: OK
@@ -101,6 +111,7 @@ paths:
       tags:
         - 會員
       summary: line login
+      description: 'project id : 2001662721'
       requestBody:
         content:
           multipart/form-data:
@@ -112,7 +123,10 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: jvAD3wX9RTesrBuoSoad
+                  example: fj8aAuQksi2Ddqut8lKL
+                redirectUrl:
+                  type: string
+                  example: https://www.google.com
       responses:
         '200':
           description: OK
