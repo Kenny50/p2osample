@@ -3362,6 +3362,51 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "試閱",
+					"item": [
+						{
+							"name": "上傳試閱 pdf",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDM4MTk2OCwiZXhwIjoxNzAwMzg1NTY4fQ.6C8PluCENngB2AoyeNa8VMwpzbr9ggLfg1zyQu-FGrQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "[required] upload",
+											"type": "file",
+											"src": "/Users/chang/Downloads/000.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/pdf/trial",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"pdf",
+										"trial"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
@@ -4825,6 +4870,63 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "試閱",
+			"item": [
+				{
+					"name": "get trial pdf link",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/pdf/trial",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"pdf",
+								"trial"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get trial pdf link",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/pdf/trial",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"pdf",
+										"trial"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf\"\n}"
+						}
+					]
 				}
 			]
 		}

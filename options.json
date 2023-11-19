@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.19.1139",
-        "description": "sms validate"
+        "version": "11.19.1643",
+        "description": "試閱 pdf api"
     },
     "servers": [
         {
