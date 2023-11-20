@@ -32,10 +32,12 @@ tags:
       0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
   - name: 後台
   - name: 後台 > 文章
+  - name: 後台 > 圖片
   - name: 後台 > 帳戶
   - name: 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
   - name: 後台 > 訂閱 & 發票
   - name: 後台 > 試閱
+  - name: 後台 > 公司群組
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -79,7 +81,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXkIqo1_a6V-UYlnmJ3B5IsWnkf0j0VMjTjofVc3IH-bzmjE4yeTcBN9XhOT_oN_-g
+                    4/0AfJohXmV0JqdmlJe0cbY4m5WFxZ9EqIhlTMdlWGlQOWaxf9T88zb-wngdl4qnFH-a4BYjw
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -128,7 +130,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: TWwtScym6oLHOkW4PapN
+                  example: 33Q4tYbe5tO1QSrKEZvQ
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -143,20 +145,12 @@ paths:
                 data:
                   accessToken: YOUR_ACCESS_TOKEN
                   refreshToken: YOUR_REFRESH_TOKEN
-        '400':
-          description: Bad Request
-          headers:
-            Content-Type:
+        undefined:
+          content:
+            text/plain:
               schema:
                 type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: Request failed with status code 400
+              example: null
   /api/member/refresh-token:
     post:
       tags:
@@ -442,7 +436,14 @@ paths:
         - 會員
       summary: sent validate email
       requestBody:
-        content: {}
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                redirectUrl:
+                  type: string
+                  example: http://localhost:5173
       security:
         - bearerAuth: []
       responses:
@@ -987,11 +988,11 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
-  /api/image/upload:
+  /api/image:
     post:
       tags:
-        - 後台 > 文章
-      summary: upload image for article
+        - 後台 > 圖片
+      summary: upload image
       requestBody:
         content:
           multipart/form-data:
@@ -1006,6 +1007,8 @@ paths:
                   format: binary
                 '':
                   type: string
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -1015,7 +1018,18 @@ paths:
                 type: object
               example:
                 data:
-                  url: https://path/to/img
+                  message: 檔案上傳成功！
+                  imageUrl: >-
+                    https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                    (1).png
+                  image:
+                    id: 2
+                    name: 1700467448756-sticker (1).png
+                    path: 1700467448756-sticker (1).png
+                    creatorType: User
+                    creatorId: 8
+                    updatedAt: '2023-11-20T08:04:09.443Z'
+                    createdAt: '2023-11-20T08:04:09.443Z'
   /api/users:
     get:
       tags:
@@ -1141,6 +1155,7 @@ paths:
           schema:
             type: integer
           required: true
+          description: '[required]'
           example: '27'
       responses:
         '200':
@@ -1221,6 +1236,48 @@ paths:
               example:
                 data:
                   message: permission denied
+  /api/user/{id}/permission:
+    post:
+      tags:
+        - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
+      summary: 更新指定用戶權限
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                permissions[0][resourceCode]:
+                  type: string
+                  example: pdf
+                permissions[0][operation]:
+                  type: string
+                  example: read
+                permissions[1][resourceCode]:
+                  type: string
+                  example: article
+                permissions[1][operation]:
+                  type: string
+                  example: delete
+                permissions[2][resourceCode]:
+                  type: string
+                  example: backend
+                permissions[2][operation]:
+                  type: string
+                  example: update
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required]'
+          example: '28'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/user/create:
     post:
       tags:
@@ -1235,11 +1292,11 @@ paths:
                 account:
                   type: string
                   description: '[ required ] '
-                  example: Kenny888
+                  example: Kenny555
                 password:
                   type: string
                   description: '[ required ] '
-                  example: Kenny888
+                  example: Kenny555
                 name:
                   type: string
       responses:
@@ -1282,7 +1339,7 @@ paths:
                 password:
                   type: string
                   description: 最少六位英數
-                  example: hashpassword123
+                  example: hashpassword
       responses:
         '200':
           description: OK
@@ -1307,7 +1364,7 @@ paths:
     post:
       tags:
         - 後台 > 帳戶
-      summary: 刷新內部帳戶
+      summary: 刷新內部帳戶 refresh token
       requestBody:
         content:
           multipart/form-data:
@@ -1719,6 +1776,18 @@ paths:
               example:
                 data: >-
                   https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf
+  /api/companyFilters:
+    get:
+      tags:
+        - 後台 > 公司群組
+      summary: 獲得群組內容
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/topic-tag:
     get:
       tags:

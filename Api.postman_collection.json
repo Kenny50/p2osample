@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -21,7 +21,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXkIqo1_a6V-UYlnmJ3B5IsWnkf0j0VMjTjofVc3IH-bzmjE4yeTcBN9XhOT_oN_-g",
+									"value": "4/0AfJohXmV0JqdmlJe0cbY4m5WFxZ9EqIhlTMdlWGlQOWaxf9T88zb-wngdl4qnFH-a4BYjw",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
@@ -134,7 +134,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "TWwtScym6oLHOkW4PapN",
+									"value": "33Q4tYbe5tO1QSrKEZvQ",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -229,20 +229,10 @@
 									]
 								}
 							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
+							"_postman_previewlanguage": null,
+							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"Request failed with status code 400\"\n    }\n}"
+							"body": null
 						}
 					]
 				},
@@ -978,6 +968,16 @@
 						},
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "redirectUrl",
+									"value": "http://localhost:5173",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 							"host": [
@@ -1451,78 +1451,6 @@
 					"name": "文章",
 					"item": [
 						{
-							"name": "upload image for article",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "image",
-											"description": "[required]",
-											"type": "file",
-											"src": []
-										},
-										{
-											"key": "",
-											"value": "",
-											"type": "text",
-											"disabled": true
-										}
-									]
-								},
-								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/image/upload",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{internalPrefix}}",
-										"image",
-										"upload"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "upload image for article",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "image",
-													"description": "[required]",
-													"type": "file",
-													"src": []
-												}
-											]
-										},
-										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/image/upload",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"{{internalPrefix}}",
-												"image",
-												"upload"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": null,
-									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"url\": \"https://path/to/img\"\n    }\n}"
-								}
-							]
-						},
-						{
 							"name": "create an article",
 							"request": {
 								"method": "POST",
@@ -1912,6 +1840,91 @@
 					]
 				},
 				{
+					"name": "圖片",
+					"item": [
+						{
+							"name": "upload image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"description": "[required]",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/image",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"image"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "upload image for article",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "image",
+													"description": "[required]",
+													"type": "file",
+													"src": []
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{internalPrefix}}/image",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{internalPrefix}}",
+												"image"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"檔案上傳成功！\",\n        \"imageUrl\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\",\n        \"image\": {\n            \"id\": 2,\n            \"name\": \"1700467448756-sticker (1).png\",\n            \"path\": \"1700467448756-sticker (1).png\",\n            \"creatorType\": \"User\",\n            \"creatorId\": 8,\n            \"updatedAt\": \"2023-11-20T08:04:09.443Z\",\n            \"createdAt\": \"2023-11-20T08:04:09.443Z\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
 					"name": "帳戶",
 					"item": [
 						{
@@ -2278,7 +2291,8 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "27"
+													"value": "27",
+													"description": "[required]"
 												}
 											]
 										}
@@ -2361,6 +2375,68 @@
 											"body": "{\n    \"data\": {\n        \"message\": \"permission denied\"\n    }\n}"
 										}
 									]
+								},
+								{
+									"name": "更新指定用戶權限",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "permissions[0][resourceCode]",
+													"value": "pdf",
+													"type": "text"
+												},
+												{
+													"key": "permissions[0][operation]",
+													"value": "read",
+													"type": "text"
+												},
+												{
+													"key": "permissions[1][resourceCode]",
+													"value": "article",
+													"type": "text"
+												},
+												{
+													"key": "permissions[1][operation]",
+													"value": "delete",
+													"type": "text"
+												},
+												{
+													"key": "permissions[2][resourceCode]",
+													"value": "backend",
+													"type": "text"
+												},
+												{
+													"key": "permissions[2][operation]",
+													"value": "update",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/api/user/:id/permission",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"user",
+												":id",
+												"permission"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "28",
+													"description": "[required]"
+												}
+											]
+										}
+									},
+									"response": []
 								}
 							]
 						},
@@ -2374,13 +2450,13 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Kenny888",
+											"value": "Kenny555",
 											"description": "[ required ] ",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "Kenny888",
+											"value": "Kenny555",
 											"description": "[ required ] ",
 											"type": "text"
 										},
@@ -2531,7 +2607,7 @@
 										},
 										{
 											"key": "password",
-											"value": "hashpassword123",
+											"value": "hashpassword",
 											"description": "[required] 最少六位英數",
 											"type": "text"
 										}
@@ -2631,7 +2707,7 @@
 							]
 						},
 						{
-							"name": "刷新內部帳戶",
+							"name": "刷新內部帳戶 refresh token",
 							"event": [
 								{
 									"listen": "test",
@@ -2675,12 +2751,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/refresh",
+									"raw": "{{domain}}/api/user/refresh",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"user",
 										"refresh"
 									]
@@ -2806,12 +2882,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user",
+									"raw": "{{domain}}/api/user",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"user"
 									]
 								}
@@ -3333,6 +3409,39 @@
 										"api",
 										"pdf",
 										"trial"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "公司群組",
+					"item": [
+						{
+							"name": "獲得群組內容",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/companyFilters",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"companyFilters"
 									]
 								}
 							},
