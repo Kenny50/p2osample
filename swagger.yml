@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: login rediect api, project id, token, secret
-  version: 11.19.2219
+  description: 前台修正，登入只做登入，後台改 success 統一接 message 欄位
+  version: 11.20.1350
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -13,6 +13,8 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+security:
+  - bearerAuth: []
 tags:
   - name: 會員
   - name: 文章
@@ -62,8 +64,6 @@ paths:
       description: >-
         ```
 
-        GOOGLE_CLIENT_SECRET=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
-
         GOOGLE_CLIENT_ID=286825346535-u9i330mtainbb3cog1ctdjm15htvekjv.apps.googleusercontent.com
 
          ```
@@ -79,9 +79,10 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXkeFgsRqesCmF8ZPGf8AYYPxH6zsrFtinUWYzGM6wZQoAISddaE9wi2aF0rdF2_EA
-                '':
+                    4/0AfJohXkIqo1_a6V-UYlnmJ3B5IsWnkf0j0VMjTjofVc3IH-bzmjE4yeTcBN9XhOT_oN_-g
+                redirectUrl:
                   type: string
+                  example: http://localhost:5173
       responses:
         '200':
           description: OK
@@ -91,8 +92,6 @@ paths:
                 type: object
               example:
                 data:
-                  name: uuid
-                  email: null
                   accessToken: YOUR_ACCESS_TOKEN
                   refreshToken: YOUR_REFRESH_TOKEN
   /api/auth/google:
@@ -101,6 +100,12 @@ paths:
         - 會員
       summary: get auth google url
       description: 會重導向，沒有 response
+      parameters:
+        - name: redirectUrl
+          in: query
+          schema:
+            type: string
+          example: http://localhost:5173
       responses:
         '200':
           description: Successful response
@@ -123,7 +128,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: fj8aAuQksi2Ddqut8lKL
+                  example: TWwtScym6oLHOkW4PapN
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -136,8 +141,6 @@ paths:
                 type: object
               example:
                 data:
-                  name: uuid
-                  email: null
                   accessToken: YOUR_ACCESS_TOKEN
                   refreshToken: YOUR_REFRESH_TOKEN
         '400':
@@ -170,8 +173,9 @@ paths:
                 refreshToken:
                   type: string
                   description: ''
-                  example: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDA5NjgxODV9.W2RoyxsgSLSFJI6Ie6qJCi3nWdNhQYxXV_FUrMYm6og
+                  example: '{{refresh_token}}'
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -198,7 +202,7 @@ paths:
                   example: 永翰
                 email:
                   type: string
-                  example: ssshello@gmail.com
+                  example: yunghancareer@gmail.com
                 phone:
                   type: integer
                   example: '0936965814'
@@ -224,8 +228,6 @@ paths:
                   isSubscribing: false
                   phone: '0936965814'
                   isPhoneValidate: false
-                  createdAt: '2023-11-10T07:37:42.000Z'
-                  updatedAt: '2023-11-10T08:04:32.407Z'
         '409':
           description: Conflict
           content:
@@ -235,64 +237,6 @@ paths:
               example:
                 data:
                   message: 此電子郵箱已被使用
-  /api/member/sent-validate-email:
-    get:
-      tags:
-        - 會員
-      summary: 補寄驗證信件
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: your email is already validated
-        '202':
-          description: Accepted
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: validate mail has sent, please check out your mailbox
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: email field is empty
-    post:
-      tags:
-        - 會員
-      summary: sent validate email
-      requestBody:
-        content: {}
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  status: success
   /api/member/sent-validate-sms:
     get:
       tags:
@@ -333,8 +277,6 @@ paths:
       tags:
         - 會員
       summary: 個人資訊，請等待訂閱格式出來
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -407,7 +349,7 @@ paths:
             type: integer
           required: true
           description: link from email, 要有個前端專門處理驗證的畫面
-          example: '179623'
+          example: '320192'
       responses:
         '200':
           description: OK
@@ -432,7 +374,7 @@ paths:
             type: integer
           required: true
           description: code for sms
-          example: '214557'
+          example: '604842'
       responses:
         '200':
           description: OK
@@ -494,8 +436,30 @@ paths:
                   id: 4
                   type: privacy
                   content: Privacy Policy content goes here.
-                  createdAt: '2023-11-10T07:09:32.000Z'
-                  updatedAt: '2023-11-10T07:09:32.000Z'
+  /api/member/sent-validate-email:
+    post:
+      tags:
+        - 會員
+      summary: sent validate email
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: success
   /api/article/all-topic-latest:
     get:
       tags:
@@ -1101,7 +1065,7 @@ paths:
             type: integer
           required: true
           description: '[ required ] 用戶 id'
-          example: '13'
+          example: '24'
       responses:
         '200':
           description: OK
@@ -1116,9 +1080,48 @@ paths:
                 type: object
               example:
                 data:
-                  name: Voss
-                  avatar: https://path/to/avatar
-                  permissions: []
+                  id: 24
+                  account: Vossvoss
+                  name: employee
+                  avatar: ''
+                  role:
+                    code: employee24
+                    name: employee
+                  permissions:
+                    - resourceCode: user-resource
+                      operation: create
+                    - resourceCode: user-resource
+                      operation: read
+                    - resourceCode: user-resource
+                      operation: update
+                    - resourceCode: user-resource
+                      operation: delete
+                    - resourceCode: pdf
+                      operation: create
+                    - resourceCode: pdf
+                      operation: read
+                    - resourceCode: pdf
+                      operation: update
+                    - resourceCode: pdf
+                      operation: delete
+                    - resourceCode: article
+                      operation: create
+                    - resourceCode: article
+                      operation: read
+                    - resourceCode: article
+                      operation: update
+                    - resourceCode: article
+                      operation: delete
+                    - resourceCode: paid
+                      operation: create
+                    - resourceCode: paid
+                      operation: read
+                    - resourceCode: paid
+                      operation: update
+                    - resourceCode: paid
+                      operation: delete
+                    - resourceCode: paid
+                      operation: read
         '403':
           description: Forbidden
           content:
@@ -1127,7 +1130,7 @@ paths:
                 type: object
               example:
                 data:
-                  error: permission denied
+                  message: permission denied
     delete:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1138,7 +1141,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '26'
+          example: '27'
       responses:
         '200':
           description: OK
@@ -1153,7 +1156,7 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  message: success
         '403':
           description: Forbidden
           headers:
@@ -1188,7 +1191,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '26'
+          example: '24'
       responses:
         '200':
           description: OK
@@ -1203,7 +1206,7 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  message: success
         '403':
           description: Forbidden
           headers:
@@ -1232,11 +1235,11 @@ paths:
                 account:
                   type: string
                   description: '[ required ] '
-                  example: Vossvosscc
+                  example: Kenny888
                 password:
                   type: string
                   description: '[ required ] '
-                  example: Vossvoss
+                  example: Kenny888
                 name:
                   type: string
       responses:
@@ -1248,7 +1251,7 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  message: success
         '403':
           description: Forbidden
           content:
@@ -1313,8 +1316,7 @@ paths:
               properties:
                 refreshToken:
                   type: string
-                  example: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDMyNTY3MywiZXhwIjoxNzAwOTMwNDczfQ.iD5yBg9pp2KGlzuYff902Eoz8SJ8LJ8utuU3GIH2aKg
+                  example: '{{refresh_token}}'
       responses:
         '200':
           description: OK
@@ -1325,7 +1327,6 @@ paths:
               example:
                 data:
                   accessToken: YOUR_ACCESS_TOKEN
-                  refreshToken: YOUR_REFRESH_TOKEN
         '401':
           description: Unauthorized
           content:
@@ -1349,7 +1350,44 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  id: 11
+                  account: Remus88888
+                  name: Remus88888
+                  avatar: https://
+                  role:
+                    code: admin
+                    name: admin
+                  permissions:
+                    - resourceCode: user-resource
+                      operation: create
+                    - resourceCode: user-resource
+                      operation: read
+                    - resourceCode: user-resource
+                      operation: update
+                    - resourceCode: user-resource
+                      operation: delete
+                    - resourceCode: pdf
+                      operation: create
+                    - resourceCode: pdf
+                      operation: read
+                    - resourceCode: pdf
+                      operation: update
+                    - resourceCode: pdf
+                      operation: delete
+                    - resourceCode: article
+                      operation: create
+                    - resourceCode: article
+                      operation: read
+                    - resourceCode: article
+                      operation: update
+                    - resourceCode: article
+                      operation: delete
+                    - resourceCode: permission
+                      operation: read
+                    - resourceCode: permission
+                      operation: update
+                    - resourceCode: paid
+                      operation: read
         '403':
           description: Forbidden
           content:
@@ -1382,7 +1420,7 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  message: success
   /api/user/update-avatar:
     post:
       tags:
@@ -1421,7 +1459,7 @@ paths:
               properties:
                 password:
                   type: string
-                  example: hashpassword123
+                  example: hashpassword
                 oldPassword:
                   type: string
                   example: hashpassword
@@ -1434,7 +1472,7 @@ paths:
                 type: object
               example:
                 data:
-                  status: success
+                  message: success
   /api/dashboard/subscriptions:
     get:
       tags:

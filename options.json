@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.19.2219",
-        "description": "login rediect api, project id, token, secret"
+        "version": "11.20.1350",
+        "description": "前台修正，登入只做登入，後台改 success 統一接 message 欄位"
     },
     "servers": [
         {

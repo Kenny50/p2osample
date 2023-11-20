@@ -21,15 +21,14 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXkeFgsRqesCmF8ZPGf8AYYPxH6zsrFtinUWYzGM6wZQoAISddaE9wi2aF0rdF2_EA",
+									"value": "4/0AfJohXkIqo1_a6V-UYlnmJ3B5IsWnkf0j0VMjTjofVc3IH-bzmjE4yeTcBN9XhOT_oN_-g",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
 								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
+									"key": "redirectUrl",
+									"value": "http://localhost:5173",
+									"type": "text"
 								}
 							]
 						},
@@ -52,7 +51,7 @@
 								}
 							]
 						},
-						"description": "```\nGOOGLE_CLIENT_SECRET=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\nGOOGLE_CLIENT_ID=286825346535-u9i330mtainbb3cog1ctdjm15htvekjv.apps.googleusercontent.com\n\n ```"
+						"description": "```\nGOOGLE_CLIENT_ID=286825346535-u9i330mtainbb3cog1ctdjm15htvekjv.apps.googleusercontent.com\n\n ```"
 					},
 					"response": [
 						{
@@ -88,7 +87,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"name\":\"uuid\",\n        \"email\":null,\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
 						}
 					]
 				},
@@ -105,7 +104,7 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/auth/google",
+							"raw": "{{domain}}/{{prefix}}/auth/google?redirectUrl=http://localhost:5173",
 							"host": [
 								"{{domain}}"
 							],
@@ -113,6 +112,12 @@
 								"{{prefix}}",
 								"auth",
 								"google"
+							],
+							"query": [
+								{
+									"key": "redirectUrl",
+									"value": "http://localhost:5173"
+								}
 							]
 						},
 						"description": "會重導向，沒有 response"
@@ -129,7 +134,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "fj8aAuQksi2Ddqut8lKL",
+									"value": "TWwtScym6oLHOkW4PapN",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -194,7 +199,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"name\": \"uuid\",\n        \"email\": null,\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
 						},
 						{
 							"name": "line login fail",
@@ -244,6 +249,16 @@
 				{
 					"name": "refresh token",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{refresh_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -251,19 +266,19 @@
 							"formdata": [
 								{
 									"key": "refreshToken",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDA5NjgxODV9.W2RoyxsgSLSFJI6Ie6qJCi3nWdNhQYxXV_FUrMYm6og",
+									"value": "{{refresh_token}}",
 									"description": "[required]",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/refresh-token",
+							"raw": "{{domain}}/api/member/refresh-token",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
-								"{{prefix}}",
+								"api",
 								"member",
 								"refresh-token"
 							]
@@ -313,7 +328,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzg1NTA2LCJleHAiOjE3MDAzODkxMDZ9.L4v0sgD4NuA9L2Mh7Anrf31_Eu6jGhYnIRZXLhUn_dY",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -330,9 +345,8 @@
 								},
 								{
 									"key": "email",
-									"value": "ssshello@gmail.com",
-									"type": "text",
-									"disabled": true
+									"value": "yunghancareer@gmail.com",
+									"type": "text"
 								},
 								{
 									"key": "phone",
@@ -392,7 +406,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"name\": \"永翰\",\n        \"email\": \"hello@gmail.com\",\n        \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n        \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n        \"loginType\": \"google\",\n        \"thirdPartyIdentifier\": \"112345303661950802160\",\n        \"isEmailValidate\": false,\n        \"isSubscribing\": false,\n        \"phone\": \"0936965814\",\n        \"isPhoneValidate\": false,\n        \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n        \"updatedAt\": \"2023-11-10T08:04:32.407Z\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"name\": \"永翰\",\n        \"email\": \"hello@gmail.com\",\n        \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n        \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n        \"loginType\": \"google\",\n        \"thirdPartyIdentifier\": \"112345303661950802160\",\n        \"isEmailValidate\": false,\n        \"isSubscribing\": false,\n        \"phone\": \"0936965814\",\n        \"isPhoneValidate\": false\n    }\n}"
 						},
 						{
 							"name": "mail conflict",
@@ -436,108 +450,6 @@
 					]
 				},
 				{
-					"name": "補寄驗證信件",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"member",
-								"sent-validate-email"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "sent",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "Accepted",
-							"code": 202,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"validate mail has sent, please check out your mailbox\"\n    }\n}"
-						},
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"your email is already validated\"\n    }\n}"
-						},
-						{
-							"name": "email 空白",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"email field is empty\"\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "寄驗證簡訊",
 					"request": {
 						"auth": {
@@ -545,7 +457,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -642,25 +554,15 @@
 				{
 					"name": "個人資訊，請等待訂閱格式出來",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzg1NTA2LCJleHAiOjE3MDAzODkxMDZ9.L4v0sgD4NuA9L2Mh7Anrf31_Eu6jGhYnIRZXLhUn_dY",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/information",
+							"raw": "{{domain}}/api/member/information",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
-								"{{prefix}}",
+								"api",
 								"member",
 								"information"
 							]
@@ -701,7 +603,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -803,7 +705,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -811,7 +713,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=179623",
+							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=320192",
 							"host": [
 								"{{domain}}"
 							],
@@ -823,7 +725,7 @@
 							"query": [
 								{
 									"key": "signature",
-									"value": "179623",
+									"value": "320192",
 									"description": "[required] link from email, 要有個前端專門處理驗證的畫面"
 								}
 							]
@@ -871,7 +773,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -879,7 +781,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-sms?signature=214557",
+							"raw": "{{domain}}/{{prefix}}/member/validate-sms?signature=604842",
 							"host": [
 								"{{domain}}"
 							],
@@ -891,7 +793,7 @@
 							"query": [
 								{
 									"key": "signature",
-									"value": "214557",
+									"value": "604842",
 									"description": "[required] code for sms"
 								}
 							]
@@ -939,7 +841,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -1057,7 +959,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"type\": \"privacy\",\n        \"content\": \"Privacy Policy content goes here.\",\n        \"createdAt\": \"2023-11-10T07:09:32.000Z\",\n        \"updatedAt\": \"2023-11-10T07:09:32.000Z\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"type\": \"privacy\",\n        \"content\": \"Privacy Policy content goes here.\"\n    }\n}"
 						}
 					]
 				},
@@ -1069,7 +971,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiNWMzZTFhMWYtODc4ZS00OWMzLThiNGQtOGM5OTQ3NTEyYjE0IiwiaWF0IjoxNzAwMzYzMzg1LCJleHAiOjE3MDAzNjY5ODV9._H1UXOPm-wMaSf4cU2Gpn4ilfqisM-WS5G2ZWo4H-V8",
+									"value": "{{access_token}}",
 									"type": "string"
 								}
 							]
@@ -1119,7 +1021,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						}
 					]
 				}
@@ -2038,13 +1940,13 @@
 												"method": "GET",
 												"header": [],
 												"url": {
-													"raw": "{{domain}}/{{internalPrefix}}/user",
+													"raw": "{{domain}}/{{internalPrefix}}/users",
 													"host": [
 														"{{domain}}"
 													],
 													"path": [
 														"{{internalPrefix}}",
-														"user"
+														"users"
 													]
 												}
 											},
@@ -2121,7 +2023,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "13",
+													"value": "24",
 													"description": "[ required ] 用戶 id"
 												}
 											]
@@ -2164,7 +2066,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"name\": \"Voss\",\n        \"avatar\": \"https://path/to/avatar\",\n        \"permissions\": [\n            \n        ]\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"id\": 24,\n        \"account\": \"Vossvoss\",\n        \"name\": \"employee\",\n        \"avatar\": \"\",\n        \"role\": {\n            \"code\": \"employee24\",\n            \"name\": \"employee\"\n        },\n        \"permissions\": [\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"read\"\n            }\n        ]\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -2209,7 +2111,7 @@
 											"_postman_previewlanguage": "json",
 											"header": null,
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"error\":\"permission denied\"\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"message\":\"permission denied\"\n    }\n}"
 										}
 									]
 								},
@@ -2242,7 +2144,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "26"
+													"value": "24"
 												}
 											]
 										}
@@ -2300,7 +2202,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -2376,7 +2278,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "26"
+													"value": "27"
 												}
 											]
 										}
@@ -2418,7 +2320,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"data\": {\n        \"status\": \"success\"\n    }\n}"
+											"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 										},
 										{
 											"name": "permission deny",
@@ -2472,13 +2374,13 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Vossvosscc",
+											"value": "Kenny888",
 											"description": "[ required ] ",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "Vossvoss",
+											"value": "Kenny888",
 											"description": "[ required ] ",
 											"type": "text"
 										},
@@ -2491,12 +2393,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/create",
+									"raw": "{{domain}}/api/user/create",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"user",
 										"create"
 									]
@@ -2540,7 +2442,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 								},
 								{
 									"name": "permission deny",
@@ -2636,12 +2538,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/login",
+									"raw": "{{domain}}/api/user/login",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"user",
 										"login"
 									]
@@ -2658,12 +2560,12 @@
 											"formdata": [
 												{
 													"key": "account",
-													"value": "Voss",
+													"value": "Kenny666",
 													"type": "text"
 												},
 												{
 													"key": "password",
-													"value": "vosssssssss",
+													"value": "Kenny666",
 													"type": "text"
 												}
 											]
@@ -2767,7 +2669,7 @@
 									"formdata": [
 										{
 											"key": "refreshToken",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDMyNTY3MywiZXhwIjoxNzAwOTMwNDczfQ.iD5yBg9pp2KGlzuYff902Eoz8SJ8LJ8utuU3GIH2aKg",
+											"value": "{{refresh_token}}",
 											"type": "text"
 										}
 									]
@@ -2822,7 +2724,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\",\n        \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"accessToken\": \"YOUR_ACCESS_TOKEN\"\n    }\n}"
 								},
 								{
 									"name": "wrong name or password",
@@ -2947,7 +2849,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 11,\n        \"account\": \"Remus88888\",\n        \"name\": \"Remus88888\",\n        \"avatar\": \"https://\",\n        \"role\": {\n            \"code\": \"admin\",\n            \"name\": \"admin\"\n        },\n        \"permissions\": [\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"user-resource\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"pdf\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"create\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"article\",\n                \"operation\": \"delete\"\n            },\n            {\n                \"resourceCode\": \"permission\",\n                \"operation\": \"read\"\n            },\n            {\n                \"resourceCode\": \"permission\",\n                \"operation\": \"update\"\n            },\n            {\n                \"resourceCode\": \"paid\",\n                \"operation\": \"read\"\n            }\n        ]\n    }\n}"
 								},
 								{
 									"name": "permission deny",
@@ -3020,7 +2922,7 @@
 								{
 									"name": "內部帳戶更新個人資訊",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "formdata",
@@ -3049,7 +2951,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 								}
 							]
 						},
@@ -3129,7 +3031,7 @@
 									"formdata": [
 										{
 											"key": "password",
-											"value": "hashpassword123",
+											"value": "hashpassword",
 											"type": "text"
 										},
 										{
@@ -3190,7 +3092,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"status\":\"success\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 								}
 							]
 						}
@@ -3444,7 +3346,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDMzMTUwNywiZXhwIjoxNzAwMzM1MTA3fQ.6dMKJqt6CcpD8lBeBNP7Y49J2DQbzeBptYB2E985_io",
+						"value": "{{access_token}}",
 						"type": "string"
 					}
 				]
@@ -4961,6 +4863,16 @@
 			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
