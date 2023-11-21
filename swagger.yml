@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 前台修正，登入只做登入，後台改 success 統一接 message 欄位
-  version: 11.20.1350
+  description: 後台修改員工權限，新增說明
+  version: 11.21.1133
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -13,6 +13,9 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 security:
   - bearerAuth: []
 tags:
@@ -38,6 +41,7 @@ tags:
   - name: 後台 > 訂閱 & 發票
   - name: 後台 > 試閱
   - name: 後台 > 公司群組
+  - name: 後台 > podcast
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -81,7 +85,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXmV0JqdmlJe0cbY4m5WFxZ9EqIhlTMdlWGlQOWaxf9T88zb-wngdl4qnFH-a4BYjw
+                    4/0AfJohXkps1nnw7xGjupUsTXxRrycyPnJro_gqS5VuXD_NcCjb8cn-R_tIgr7aTIJK6ellA
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -130,7 +134,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: 33Q4tYbe5tO1QSrKEZvQ
+                  example: qz7r0Wb8HVZVn5Pa8ijB
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -145,12 +149,20 @@ paths:
                 data:
                   accessToken: YOUR_ACCESS_TOKEN
                   refreshToken: YOUR_REFRESH_TOKEN
-        undefined:
-          content:
-            text/plain:
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
               schema:
                 type: string
-              example: null
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: Request failed with status code 400
   /api/member/refresh-token:
     post:
       tags:
@@ -343,7 +355,7 @@ paths:
             type: integer
           required: true
           description: link from email, 要有個前端專門處理驗證的畫面
-          example: '320192'
+          example: '982677'
       responses:
         '200':
           description: OK
@@ -1241,6 +1253,7 @@ paths:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
       summary: 更新指定用戶權限
+      description: 傳入該員工需要的所有權限，沒傳的權限會刪除，有新增的權限會新增
       requestBody:
         content:
           multipart/form-data:
@@ -1750,8 +1763,6 @@ paths:
                   type: string
                   description: upload
                   format: binary
-      security:
-        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -1783,6 +1794,134 @@ paths:
       summary: 獲得群組內容
       security:
         - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/podcast/callback:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: get spotify token
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: code
+          in: query
+          schema:
+            type: string
+          example: >-
+            AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/podcast/login:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: request auth link
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: spotify
+                accessToken: >-
+                  BQCVnEsPREDEP1lJK-tvQG0hojF_C-c3GNC8Kj7IEM6W0GIhmolZc9NBWdJwifVXxh-zNOLqzrfZE0FFX8_Y3K_gF9YaSrE0w_oz-KEE6WhUB6YAZb0CXYaMmqYmUBHYDb-rdu6N5j5PN63hyogMFDSMIvlK1elJpEXLYE0gQ_GvMLCLBWVs942JgmKzse-vsUlzGJvLKv90-Kz0HT-kvQ
+                refreshToken: >-
+                  AQC7YFfGSLS0yWQAWPykmiJUauAvtmgm6QOH5zcHR2tEDAmD4l_elGgvuoDF6Jg0M21uiUryncR6O_iVzZu-Cdib5m9K6mTTPIx6cx5Uajrn3VkUjKhzFtS_zEm1S9zcBQk
+                expir: '2023-11-20T22:05:35.056Z'
+                createdAt: '2023-11-20T21:04:22.000Z'
+                updatedAt: '2023-11-20T21:15:35.055Z'
+  /api/podcast/episode/latest:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: latest episode
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                href: >-
+                  https://api.spotify.com/v1/shows/2l21dV5M1Z1wKTChoXdHal/episodes?offset=0&limit=1
+                items:
+                  - audio_preview_url: >-
+                      https://podz-content.spotifycdn.com/audio/clips/0l2pkT89zUrjBtDbDcloXK/clip_448069_508069.mp3
+                    description: >-
+                      💡本集重點 1. 記憶體報價分析 2. 記憶體庫存分析 3. 記憶體廠商個別故事 
+                      記憶體隨著AI出現，而拉高規格帶動DDR5。記憶體屬於景氣循環股，大概是六到八季為一循環。今年6月時我們蒐集報告後認為記憶體谷底已過，可是到了8月記憶體平均價格依然下跌，幸好8月底的報價有稍微回升 
+                      記憶體的復甦可以從市場訊息得知，目前終端通路庫存水位下降，至少可以開始消化原廠的庫存。近期的盤勢震盪，在操作上比較適合找低基期、低評價的個股，今天Elvis提供幾個有故事的個股跟大家分享 
+                      Powered by Firstory Hosting
+                    duration_ms: 1270846
+                    explicit: false
+                    external_urls:
+                      spotify: https://open.spotify.com/episode/1FFrTaBgvKerZDwV2LvQ3B
+                    href: https://api.spotify.com/v1/episodes/1FFrTaBgvKerZDwV2LvQ3B
+                    html_description: >-
+                      <p>&#x1f4a1;本集重點 <br />1. 記憶體報價分析 <br />2. 記憶體庫存分析 <br
+                      />3. 記憶體廠商個別故事 <br /> <br
+                      />記憶體隨著AI出現&#xff0c;而拉高規格帶動DDR5。記憶體屬於景氣循環股&#xff0c;大概是六到八季為一循環。今年6月時我們蒐集報告後認為記憶體谷底已過&#xff0c;可是到了8月記憶體平均價格依然下跌&#xff0c;幸好8月底的報價有稍微回升
+                      <br /> <br
+                      />記憶體的復甦可以從市場訊息得知&#xff0c;目前終端通路庫存水位下降&#xff0c;至少可以開始消化原廠的庫存。近期的盤勢震盪&#xff0c;在操作上比較適合找低基期、低評價的個股&#xff0c;今天Elvis提供幾個有故事的個股跟大家分享</p>
+                      <br /> <br />Powered by <a href="https://firstory.me"
+                      rel="nofollow">Firstory Hosting</a>
+                    id: 1FFrTaBgvKerZDwV2LvQ3B
+                    images:
+                      - height: 640
+                        url: >-
+                          https://i.scdn.co/image/ab6765630000ba8aa75c733577d66a77dbbb2fb2
+                        width: 640
+                      - height: 300
+                        url: >-
+                          https://i.scdn.co/image/ab67656300005f1fa75c733577d66a77dbbb2fb2
+                        width: 300
+                      - height: 64
+                        url: >-
+                          https://i.scdn.co/image/ab6765630000f68da75c733577d66a77dbbb2fb2
+                        width: 64
+                    is_externally_hosted: false
+                    is_playable: true
+                    language: zh
+                    languages:
+                      - zh
+                    name: 2023.09.22 【基本點線面】景氣循環股｜谷底走了好久｜記憶體
+                    release_date: '2023-09-22'
+                    release_date_precision: day
+                    type: episode
+                    uri: spotify:episode:1FFrTaBgvKerZDwV2LvQ3B
+                limit: 1
+                next: >-
+                  https://api.spotify.com/v1/shows/2l21dV5M1Z1wKTChoXdHal/episodes?offset=1&limit=1
+                offset: 0
+                previous: null
+                total: 147
+  /api/podcast/episode/all:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: all-episode
       responses:
         '200':
           description: Successful response

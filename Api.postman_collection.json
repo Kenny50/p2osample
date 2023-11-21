@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -21,7 +21,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXmV0JqdmlJe0cbY4m5WFxZ9EqIhlTMdlWGlQOWaxf9T88zb-wngdl4qnFH-a4BYjw",
+									"value": "4/0AfJohXkps1nnw7xGjupUsTXxRrycyPnJro_gqS5VuXD_NcCjb8cn-R_tIgr7aTIJK6ellA",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
@@ -134,7 +134,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "33Q4tYbe5tO1QSrKEZvQ",
+									"value": "qz7r0Wb8HVZVn5Pa8ijB",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -229,10 +229,20 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
-							"header": null,
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
-							"body": null
+							"body": "{\n    \"data\": {\n        \"message\": \"Request failed with status code 400\"\n    }\n}"
 						}
 					]
 				},
@@ -331,7 +341,8 @@
 								{
 									"key": "name",
 									"value": "永翰",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "email",
@@ -703,7 +714,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=320192",
+							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=982677",
 							"host": [
 								"{{domain}}"
 							],
@@ -715,7 +726,7 @@
 							"query": [
 								{
 									"key": "signature",
-									"value": "320192",
+									"value": "982677",
 									"description": "[required] link from email, 要有個前端專門處理驗證的畫面"
 								}
 							]
@@ -2434,7 +2445,8 @@
 													"description": "[required]"
 												}
 											]
-										}
+										},
+										"description": "傳入該員工需要的所有權限，沒傳的權限會刪除，有新增的權限會新增"
 									},
 									"response": []
 								}
@@ -3377,16 +3389,6 @@
 						{
 							"name": "上傳試閱 pdf",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoiUmVtdXM4ODg4OCIsImlhdCI6MTcwMDM4MTk2OCwiZXhwIjoxNzAwMzg1NTY4fQ.6C8PluCENngB2AoyeNa8VMwpzbr9ggLfg1zyQu-FGrQ",
-											"type": "string"
-										}
-									]
-								},
 								"method": "PUT",
 								"header": [],
 								"body": {
@@ -3442,6 +3444,168 @@
 									"path": [
 										"api",
 										"companyFilters"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "podcast",
+					"item": [
+						{
+							"name": "get spotify token",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/callback?code=AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"callback"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "request auth link",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/login",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "request auth link",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/podcast/login",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"podcast",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"spotify\",\n    \"accessToken\": \"BQCVnEsPREDEP1lJK-tvQG0hojF_C-c3GNC8Kj7IEM6W0GIhmolZc9NBWdJwifVXxh-zNOLqzrfZE0FFX8_Y3K_gF9YaSrE0w_oz-KEE6WhUB6YAZb0CXYaMmqYmUBHYDb-rdu6N5j5PN63hyogMFDSMIvlK1elJpEXLYE0gQ_GvMLCLBWVs942JgmKzse-vsUlzGJvLKv90-Kz0HT-kvQ\",\n    \"refreshToken\": \"AQC7YFfGSLS0yWQAWPykmiJUauAvtmgm6QOH5zcHR2tEDAmD4l_elGgvuoDF6Jg0M21uiUryncR6O_iVzZu-Cdib5m9K6mTTPIx6cx5Uajrn3VkUjKhzFtS_zEm1S9zcBQk\",\n    \"expir\": \"2023-11-20T22:05:35.056Z\",\n    \"createdAt\": \"2023-11-20T21:04:22.000Z\",\n    \"updatedAt\": \"2023-11-20T21:15:35.055Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "latest episode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/episode/latest",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"episode",
+										"latest"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "latest episode",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/podcast/episode/latest",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"podcast",
+												"episode",
+												"latest"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"href\": \"https://api.spotify.com/v1/shows/2l21dV5M1Z1wKTChoXdHal/episodes?offset=0&limit=1\",\n    \"items\": [\n        {\n            \"audio_preview_url\": \"https://podz-content.spotifycdn.com/audio/clips/0l2pkT89zUrjBtDbDcloXK/clip_448069_508069.mp3\",\n            \"description\": \"💡本集重點 1. 記憶體報價分析 2. 記憶體庫存分析 3. 記憶體廠商個別故事  記憶體隨著AI出現，而拉高規格帶動DDR5。記憶體屬於景氣循環股，大概是六到八季為一循環。今年6月時我們蒐集報告後認為記憶體谷底已過，可是到了8月記憶體平均價格依然下跌，幸好8月底的報價有稍微回升  記憶體的復甦可以從市場訊息得知，目前終端通路庫存水位下降，至少可以開始消化原廠的庫存。近期的盤勢震盪，在操作上比較適合找低基期、低評價的個股，今天Elvis提供幾個有故事的個股跟大家分享  Powered by Firstory Hosting\",\n            \"duration_ms\": 1270846,\n            \"explicit\": false,\n            \"external_urls\": {\n                \"spotify\": \"https://open.spotify.com/episode/1FFrTaBgvKerZDwV2LvQ3B\"\n            },\n            \"href\": \"https://api.spotify.com/v1/episodes/1FFrTaBgvKerZDwV2LvQ3B\",\n            \"html_description\": \"<p>&#x1f4a1;本集重點 <br />1. 記憶體報價分析 <br />2. 記憶體庫存分析 <br />3. 記憶體廠商個別故事 <br /> <br />記憶體隨著AI出現&#xff0c;而拉高規格帶動DDR5。記憶體屬於景氣循環股&#xff0c;大概是六到八季為一循環。今年6月時我們蒐集報告後認為記憶體谷底已過&#xff0c;可是到了8月記憶體平均價格依然下跌&#xff0c;幸好8月底的報價有稍微回升 <br /> <br />記憶體的復甦可以從市場訊息得知&#xff0c;目前終端通路庫存水位下降&#xff0c;至少可以開始消化原廠的庫存。近期的盤勢震盪&#xff0c;在操作上比較適合找低基期、低評價的個股&#xff0c;今天Elvis提供幾個有故事的個股跟大家分享</p> <br /> <br />Powered by <a href=\\\"https://firstory.me\\\" rel=\\\"nofollow\\\">Firstory Hosting</a>\",\n            \"id\": \"1FFrTaBgvKerZDwV2LvQ3B\",\n            \"images\": [\n                {\n                    \"height\": 640,\n                    \"url\": \"https://i.scdn.co/image/ab6765630000ba8aa75c733577d66a77dbbb2fb2\",\n                    \"width\": 640\n                },\n                {\n                    \"height\": 300,\n                    \"url\": \"https://i.scdn.co/image/ab67656300005f1fa75c733577d66a77dbbb2fb2\",\n                    \"width\": 300\n                },\n                {\n                    \"height\": 64,\n                    \"url\": \"https://i.scdn.co/image/ab6765630000f68da75c733577d66a77dbbb2fb2\",\n                    \"width\": 64\n                }\n            ],\n            \"is_externally_hosted\": false,\n            \"is_playable\": true,\n            \"language\": \"zh\",\n            \"languages\": [\n                \"zh\"\n            ],\n            \"name\": \"2023.09.22 【基本點線面】景氣循環股｜谷底走了好久｜記憶體\",\n            \"release_date\": \"2023-09-22\",\n            \"release_date_precision\": \"day\",\n            \"type\": \"episode\",\n            \"uri\": \"spotify:episode:1FFrTaBgvKerZDwV2LvQ3B\"\n        }\n    ],\n    \"limit\": 1,\n    \"next\": \"https://api.spotify.com/v1/shows/2l21dV5M1Z1wKTChoXdHal/episodes?offset=1&limit=1\",\n    \"offset\": 0,\n    \"previous\": null,\n    \"total\": 147\n}"
+								}
+							]
+						},
+						{
+							"name": "all-episode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/episode/all",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"episode",
+										"all"
 									]
 								}
 							},

@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.20.1350",
-        "description": "前台修正，登入只做登入，後台改 success 統一接 message 欄位"
+        "version": "11.21.1133",
+        "description": "後台修改員工權限，新增說明"
     },
     "servers": [
         {
