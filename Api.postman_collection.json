@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -553,7 +553,7 @@
 					]
 				},
 				{
-					"name": "個人資訊，請等待訂閱格式出來",
+					"name": "個人資訊",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -592,7 +592,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"name\": \"Chang Kenneth\",\n        \"email\": \"kennethchangla@gmail.com\",\n        \"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n        \"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n        \"loginType\": \"google\",\n        \"thirdPartyIdentifier\": \"112345303661950802160\",\n        \"isEmailValidate\": true,\n        \"isSubscribing\": false,\n        \"phone\": \"\",\n        \"isPhoneValidate\": false,\n        \"createdAt\": \"2023-11-10T07:37:42.000Z\",\n        \"updatedAt\": \"2023-11-10T07:37:42.000Z\"\n    }\n}"
+							"body": "{\n\t\"data\": {\n\t\t\"name\": \"Chang Kenneth\",\n\t\t\"email\": \"kennethchangla@gmail.com\",\n\t\t\"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n\t\t\"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n\t\t\"loginType\": \"google\",\n\t\t\"thirdPartyIdentifier\": \"112345303661950802160\",\n\t\t\"isEmailValidate\": true,\n\t\t\"isSubscribing\": false,\n\t\t\"phone\": \"\",\n\t\t\"isPhoneValidate\": false,\n\t\t\"latestSubscription\": {\n\t\t\t\"id\": 2,\n\t\t\t\"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n\t\t\t\"isSubscribing\": true,\n\t\t\t\"status\": \"active\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 170,\n\t\t\t\"email\": \"kennethchangla@gmail.com\",\n\t\t\t\"nextRenewalDate\": \"2023-11-21\",\n\t\t\t\"startAt\": \"2023-11-20T17:40:35.000Z\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-20T17:39:50.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-20T17:40:36.000Z\"\n\t\t},\n\t\t\"createdAt\": \"2023-11-10T07:37:42.000Z\",\n\t\t\"updatedAt\": \"2023-11-10T07:37:42.000Z\"\n\t}\n}"
 						}
 					]
 				},
@@ -1152,7 +1152,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "12",
+									"value": "1",
 									"description": "[required] article id"
 								}
 							]
@@ -2491,21 +2491,20 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Kenny555",
+											"value": "KennyRich",
 											"description": "[ required ] ",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "Kenny555",
+											"value": "KennyRich",
 											"description": "[ required ] ",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "",
-											"type": "text",
-											"disabled": true
+											"value": "Rich",
+											"type": "text"
 										}
 									]
 								},

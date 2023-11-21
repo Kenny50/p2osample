@@ -282,7 +282,7 @@ paths:
     get:
       tags:
         - 會員
-      summary: 個人資訊，請等待訂閱格式出來
+      summary: 個人資訊
       responses:
         '200':
           description: OK
@@ -303,6 +303,19 @@ paths:
                   isSubscribing: false
                   phone: ''
                   isPhoneValidate: false
+                  latestSubscription:
+                    id: 2
+                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                    isSubscribing: true
+                    status: active
+                    plan: month
+                    amount: 170
+                    email: kennethchangla@gmail.com
+                    nextRenewalDate: '2023-11-21'
+                    startAt: '2023-11-20T17:40:35.000Z'
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-11-20T17:39:50.000Z'
+                    updatedAt: '2023-11-20T17:40:36.000Z'
                   createdAt: '2023-11-10T07:37:42.000Z'
                   updatedAt: '2023-11-10T07:37:42.000Z'
   /api/member/delete-account:
@@ -550,7 +563,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '12'
+          example: '1'
       responses:
         undefined:
           content:
@@ -1324,13 +1337,14 @@ paths:
                 account:
                   type: string
                   description: '[ required ] '
-                  example: Kenny555
+                  example: KennyRich
                 password:
                   type: string
                   description: '[ required ] '
-                  example: Kenny555
+                  example: KennyRich
                 name:
                   type: string
+                  example: Rich
       responses:
         '200':
           description: OK
