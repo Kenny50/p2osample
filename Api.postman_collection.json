@@ -134,7 +134,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "qz7r0Wb8HVZVn5Pa8ijB",
+									"value": "rInpDPT9ywy7bhVdWgsS",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -358,12 +358,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/update-information",
+							"raw": "{{domain}}/api/member/update-information",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
-								"{{prefix}}",
+								"api",
 								"member",
 								"update-information"
 							]
@@ -1035,6 +1035,35 @@
 							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/chang/Downloads/chang.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/api/member/upload-avatar",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"member",
+								"upload-avatar"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"event": [
@@ -1872,10 +1901,10 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "image",
+											"key": "file",
 											"description": "[required]",
 											"type": "file",
-											"src": []
+											"src": "/Users/chang/Downloads/chang.jpg"
 										},
 										{
 											"key": "",
@@ -2302,7 +2331,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "27",
+													"value": "30",
 													"description": "[required]"
 												}
 											]
@@ -2613,13 +2642,13 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Remus88888",
+											"value": "Kenny555",
 											"description": "[required] 最少六位英數",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "hashpassword",
+											"value": "Kenny555",
 											"description": "[required] 最少六位英數",
 											"type": "text"
 										}
@@ -3052,22 +3081,22 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "avatar",
+											"key": "file",
 											"description": "user avatar",
 											"type": "file",
-											"src": []
+											"src": "/Users/chang/Downloads/chang.jpg"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/update-avatar",
+									"raw": "{{domain}}/{{internalPrefix}}/user/upload-avatar",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{internalPrefix}}",
 										"user",
-										"update-avatar"
+										"upload-avatar"
 									]
 								}
 							},
@@ -3463,7 +3492,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/callback?code=AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7",
+									"raw": "{{domain}}/api/podcast/callback?code=AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK",
 									"host": [
 										"{{domain}}"
 									],
@@ -3475,7 +3504,7 @@
 									"query": [
 										{
 											"key": "code",
-											"value": "AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7"
+											"value": "AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK"
 										}
 									]
 								}
@@ -3606,6 +3635,54 @@
 										"podcast",
 										"episode",
 										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get soundon episode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/soundon",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"soundon"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get apple podcast episode",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/podcast/apple?limit=300",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"podcast",
+										"apple"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "300",
+											"description": "回傳資料總數，預設是 300"
+										}
 									]
 								}
 							},

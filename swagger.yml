@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 後台修改員工權限，新增說明
-  version: 11.21.1133
+  description: 三個平台的 podcast 資料 api，前台、後台頭像上傳
+  version: 11.21.1627
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -134,7 +134,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: qz7r0Wb8HVZVn5Pa8ijB
+                  example: rInpDPT9ywy7bhVdWgsS
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -473,6 +473,25 @@ paths:
               example:
                 data:
                   message: success
+  /api/member/upload-avatar:
+    post:
+      tags:
+        - 會員
+      summary: upload avatar
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/article/all-topic-latest:
     get:
       tags:
@@ -1011,9 +1030,9 @@ paths:
             schema:
               type: object
               required:
-                - image
+                - file
               properties:
-                image:
+                file:
                   type: string
                   description: ''
                   format: binary
@@ -1168,7 +1187,7 @@ paths:
             type: integer
           required: true
           description: '[required]'
-          example: '27'
+          example: '30'
       responses:
         '200':
           description: OK
@@ -1348,11 +1367,11 @@ paths:
                 account:
                   type: string
                   description: 最少六位英數
-                  example: Remus88888
+                  example: Kenny555
                 password:
                   type: string
                   description: 最少六位英數
-                  example: hashpassword
+                  example: Kenny555
       responses:
         '200':
           description: OK
@@ -1491,7 +1510,7 @@ paths:
               example:
                 data:
                   message: success
-  /api/user/update-avatar:
+  /api/user/upload-avatar:
     post:
       tags:
         - 後台 > 帳戶
@@ -1502,7 +1521,7 @@ paths:
             schema:
               type: object
               properties:
-                avatar:
+                file:
                   type: string
                   description: user avatar
                   format: binary
@@ -1812,7 +1831,7 @@ paths:
           schema:
             type: string
           example: >-
-            AQBCDYVdMD2PrYXJJHfilV5ygSCN7jMM17462m7QuloUKmL2GsmtGdO0AxZIYwByUv2tnDcCkFHll1Wig50L4xz46ZqpENdfuWng6FfJATK7ZYa6HM_y4bIGTr95Va_Mdi4Tl2MMQKJOiba2y5v2FJjh2gPgZqivj03Xl5_hTxQC8Lfh70PG3VGJUWBjW0mOVOJKdaQJkOgPPA-i_xcbU3ieWxHrAsv-MZSNN3egBrA6ikcks28yAKPXNe-7
+            AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK
       responses:
         '200':
           description: Successful response
@@ -1922,6 +1941,35 @@ paths:
       tags:
         - 後台 > podcast
       summary: all-episode
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/podcast/soundon:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: get soundon episode
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/podcast/apple:
+    get:
+      tags:
+        - 後台 > podcast
+      summary: get apple podcast episode
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          description: 回傳資料總數，預設是 300
+          example: '300'
       responses:
         '200':
           description: Successful response
