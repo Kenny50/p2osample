@@ -1328,6 +1328,17 @@ paths:
       tags:
         - 後台 > 帳戶
       summary: 取得前台使用者列表
+      parameters:
+        - name: subscription
+          in: query
+          schema:
+            type: string
+          description: '`is_subscribing` / `renewal_disabled` / `finished` / `none`'
+        - name: refund_status
+          in: query
+          schema:
+            type: string
+          description: '`waiting` / `refunded`'
       responses:
         '200':
           description: Successful response
@@ -1586,143 +1597,6 @@ paths:
               example:
                 data:
                   message: success
-  /api/dashboard/subscriptions:
-    get:
-      tags:
-        - 後台 > 訂閱 & 發票
-      summary: 取得訂閱 & 交易紀錄
-      responses:
-        '200':
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                data:
-                  - id: 4
-                    memberId: 6
-                    isSubscribing: false
-                    status: canceled
-                    isRefunded: false
-                    plan: month
-                    amount: 6888
-                    email: test@gnim.com
-                    nextRenewalDate: '2023-12-04'
-                    startAt: '2023-11-04T10:10:47.000Z'
-                    endAt: null
-                    canceledAt: '2023-11-10T10:10:47.000Z'
-                    refundedAt: null
-                    companyUniformSerialNo: '12345678'
-                    maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-11-04T10:05:47.000Z'
-                    updatedAt: '2023-11-04T10:05:47.000Z'
-                    bills:
-                      - id: 10
-                        memberId: 6
-                        subscriptionId: 4
-                        type: payment
-                        plan: month
-                        startAt: '2023-10-04T10:10:47.000Z'
-                        endAt: '2023-11-04T10:10:47.000Z'
-                        amount: 6888
-                        taxAmount: 300
-                        maskedCreditCardNo: 400022******1111
-                        createdAt: '2023-10-04T10:05:47.000Z'
-                  - id: 3
-                    memberId: 5
-                    isSubscribing: true
-                    status: active
-                    plan: month
-                    amount: 6888
-                    email: test@gnim.com
-                    nextRenewalDate: '2023-12-04'
-                    startAt: '2023-11-04T10:10:47.000Z'
-                    endAt: null
-                    companyUniformSerialNo: '12345678'
-                    maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-11-04T10:05:47.000Z'
-                    updatedAt: '2023-11-04T10:05:47.000Z'
-                    bills:
-                      - id: 14
-                        memberId: 5
-                        subscriptionId: 3
-                        type: payment
-                        plan: month
-                        startAt: '2023-11-04T10:10:47.000Z'
-                        endAt: '2023-12-04T10:10:47.000Z'
-                        amount: 6888
-                        taxAmount: 300
-                        maskedCreditCardNo: 400022******1111
-                        createdAt: '2023-11-04T10:05:47.000Z'
-                      - id: 6
-                        memberId: 5
-                        subscriptionId: 3
-                        type: payment
-                        plan: month
-                        startAt: '2023-10-04T10:10:47.000Z'
-                        endAt: '2023-11-04T10:10:47.000Z'
-                        amount: 6888
-                        taxAmount: 300
-                        maskedCreditCardNo: 400022******1111
-                        createdAt: '2023-10-04T10:05:47.000Z'
-  /api/dashboard/invoices:
-    get:
-      tags:
-        - 後台 > 訂閱 & 發票
-      summary: 取得發票開立紀錄
-      description: |-
-        回傳欄位  
-        \* 代表必定有值的欄位  
-          
-        \* memberId INT, 會員 ID  
-        \* subscriptionId INT, 訂閱資料 ID  
-        \* billId INT, 交易 ID  
-        \* status STRING  
-        \* amount INT, 交易金額  
-        \* taxAmount INT, 稅金金額  
-        \* uniformInvoiceNo STRING, 發票號碼  
-        \* uniformInvoiceRandomNo STRING, 發票防偽隨機碼  
-        \* email  
-        eInvoicePlatformNo STRING, 發票平台自訂編號  
-        companyUniformSerialNo STRING, 公司統一編號
-      responses:
-        '200':
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
-                data:
-                  - id: 10
-                    memberId: 5
-                    subscriptionId: 3
-                    billId: 6
-                    status: invoice-status-string
-                    amount: 6888
-                    taxAmount: 300
-                    uniformInvoiceNo: AB00000001
-                    uniformInvoiceRandomNo: '1234'
-                    email: test@gnim.com.tw
-                    eInvoicePlatformNo: abab222222
-                    companyUniformSerialNo: '12345678'
-                    createdAt: '2023-11-04T10:05:47.000Z'
-                    updatedAt: '2023-11-04T10:05:47.000Z'
   /api/dashboard/upsert-refund-amount:
     post:
       tags:

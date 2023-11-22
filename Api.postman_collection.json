@@ -2521,11 +2521,23 @@
 						},
 						{
 							"name": "取得前台使用者列表",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{domain}}/api/dashboard/members",
+									"raw": "{{domain}}/api/dashboard/members?subscription=&refund_status=",
 									"host": [
 										"{{domain}}"
 									],
@@ -2533,6 +2545,18 @@
 										"api",
 										"dashboard",
 										"members"
+									],
+									"query": [
+										{
+											"key": "subscription",
+											"value": "",
+											"description": "`is_subscribing` / `renewal_disabled` / `finished` / `none`"
+										},
+										{
+											"key": "refund_status",
+											"value": "",
+											"description": "`waiting` / `refunded`"
+										}
 									]
 								}
 							},
@@ -3260,109 +3284,6 @@
 				{
 					"name": "訂閱 & 發票",
 					"item": [
-						{
-							"name": "取得訂閱 & 交易紀錄",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/api/dashboard/subscriptions",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"api",
-										"dashboard",
-										"subscriptions"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "取得訂閱 & 交易紀錄",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/api/dashboard/subscriptions",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"api",
-												"dashboard",
-												"subscriptions"
-											]
-										}
-									},
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 4,\n\t\t\t\"memberId\": 6,\n\t\t\t\"isSubscribing\": false,\n\t\t\t\"status\": \"canceled\",\n\t\t\t\"isRefunded\": false,\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n\t\t\t\"refundedAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 10,\n\t\t\t\t\t\"memberId\": 6,\n\t\t\t\t\t\"subscriptionId\": 4,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"memberId\": 5,\n\t\t\t\"isSubscribing\": true,\n\t\t\t\"status\": \"active\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"email\": \"test@gnim.com\",\n\t\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": null,\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"bills\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 14,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"memberId\": 5,\n\t\t\t\t\t\"subscriptionId\": 3,\n\t\t\t\t\t\"type\": \"payment\",\n\t\t\t\t\t\"plan\": \"month\",\n\t\t\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\t\t\"amount\": 6888,\n\t\t\t\t\t\"taxAmount\": 300,\n\t\t\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
-								}
-							]
-						},
-						{
-							"name": "取得發票開立紀錄",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/api/dashboard/invoices",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"api",
-										"dashboard",
-										"invoices"
-									]
-								},
-								"description": "回傳欄位  \n\\* 代表必定有值的欄位  \n  \n\\* memberId INT, 會員 ID  \n\\* subscriptionId INT, 訂閱資料 ID  \n\\* billId INT, 交易 ID  \n\\* status STRING  \n\\* amount INT, 交易金額  \n\\* taxAmount INT, 稅金金額  \n\\* uniformInvoiceNo STRING, 發票號碼  \n\\* uniformInvoiceRandomNo STRING, 發票防偽隨機碼  \n\\* email  \neInvoicePlatformNo STRING, 發票平台自訂編號  \ncompanyUniformSerialNo STRING, 公司統一編號"
-							},
-							"response": [
-								{
-									"name": "取得發票開立紀錄",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{domain}}/api/dashboard/invoices",
-											"host": [
-												"{{domain}}"
-											],
-											"path": [
-												"api",
-												"dashboard",
-												"invoices"
-											]
-										}
-									},
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "",
-											"type": "text"
-										}
-									],
-									"cookie": [],
-									"body": "{\n\t\"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 10,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n\t\t\t\"billId\": 6,\n\t\t\t\"status\": \"invoice-status-string\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"uniformInvoiceNo\": \"AB00000001\",\n\t\t\t\"uniformInvoiceRandomNo\": \"1234\",\n\t\t\t\"email\": \"test@gnim.com.tw\",\n\t\t\t\"eInvoicePlatformNo\": \"abab222222\",\n\t\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t}\n\t]\n}\n"
-								}
-							]
-						},
 						{
 							"name": "完成退費 (i.e. 編輯已退款金額)",
 							"request": {
