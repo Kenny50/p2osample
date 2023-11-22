@@ -1323,6 +1323,16 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/dashboard/members:
+    get:
+      tags:
+        - 後台 > 帳戶
+      summary: 取得前台使用者列表
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/user/create:
     post:
       tags:

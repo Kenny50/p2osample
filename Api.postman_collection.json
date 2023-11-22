@@ -13,6 +13,19 @@
 			"item": [
 				{
 					"name": "google login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"pm.environment.set(\"access_token\", jsonData.data.accessToken);",
+									"pm.environment.set(\"refresh_token\", jsonData.data.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -126,6 +139,19 @@
 				},
 				{
 					"name": "line login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"pm.environment.set(\"access_token\", jsonData.data.accessToken);",
+									"pm.environment.set(\"refresh_token\", jsonData.data.refreshToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -248,6 +274,18 @@
 				},
 				{
 					"name": "refresh token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"pm.environment.set(\"access_token\", jsonData.data.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -2482,6 +2520,25 @@
 							]
 						},
 						{
+							"name": "取得前台使用者列表",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/dashboard/members",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "創建內部帳戶",
 							"request": {
 								"method": "POST",
@@ -2608,26 +2665,9 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"response is ok\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"let jsonResponse = pm.response.json();",
-											"",
-											"pm.test(\"Response should be a parsable JSON\", function() {",
-											"    pm.expect(jsonResponse).to.be.ok;",
-											"});",
-											"",
-											"pm.test(\"Response body should be an object\", function() {",
-											"    pm.expect(jsonResponse).to.be.an('object');",
-											"});",
-											"",
-											"pm.test(\"Response body should be in the correct format\", function() {",
-											"    pm.expect(jsonResponse.accessToken).to.be.a('string');",
-											"    pm.expect(jsonResponse.refreshToken).to.be.a('string');",
-											"});",
-											"",
-											""
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"access_token\", jsonData.data.accessToken);",
+											"pm.environment.set(\"refresh_token\", jsonData.data.refreshToken);"
 										],
 										"type": "text/javascript"
 									}
@@ -2753,25 +2793,8 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"response is ok\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"let jsonResponse = pm.response.json();",
-											"",
-											"pm.test(\"Response should be a parsable JSON\", function() {",
-											"    pm.expect(jsonResponse).to.be.ok;",
-											"});",
-											"",
-											"pm.test(\"Response body should be an object\", function() {",
-											"    pm.expect(jsonResponse).to.be.an('object');",
-											"});",
-											"",
-											"pm.test(\"Response body should be in the correct format\", function() {",
-											"    pm.expect(jsonResponse.accessToken).to.be.a('string');",
-											"});",
-											"",
-											""
+											"let jsonData = pm.response.json();",
+											"pm.environment.set(\"access_token\", jsonData.data.accessToken);"
 										],
 										"type": "text/javascript"
 									}
