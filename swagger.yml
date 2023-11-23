@@ -838,9 +838,9 @@ paths:
                 - isDraft
               properties:
                 title:
-                  type: integer
+                  type: string
                   description: ''
-                  example: '28'
+                  example: 標題
                 fullContent:
                   type: string
                   description: json stringtify
@@ -2308,7 +2308,7 @@ paths:
                 name: 音訊
                 createdAt: '2023-10-30T08:38:21.000Z'
                 updatedAt: '2023-10-30T08:38:21.000Z'
-  /api/topic-tag:
+  /api/topic:
     get:
       tags:
         - 標籤、主題

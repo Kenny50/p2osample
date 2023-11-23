@@ -1558,7 +1558,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "28",
+											"value": "標題",
 											"description": "[required]",
 											"type": "text"
 										},
@@ -4233,13 +4233,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/topic-tag",
+							"raw": "{{domain}}/{{prefix}}/topic",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"{{prefix}}",
-								"topic-tag"
+								"topic"
 							]
 						}
 					},
