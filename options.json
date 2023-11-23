@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.23.1447",
-        "description": "article.topic -> article.topics"
+        "version": "11.24.0122",
+        "description": "更新 標籤、主題 文件內容"
     },
     "servers": [
         {

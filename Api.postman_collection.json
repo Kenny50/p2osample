@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -4228,35 +4210,49 @@
 			"name": "標籤、主題",
 			"item": [
 				{
-					"name": "前臺 get tags with topics",
+					"name": "前臺 get topics with tags",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/topic",
+							"raw": "{{domain}}/{{prefix}}/topic?showHiddenTag=true",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"{{prefix}}",
 								"topic"
+							],
+							"query": [
+								{
+									"key": "showHiddenTag",
+									"value": "true",
+									"description": "[ true, false ] \n若為 true 將回傳 hide 為 true 的 tag。\n預設為 false。"
+								}
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "前臺 get tags with topics",
+							"name": "前臺 get topics with tags",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/topic-tag",
+									"raw": "{{domain}}/{{prefix}}/topic?showHiddenTag=true",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
-										"topic-tag"
+										"topic"
+									],
+									"query": [
+										{
+											"key": "showHiddenTag",
+											"value": "true",
+											"description": "[ true, false ] \n若為 true 將回傳 hide 為 true 的 tag。\n預設為 false。"
+										}
 									]
 								}
 							},
@@ -4265,23 +4261,132 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"topics\": [\n            {\n                \"id\": 1,\n                \"name\": \"基礎面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\"\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"name\": \"技術面面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"產業\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"sort\": 0,\n                    \"hide\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"sort\": 1,\n                    \"hide\": false\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"總經\",\n            \"tags\": [\n                {\n                    \"id\": 16,\n                    \"name\": \"總經\",\n                    \"sort\": 0,\n                    \"hide\": false\n                },\n                {\n                    \"id\": 17,\n                    \"name\": \"美元\",\n                    \"sort\": 1,\n                    \"hide\": false\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "後台 get all topic with tag",
+					"name": "前臺 get Industry tags",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{internalPrefix}}/topic-all",
+							"raw": "{{domain}}/{{prefix}}/topic/industry-tags",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
+								"{{prefix}}",
+								"topic",
+								"industry-tags"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "前臺 get Industry tags",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/topic/industry-tags",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"topic",
+										"industry-tags"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"產業\",\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"半導體\",\n                \"sort\": 0,\n                \"hide\": false\n            },\n            {\n                \"id\": 2,\n                \"name\": \"IC 設計\",\n                \"sort\": 1,\n                \"hide\": false\n            },\n            {\n                \"id\": 3,\n                \"name\": \"車用\",\n                \"sort\": 2,\n                \"hide\": false\n            },\n            {\n                \"id\": 4,\n                \"name\": \"綠能\",\n                \"sort\": 3,\n                \"hide\": false\n            },\n            {\n                \"id\": 5,\n                \"name\": \"充電樁\",\n                \"sort\": 4,\n                \"hide\": false\n            },\n            {\n                \"id\": 6,\n                \"name\": \"AI\",\n                \"sort\": 5,\n                \"hide\": false\n            },\n            {\n                \"id\": 7,\n                \"name\": \"工具機\",\n                \"sort\": 6,\n                \"hide\": false\n            },\n            {\n                \"id\": 8,\n                \"name\": \"資安\",\n                \"sort\": 7,\n                \"hide\": false\n            },\n            {\n                \"id\": 9,\n                \"name\": \"檢測\",\n                \"sort\": 8,\n                \"hide\": false\n            },\n            {\n                \"id\": 10,\n                \"name\": \"IPC\",\n                \"sort\": 9,\n                \"hide\": false\n            },\n            {\n                \"id\": 11,\n                \"name\": \"記憶體\",\n                \"sort\": 10,\n                \"hide\": false\n            },\n            {\n                \"id\": 12,\n                \"name\": \"生技\",\n                \"sort\": 11,\n                \"hide\": false\n            },\n            {\n                \"id\": 13,\n                \"name\": \"航天軍工\",\n                \"sort\": 12,\n                \"hide\": false\n            },\n            {\n                \"id\": 14,\n                \"name\": \"導線架\",\n                \"sort\": 13,\n                \"hide\": false\n            },\n            {\n                \"id\": 15,\n                \"name\": \"電源供應器\",\n                \"sort\": 14,\n                \"hide\": false\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "後臺 get tags with topics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
 								"{{internalPrefix}}",
-								"topic-all"
+								"tag"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後臺 get tags with topics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"tag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"半導體\",\n            \"sort\": 0,\n            \"hide\": false,\n            \"topic\": {\n                \"id\": 1,\n                \"name\": \"產業\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"IC 設計\",\n            \"sort\": 1,\n            \"hide\": false,\n            \"topic\": {\n                \"id\": 1,\n                \"name\": \"產業\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"name\": \"車用\",\n            \"sort\": 2,\n            \"hide\": false,\n            \"topic\": {\n                \"id\": 1,\n                \"name\": \"產業\"\n            }\n        }\n    ]\n}\n"
+						}
+					]
+				},
+				{
+					"name": "後臺 get all topic with tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/topic",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"topic"
 							]
 						}
 					},
@@ -4292,13 +4397,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/topic-all",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/topic",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
-										"topic-all"
+										"topic"
 									]
 								}
 							},
@@ -4307,7 +4413,108 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"topics\": [\n            {\n                \"id\": 1,\n                \"name\": \"基礎面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\",\n                        \"sort\":1,\n                        \"hide\":true\n                    }\n                ]\n            },\n            {\n                \"id\": 2,\n                \"name\": \"技術面面\",\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"毛利\",\n                        \"sort\":1,\n                        \"hide\":false\n\n                    }\n                ]\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"產業\",\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"sort\": 0,\n                    \"hide\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"sort\": 1,\n                    \"hide\": false\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"name\": \"總經\",\n            \"tags\": [\n                {\n                    \"id\": 16,\n                    \"name\": \"總經\",\n                    \"sort\": 0,\n                    \"hide\": false\n                },\n                {\n                    \"id\": 17,\n                    \"name\": \"美元\",\n                    \"sort\": 1,\n                    \"hide\": false\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "tag 名稱搜尋",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/search?q=消費",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"tag",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "消費"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "tag 名稱搜尋",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/search?q=消費",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"tag",
+										"search"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "消費"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "92"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c-IqTgW530YxeHCzz9USwxxBc/UiQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 23 Nov 2023 17:08:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 24,\n            \"name\": \"消費者信心指數\"\n        },\n        {\n            \"id\": 25,\n            \"name\": \"消費者物價指數\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -4326,9 +4533,15 @@
 									"type": "text"
 								},
 								{
-									"key": "topic",
+									"key": "topicId",
 									"value": "1",
 									"description": "[required] topic 類的 id",
+									"type": "text"
+								},
+								{
+									"key": "sort",
+									"value": "5",
+									"description": "[required]",
 									"type": "text"
 								},
 								{
@@ -4336,21 +4549,16 @@
 									"value": "true",
 									"description": "[required]",
 									"type": "text"
-								},
-								{
-									"key": "",
-									"value": "",
-									"type": "text",
-									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "{{domain}}/{{internalPrefix}}/tag",
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
+								"{{prefix}}",
 								"{{internalPrefix}}",
 								"tag"
 							]
@@ -4361,20 +4569,57 @@
 							"name": "後台 新增標籤",
 							"originalRequest": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "布林通道",
+											"description": "[required] string",
+											"type": "text"
+										},
+										{
+											"key": "topicId",
+											"value": "1",
+											"description": "[required] integer",
+											"type": "text"
+										},
+										{
+											"key": "sort",
+											"value": "5",
+											"description": "[required] integer",
+											"type": "text"
+										},
+										{
+											"key": "hide",
+											"value": "true",
+											"description": "[required] boolean",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"tag"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Created",
+							"code": 201,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -4386,7 +4631,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 719,\n        \"name\": \"布林通道\",\n        \"sort\": \"5\",\n        \"hide\": true,\n        \"topicId\": \"1\"\n    }\n}"
 						},
 						{
 							"name": "topic not found",
@@ -4394,11 +4639,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"tag"
 									]
@@ -4422,29 +4668,170 @@
 					]
 				},
 				{
-					"name": "後台 刪除標籤",
+					"name": "後台 update tag",
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "id",
+									"key": "name",
+									"value": "布林通道123",
+									"description": "[required] string",
+									"type": "text"
+								},
+								{
+									"key": "topicId",
 									"value": "1",
-									"description": "[required] 標籤的 id",
+									"description": "[required] integer",
+									"type": "text"
+								},
+								{
+									"key": "sort",
+									"value": "5",
+									"description": "[required] integer",
+									"type": "text"
+								},
+								{
+									"key": "hide",
+									"value": "true",
+									"description": "[required] boolean",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{domain}}/{{internalPrefix}}/tag",
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/:id",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
+								"{{prefix}}",
 								"{{internalPrefix}}",
-								"tag"
+								"tag",
+								":id"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "719"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update tag",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "布林通道123",
+											"description": "[required] string",
+											"type": "text"
+										},
+										{
+											"key": "topicId",
+											"value": "1",
+											"description": "[required] integer",
+											"type": "text"
+										},
+										{
+											"key": "sort",
+											"value": "5",
+											"description": "[required] integer",
+											"type": "text"
+										},
+										{
+											"key": "hide",
+											"value": "true",
+											"description": "[required] boolean",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{internalPrefix}}/tag/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{internalPrefix}}",
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 719,\n        \"name\": \"布林通道123\",\n        \"sort\": \"5\",\n        \"hide\": true,\n        \"topicId\": \"1\",\n        \"topic\": {\n            \"id\": 1,\n            \"name\": \"產業\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 刪除標籤",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"tag",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "719"
+								}
 							]
 						}
 					},
@@ -4456,25 +4843,24 @@
 								"header": [],
 								"body": {
 									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "id",
-											"value": "1",
-											"description": "標籤的 id",
-											"type": "text"
-										}
-									]
+									"formdata": []
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/tag",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/:id",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
-										"tag"
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -4500,23 +4886,24 @@
 								"header": [],
 								"body": {
 									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "id",
-											"value": "1",
-											"description": "標籤的 id",
-											"type": "text"
-										}
-									]
+									"formdata": []
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/tag/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
-										"tag"
+										"tag",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
 									]
 								}
 							},
@@ -4533,12 +4920,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"not found\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"code\": 404,\n        \"name\": \"NotFoundError\",\n        \"message\": \"無法獲取 tag 資源\",\n        \"field\": \"tag\"\n    }\n}"
 						}
 					]
 				},
 				{
-					"name": "後台  edit tags display setting",
+					"name": "[未完成]後台  edit tags display setting",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -4621,14 +5008,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/edit-tags-display-setting",
-									"protocol": "http",
+									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{internalPrefix}}",
 										"edit-tags-display-setting"
 									]
 								}
@@ -4647,106 +5032,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "後台 update tag",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "new name",
-									"description": "[required]",
-									"type": "text"
-								},
-								{
-									"key": "hide",
-									"value": "true",
-									"description": "[required] boolean",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{domain}}/{{internalPrefix}}/tag/:id",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{internalPrefix}}",
-								"tag",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "update tag",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "new name",
-											"description": "[required]",
-											"type": "text"
-										},
-										{
-											"key": "hide",
-											"value": "true",
-											"description": "[required] boolean",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://localhost:3020/api/tag/:id",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3020",
-									"path": [
-										"api",
-										"tag",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": ""
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\":\"success\"\n    }\n}"
 						}
 					]
 				}
@@ -4828,14 +5113,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/news?tag=123",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"news"
 									],
 									"query": [
@@ -4947,14 +5230,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/query?q=你好&page=0&size=30&topic=1&type=article",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1&type=article",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"query"
 									],
@@ -5050,14 +5331,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"author"
 									],
@@ -5153,14 +5432,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"tag"
 									],
@@ -5235,12 +5512,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
@@ -5731,6 +6006,41 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "youtube",
+			"item": [
+				{
+					"name": "get youtube paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/youtube?page=0&size=30",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"youtube"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[required]"
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -5771,7 +6081,7 @@
 		},
 		{
 			"key": "internalPrefix",
-			"value": "api",
+			"value": "dashboard",
 			"type": "string"
 		}
 	]

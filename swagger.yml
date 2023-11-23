@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: article.topic -> article.topics
-  version: 11.23.1447
+  description: 更新 標籤、主題 文件內容
+  version: 11.24.0122
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -64,6 +64,7 @@ tags:
       0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
   - name: 訂閱
   - name: 試閱
+  - name: youtube
 paths:
   /api/login/google:
     post:
@@ -596,109 +597,6 @@ paths:
                   type: 1
                   isLimited: true
                   source: null
-    put:
-      tags:
-        - 後台 > 文章
-      summary: update article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - title
-                - fullContent
-                - rawContent
-                - isLimited
-                - isDraft
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: 你好
-                fullContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                rawContent:
-                  type: string
-                  description: ''
-                  example: >-
-                    <h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
-                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
-                    width="500"
-                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
-                clippedContent:
-                  type: string
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                topics[0]:
-                  type: integer
-                  example: '28'
-                topics[1]:
-                  type: integer
-                  example: '30'
-                tags[0]:
-                  type: integer
-                  example: '188'
-                tags[1]:
-                  type: integer
-                  example: '200'
-                isLimited:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                isDraft:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] article id'
-          example: '27'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  id: 123
-    delete:
-      tags:
-        - 後台 > 文章
-      summary: delete article by id
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] article id'
-          example: '27'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  status: success
   /api/podcast/{id}:
     get:
       tags:
@@ -818,85 +716,6 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
-    post:
-      tags:
-        - 後台 > 文章
-      summary: create an article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - title
-                - fullContent
-                - rawContent
-                - clippedContent
-                - topics[0]
-                - topics[1]
-                - isLimited
-                - isDraft
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: 標題
-                fullContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                rawContent:
-                  type: string
-                  description: article.html, podcast.description
-                  example: >-
-                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
-                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
-                    width="500"
-                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
-                clippedContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                topics[0]:
-                  type: integer
-                  description: ''
-                  example: '27'
-                topics[1]:
-                  type: integer
-                  description: ''
-                  example: '30'
-                tags[0]:
-                  type: integer
-                  example: '179'
-                tags[1]:
-                  type: integer
-                  example: '200'
-                isLimited:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                isDraft:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  id: 123
   /api/podcast:
     get:
       tags:
@@ -1049,6 +868,190 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
+  /dashboard/article:
+    post:
+      tags:
+        - 後台 > 文章
+      summary: create an article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - fullContent
+                - rawContent
+                - clippedContent
+                - topics[0]
+                - topics[1]
+                - isLimited
+                - isDraft
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 標題
+                fullContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                rawContent:
+                  type: string
+                  description: article.html, podcast.description
+                  example: >-
+                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                clippedContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                topics[0]:
+                  type: integer
+                  description: ''
+                  example: '27'
+                topics[1]:
+                  type: integer
+                  description: ''
+                  example: '30'
+                tags[0]:
+                  type: integer
+                  example: '179'
+                tags[1]:
+                  type: integer
+                  example: '200'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                isDraft:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 123
+  /dashboard/article/{id}:
+    put:
+      tags:
+        - 後台 > 文章
+      summary: update article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - fullContent
+                - rawContent
+                - isLimited
+                - isDraft
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 你好
+                fullContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                rawContent:
+                  type: string
+                  description: ''
+                  example: >-
+                    <h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
+                clippedContent:
+                  type: string
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                topics[0]:
+                  type: integer
+                  example: '28'
+                topics[1]:
+                  type: integer
+                  example: '30'
+                tags[0]:
+                  type: integer
+                  example: '188'
+                tags[1]:
+                  type: integer
+                  example: '200'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                isDraft:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '27'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 123
+    delete:
+      tags:
+        - 後台 > 文章
+      summary: delete article by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '27'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  status: success
   /api/image:
     post:
       tags:
@@ -1091,7 +1094,7 @@ paths:
                     creatorId: 8
                     updatedAt: '2023-11-20T08:04:09.443Z'
                     createdAt: '2023-11-20T08:04:09.443Z'
-  /api/users:
+  /dashboard/users:
     get:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1128,7 +1131,7 @@ paths:
               example:
                 data:
                   error: permission denied
-  /api/user/{id}:
+  /dashboard/user/{id}:
     get:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1247,7 +1250,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /api/user/{id}/update-password:
+  /dashboard/user/{id}/update-password:
     post:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1538,7 +1541,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /api/user/update-information:
+  /dashboard/user/update-information:
     post:
       tags:
         - 後台 > 帳戶
@@ -1562,7 +1565,7 @@ paths:
               example:
                 data:
                   message: success
-  /api/user/upload-avatar:
+  /dashboard/user/upload-avatar:
     post:
       tags:
         - 後台 > 帳戶
@@ -1587,7 +1590,7 @@ paths:
               example:
                 data:
                   url: https://path/to/avatar
-  /api/user/update-password:
+  /dashboard/user/update-password:
     post:
       tags:
         - 後台 > 帳戶
@@ -2319,7 +2322,17 @@ paths:
     get:
       tags:
         - 標籤、主題
-      summary: 前臺 get tags with topics
+      summary: 前臺 get topics with tags
+      parameters:
+        - name: showHiddenTag
+          in: query
+          schema:
+            type: boolean
+          description: |-
+            [ true, false ] 
+            若為 true 將回傳 hide 為 true 的 tag。
+            預設為 false。
+          example: 'true'
       responses:
         '200':
           description: OK
@@ -2329,22 +2342,33 @@ paths:
                 type: object
               example:
                 data:
-                  topics:
-                    - id: 1
-                      name: 基礎面
-                      tags:
-                        - id: 1
-                          name: 毛利
-                    - id: 2
-                      name: 技術面面
-                      tags:
-                        - id: 1
-                          name: 毛利
-  /api/topic-all:
+                  - id: 1
+                    name: 產業
+                    tags:
+                      - id: 1
+                        name: 半導體
+                        sort: 0
+                        hide: false
+                      - id: 2
+                        name: IC 設計
+                        sort: 1
+                        hide: false
+                  - id: 2
+                    name: 總經
+                    tags:
+                      - id: 16
+                        name: 總經
+                        sort: 0
+                        hide: false
+                      - id: 17
+                        name: 美元
+                        sort: 1
+                        hide: false
+  /api/topic/industry-tags:
     get:
       tags:
         - 標籤、主題
-      summary: 後台 get all topic with tag
+      summary: 前臺 get Industry tags
       responses:
         '200':
           description: OK
@@ -2354,22 +2378,106 @@ paths:
                 type: object
               example:
                 data:
-                  topics:
+                  id: 1
+                  name: 產業
+                  tags:
                     - id: 1
-                      name: 基礎面
-                      tags:
-                        - id: 1
-                          name: 毛利
-                          sort: 1
-                          hide: true
+                      name: 半導體
+                      sort: 0
+                      hide: false
                     - id: 2
-                      name: 技術面面
-                      tags:
-                        - id: 1
-                          name: 毛利
-                          sort: 1
-                          hide: false
-  /api/tag:
+                      name: IC 設計
+                      sort: 1
+                      hide: false
+                    - id: 3
+                      name: 車用
+                      sort: 2
+                      hide: false
+                    - id: 4
+                      name: 綠能
+                      sort: 3
+                      hide: false
+                    - id: 5
+                      name: 充電樁
+                      sort: 4
+                      hide: false
+                    - id: 6
+                      name: AI
+                      sort: 5
+                      hide: false
+                    - id: 7
+                      name: 工具機
+                      sort: 6
+                      hide: false
+                    - id: 8
+                      name: 資安
+                      sort: 7
+                      hide: false
+                    - id: 9
+                      name: 檢測
+                      sort: 8
+                      hide: false
+                    - id: 10
+                      name: IPC
+                      sort: 9
+                      hide: false
+                    - id: 11
+                      name: 記憶體
+                      sort: 10
+                      hide: false
+                    - id: 12
+                      name: 生技
+                      sort: 11
+                      hide: false
+                    - id: 13
+                      name: 航天軍工
+                      sort: 12
+                      hide: false
+                    - id: 14
+                      name: 導線架
+                      sort: 13
+                      hide: false
+                    - id: 15
+                      name: 電源供應器
+                      sort: 14
+                      hide: false
+  /api/dashboard/tag:
+    get:
+      tags:
+        - 標籤、主題
+      summary: 後臺 get tags with topics
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: 1
+                    name: 半導體
+                    sort: 0
+                    hide: false
+                    topic:
+                      id: 1
+                      name: 產業
+                  - id: 2
+                    name: IC 設計
+                    sort: 1
+                    hide: false
+                    topic:
+                      id: 1
+                      name: 產業
+                  - id: 3
+                    name: 車用
+                    sort: 2
+                    hide: false
+                    topic:
+                      id: 1
+                      name: 產業
     post:
       tags:
         - 標籤、主題
@@ -2381,26 +2489,29 @@ paths:
               type: object
               required:
                 - name
-                - topic
+                - topicId
+                - sort
                 - hide
               properties:
                 name:
                   type: string
                   description: ''
                   example: 布林通道
-                topic:
+                topicId:
                   type: integer
                   description: topic 類的 id
                   example: '1'
+                sort:
+                  type: integer
+                  description: ''
+                  example: '5'
                 hide:
                   type: boolean
                   description: ''
                   example: 'true'
-                '':
-                  type: string
       responses:
-        '200':
-          description: OK
+        '201':
+          description: Created
           headers:
             Content-Type:
               schema:
@@ -2412,7 +2523,11 @@ paths:
                 type: object
               example:
                 data:
-                  message: success
+                  id: 719
+                  name: 布林通道
+                  sort: '5'
+                  hide: true
+                  topicId: '1'
         '404':
           description: Not Found
           headers:
@@ -2427,10 +2542,177 @@ paths:
               example:
                 data:
                   message: not found
+  /api/dashboard/topic:
+    get:
+      tags:
+        - 標籤、主題
+      summary: 後臺 get all topic with tag
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: 1
+                    name: 產業
+                    tags:
+                      - id: 1
+                        name: 半導體
+                        sort: 0
+                        hide: false
+                      - id: 2
+                        name: IC 設計
+                        sort: 1
+                        hide: false
+                  - id: 2
+                    name: 總經
+                    tags:
+                      - id: 16
+                        name: 總經
+                        sort: 0
+                        hide: false
+                      - id: 17
+                        name: 美元
+                        sort: 1
+                        hide: false
+  /api/dashboard/tag/search:
+    get:
+      tags:
+        - 標籤、主題
+      summary: tag 名稱搜尋
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+          example: 消費
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '92'
+            ETag:
+              schema:
+                type: string
+                example: W/"5c-IqTgW530YxeHCzz9USwxxBc/UiQ"
+            Date:
+              schema:
+                type: string
+                example: Thu, 23 Nov 2023 17:08:42 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: 24
+                    name: 消費者信心指數
+                  - id: 25
+                    name: 消費者物價指數
+  /api/dashboard/tag/{id}:
+    put:
+      tags:
+        - 標籤、主題
+      summary: 後台 update tag
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+                - topicId
+                - sort
+                - hide
+              properties:
+                name:
+                  type: string
+                  description: string
+                  example: 布林通道123
+                topicId:
+                  type: integer
+                  description: integer
+                  example: '1'
+                sort:
+                  type: integer
+                  description: integer
+                  example: '5'
+                hide:
+                  type: boolean
+                  description: boolean
+                  example: 'true'
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '719'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 719
+                  name: 布林通道123
+                  sort: '5'
+                  hide: true
+                  topicId: '1'
+                  topic:
+                    id: 1
+                    name: 產業
     delete:
       tags:
         - 標籤、主題
       summary: 後台 刪除標籤
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '719'
       responses:
         '200':
           description: OK
@@ -2459,12 +2741,15 @@ paths:
                 type: object
               example:
                 data:
-                  message: not found
-  /api/edit-tags-display-setting:
+                  code: 404
+                  name: NotFoundError
+                  message: 無法獲取 tag 資源
+                  field: tag
+  /dashboard/edit-tags-display-setting:
     post:
       tags:
         - 標籤、主題
-      summary: 後台  edit tags display setting
+      summary: '[未完成]後台  edit tags display setting'
       requestBody:
         content:
           multipart/form-data:
@@ -2498,49 +2783,6 @@ paths:
                 tags[2][hide]:
                   type: boolean
                   example: 'false'
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: success
-  /api/tag/{id}:
-    put:
-      tags:
-        - 標籤、主題
-      summary: 後台 update tag
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - name
-                - hide
-              properties:
-                name:
-                  type: string
-                  description: ''
-                  example: new name
-                hide:
-                  type: boolean
-                  description: boolean
-                  example: 'true'
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: OK
@@ -3321,6 +3563,31 @@ paths:
       summary: 取消訂閱
       requestBody:
         content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/youtube:
+    get:
+      tags:
+        - youtube
+      summary: get youtube paging
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '30'
       responses:
         '200':
           description: Successful response
