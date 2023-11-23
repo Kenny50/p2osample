@@ -1581,24 +1581,24 @@
 											"type": "text"
 										},
 										{
-											"key": "topics[]",
+											"key": "topics[0]",
 											"value": "27",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
-											"key": "topics[]",
+											"key": "topics[1]",
 											"value": "30",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
-											"key": "tags[]",
+											"key": "tags[0]",
 											"value": "179",
 											"type": "text"
 										},
 										{
-											"key": "tags[]",
+											"key": "tags[1]",
 											"value": "200",
 											"type": "text"
 										},

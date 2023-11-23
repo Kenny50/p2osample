@@ -832,8 +832,8 @@ paths:
                 - fullContent
                 - rawContent
                 - clippedContent
-                - topics[]
-                - topics[]
+                - topics[0]
+                - topics[1]
                 - isLimited
                 - isDraft
               properties:
@@ -865,11 +865,18 @@ paths:
                   example: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                topics[]:
+                topics[0]:
+                  type: integer
+                  description: ''
+                  example: '27'
+                topics[1]:
                   type: integer
                   description: ''
                   example: '30'
-                tags[]:
+                tags[0]:
+                  type: integer
+                  example: '179'
+                tags[1]:
                   type: integer
                   example: '200'
                 isLimited:
