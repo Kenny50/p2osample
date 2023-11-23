@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.21.1627",
-        "description": "三個平台的 podcast 資料 api，前台、後台頭像上傳"
+        "version": "11.23.1447",
+        "description": "article.topic -> article.topics"
     },
     "servers": [
         {

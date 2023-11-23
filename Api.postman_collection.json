@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -84,12 +84,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/google",
+									"raw": "http://localhost:3020/api/auth/google",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"google"
 									]
@@ -209,12 +211,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"raw": "http://localhost:3020/api/auth/line",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"line"
 									]
@@ -339,12 +343,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/refresh-token",
+									"raw": "http://localhost:3020/api/refresh-token",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"refresh-token"
 									]
 								}
@@ -429,12 +435,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"raw": "http://localhost:3020/api/member/update-information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"update-information"
 									]
@@ -522,12 +530,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"raw": "http://localhost:3020/api/member/sent-validate-email",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"sent-validate-email"
 									]
@@ -614,12 +624,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/information",
+									"raw": "http://localhost:3020/api/member/information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"information"
 									]
@@ -668,12 +680,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"raw": "http://localhost:3020/api/member/delete-account",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"delete-account"
 									]
@@ -777,12 +791,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -845,12 +861,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -1190,7 +1208,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "12",
 									"description": "[required] article id"
 								}
 							]
@@ -1224,7 +1242,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topic\":{\n            \"name\":\"基本面\",\n            \"id\":1\n        },\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":null,\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
 						}
 					]
 				},
@@ -1246,7 +1264,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "11",
 									"description": "[required] podcast id, not the one from spotify"
 								}
 							]
@@ -1292,7 +1310,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/article?topic=3&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -1303,16 +1321,18 @@
 							"query": [
 								{
 									"key": "topic",
-									"value": "0",
-									"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
+									"value": "3",
+									"description": "[required]"
 								},
 								{
 									"key": "page",
-									"value": "0"
+									"value": "0",
+									"description": "[required]"
 								},
 								{
 									"key": "size",
-									"value": "30"
+									"value": "30",
+									"description": "[required]"
 								}
 							]
 						},
@@ -1478,7 +1498,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "123",
+									"value": "11",
 									"description": "[required] article id"
 								}
 							]
@@ -1538,7 +1558,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "你好，世界",
+											"value": "28",
 											"description": "[required]",
 											"type": "text"
 										},
@@ -1551,7 +1571,7 @@
 										{
 											"key": "rawContent",
 											"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
-											"description": "[required] 一般文章上傳，請用 html 格式",
+											"description": "[required] article.html, podcast.description",
 											"type": "text"
 										},
 										{
@@ -1561,19 +1581,25 @@
 											"type": "text"
 										},
 										{
-											"key": "topic",
+											"key": "topics[]",
 											"value": "27",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
-											"key": "tags[]",
-											"value": "1",
+											"key": "topics[]",
+											"value": "30",
+											"description": "[required]",
 											"type": "text"
 										},
 										{
 											"key": "tags[]",
-											"value": "2",
+											"value": "179",
+											"type": "text"
+										},
+										{
+											"key": "tags[]",
+											"value": "200",
 											"type": "text"
 										},
 										{
@@ -1682,7 +1708,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "你好，世界",
+											"value": "你好",
 											"description": "[required]",
 											"type": "text"
 										},
@@ -1704,19 +1730,23 @@
 											"type": "text"
 										},
 										{
-											"key": "topic",
-											"value": "27",
-											"description": "[required]",
+											"key": "topics[0]",
+											"value": "28",
 											"type": "text"
 										},
 										{
-											"key": "tags[]",
-											"value": "1",
+											"key": "topics[1]",
+											"value": "30",
 											"type": "text"
 										},
 										{
-											"key": "tags[]",
-											"value": "2",
+											"key": "tags[0]",
+											"value": "188",
+											"type": "text"
+										},
+										{
+											"key": "tags[1]",
+											"value": "200",
 											"type": "text"
 										},
 										{
@@ -1746,7 +1776,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9",
+											"value": "27",
 											"description": "[required] article id"
 										}
 									]
@@ -1780,19 +1810,25 @@
 													"type": "text"
 												},
 												{
-													"key": "topic",
+													"key": "topics[]",
 													"value": "1",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "tags",
-													"value": "1",
+													"key": "topics[]",
+													"value": "2",
+													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "tags",
-													"value": "2",
+													"key": "tags[]",
+													"value": "11",
+													"type": "text"
+												},
+												{
+													"key": "tags[]",
+													"value": "22",
 													"type": "text"
 												},
 												{
@@ -1855,7 +1891,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9",
+											"value": "27",
 											"description": "[required] article id"
 										}
 									]
@@ -2705,13 +2741,13 @@
 									"formdata": [
 										{
 											"key": "account",
-											"value": "Kenny555",
+											"value": "Rick88888",
 											"description": "[required] 最少六位英數",
 											"type": "text"
 										},
 										{
 											"key": "password",
-											"value": "Kenny555",
+											"value": "hashpassword",
 											"description": "[required] 最少六位英數",
 											"type": "text"
 										}
@@ -3632,6 +3668,529 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "評等",
+					"item": [
+						{
+							"name": "get all rate",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/rate",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"rate"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get all rate",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/rate",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"rate"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 133,\n        \"code\": \"SB\",\n        \"name\": \"強力買進\",\n        \"order\": 1\n    },\n    {\n        \"id\": 134,\n        \"code\": \"B\",\n        \"name\": \"買進\",\n        \"order\": 2\n    },\n    {\n        \"id\": 135,\n        \"code\": \"IH\",\n        \"name\": \"增加持股\",\n        \"order\": 3\n    },\n    {\n        \"id\": 136,\n        \"code\": \"OP\",\n        \"name\": \"優於大盤\",\n        \"order\": 4\n    },\n    {\n        \"id\": 137,\n        \"code\": \"N\",\n        \"name\": \"中立\",\n        \"order\": 5\n    },\n    {\n        \"id\": 138,\n        \"code\": \"T\",\n        \"name\": \"區間操作\",\n        \"order\": 6\n    },\n    {\n        \"id\": 139,\n        \"code\": \"H\",\n        \"name\": \"持有\",\n        \"order\": 7\n    },\n    {\n        \"id\": 140,\n        \"code\": \"R\",\n        \"name\": \"調降持股\",\n        \"order\": 8\n    },\n    {\n        \"id\": 141,\n        \"code\": \"OW\",\n        \"name\": \"Overweight\",\n        \"order\": 9\n    },\n    {\n        \"id\": 142,\n        \"code\": \"UTB\",\n        \"name\": \"Upgrade to Buy\",\n        \"order\": 10\n    },\n    {\n        \"id\": 143,\n        \"code\": \"UP\",\n        \"name\": \"Underperform\",\n        \"order\": 11\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "create new rate",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "強力買進",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "SB",
+											"type": "text"
+										},
+										{
+											"key": "order",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/rate",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"rate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get rate by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/rate/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"rate",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "133",
+											"description": "[required]"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "公司",
+					"item": [
+						{
+							"name": "get all company",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/company-all",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"company-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get company paging",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/company?page=0&size=30",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"company"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get company paging",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/company?page=0&size=30",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"company"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "0",
+													"description": "[required]"
+												},
+												{
+													"key": "size",
+													"value": "30",
+													"description": "[required]"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 1788,\n    \"data\": [\n        {\n            \"id\": 10729,\n            \"code\": \"1101\",\n            \"name\": \"台泥\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10730,\n            \"code\": \"1102\",\n            \"name\": \"亞泥\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10731,\n            \"code\": \"1103\",\n            \"name\": \"嘉泥\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10732,\n            \"code\": \"1104\",\n            \"name\": \"環泥\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10733,\n            \"code\": \"1108\",\n            \"name\": \"幸福\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10734,\n            \"code\": \"1109\",\n            \"name\": \"信大\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10735,\n            \"code\": \"1110\",\n            \"name\": \"東泥\",\n            \"industry\": 644\n        },\n        {\n            \"id\": 10736,\n            \"code\": \"1201\",\n            \"name\": \"味全\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10737,\n            \"code\": \"1203\",\n            \"name\": \"味王\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10738,\n            \"code\": \"1210\",\n            \"name\": \"大成\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10739,\n            \"code\": \"1213\",\n            \"name\": \"大飲\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10740,\n            \"code\": \"1215\",\n            \"name\": \"卜蜂\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10741,\n            \"code\": \"1216\",\n            \"name\": \"統一\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10742,\n            \"code\": \"1217\",\n            \"name\": \"愛之味\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10743,\n            \"code\": \"1218\",\n            \"name\": \"泰山\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10744,\n            \"code\": \"1219\",\n            \"name\": \"福壽\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10745,\n            \"code\": \"1220\",\n            \"name\": \"台榮\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10746,\n            \"code\": \"1225\",\n            \"name\": \"福懋油\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10747,\n            \"code\": \"1227\",\n            \"name\": \"佳格\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10748,\n            \"code\": \"1229\",\n            \"name\": \"聯華\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10749,\n            \"code\": \"1231\",\n            \"name\": \"聯華食\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10750,\n            \"code\": \"1232\",\n            \"name\": \"大統益\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10751,\n            \"code\": \"1233\",\n            \"name\": \"天仁\",\n            \"industry\": 648\n        },\n        {\n            \"id\": 10752,\n            \"code\": \"1234\",\n            \"name\": \"黑松\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10753,\n            \"code\": \"1235\",\n            \"name\": \"興泰\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10754,\n            \"code\": \"1236\",\n            \"name\": \"宏亞\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10755,\n            \"code\": \"1240\",\n            \"name\": \"茂生農經\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10756,\n            \"code\": \"1256\",\n            \"name\": \"鮮活果汁-KY\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10757,\n            \"code\": \"1258\",\n            \"name\": \"其祥-KY\",\n            \"industry\": null\n        },\n        {\n            \"id\": 10758,\n            \"code\": \"1259\",\n            \"name\": \"安心\",\n            \"industry\": 648\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "create new company",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "台泥",
+											"description": "[required] 公司名稱",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "1101",
+											"description": "[required] 股票代碼",
+											"type": "text"
+										},
+										{
+											"key": "industry",
+											"value": "1",
+											"description": "[required] 產業 id ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/company",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"company"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get company by id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/company/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"company",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10729"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get company by id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/company/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"company",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 10729,\n    \"code\": \"1101\",\n    \"name\": \"台泥\",\n    \"industry\": 644\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "產業",
+					"item": [
+						{
+							"name": "get all industrty",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/industry",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"industry"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get all industrty",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/industry",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"industry"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 613,\n        \"name\": \"半導體\"\n    },\n    {\n        \"id\": 614,\n        \"name\": \"IC設計\"\n    },\n    {\n        \"id\": 615,\n        \"name\": \"車用\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "建立新產業",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "博弈",
+											"description": "[required] 產業名稱",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/api/industry",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"industry"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "建立新產業",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "博弈",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/api/industry",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"industry"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 664,\n    \"name\": \"博弈\",\n    \"updatedAt\": \"2023-11-22T18:40:47.277Z\",\n    \"createdAt\": \"2023-11-22T18:40:47.277Z\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get industry by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/industry/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"industry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "660",
+											"description": "[required] 產業id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get industry by id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/industry/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"industry",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "660",
+													"description": "[required] 產業id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 660,\n    \"name\": \"音訊\",\n    \"createdAt\": \"2023-10-30T08:38:21.000Z\",\n    \"updatedAt\": \"2023-10-30T08:38:21.000Z\"\n}"
+								}
+							]
+						}
+					]
 				}
 			],
 			"auth": {
@@ -3907,12 +4466,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/tag",
+									"raw": "http://localhost:3020/api/tag",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"tag"
 									]
 								}
@@ -4060,12 +4621,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
+									"raw": "http://localhost:3020/api/edit-tags-display-setting",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"edit-tags-display-setting"
 									]
 								}
@@ -4151,12 +4714,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/tag/:id",
+									"raw": "http://localhost:3020/api/tag/:id",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"tag",
 										":id"
 									],
@@ -4214,12 +4779,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/banner",
+									"raw": "http://localhost:3020/api/banner",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"banner"
 									]
 								}
@@ -4229,7 +4796,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"基本面\",\n                \"id\": 1\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": true,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"topic\": {\n                \"name\": \"總經\",\n                \"id\": 2\n            },\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 1\n            },\n            \"tags\": [\n                {\n                    \"name\": \"毛利\",\n                    \"id\": 1\n                }\n            ],\n            \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": \"https://path/to/image\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": 1\n        }\n    ]\n}\n"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 28,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"28\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [],\n            \"publishDate\": \"2023-11-23T05:54:35.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 25,\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"title\": \"你好\",\n            \"topics\": [\n                {\n                    \"id\": 28,\n                    \"name\": \"籌碼\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 188,\n                    \"name\": \"IPC\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T04:13:01.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 19,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"19\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:02:16.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 18,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"18\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 188,\n                    \"name\": \"IPC\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:01:18.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 17,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"17\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:01:02.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -4261,12 +4828,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/news?tag=123",
+									"raw": "http://localhost:3020/api/news?tag=123",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"news"
 									],
 									"query": [
@@ -4338,7 +4907,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=手&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=總經&page=0&size=30&topic=1",
 							"host": [
 								"{{domain}}"
 							],
@@ -4350,7 +4919,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "手",
+									"value": "總經",
 									"description": "[required]"
 								},
 								{
@@ -4365,7 +4934,7 @@
 								},
 								{
 									"key": "topic",
-									"value": "0",
+									"value": "1",
 									"description": "[required]"
 								}
 							]
@@ -4378,12 +4947,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "http://localhost:3020/api/search/query?q=你好&page=0&size=30&topic=1&type=article",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"query"
 									],
@@ -4439,7 +5010,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/author?author=1&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/author?author=1&page=0&size=30&topic=1",
 							"host": [
 								"{{domain}}"
 							],
@@ -4466,7 +5037,7 @@
 								},
 								{
 									"key": "topic",
-									"value": "0",
+									"value": "1",
 									"description": "[required]"
 								}
 							]
@@ -4479,12 +5050,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"author"
 									],
@@ -4540,7 +5113,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/tag?tag=222&page=0&size=30&topic=4",
 							"host": [
 								"{{domain}}"
 							],
@@ -4552,7 +5125,7 @@
 							"query": [
 								{
 									"key": "tag",
-									"value": "1",
+									"value": "222",
 									"description": "[required] tag id"
 								},
 								{
@@ -4567,7 +5140,7 @@
 								},
 								{
 									"key": "topic",
-									"value": "0",
+									"value": "4",
 									"description": "[required]"
 								}
 							]
@@ -4580,12 +5153,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"tag"
 									],
@@ -4660,10 +5235,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/latest-plan",
+									"raw": "http://localhost:3020/api/subscription/latest-plan",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
 										"api",
 										"subscription",

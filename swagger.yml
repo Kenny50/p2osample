@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 三個平台的 podcast 資料 api，前台、後台頭像上傳
-  version: 11.21.1627
+  description: article.topic -> article.topics
+  version: 11.23.1447
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -42,6 +42,9 @@ tags:
   - name: 後台 > 試閱
   - name: 後台 > 公司群組
   - name: 後台 > podcast
+  - name: 後台 > 評等
+  - name: 後台 > 公司
+  - name: 後台 > 產業
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -563,7 +566,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '1'
+          example: '12'
       responses:
         undefined:
           content:
@@ -577,9 +580,9 @@ paths:
                   content: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                  topic:
-                    name: 基本面
-                    id: 1
+                  topics:
+                    - name: 基本面
+                      id: 1
                   author:
                     name: Rick
                     id: 1
@@ -587,7 +590,9 @@ paths:
                     - name: 毛利
                       id: 1
                   publishDate: '2023-05-02T00:00:00.000Z'
-                  previewImage: null
+                  previewImage:
+                    id: 1
+                    path: path
                   type: 1
                   isLimited: true
                   source: null
@@ -604,14 +609,13 @@ paths:
                 - title
                 - fullContent
                 - rawContent
-                - topic
                 - isLimited
                 - isDraft
               properties:
                 title:
                   type: string
                   description: ''
-                  example: 你好，世界
+                  example: 你好
                 fullContent:
                   type: string
                   description: json stringtify
@@ -635,13 +639,18 @@ paths:
                   example: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                topic:
+                topics[0]:
                   type: integer
-                  description: ''
-                  example: '27'
-                tags[]:
+                  example: '28'
+                topics[1]:
                   type: integer
-                  example: '2'
+                  example: '30'
+                tags[0]:
+                  type: integer
+                  example: '188'
+                tags[1]:
+                  type: integer
+                  example: '200'
                 isLimited:
                   type: boolean
                   description: ''
@@ -657,7 +666,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '9'
+          example: '27'
       responses:
         '200':
           description: OK
@@ -679,7 +688,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '9'
+          example: '27'
       responses:
         '200':
           description: OK
@@ -702,7 +711,7 @@ paths:
             type: integer
           required: true
           description: '[required] podcast id, not the one from spotify'
-          example: '1'
+          example: '11'
       responses:
         '200':
           description: OK
@@ -745,22 +754,22 @@ paths:
           in: query
           schema:
             type: integer
-          description: |-
-            不傳 -> 全部
-            1 -> 基本面（基本面、總經）
-            2 -> 技術面
-            3 -> 籌碼面
-            4 -> 其他
-          example: '0'
+          required: true
+          description: ''
+          example: '3'
         - name: page
           in: query
           schema:
             type: integer
+          required: true
+          description: ''
           example: '0'
         - name: size
           in: query
           schema:
             type: integer
+          required: true
+          description: ''
           example: '30'
       responses:
         '200':
@@ -823,14 +832,15 @@ paths:
                 - fullContent
                 - rawContent
                 - clippedContent
-                - topic
+                - topics[]
+                - topics[]
                 - isLimited
                 - isDraft
               properties:
                 title:
-                  type: string
+                  type: integer
                   description: ''
-                  example: 你好，世界
+                  example: '28'
                 fullContent:
                   type: string
                   description: json stringtify
@@ -839,7 +849,7 @@ paths:
                     this editor instance exports its content as JSON."}]}]}
                 rawContent:
                   type: string
-                  description: 一般文章上傳，請用 html 格式
+                  description: article.html, podcast.description
                   example: >-
                     <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
                     src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
@@ -855,13 +865,13 @@ paths:
                   example: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                topic:
+                topics[]:
                   type: integer
                   description: ''
-                  example: '27'
+                  example: '30'
                 tags[]:
                   type: integer
-                  example: '2'
+                  example: '200'
                 isLimited:
                   type: boolean
                   description: ''
@@ -987,7 +997,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '123'
+          example: '11'
       responses:
         '200':
           description: OK
@@ -1402,11 +1412,11 @@ paths:
                 account:
                   type: string
                   description: 最少六位英數
-                  example: Kenny555
+                  example: Rick88888
                 password:
                   type: string
                   description: 最少六位英數
-                  example: Kenny555
+                  example: hashpassword
       responses:
         '200':
           description: OK
@@ -1873,6 +1883,431 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/rate:
+    get:
+      tags:
+        - 後台 > 評等
+      summary: get all rate
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: 133
+                  code: SB
+                  name: 強力買進
+                  order: 1
+                - id: 134
+                  code: B
+                  name: 買進
+                  order: 2
+                - id: 135
+                  code: IH
+                  name: 增加持股
+                  order: 3
+                - id: 136
+                  code: OP
+                  name: 優於大盤
+                  order: 4
+                - id: 137
+                  code: 'N'
+                  name: 中立
+                  order: 5
+                - id: 138
+                  code: T
+                  name: 區間操作
+                  order: 6
+                - id: 139
+                  code: H
+                  name: 持有
+                  order: 7
+                - id: 140
+                  code: R
+                  name: 調降持股
+                  order: 8
+                - id: 141
+                  code: OW
+                  name: Overweight
+                  order: 9
+                - id: 142
+                  code: UTB
+                  name: Upgrade to Buy
+                  order: 10
+                - id: 143
+                  code: UP
+                  name: Underperform
+                  order: 11
+    post:
+      tags:
+        - 後台 > 評等
+      summary: create new rate
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 強力買進
+                code:
+                  type: string
+                  example: SB
+                order:
+                  type: integer
+                  example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/rate/{id}:
+    get:
+      tags:
+        - 後台 > 評等
+      summary: get rate by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required]'
+          example: '133'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/company-all:
+    get:
+      tags:
+        - 後台 > 公司
+      summary: get all company
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/company:
+    get:
+      tags:
+        - 後台 > 公司
+      summary: get company paging
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '30'
+      responses:
+        undefined:
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 0
+                pageSize: 30
+                totalCount: 1788
+                data:
+                  - id: 10729
+                    code: '1101'
+                    name: 台泥
+                    industry: 644
+                  - id: 10730
+                    code: '1102'
+                    name: 亞泥
+                    industry: 644
+                  - id: 10731
+                    code: '1103'
+                    name: 嘉泥
+                    industry: 644
+                  - id: 10732
+                    code: '1104'
+                    name: 環泥
+                    industry: 644
+                  - id: 10733
+                    code: '1108'
+                    name: 幸福
+                    industry: 644
+                  - id: 10734
+                    code: '1109'
+                    name: 信大
+                    industry: 644
+                  - id: 10735
+                    code: '1110'
+                    name: 東泥
+                    industry: 644
+                  - id: 10736
+                    code: '1201'
+                    name: 味全
+                    industry: null
+                  - id: 10737
+                    code: '1203'
+                    name: 味王
+                    industry: null
+                  - id: 10738
+                    code: '1210'
+                    name: 大成
+                    industry: null
+                  - id: 10739
+                    code: '1213'
+                    name: 大飲
+                    industry: null
+                  - id: 10740
+                    code: '1215'
+                    name: 卜蜂
+                    industry: null
+                  - id: 10741
+                    code: '1216'
+                    name: 統一
+                    industry: null
+                  - id: 10742
+                    code: '1217'
+                    name: 愛之味
+                    industry: null
+                  - id: 10743
+                    code: '1218'
+                    name: 泰山
+                    industry: null
+                  - id: 10744
+                    code: '1219'
+                    name: 福壽
+                    industry: null
+                  - id: 10745
+                    code: '1220'
+                    name: 台榮
+                    industry: null
+                  - id: 10746
+                    code: '1225'
+                    name: 福懋油
+                    industry: null
+                  - id: 10747
+                    code: '1227'
+                    name: 佳格
+                    industry: null
+                  - id: 10748
+                    code: '1229'
+                    name: 聯華
+                    industry: null
+                  - id: 10749
+                    code: '1231'
+                    name: 聯華食
+                    industry: null
+                  - id: 10750
+                    code: '1232'
+                    name: 大統益
+                    industry: null
+                  - id: 10751
+                    code: '1233'
+                    name: 天仁
+                    industry: 648
+                  - id: 10752
+                    code: '1234'
+                    name: 黑松
+                    industry: null
+                  - id: 10753
+                    code: '1235'
+                    name: 興泰
+                    industry: null
+                  - id: 10754
+                    code: '1236'
+                    name: 宏亞
+                    industry: null
+                  - id: 10755
+                    code: '1240'
+                    name: 茂生農經
+                    industry: null
+                  - id: 10756
+                    code: '1256'
+                    name: 鮮活果汁-KY
+                    industry: null
+                  - id: 10757
+                    code: '1258'
+                    name: 其祥-KY
+                    industry: null
+                  - id: 10758
+                    code: '1259'
+                    name: 安心
+                    industry: 648
+    post:
+      tags:
+        - 後台 > 公司
+      summary: create new company
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+                - code
+                - industry
+              properties:
+                name:
+                  type: string
+                  description: 公司名稱
+                  example: 台泥
+                code:
+                  type: integer
+                  description: 股票代碼
+                  example: '1101'
+                industry:
+                  type: integer
+                  description: '產業 id '
+                  example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/company/{id}:
+    get:
+      tags:
+        - 後台 > 公司
+      summary: get company by id
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10729'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 10729
+                code: '1101'
+                name: 台泥
+                industry: 644
+  /api/industry:
+    get:
+      tags:
+        - 後台 > 產業
+      summary: get all industrty
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - id: 613
+                  name: 半導體
+                - id: 614
+                  name: IC設計
+                - id: 615
+                  name: 車用
+    post:
+      tags:
+        - 後台 > 產業
+      summary: 建立新產業
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: 產業名稱
+                  example: 博弈
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 664
+                name: 博弈
+                updatedAt: '2023-11-22T18:40:47.277Z'
+                createdAt: '2023-11-22T18:40:47.277Z'
+  /api/industry/{id}:
+    get:
+      tags:
+        - 後台 > 產業
+      summary: get industry by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] 產業id'
+          example: '660'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                id: 660
+                name: 音訊
+                createdAt: '2023-10-30T08:38:21.000Z'
+                updatedAt: '2023-10-30T08:38:21.000Z'
   /api/topic-tag:
     get:
       tags:
@@ -2144,40 +2579,137 @@ paths:
                 type: object
               example:
                 data:
-                  - id: 1
-                    title: 你好，世界
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 基本面
-                      id: 1
+                  - id: 28
+                    description: >-
+                      新手也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…
+                    title: '28'
+                    topics:
+                      - id: 27
+                        name: 基本面
                     author:
                       name: Rick
-                      id: 1
-                    tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-11T00:00:00.000Z'
+                      id: 2
+                    tags: []
+                    publishDate: '2023-11-23T05:54:35.000Z'
                     previewImage: null
                     type: 1
-                    isLimited: true
+                    isLimited: false
                     source: null
-                  - id: 2
-                    title: 雪烏龍
-                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                    topic:
-                      name: 總經
-                      id: 2
+                  - id: 25
+                    description: >-
+                      也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…</
+                    title: 你好
+                    topics:
+                      - id: 28
+                        name: 籌碼
+                      - id: 30
+                        name: 其他
                     author:
                       name: Rick
-                      id: 1
+                      id: 2
                     tags:
-                      - name: 毛利
-                        id: 1
-                    publishDate: '2023-11-10T00:00:00.000Z'
-                    previewImage: https://path/to/image
+                      - id: 188
+                        name: IPC
+                      - id: 200
+                        name: 非農就業
+                    publishDate: '2023-11-23T04:13:01.000Z'
+                    previewImage: null
                     type: 1
                     isLimited: false
-                    source: 1
+                    source: null
+                  - id: 19
+                    description: >-
+                      新手也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…
+                    title: '19'
+                    topics:
+                      - id: 27
+                        name: 基本面
+                      - id: 30
+                        name: 其他
+                    author:
+                      name: Rick
+                      id: 2
+                    tags:
+                      - id: 179
+                        name: 半導體
+                      - id: 200
+                        name: 非農就業
+                    publishDate: '2023-11-23T03:02:16.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: false
+                    source: null
+                  - id: 18
+                    description: >-
+                      新手也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…
+                    title: '18'
+                    topics:
+                      - id: 27
+                        name: 基本面
+                      - id: 30
+                        name: 其他
+                    author:
+                      name: Rick
+                      id: 2
+                    tags:
+                      - id: 179
+                        name: 半導體
+                      - id: 188
+                        name: IPC
+                      - id: 200
+                        name: 非農就業
+                    publishDate: '2023-11-23T03:01:18.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: false
+                    source: null
+                  - id: 17
+                    description: >-
+                      新手也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…
+                    title: '17'
+                    topics:
+                      - id: 27
+                        name: 基本面
+                      - id: 30
+                        name: 其他
+                    author:
+                      name: Rick
+                      id: 2
+                    tags:
+                      - id: 179
+                        name: 半導體
+                      - id: 200
+                        name: 非農就業
+                    publishDate: '2023-11-23T03:01:02.000Z'
+                    previewImage: null
+                    type: 1
+                    isLimited: false
+                    source: null
   /api/news:
     get:
       tags:
@@ -2244,7 +2776,7 @@ paths:
             type: string
           required: true
           description: ''
-          example: 手
+          example: 總經
         - name: page
           in: query
           schema:
@@ -2265,7 +2797,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '0'
+          example: '1'
       responses:
         '200':
           description: OK
@@ -2348,7 +2880,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '0'
+          example: '1'
       responses:
         '200':
           description: OK
@@ -2410,7 +2942,7 @@ paths:
             type: integer
           required: true
           description: tag id
-          example: '1'
+          example: '222'
         - name: page
           in: query
           schema:
@@ -2431,7 +2963,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '0'
+          example: '4'
       responses:
         '200':
           description: OK
