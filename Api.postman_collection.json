@@ -1186,7 +1186,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1242,7 +1242,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"companies\": [\n            {\n                \"id\": 1,\n                \"code\": \"1101\",\n                \"name\": \"台泥\"\n            },\n            {\n                \"id\": 2,\n                \"code\": \"1102\",\n                \"name\": \"亞泥\"\n            }\n        ],\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
 						}
 					]
 				},
@@ -1345,7 +1345,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article",
+									"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10",
 									"host": [
 										"{{domain}}"
 									],
@@ -1357,8 +1357,15 @@
 										{
 											"key": "topic",
 											"value": "1",
-											"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他",
-											"disabled": true
+											"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "10"
 										}
 									]
 								}
@@ -1366,9 +1373,42 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2122"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 24 Nov 2023 19:23:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 10,\n        \"totalCount\": 2,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            },\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\"\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1673,11 +1713,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/article",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"article"
 									]
@@ -1820,11 +1861,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"article",
 										":id"
@@ -1832,7 +1874,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "27",
+											"value": "2",
 											"description": "[required] article id"
 										}
 									]
@@ -1935,11 +1977,12 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"article",
 										":id"
@@ -1947,7 +1990,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "27",
+											"value": "2",
 											"description": "[required] article id"
 										}
 									]
@@ -2045,12 +2088,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/image",
+									"raw": "{{domain}}/{{prefix}}/image",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
 										"image"
 									]
 								}
@@ -2106,11 +2149,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/users",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/users",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"users"
 											]
@@ -2194,11 +2238,12 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/user/:id",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"user",
 												":id"
@@ -2206,7 +2251,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "24",
+													"value": "5",
 													"description": "[ required ] 用戶 id"
 												}
 											]
@@ -2314,11 +2359,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/user/:id/update-password",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/:id/update-password",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"user",
 												":id",
@@ -2327,7 +2373,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "24"
+													"value": "5"
 												}
 											]
 										}
@@ -2449,11 +2495,12 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/user/:id",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"user",
 												":id"
@@ -2461,7 +2508,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "30",
+													"value": "5",
 													"description": "[required]"
 												}
 											]
@@ -2587,12 +2634,13 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/api/user/:id/permission",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/:id/permission",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
-												"api",
+												"{{prefix}}",
+												"{{internalPrefix}}",
 												"user",
 												":id",
 												"permission"
@@ -2600,7 +2648,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "28",
+													"value": "5",
 													"description": "[required]"
 												}
 											]
@@ -2682,12 +2730,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/user/create",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/create",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"user",
 										"create"
 									]
@@ -2810,12 +2859,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/user/login",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/login",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"user",
 										"login"
 									]
@@ -2930,12 +2980,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/user/refresh",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/refresh",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"user",
 										"refresh"
 									]
@@ -3061,12 +3112,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/user",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"user"
 									]
 								}
@@ -3162,11 +3214,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/update-information",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/update-information",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"user",
 										"update-information"
@@ -3227,11 +3280,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/upload-avatar",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/upload-avatar",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"user",
 										"upload-avatar"
@@ -3297,11 +3351,12 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/user/update-password",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/update-password",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
+										"{{prefix}}",
 										"{{internalPrefix}}",
 										"user",
 										"update-password"
@@ -3467,12 +3522,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/pdf/trial",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf/trial",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"pdf",
 										"trial"
 									]
@@ -3486,7 +3542,7 @@
 					"name": "公司群組",
 					"item": [
 						{
-							"name": "獲得群組內容",
+							"name": "get all company filter by user",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -3501,13 +3557,240 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/companyFilters",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"companyFilters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create company group",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "pub",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all company in :id group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/:id/companies",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										":id",
+										"companies"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] company filter id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all company in :id group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/:id/pdfs",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										":id",
+										"pdfs"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "[required] company filter id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add :company.code into :id group",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] company filter id",
+											"type": "text"
+										},
+										{
+											"key": "companyCode",
+											"value": "1101",
+											"description": "[required] company code",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/insert-field",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										"insert-field"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete :company.code from :id group",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] company filter id",
+											"type": "text"
+										},
+										{
+											"key": "companyCode",
+											"value": "2330",
+											"description": "[required] company code",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/remove-field",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										"remove-field"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete company filter",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] company filter"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rename",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "ppuu",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/companyFilters/:id/rename",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"companyFilters",
+										":id",
+										"rename"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2",
+											"description": "[required] company filter"
+										}
 									]
 								}
 							},
@@ -3527,12 +3810,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/callback?code=AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/callback?code=AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"callback"
 									],
@@ -3555,12 +3839,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/login",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/login",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"login"
 									]
@@ -3607,12 +3892,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/episode/latest",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/episode/latest",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"episode",
 										"latest"
@@ -3661,12 +3947,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/episode/all",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/episode/all",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"episode",
 										"all"
@@ -3681,12 +3968,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/soundon",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/soundon",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"soundon"
 									]
@@ -3703,12 +3991,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/podcast/apple?limit=300",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/apple?limit=300",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"podcast",
 										"apple"
 									],
@@ -3722,6 +4011,29 @@
 								}
 							},
 							"response": []
+						}
+					],
+					"auth": {
+						"type": "noauth"
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					]
 				},
@@ -3737,12 +4049,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/rate",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/rate",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"rate"
 									]
 								}
@@ -3807,12 +4120,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/rate",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/rate",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"rate"
 									]
 								}
@@ -3822,15 +4136,19 @@
 						{
 							"name": "get rate by id",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/rate/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/rate/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"rate",
 										":id"
 									],
@@ -3853,15 +4171,19 @@
 						{
 							"name": "get all company",
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/company-all",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company-all",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"company-all"
 									]
 								}
@@ -3877,12 +4199,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/company?page=0&size=30",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company?page=0&size=30",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"company"
 									],
 									"query": [
@@ -3972,12 +4295,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/company",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"company"
 									]
 								}
@@ -3993,12 +4317,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/company/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"company",
 										":id"
 									],
@@ -4065,12 +4390,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/industry",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/industry",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"industry"
 									]
 								}
@@ -4126,12 +4452,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/api/industry",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/industry",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"industry"
 									]
 								}
@@ -4186,12 +4513,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/industry/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/industry/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"api",
+										"{{prefix}}",
+										"{{internalPrefix}}",
 										"industry",
 										":id"
 									],
@@ -4245,6 +4573,373 @@
 									"body": "{\n    \"id\": 660,\n    \"name\": \"音訊\",\n    \"createdAt\": \"2023-10-30T08:38:21.000Z\",\n    \"updatedAt\": \"2023-10-30T08:38:21.000Z\"\n}"
 								}
 							]
+						}
+					]
+				},
+				{
+					"name": "pdf",
+					"item": [
+						{
+							"name": "find pdf paging",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf?page=0&size=1&rate=SB&securitiesFirms=260&industry=660&company=10729",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "1"
+										},
+										{
+											"key": "rate",
+											"value": "SB"
+										},
+										{
+											"key": "securitiesFirms",
+											"value": "260"
+										},
+										{
+											"key": "industry",
+											"value": "660"
+										},
+										{
+											"key": "company",
+											"value": "10729"
+										},
+										{
+											"key": "q",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": null,
+											"disabled": true
+										}
+									]
+								},
+								"description": "find pdf by filter \\\\n date format should be '2023-04-14T00:00:00.000Z'"
+							},
+							"response": []
+						},
+						{
+							"name": "find pdf all",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf?rate&securitiesFirms&industry&company&q&date",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf"
+									],
+									"query": [
+										{
+											"key": "rate",
+											"value": null
+										},
+										{
+											"key": "securitiesFirms",
+											"value": null
+										},
+										{
+											"key": "industry",
+											"value": null
+										},
+										{
+											"key": "company",
+											"value": null
+										},
+										{
+											"key": "q",
+											"value": null
+										},
+										{
+											"key": "date",
+											"value": null
+										}
+									]
+								},
+								"description": "find pdf by filter \\\\n date format should be '2023-04-14T00:00:00.000Z'"
+							},
+							"response": []
+						},
+						{
+							"name": "upload pdf",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/chang/Downloads/2330台積電 野村 20230414 SB.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf"
+									]
+								},
+								"description": "使用 AWS SDK、REST API 或 AWS CLI 在單一操作中上傳物件 – 透過單一 PUT 操作，您最多可以上傳最大 5 GB 的單一物件。"
+							},
+							"response": []
+						},
+						{
+							"name": "upload pdf bulk",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/chang/Downloads/2330台積電 野村 20211214 SB.pdf"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/chang/Downloads/2330台積電 野村 20221214 SB.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf-bulk-upload",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf-bulk-upload"
+									]
+								},
+								"description": "使用 AWS SDK、REST API 或 AWS CLI 在單一操作中上傳物件 – 透過單一 PUT 操作，您最多可以上傳最大 5 GB 的單一物件。"
+							},
+							"response": []
+						},
+						{
+							"name": "pdf rename",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "oldName",
+											"value": "2330台積電 野村 20211214 SB.pdf",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "newName",
+											"value": "2330台積電 野村 20211204 SB.pdf",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf/rename",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf",
+										"rename"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete pdfs",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fileNames[0][fileName]",
+											"value": "2330台積電 野村 20211204 SB.pdf",
+											"type": "text"
+										},
+										{
+											"key": "fileNames[1][fileName]",
+											"value": "2330台積電 野村 20221214 SB.pdf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "presigned url",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "2330台積電 野村 20230414 SB.pdf",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/presigned",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"presigned"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "卷商",
+					"item": [
+						{
+							"name": "get all firms",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/securities-firms",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"securities-firms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create a new security firm",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/securities-firms",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"securities-firms"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get firm by id",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/securities-firms/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"securities-firms",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "260",
+											"description": "[required] firm id"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}

@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 更新 標籤、主題 文件內容
-  version: 11.24.0122
+  description: 新增前一期的 api
+  version: 11.25.0406
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -45,6 +45,8 @@ tags:
   - name: 後台 > 評等
   - name: 後台 > 公司
   - name: 後台 > 產業
+  - name: 後台 > pdf
+  - name: 後台 > 卷商
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -529,6 +531,13 @@ paths:
                     author:
                       name: Remus
                       id: 1
+                    companies:
+                      - id: 1
+                        code: '1101'
+                        name: 台泥
+                      - id: 2
+                        code: '1102'
+                        name: 亞泥
                     topics:
                       - id: 3
                         name: 基本面
@@ -550,6 +559,13 @@ paths:
                     author:
                       name: Rick
                       id: 1
+                    companies:
+                      - id: 1
+                        code: '1101'
+                        name: 台泥
+                      - id: 2
+                        code: '1102'
+                        name: 亞泥
                     topics:
                       - id: 3
                         name: 基本面
@@ -682,6 +698,39 @@ paths:
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2122'
+            ETag:
+              schema:
+                type: string
+                example: W/"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc"
+            Date:
+              schema:
+                type: string
+                example: Fri, 24 Nov 2023 19:23:06 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
@@ -689,40 +738,69 @@ paths:
               example:
                 data:
                   currentPage: 0
-                  pageSize: 30
-                  totalCount: 515
+                  pageSize: 10
+                  totalCount: 2
+                  totalPage: 1
                   articles:
-                    - id: 1
+                    - id: 2
                       title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 基本面
-                        id: 1
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
-                        name: Rick
+                        name: Remus
                         id: 1
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
+                      companies: []
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼
+                        - id: 5
+                          name: 技術
+                      tags: []
+                      publishDate: '2023-11-22T16:11:23.000Z'
                       previewImage: null
                       type: 1
-                      isLimited: true
+                      isLimited: false
                       source: null
-                    - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
+                    - id: 1
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
-                        name: Rick
+                        name: Remus
                         id: 1
+                      companies:
+                        - id: 1
+                          code: '1101'
+                          name: 台泥
+                        - id: 2
+                          code: '1102'
+                          name: 亞泥
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼
+                        - id: 5
+                          name: 技術
                       tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
+                        - id: 1
+                          name: 半導體
+                        - id: 2
+                          name: IC 設計
+                      publishDate: '2023-11-21T16:11:23.000Z'
+                      previewImage: null
                       type: 1
                       isLimited: false
                       source: null
@@ -878,7 +956,7 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
-  /dashboard/article:
+  /api/dashboard/article:
     post:
       tags:
         - 後台 > 文章
@@ -987,7 +1065,7 @@ paths:
                   isLimited: false
                   isDraft: false
                   publishedAt: '2023-11-21T16:11:23.000Z'
-  /dashboard/article/{id}:
+  /api/dashboard/article/{id}:
     put:
       tags:
         - 後台 > 文章
@@ -1058,7 +1136,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '27'
+          example: '2'
       responses:
         '200':
           description: OK
@@ -1080,7 +1158,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '27'
+          example: '2'
       responses:
         '200':
           description: OK
@@ -1133,7 +1211,7 @@ paths:
                     creatorId: 8
                     updatedAt: '2023-11-20T08:04:09.443Z'
                     createdAt: '2023-11-20T08:04:09.443Z'
-  /dashboard/users:
+  /api/dashboard/users:
     get:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1170,7 +1248,7 @@ paths:
               example:
                 data:
                   error: permission denied
-  /dashboard/user/{id}:
+  /api/dashboard/user/{id}:
     get:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1182,7 +1260,7 @@ paths:
             type: integer
           required: true
           description: '[ required ] 用戶 id'
-          example: '24'
+          example: '5'
       responses:
         '200':
           description: OK
@@ -1259,7 +1337,7 @@ paths:
             type: integer
           required: true
           description: '[required]'
-          example: '30'
+          example: '5'
       responses:
         '200':
           description: OK
@@ -1289,7 +1367,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /dashboard/user/{id}/update-password:
+  /api/dashboard/user/{id}/update-password:
     post:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1309,7 +1387,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '24'
+          example: '5'
       responses:
         '200':
           description: OK
@@ -1339,7 +1417,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /api/user/{id}/permission:
+  /api/dashboard/user/{id}/permission:
     post:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
@@ -1376,7 +1454,7 @@ paths:
             type: integer
           required: true
           description: '[required]'
-          example: '28'
+          example: '5'
       responses:
         '200':
           description: Successful response
@@ -1403,7 +1481,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/user/create:
+  /api/dashboard/user/create:
     post:
       tags:
         - 後台 > 帳戶
@@ -1444,7 +1522,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /api/user/login:
+  /api/dashboard/user/login:
     post:
       tags:
         - 後台 > 帳戶
@@ -1486,7 +1564,7 @@ paths:
               example:
                 data:
                   message: Invalid username or password.
-  /api/user/refresh:
+  /api/dashboard/user/refresh:
     post:
       tags:
         - 後台 > 帳戶
@@ -1519,7 +1597,7 @@ paths:
               example:
                 data:
                   message: Invalid username or password.
-  /api/user:
+  /api/dashboard/user:
     get:
       tags:
         - 後台 > 帳戶
@@ -1580,7 +1658,7 @@ paths:
               example:
                 data:
                   message: permission denied
-  /dashboard/user/update-information:
+  /api/dashboard/user/update-information:
     post:
       tags:
         - 後台 > 帳戶
@@ -1604,7 +1682,7 @@ paths:
               example:
                 data:
                   message: success
-  /dashboard/user/upload-avatar:
+  /api/dashboard/user/upload-avatar:
     post:
       tags:
         - 後台 > 帳戶
@@ -1629,7 +1707,7 @@ paths:
               example:
                 data:
                   url: https://path/to/avatar
-  /dashboard/user/update-password:
+  /api/dashboard/user/update-password:
     post:
       tags:
         - 後台 > 帳戶
@@ -1722,7 +1800,7 @@ paths:
                       taxAmount: 300
                       maskedCreditCardNo: 400022******1111
                       createdAt: '2023-10-04T10:05:47.000Z'
-  /api/pdf/trial:
+  /api/dashboard/pdf/trial:
     put:
       tags:
         - 後台 > 試閱
@@ -1744,30 +1822,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    get:
-      tags:
-        - 試閱
-      summary: get trial pdf link
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data: >-
-                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf
-  /api/companyFilters:
+  /api/dashboard/companyFilters:
     get:
       tags:
         - 後台 > 公司群組
-      summary: 獲得群組內容
+      summary: get all company filter by user
       security:
         - bearerAuth: []
       responses:
@@ -1775,7 +1834,149 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/podcast/callback:
+    post:
+      tags:
+        - 後台 > 公司群組
+      summary: create company group
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: pub
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/{id}/companies:
+    get:
+      tags:
+        - 後台 > 公司群組
+      summary: get all company in :id group
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] company filter id'
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/{id}/pdfs:
+    get:
+      tags:
+        - 後台 > 公司群組
+      summary: get all company in :id group
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] company filter id'
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/insert-field:
+    put:
+      tags:
+        - 後台 > 公司群組
+      summary: add :company.code into :id group
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - id
+                - companyCode
+              properties:
+                id:
+                  type: integer
+                  description: company filter id
+                  example: '1'
+                companyCode:
+                  type: integer
+                  description: company code
+                  example: '1101'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/remove-field:
+    delete:
+      tags:
+        - 後台 > 公司群組
+      summary: delete :company.code from :id group
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/{id}:
+    delete:
+      tags:
+        - 後台 > 公司群組
+      summary: delete company filter
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] company filter'
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/companyFilters/{id}/rename:
+    post:
+      tags:
+        - 後台 > 公司群組
+      summary: rename
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: ppuu
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] company filter'
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/podcast/callback:
     get:
       tags:
         - 後台 > podcast
@@ -1794,7 +1995,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/podcast/login:
+  /api/dashboard/podcast/login:
     get:
       tags:
         - 後台 > podcast
@@ -1822,7 +2023,7 @@ paths:
                 expir: '2023-11-20T22:05:35.056Z'
                 createdAt: '2023-11-20T21:04:22.000Z'
                 updatedAt: '2023-11-20T21:15:35.055Z'
-  /api/podcast/episode/latest:
+  /api/dashboard/podcast/episode/latest:
     get:
       tags:
         - 後台 > podcast
@@ -1893,7 +2094,7 @@ paths:
                 offset: 0
                 previous: null
                 total: 147
-  /api/podcast/episode/all:
+  /api/dashboard/podcast/episode/all:
     get:
       tags:
         - 後台 > podcast
@@ -1903,7 +2104,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/podcast/soundon:
+  /api/dashboard/podcast/soundon:
     get:
       tags:
         - 後台 > podcast
@@ -1913,7 +2114,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/podcast/apple:
+  /api/dashboard/podcast/apple:
     get:
       tags:
         - 後台 > podcast
@@ -1932,7 +2133,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/rate:
+  /api/dashboard/rate:
     get:
       tags:
         - 後台 > 評等
@@ -2020,11 +2221,13 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/rate/{id}:
+  /api/dashboard/rate/{id}:
     get:
       tags:
         - 後台 > 評等
       summary: get rate by id
+      security:
+        - noauthAuth: []
       parameters:
         - name: id
           in: path
@@ -2038,17 +2241,19 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/company-all:
+  /api/dashboard/company-all:
     get:
       tags:
         - 後台 > 公司
       summary: get all company
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /api/company:
+  /api/dashboard/company:
     get:
       tags:
         - 後台 > 公司
@@ -2237,7 +2442,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/company/{id}:
+  /api/dashboard/company/{id}:
     get:
       tags:
         - 後台 > 公司
@@ -2268,7 +2473,7 @@ paths:
                 code: '1101'
                 name: 台泥
                 industry: 644
-  /api/industry:
+  /api/dashboard/industry:
     get:
       tags:
         - 後台 > 產業
@@ -2327,7 +2532,7 @@ paths:
                 name: 博弈
                 updatedAt: '2023-11-22T18:40:47.277Z'
                 createdAt: '2023-11-22T18:40:47.277Z'
-  /api/industry/{id}:
+  /api/dashboard/industry/{id}:
     get:
       tags:
         - 後台 > 產業
@@ -2357,6 +2562,197 @@ paths:
                 name: 音訊
                 createdAt: '2023-10-30T08:38:21.000Z'
                 updatedAt: '2023-10-30T08:38:21.000Z'
+  /api/dashboard/pdf:
+    get:
+      tags:
+        - 後台 > pdf
+      summary: find pdf all
+      description: find pdf by filter \\n date format should be '2023-04-14T00:00:00.000Z'
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: rate
+          in: query
+          schema:
+            type: string
+        - name: securitiesFirms
+          in: query
+          schema:
+            type: string
+        - name: industry
+          in: query
+          schema:
+            type: string
+        - name: company
+          in: query
+          schema:
+            type: string
+        - name: q
+          in: query
+          schema:
+            type: string
+        - name: date
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - 後台 > pdf
+      summary: upload pdf
+      description: >-
+        使用 AWS SDK、REST API 或 AWS CLI 在單一操作中上傳物件 – 透過單一 PUT 操作，您最多可以上傳最大 5 GB
+        的單一物件。
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - 後台 > pdf
+      summary: delete pdfs
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf-bulk-upload:
+    post:
+      tags:
+        - 後台 > pdf
+      summary: upload pdf bulk
+      description: >-
+        使用 AWS SDK、REST API 或 AWS CLI 在單一操作中上傳物件 – 透過單一 PUT 操作，您最多可以上傳最大 5 GB
+        的單一物件。
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf/rename:
+    post:
+      tags:
+        - 後台 > pdf
+      summary: pdf rename
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - oldName
+                - newName
+              properties:
+                oldName:
+                  type: string
+                  description: ''
+                  example: 2330台積電 野村 20211214 SB.pdf
+                newName:
+                  type: string
+                  description: ''
+                  example: 2330台積電 野村 20211204 SB.pdf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/presigned:
+    post:
+      tags:
+        - 後台 > pdf
+      summary: presigned url
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: 2330台積電 野村 20230414 SB.pdf
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/securities-firms:
+    get:
+      tags:
+        - 後台 > 卷商
+      summary: get all firms
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - 後台 > 卷商
+      summary: create a new security firm
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: ''
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/securities-firms/{id}:
+    get:
+      tags:
+        - 後台 > 卷商
+      summary: get firm by id
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] firm id'
+          example: '260'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/topic:
     get:
       tags:
@@ -3608,6 +4004,26 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/pdf/trial:
+    get:
+      tags:
+        - 試閱
+      summary: get trial pdf link
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf
   /api/youtube:
     get:
       tags:
