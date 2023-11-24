@@ -523,42 +523,52 @@ paths:
                 type: object
               example:
                 data:
-                  articles:
-                    - id: 1
-                      title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
+                  - id: 1
+                    title: 你好，世界
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    author:
+                      name: Remus
+                      id: 1
+                    topics:
+                      - id: 3
                         name: 基本面
+                    tags:
+                      - name: 毛利
                         id: 1
-                      author:
-                        name: Rick
+                    publishDate: '2023-11-11T00:00:00.000Z'
+                    previewImage:
+                      id: 1
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                        (1).png
+                    type: 1
+                    isLimited: true
+                    source: null
+                  - id: 2
+                    title: 雪烏龍
+                    description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
+                    author:
+                      name: Rick
+                      id: 1
+                    topics:
+                      - id: 3
+                        name: 基本面
+                    tags:
+                      - name: 毛利
                         id: 1
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: true
-                      source: null
-                    - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
-                      author:
-                        name: Rick
-                        id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
-                      type: 1
-                      isLimited: false
-                      source: null
+                    publishDate: '2023-11-10T00:00:00.000Z'
+                    previewImage:
+                      id: 1
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                        (1).png
+                    type: 1
+                    isLimited: false
+                    source: null
   /api/article/{id}:
     get:
       tags:
-        - 文章
+        - 後台 > 文章
       summary: get article content
       parameters:
         - name: id
@@ -654,7 +664,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '3'
+          example: '0'
         - name: page
           in: query
           schema:
@@ -727,7 +737,7 @@ paths:
           schema:
             type: integer
           description: |-
-            不傳 -> 全部
+            0 -> 全部
             1 -> 基本面（基本面、總經）
             2 -> 技術面
             3 -> 籌碼面
@@ -947,7 +957,36 @@ paths:
                 type: object
               example:
                 data:
-                  id: 123
+                  id: 1
+                  title: 你好，世界
+                  fullContent: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                  rawContent: >-
+                    新手也能懂的 Kotlin Collection
+                    賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…
+                  clippedContent: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                  topic:
+                    - id: 3
+                      name: 基本面
+                    - id: 4
+                      name: 籌碼
+                    - id: 5
+                      name: 技術
+                  tags:
+                    - id: 1
+                      name: 半導體
+                    - id: 2
+                      name: IC 設計
+                  isLimited: false
+                  isDraft: false
+                  publishedAt: '2023-11-21T16:11:23.000Z'
   /dashboard/article/{id}:
     put:
       tags:
@@ -3025,7 +3064,7 @@ paths:
             type: string
           required: true
           description: ''
-          example: 總經
+          example: 台積電
         - name: page
           in: query
           schema:
@@ -3046,7 +3085,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '1'
+          example: '0'
       responses:
         '200':
           description: OK
@@ -3064,6 +3103,7 @@ paths:
                   currentPage: 0
                   pageSize: 30
                   totalCount: 515
+                  totalPage: 18
                   articles:
                     - id: 1
                       title: 你好，世界

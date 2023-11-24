@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -84,12 +84,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/google",
+									"raw": "http://localhost:3020/api/auth/google",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"google"
 									]
@@ -209,12 +211,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"raw": "http://localhost:3020/api/auth/line",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"line"
 									]
@@ -339,12 +343,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/refresh-token",
+									"raw": "http://localhost:3020/api/refresh-token",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"refresh-token"
 									]
 								}
@@ -429,12 +435,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"raw": "http://localhost:3020/api/member/update-information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"update-information"
 									]
@@ -522,12 +530,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"raw": "http://localhost:3020/api/member/sent-validate-email",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"sent-validate-email"
 									]
@@ -614,12 +624,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/information",
+									"raw": "http://localhost:3020/api/member/information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"information"
 									]
@@ -668,12 +680,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"raw": "http://localhost:3020/api/member/delete-account",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"delete-account"
 									]
@@ -777,12 +791,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -845,12 +861,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -1168,7 +1186,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1190,7 +1208,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "12",
+									"value": "1",
 									"description": "[required] article id"
 								}
 							]
@@ -1292,7 +1310,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=3&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -1303,7 +1321,7 @@
 							"query": [
 								{
 									"key": "topic",
-									"value": "3",
+									"value": "0",
 									"description": "[required]"
 								},
 								{
@@ -1372,7 +1390,7 @@
 								{
 									"key": "topic",
 									"value": "0",
-									"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
+									"description": "0 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
 								},
 								{
 									"key": "size",
@@ -1531,6 +1549,62 @@
 					"name": "文章",
 					"item": [
 						{
+							"name": "get article content",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/article/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"article",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "12",
+											"description": "[required] article id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get article content",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/article/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"article",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "123",
+													"description": "[required] article id"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": "json",
+									"header": null,
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+								}
+							]
+						},
+						{
 							"name": "create an article",
 							"request": {
 								"method": "POST",
@@ -1676,7 +1750,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 123\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"你好，世界\",\n        \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"rawContent\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n        \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topic\": [\n            {\n                \"id\": 3,\n                \"name\": \"基本面\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"籌碼\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"技術\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"半導體\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"IC 設計\"\n            }\n        ],\n        \"isLimited\": false,\n        \"isDraft\": false,\n        \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n    }\n}"
 								}
 							]
 						},
@@ -5008,12 +5082,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
+									"raw": "http://localhost:3020/api/edit-tags-display-setting",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{internalPrefix}}",
+										"api",
 										"edit-tags-display-setting"
 									]
 								}
@@ -5113,12 +5189,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/news?tag=123",
+									"raw": "http://localhost:3020/api/news?tag=123",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"news"
 									],
 									"query": [
@@ -5190,7 +5268,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=總經&page=0&size=30&topic=1",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=台積電&page=0&size=30&topic=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -5202,7 +5280,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "總經",
+									"value": "台積電",
 									"description": "[required]"
 								},
 								{
@@ -5217,7 +5295,7 @@
 								},
 								{
 									"key": "topic",
-									"value": "1",
+									"value": "0",
 									"description": "[required]"
 								}
 							]
@@ -5230,7 +5308,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -5259,11 +5337,6 @@
 											"key": "topic",
 											"value": "1",
 											"description": "[required]"
-										},
-										{
-											"key": "type",
-											"value": "article",
-											"description": "[required] article, podcast"
 										}
 									]
 								}
@@ -5281,7 +5354,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"totalPage\": 18,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -5331,12 +5404,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"author"
 									],
@@ -5432,12 +5507,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"tag"
 									],
@@ -5512,10 +5589,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/latest-plan",
+									"raw": "http://localhost:3020/api/subscription/latest-plan",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
