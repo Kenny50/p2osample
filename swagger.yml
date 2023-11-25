@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 新增前一期的 api
-  version: 11.25.0406
+  description: API 新增推薦 tag
+  version: 11.25.1222
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -66,7 +66,6 @@ tags:
       0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
   - name: 訂閱
   - name: 試閱
-  - name: youtube
 paths:
   /api/login/google:
     post:
@@ -584,7 +583,7 @@ paths:
   /api/article/{id}:
     get:
       tags:
-        - 後台 > 文章
+        - 文章
       summary: get article content
       parameters:
         - name: id
@@ -593,7 +592,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '12'
+          example: '1'
       responses:
         undefined:
           content:
@@ -613,6 +612,13 @@ paths:
                   author:
                     name: Rick
                     id: 1
+                  companies:
+                    - id: 1
+                      code: '1101'
+                      name: 台泥
+                    - id: 2
+                      code: '1102'
+                      name: 亞泥
                   tags:
                     - name: 毛利
                       id: 1
@@ -695,6 +701,11 @@ paths:
           required: true
           description: ''
           example: '30'
+        - name: type
+          in: query
+          schema:
+            type: integer
+          example: '2'
       responses:
         '200':
           description: OK
@@ -956,6 +967,151 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
+  /api/dashboard/article/{id}:
+    get:
+      tags:
+        - 後台 > 文章
+      summary: get article content
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '1'
+      responses:
+        undefined:
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 123
+                  title: 你好，世界
+                  content: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                  topics:
+                    - name: 基本面
+                      id: 1
+                  author:
+                    name: Rick
+                    id: 1
+                  tags:
+                    - name: 毛利
+                      id: 1
+                  publishDate: '2023-05-02T00:00:00.000Z'
+                  previewImage:
+                    id: 1
+                    path: path
+                  type: 1
+                  isLimited: true
+                  source: null
+    put:
+      tags:
+        - 後台 > 文章
+      summary: update article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - fullContent
+                - rawContent
+                - isLimited
+                - isDraft
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 你好
+                fullContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                rawContent:
+                  type: string
+                  description: ''
+                  example: >-
+                    <h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
+                clippedContent:
+                  type: string
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                topics[0]:
+                  type: integer
+                  example: '28'
+                topics[1]:
+                  type: integer
+                  example: '30'
+                tags[0]:
+                  type: integer
+                  example: '188'
+                tags[1]:
+                  type: integer
+                  example: '200'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                isDraft:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '2'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 123
+    delete:
+      tags:
+        - 後台 > 文章
+      summary: delete article by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] article id'
+          example: '2'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  status: success
   /api/dashboard/article:
     post:
       tags:
@@ -1065,110 +1221,6 @@ paths:
                   isLimited: false
                   isDraft: false
                   publishedAt: '2023-11-21T16:11:23.000Z'
-  /api/dashboard/article/{id}:
-    put:
-      tags:
-        - 後台 > 文章
-      summary: update article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - title
-                - fullContent
-                - rawContent
-                - isLimited
-                - isDraft
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: 你好
-                fullContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                rawContent:
-                  type: string
-                  description: ''
-                  example: >-
-                    <h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
-                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
-                    width="500"
-                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
-                clippedContent:
-                  type: string
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                topics[0]:
-                  type: integer
-                  example: '28'
-                topics[1]:
-                  type: integer
-                  example: '30'
-                tags[0]:
-                  type: integer
-                  example: '188'
-                tags[1]:
-                  type: integer
-                  example: '200'
-                isLimited:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                isDraft:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] article id'
-          example: '2'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  id: 123
-    delete:
-      tags:
-        - 後台 > 文章
-      summary: delete article by id
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] article id'
-          example: '2'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  status: success
   /api/image:
     post:
       tags:
@@ -2566,35 +2618,43 @@ paths:
     get:
       tags:
         - 後台 > pdf
-      summary: find pdf all
+      summary: find pdf paging
       description: find pdf by filter \\n date format should be '2023-04-14T00:00:00.000Z'
       security:
         - noauthAuth: []
       parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          example: '1'
         - name: rate
           in: query
           schema:
             type: string
+          example: SB
         - name: securitiesFirms
           in: query
           schema:
-            type: string
+            type: integer
+          example: '260'
         - name: industry
           in: query
           schema:
-            type: string
+            type: integer
+          example: '660'
         - name: company
           in: query
           schema:
-            type: string
-        - name: q
-          in: query
-          schema:
-            type: string
-        - name: date
-          in: query
-          schema:
-            type: string
+            type: integer
+          example: '10729'
       responses:
         '200':
           description: Successful response
@@ -2625,6 +2685,19 @@ paths:
       tags:
         - 後台 > pdf
       summary: delete pdfs
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf-all:
+    get:
+      tags:
+        - 後台 > pdf
+      summary: find pdf all
+      description: find pdf by filter \\n date format should be '2023-04-14T00:00:00.000Z'
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: Successful response
@@ -2927,15 +3000,16 @@ paths:
                 - topicId
                 - sort
                 - hide
+                - isRecommended
               properties:
                 name:
                   type: string
                   description: ''
-                  example: 布林通道
+                  example: 布林通道25
                 topicId:
                   type: integer
                   description: topic 類的 id
-                  example: '1'
+                  example: '25'
                 sort:
                   type: integer
                   description: ''
@@ -2943,6 +3017,10 @@ paths:
                 hide:
                   type: boolean
                   description: ''
+                  example: 'true'
+                isRecommended:
+                  type: boolean
+                  description: boolean
                   example: 'true'
       responses:
         '201':
@@ -3089,6 +3167,7 @@ paths:
                 - topicId
                 - sort
                 - hide
+                - isRecommended
               properties:
                 name:
                   type: string
@@ -3106,6 +3185,10 @@ paths:
                   type: boolean
                   description: boolean
                   example: 'true'
+                isRecommended:
+                  type: boolean
+                  description: boolean
+                  example: 'false'
       parameters:
         - name: id
           in: path
@@ -3233,6 +3316,74 @@ paths:
               example:
                 data:
                   message: success
+  /api/tag/recommand:
+    get:
+      tags:
+        - 標籤、主題
+      summary: 前台拿到推薦 tag
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+          example: 人
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '213'
+            ETag:
+              schema:
+                type: string
+                example: W/"d5-QcknWfa7o0fzLZIXJTE8FQBifEI"
+            Date:
+              schema:
+                type: string
+                example: Sat, 25 Nov 2023 04:14:18 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: 23
+                    name: 個人消費支出
+                    sort: 7
+                    hide: false
+                    topicId: 2
+                  - id: 55
+                    name: 法人
+                    sort: 11
+                    hide: false
+                    topicId: 4
+                  - id: 57
+                    name: 總股東人數
+                    sort: 13
+                    hide: false
+                    topicId: 4
   /api/banner:
     get:
       tags:
@@ -4024,28 +4175,3 @@ paths:
               example:
                 data: >-
                   https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf
-  /api/youtube:
-    get:
-      tags:
-        - youtube
-      summary: get youtube paging
-      parameters:
-        - name: page
-          in: query
-          schema:
-            type: integer
-          required: true
-          description: ''
-          example: '0'
-        - name: size
-          in: query
-          schema:
-            type: integer
-          required: true
-          description: ''
-          example: '30'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}

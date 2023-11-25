@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -1310,7 +1292,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&type=2",
 							"host": [
 								"{{domain}}"
 							],
@@ -1333,6 +1315,10 @@
 									"key": "size",
 									"value": "30",
 									"description": "[required]"
+								},
+								{
+									"key": "type",
+									"value": "2"
 								}
 							]
 						},
@@ -1594,19 +1580,20 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"article",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "12",
+											"value": "1",
 											"description": "[required] article id"
 										}
 									]
@@ -4648,39 +4635,45 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf?rate&securitiesFirms&industry&company&q&date",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf-all",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
 										"{{internalPrefix}}",
-										"pdf"
+										"pdf-all"
 									],
 									"query": [
 										{
 											"key": "rate",
-											"value": null
+											"value": null,
+											"disabled": true
 										},
 										{
 											"key": "securitiesFirms",
-											"value": null
+											"value": null,
+											"disabled": true
 										},
 										{
 											"key": "industry",
-											"value": null
+											"value": null,
+											"disabled": true
 										},
 										{
 											"key": "company",
-											"value": null
+											"value": null,
+											"disabled": true
 										},
 										{
 											"key": "q",
-											"value": null
+											"value": "",
+											"disabled": true
 										},
 										{
 											"key": "date",
-											"value": null
+											"value": "",
+											"disabled": true
 										}
 									]
 								},
@@ -4699,7 +4692,7 @@
 										{
 											"key": "file",
 											"type": "file",
-											"src": "/Users/chang/Downloads/2330台積電 野村 20230414 SB.pdf"
+											"src": "/Users/chang/Downloads/2330台積電 野村 20221214 SB.pdf"
 										}
 									]
 								},
@@ -4729,12 +4722,12 @@
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/2330台積電 野村 20211214 SB.pdf"
+											"src": "/Users/chang/Downloads/2330台積電 野村 20221214 SB.pdf"
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/2330台積電 野村 20221214 SB.pdf"
+											"src": "/Users/chang/Downloads/2330台積電 野村 20211214 SB.pdf"
 										}
 									]
 								},
@@ -4800,12 +4793,12 @@
 									"formdata": [
 										{
 											"key": "fileNames[0][fileName]",
-											"value": "2330台積電 野村 20211204 SB.pdf",
+											"value": "2330台積電 野村 20221214 SB.pdf",
 											"type": "text"
 										},
 										{
 											"key": "fileNames[1][fileName]",
-											"value": "2330台積電 野村 20221214 SB.pdf",
+											"value": "2330台積電 野村 20211214 SB.pdf",
 											"type": "text"
 										}
 									]
@@ -5297,13 +5290,13 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "布林通道",
+									"value": "布林通道25",
 									"description": "[required]",
 									"type": "text"
 								},
 								{
 									"key": "topicId",
-									"value": "1",
+									"value": "25",
 									"description": "[required] topic 類的 id",
 									"type": "text"
 								},
@@ -5317,6 +5310,12 @@
 									"key": "hide",
 									"value": "true",
 									"description": "[required]",
+									"type": "text"
+								},
+								{
+									"key": "isRecommended",
+									"value": "true",
+									"description": "[required] boolean",
 									"type": "text"
 								}
 							]
@@ -5465,6 +5464,12 @@
 								{
 									"key": "hide",
 									"value": "true",
+									"description": "[required] boolean",
+									"type": "text"
+								},
+								{
+									"key": "isRecommended",
+									"value": "false",
 									"description": "[required] boolean",
 									"type": "text"
 								}
@@ -5777,14 +5782,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/edit-tags-display-setting",
-									"protocol": "http",
+									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{internalPrefix}}",
 										"edit-tags-display-setting"
 									]
 								}
@@ -5803,6 +5806,95 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "前台拿到推薦 tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/tag/recommand?q=人",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"tag",
+								"recommand"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "人"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "前台拿到推薦 tag",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/tag/recommand?q=人",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"tag",
+										"recommand"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "人"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "213"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d5-QcknWfa7o0fzLZIXJTE8FQBifEI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Nov 2023 04:14:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 23,\n            \"name\": \"個人消費支出\",\n            \"sort\": 7,\n            \"hide\": false,\n            \"topicId\": 2\n        },\n        {\n            \"id\": 55,\n            \"name\": \"法人\",\n            \"sort\": 11,\n            \"hide\": false,\n            \"topicId\": 4\n        },\n        {\n            \"id\": 57,\n            \"name\": \"總股東人數\",\n            \"sort\": 13,\n            \"hide\": false,\n            \"topicId\": 4\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -5884,14 +5976,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/news?tag=123",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"news"
 									],
 									"query": [
@@ -6099,14 +6189,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"author"
 									],
@@ -6202,14 +6290,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"tag"
 									],
@@ -6284,12 +6370,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
@@ -6778,41 +6862,6 @@
 							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf\"\n}"
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "youtube",
-			"item": [
-				{
-					"name": "get youtube paging",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/youtube?page=0&size=30",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"youtube"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "0",
-									"description": "[required]"
-								},
-								{
-									"key": "size",
-									"value": "30",
-									"description": "[required]"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		}
