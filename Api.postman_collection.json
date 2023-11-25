@@ -6404,6 +6404,35 @@
 							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "search by title",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/search/title?q=2023",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"search",
+								"title"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "2023",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"

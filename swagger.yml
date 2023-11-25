@@ -1,8 +1,10 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix
-  version: 11.25.1410
+  description: >-
+    API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix, add search article by
+    title
+  version: 11.25.1631
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -3850,6 +3852,26 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
+  /api/search/title:
+    get:
+      tags:
+        - 搜尋
+      summary: search by title
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '2023'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/subscription/latest-plan:
     get:
       tags:

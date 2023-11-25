@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.25.1410",
-        "description": "API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix"
+        "version": "11.25.1631",
+        "description": "API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix, add search article by title"
     },
     "servers": [
         {
