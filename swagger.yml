@@ -3326,12 +3326,8 @@ paths:
       tags:
         - 標籤、主題
       summary: 前台拿到推薦 tag
-      parameters:
-        - name: q
-          in: query
-          schema:
-            type: string
-          example: 人
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: OK
