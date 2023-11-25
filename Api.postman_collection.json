@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -1103,7 +1085,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/Users/chang/Downloads/chang.jpg"
+									"src": []
 								}
 							]
 						},
@@ -1310,7 +1292,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&type=2",
+							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -1333,10 +1315,6 @@
 									"key": "size",
 									"value": "30",
 									"description": "[required]"
-								},
-								{
-									"key": "type",
-									"value": "2"
 								}
 							]
 						},
@@ -1592,6 +1570,143 @@
 				{
 					"name": "文章",
 					"item": [
+						{
+							"name": "get latest articles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=標題",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"article"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										},
+										{
+											"key": "title",
+											"value": "標題",
+											"description": "[string]"
+										},
+										{
+											"key": "author",
+											"value": "1",
+											"description": "[int]",
+											"disabled": true
+										},
+										{
+											"key": "topic",
+											"value": "1",
+											"description": "[int]",
+											"disabled": true
+										},
+										{
+											"key": "tag",
+											"value": "1",
+											"description": "[int]",
+											"disabled": true
+										}
+									]
+								},
+								"description": "topic query value\n\n不傳 -> 全部  \n1 -> 基本面（基本面、總經）  \n2 -> 技術面  \n3 -> 籌碼面  \n4 -> 其他"
+							},
+							"response": [
+								{
+									"name": "get latest articles",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"article"
+											],
+											"query": [
+												{
+													"key": "topic",
+													"value": "1",
+													"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
+												},
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2122"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 24 Nov 2023 19:23:06 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 10,\n        \"totalCount\": 2,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            },\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\"\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
 						{
 							"name": "get article content",
 							"request": {
@@ -2117,12 +2232,6 @@
 											"description": "[required][檔案格式：jpg, jpeg, png]",
 											"type": "file",
 											"src": "/Users/rui/Downloads/sticker (1) (16).png"
-										},
-										{
-											"key": "",
-											"value": "",
-											"type": "text",
-											"disabled": true
 										}
 									]
 								},
@@ -2718,7 +2827,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{domain}}/api/dashboard/members?subscription=&refund_status=",
+									"raw": "{{domain}}/api/dashboard/members?subscription=",
 									"host": [
 										"{{domain}}"
 									],
@@ -2732,11 +2841,6 @@
 											"key": "subscription",
 											"value": "",
 											"description": "`is_subscribing` / `renewal_disabled` / `finished` / `none`"
-										},
-										{
-											"key": "refund_status",
-											"value": "",
-											"description": "`waiting` / `refunded`"
 										}
 									]
 								}
@@ -3021,13 +3125,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user/refresh",
+									"raw": "{{domain}}/api/dashboard/user/refresh",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{prefix}}",
-										"{{internalPrefix}}",
+										"api",
+										"dashboard",
 										"user",
 										"refresh"
 									]
@@ -3316,7 +3420,7 @@
 											"key": "file",
 											"description": "user avatar",
 											"type": "file",
-											"src": "/Users/chang/Downloads/chang.jpg"
+											"src": "/Users/rui/Downloads/sticker (1).png"
 										}
 									]
 								},
@@ -3472,6 +3576,99 @@
 				{
 					"name": "訂閱 & 發票",
 					"item": [
+						{
+							"name": "取得退費清單",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/dashboard/refund-bills",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"refund-bills"
+									],
+									"query": [
+										{
+											"key": "refund_status",
+											"value": "",
+											"description": "`waiting` / `refunded`",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "取得退費清單",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/dashboard/refund-bills",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"dashboard",
+												"refund-bills"
+											],
+											"query": [
+												{
+													"key": "refund_status",
+													"value": "",
+													"description": "`waiting` / `refunded`",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1016"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3f8-c0xdaaAkrmMDtBhO5Y036tyyEOI\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 Nov 2023 17:18:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 2,\n    \"totalCount\": 2,\n    \"data\": [\n        {\n            \"id\": 5,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"plan\": \"month\",\n            \"email\": \"no-reply@gmail.com\",\n            \"isRefunded\": true,\n            \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n            \"refundedAt\": \"2023-11-20T17:40:35.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"refund\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-20T17:40:35.000Z\",\n            \"endAt\": \"2023-12-20T17:40:35.000Z\",\n            \"createdByUserId\": 7,\n            \"paymentPlatformNo\": \"mock_order_1700501990814_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-20T17:40:35.000Z\",\n            \"updatedAt\": \"2023-11-20T17:40:35.000Z\"\n        },\n        {\n            \"id\": 7,\n            \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n            \"plan\": \"month\",\n            \"email\": \"yot4106@gmail.com\",\n            \"isRefunded\": false,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-21T16:44:27.000Z\",\n            \"endAt\": \"2023-12-21T16:44:27.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"mock_order_1700585052751_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n            \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
 						{
 							"name": "完成退費 (i.e. 編輯已退款金額)",
 							"request": {
@@ -5836,14 +6033,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/edit-tags-display-setting",
-									"protocol": "http",
+									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{internalPrefix}}",
 										"edit-tags-display-setting"
 									]
 								}
@@ -6036,14 +6231,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/news?tag=123",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"news"
 									],
 									"query": [
@@ -6251,14 +6444,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"author"
 									],
@@ -6354,14 +6545,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"tag"
 									],
@@ -6465,12 +6654,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",

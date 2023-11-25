@@ -703,11 +703,6 @@ paths:
           required: true
           description: ''
           example: '30'
-        - name: type
-          in: query
-          schema:
-            type: integer
-          example: '2'
       responses:
         '200':
           description: OK
@@ -983,6 +978,238 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
+  /api/dashboard/article:
+    get:
+      tags:
+        - 後台 > 文章
+      summary: get latest articles
+      description: |-
+        topic query value
+
+        不傳 -> 全部  
+        1 -> 基本面（基本面、總經）  
+        2 -> 技術面  
+        3 -> 籌碼面  
+        4 -> 其他
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '30'
+        - name: title
+          in: query
+          schema:
+            type: string
+          description: '[string]'
+          example: 標題
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '2122'
+            ETag:
+              schema:
+                type: string
+                example: W/"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc"
+            Date:
+              schema:
+                type: string
+                example: Fri, 24 Nov 2023 19:23:06 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  currentPage: 0
+                  pageSize: 10
+                  totalCount: 2
+                  totalPage: 1
+                  articles:
+                    - id: 2
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
+                      author:
+                        name: Remus
+                        id: 1
+                      companies: []
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼
+                        - id: 5
+                          name: 技術
+                      tags: []
+                      publishDate: '2023-11-22T16:11:23.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: false
+                      source: null
+                    - id: 1
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
+                      author:
+                        name: Remus
+                        id: 1
+                      companies:
+                        - id: 1
+                          code: '1101'
+                          name: 台泥
+                        - id: 2
+                          code: '1102'
+                          name: 亞泥
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼
+                        - id: 5
+                          name: 技術
+                      tags:
+                        - id: 1
+                          name: 半導體
+                        - id: 2
+                          name: IC 設計
+                      publishDate: '2023-11-21T16:11:23.000Z'
+                      previewImage: null
+                      type: 1
+                      isLimited: false
+                      source: null
+    post:
+      tags:
+        - 後台 > 文章
+      summary: create an article
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - title
+                - fullContent
+                - rawContent
+                - clippedContent
+                - topics[0]
+                - topics[1]
+                - isLimited
+                - isDraft
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: 標題
+                fullContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                rawContent:
+                  type: string
+                  description: article.html, podcast.description
+                  example: >-
+                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
+                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
+                    width="500"
+                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
+                clippedContent:
+                  type: string
+                  description: json stringtify
+                  example: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                topics[0]:
+                  type: integer
+                  description: ''
+                  example: '27'
+                topics[1]:
+                  type: integer
+                  description: ''
+                  example: '30'
+                tags[0]:
+                  type: integer
+                  example: '179'
+                tags[1]:
+                  type: integer
+                  example: '200'
+                isLimited:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                isDraft:
+                  type: boolean
+                  description: ''
+                  example: 'false'
+                companies[0]:
+                  type: integer
+                  example: '1'
+                companies[1]:
+                  type: integer
+                  example: '2'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 10
   /api/dashboard/article/{id}:
     get:
       tags:
@@ -1141,94 +1368,6 @@ paths:
               example:
                 data:
                   status: success
-  /api/dashboard/article:
-    post:
-      tags:
-        - 後台 > 文章
-      summary: create an article
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              required:
-                - title
-                - fullContent
-                - rawContent
-                - clippedContent
-                - topics[0]
-                - topics[1]
-                - isLimited
-                - isDraft
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: 標題
-                fullContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                rawContent:
-                  type: string
-                  description: article.html, podcast.description
-                  example: >-
-                    <h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img
-                    src="https://i.imgur.com/2vCuMM9.jpeg"  alt="canyon"
-                    width="500"
-                    height="600"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…</p>
-                clippedContent:
-                  type: string
-                  description: json stringtify
-                  example: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                topics[0]:
-                  type: integer
-                  description: ''
-                  example: '27'
-                topics[1]:
-                  type: integer
-                  description: ''
-                  example: '30'
-                tags[0]:
-                  type: integer
-                  example: '179'
-                tags[1]:
-                  type: integer
-                  example: '200'
-                isLimited:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                isDraft:
-                  type: boolean
-                  description: ''
-                  example: 'false'
-                companies[0]:
-                  type: integer
-                  example: '1'
-                companies[1]:
-                  type: integer
-                  example: '2'
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  id: 10
   /api/dashboard/image:
     post:
       tags:
@@ -1246,8 +1385,6 @@ paths:
                   type: string
                   description: '[檔案格式：jpg, jpeg, png]'
                   format: binary
-                '':
-                  type: string
       security:
         - bearerAuth: []
       responses:
@@ -1530,11 +1667,6 @@ paths:
           schema:
             type: string
           description: '`is_subscribing` / `renewal_disabled` / `finished` / `none`'
-        - name: refund_status
-          in: query
-          schema:
-            type: string
-          description: '`waiting` / `refunded`'
       responses:
         '200':
           description: Successful response
@@ -1793,6 +1925,88 @@ paths:
               example:
                 data:
                   message: success
+  /api/dashboard/refund-bills:
+    get:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 取得退費清單
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1016'
+            ETag:
+              schema:
+                type: string
+                example: W/"3f8-c0xdaaAkrmMDtBhO5Y036tyyEOI"
+            Date:
+              schema:
+                type: string
+                example: Sat, 25 Nov 2023 17:18:52 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 0
+                pageSize: 2
+                totalCount: 2
+                data:
+                  - id: 5
+                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                    plan: month
+                    email: no-reply@gmail.com
+                    isRefunded: true
+                    canceledAt: '2023-11-24T18:49:05.000Z'
+                    refundedAt: '2023-11-20T17:40:35.000Z'
+                    maskedCreditCardNo: 400022******1111
+                    type: refund
+                    amount: 170
+                    startAt: '2023-11-20T17:40:35.000Z'
+                    endAt: '2023-12-20T17:40:35.000Z'
+                    createdByUserId: 7
+                    paymentPlatformNo: mock_order_1700501990814_1
+                    paymentResponsePayload: null
+                    createdAt: '2023-11-20T17:40:35.000Z'
+                    updatedAt: '2023-11-20T17:40:35.000Z'
+                  - id: 7
+                    memberId: 6a518ce9-8bcd-41d4-911e-e849b3b21cf6
+                    plan: month
+                    email: yot4106@gmail.com
+                    isRefunded: false
+                    maskedCreditCardNo: 400022******1111
+                    type: payment
+                    amount: 170
+                    startAt: '2023-11-21T16:44:27.000Z'
+                    endAt: '2023-12-21T16:44:27.000Z'
+                    createdByUserId: null
+                    paymentPlatformNo: mock_order_1700585052751_1
+                    paymentResponsePayload: null
+                    createdAt: '2023-11-21T16:44:27.000Z'
+                    updatedAt: '2023-11-21T16:44:27.000Z'
   /api/dashboard/upsert-refund-amount:
     post:
       tags:
