@@ -1,10 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: >-
-    API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix, add search article by
-    title
-  version: 11.25.1631
+  description: tag 加上 isRecommended 欄位。新增後台 get latest articles
+  version: 11.26.0335
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -1013,7 +1011,25 @@ paths:
           schema:
             type: string
           description: '[string]'
-          example: 標題
+          example: 世界
+        - name: author
+          in: query
+          schema:
+            type: integer
+          description: '[int]'
+          example: '1'
+        - name: topic
+          in: query
+          schema:
+            type: integer
+          description: '[int]'
+          example: '3'
+        - name: tag
+          in: query
+          schema:
+            type: integer
+          description: '[int]'
+          example: '1'
       responses:
         '200':
           description: OK
@@ -1033,15 +1049,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '2122'
+                example: '1218'
             ETag:
               schema:
                 type: string
-                example: W/"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc"
+                example: W/"4c2-Z7njMDjTF6qghD3WGwhCuNE5HWU"
             Date:
               schema:
                 type: string
-                example: Fri, 24 Nov 2023 19:23:06 GMT
+                example: Sat, 25 Nov 2023 18:38:11 GMT
             Connection:
               schema:
                 type: string
@@ -1057,36 +1073,10 @@ paths:
               example:
                 data:
                   currentPage: 0
-                  pageSize: 10
-                  totalCount: 2
+                  pageSize: 30
+                  totalCount: 1
                   totalPage: 1
                   articles:
-                    - id: 2
-                      title: 你好，世界
-                      description: >-
-                        新手也能懂的 Kotlin Collection
-                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                        Collection 有關。Collection
-                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
-                        團隊深知資料處理的重要性，在標準函式庫（Stan…
-                      author:
-                        name: Remus
-                        id: 1
-                      companies: []
-                      topics:
-                        - id: 3
-                          name: 基本面
-                        - id: 4
-                          name: 籌碼
-                        - id: 5
-                          name: 技術
-                      tags: []
-                      publishDate: '2023-11-22T16:11:23.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: false
-                      source: null
                     - id: 1
                       title: 你好，世界
                       description: >-
@@ -1109,17 +1099,16 @@ paths:
                       topics:
                         - id: 3
                           name: 基本面
-                        - id: 4
-                          name: 籌碼
-                        - id: 5
-                          name: 技術
                       tags:
                         - id: 1
                           name: 半導體
-                        - id: 2
-                          name: IC 設計
+                          isRecommended: false
                       publishDate: '2023-11-21T16:11:23.000Z'
-                      previewImage: null
+                      previewImage:
+                        id: 1
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       source: null
@@ -1198,18 +1187,54 @@ paths:
                 companies[1]:
                   type: integer
                   example: '2'
+                previewImageId:
+                  type: integer
+                  example: '2'
       security:
         - bearerAuth: []
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '18'
+            ETag:
+              schema:
+                type: string
+                example: W/"12-KZIEXCqq4aVJNVtebn2QvkzdD6s"
+            Date:
+              schema:
+                type: string
+                example: Sat, 25 Nov 2023 18:42:39 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
-                  id: 10
+                  id: 27
   /api/dashboard/article/{id}:
     get:
       tags:
@@ -1328,6 +1353,9 @@ paths:
                 companies[1]:
                   type: integer
                   example: '4'
+                previewImageId:
+                  type: integer
+                  example: '2'
       parameters:
         - name: id
           in: path
@@ -1335,17 +1363,50 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '25'
+          example: '1'
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '17'
+            ETag:
+              schema:
+                type: string
+                example: W/"11-mhIzk+6CZQ0xNbkxdoJWFe0RFnY"
+            Date:
+              schema:
+                type: string
+                example: Sat, 25 Nov 2023 18:42:05 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
-                  id: 123
+                  id: 1
     delete:
       tags:
         - 後台 > 文章
@@ -3219,25 +3280,23 @@ paths:
               required:
                 - name
                 - topicId
-                - sort
-                - hide
                 - isRecommended
               properties:
                 name:
                   type: string
                   description: ''
-                  example: 布林通道25
+                  example: 布林通道123
                 topicId:
                   type: integer
                   description: topic 類的 id
-                  example: '25'
+                  example: '1'
                 sort:
                   type: integer
-                  description: ''
+                  description: 'integer, default: 0'
                   example: '5'
                 hide:
                   type: boolean
-                  description: ''
+                  description: 'boolean, defult: false'
                   example: 'true'
                 isRecommended:
                   type: boolean
@@ -3386,8 +3445,6 @@ paths:
               required:
                 - name
                 - topicId
-                - sort
-                - hide
                 - isRecommended
               properties:
                 name:
@@ -3400,11 +3457,11 @@ paths:
                   example: '1'
                 sort:
                   type: integer
-                  description: integer
-                  example: '5'
+                  description: 'integer, default: 0'
+                  example: '0'
                 hide:
                   type: boolean
-                  description: boolean
+                  description: 'boolean, defult: false'
                   example: 'true'
                 isRecommended:
                   type: boolean
@@ -3416,7 +3473,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '719'
+          example: '808'
       responses:
         '200':
           description: OK
@@ -3484,59 +3541,6 @@ paths:
                   name: NotFoundError
                   message: 無法獲取 tag 資源
                   field: tag
-  /dashboard/edit-tags-display-setting:
-    post:
-      tags:
-        - 標籤、主題
-      summary: '[未完成]後台  edit tags display setting'
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                tags[0][id]:
-                  type: integer
-                  example: '1'
-                tags[0][name]:
-                  type: string
-                  example: a tag
-                tags[0][hide]:
-                  type: boolean
-                  example: 'false'
-                tags[1][id]:
-                  type: integer
-                  example: '3'
-                tags[1][name]:
-                  type: string
-                  example: c tag
-                tags[1][hide]:
-                  type: boolean
-                  example: 'true'
-                tags[2][id]:
-                  type: integer
-                  example: '4'
-                tags[2][name]:
-                  type: string
-                  example: b tag
-                tags[2][hide]:
-                  type: boolean
-                  example: 'false'
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: success
   /api/tag/recommand:
     get:
       tags:

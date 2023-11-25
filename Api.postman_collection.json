@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -1586,7 +1586,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=標題",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=1&topic=3&tag=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -1608,26 +1608,23 @@
 										},
 										{
 											"key": "title",
-											"value": "標題",
+											"value": "世界",
 											"description": "[string]"
 										},
 										{
 											"key": "author",
 											"value": "1",
-											"description": "[int]",
-											"disabled": true
+											"description": "[int]"
 										},
 										{
 											"key": "topic",
-											"value": "1",
-											"description": "[int]",
-											"disabled": true
+											"value": "3",
+											"description": "[int]"
 										},
 										{
 											"key": "tag",
 											"value": "1",
-											"description": "[int]",
-											"disabled": true
+											"description": "[int]"
 										}
 									]
 								},
@@ -1640,27 +1637,45 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=1&topic=3&tag=1",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{prefix}}",
+												"{{internalPrefix}}",
 												"article"
 											],
 											"query": [
 												{
-													"key": "topic",
-													"value": "1",
-													"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
-												},
-												{
 													"key": "page",
-													"value": "0"
+													"value": "0",
+													"description": "[required]"
 												},
 												{
 													"key": "size",
-													"value": "10"
+													"value": "30",
+													"description": "[required]"
+												},
+												{
+													"key": "title",
+													"value": "世界",
+													"description": "[string]"
+												},
+												{
+													"key": "author",
+													"value": "1",
+													"description": "[int]"
+												},
+												{
+													"key": "topic",
+													"value": "3",
+													"description": "[int]"
+												},
+												{
+													"key": "tag",
+													"value": "1",
+													"description": "[int]"
 												}
 											]
 										}
@@ -1683,15 +1698,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "2122"
+											"value": "1218"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc\""
+											"value": "W/\"4c2-Z7njMDjTF6qghD3WGwhCuNE5HWU\""
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 24 Nov 2023 19:23:06 GMT"
+											"value": "Sat, 25 Nov 2023 18:38:11 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1703,7 +1718,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 10,\n        \"totalCount\": 2,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            },\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\"\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -1850,6 +1865,11 @@
 											"key": "companies[1]",
 											"value": "2",
 											"type": "text"
+										},
+										{
+											"key": "previewImageId",
+											"value": "2",
+											"type": "text"
 										}
 									]
 								},
@@ -1876,42 +1896,75 @@
 											"formdata": [
 												{
 													"key": "title",
-													"value": "你好，世界",
+													"value": "標題",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "content",
+													"key": "fullContent",
 													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
 													"description": "[required] json stringtify",
 													"type": "text"
 												},
 												{
-													"key": "html",
+													"key": "rawContent",
 													"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+													"description": "[required] article.html, podcast.description",
+													"type": "text"
+												},
+												{
+													"key": "clippedContent",
+													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+													"description": "[required] json stringtify",
+													"type": "text"
+												},
+												{
+													"key": "topics[0]",
+													"value": "27",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "topic",
-													"value": "1",
+													"key": "topics[1]",
+													"value": "30",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "tags",
-													"value": "1",
+													"key": "tags[0]",
+													"value": "179",
 													"type": "text"
 												},
 												{
-													"key": "tags",
-													"value": "2",
+													"key": "tags[1]",
+													"value": "200",
 													"type": "text"
 												},
 												{
 													"key": "isLimited",
 													"value": "false",
 													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "isDraft",
+													"value": "false",
+													"description": "[required] ",
+													"type": "text"
+												},
+												{
+													"key": "companies[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "companies[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "previewImageId",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -1931,9 +1984,42 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "18"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"12-KZIEXCqq4aVJNVtebn2QvkzdD6s\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 Nov 2023 18:42:39 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 10\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 27\n    }\n}"
 								}
 							]
 						},
@@ -2009,6 +2095,11 @@
 											"key": "companies[1]",
 											"value": "4",
 											"type": "text"
+										},
+										{
+											"key": "previewImageId",
+											"value": "2",
+											"type": "text"
 										}
 									]
 								},
@@ -2026,7 +2117,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "25",
+											"value": "1",
 											"description": "[required] article id"
 										}
 									]
@@ -2043,42 +2134,45 @@
 											"formdata": [
 												{
 													"key": "title",
-													"value": "你好，世界",
+													"value": "你好",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "content",
-													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+													"key": "fullContent",
+													"value": "{\"type\":\"dpooc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
 													"description": "[required] json stringtify",
 													"type": "text"
 												},
 												{
-													"key": "html",
-													"value": "<h2><strong>新手也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</p>",
+													"key": "rawContent",
+													"value": "<h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</",
 													"description": "[required]",
 													"type": "text"
 												},
 												{
-													"key": "topics[]",
-													"value": "1",
-													"description": "[required]",
+													"key": "clippedContent",
+													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
 													"type": "text"
 												},
 												{
-													"key": "topics[]",
-													"value": "2",
-													"description": "[required]",
+													"key": "topics[0]",
+													"value": "28",
 													"type": "text"
 												},
 												{
-													"key": "tags[]",
-													"value": "11",
+													"key": "topics[1]",
+													"value": "30",
 													"type": "text"
 												},
 												{
-													"key": "tags[]",
-													"value": "22",
+													"key": "tags[0]",
+													"value": "188",
+													"type": "text"
+												},
+												{
+													"key": "tags[1]",
+													"value": "200",
 													"type": "text"
 												},
 												{
@@ -2091,6 +2185,21 @@
 													"key": "isDraft",
 													"value": "false",
 													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "companies[0]",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "companies[1]",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "previewImageId",
+													"value": "2",
 													"type": "text"
 												}
 											]
@@ -2109,7 +2218,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "123",
+													"value": "1",
 													"description": "[required] article id"
 												}
 											]
@@ -2118,9 +2227,42 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "17"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11-mhIzk+6CZQ0xNbkxdoJWFe0RFnY\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 25 Nov 2023 18:42:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 123\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 1\n    }\n}"
 								}
 							]
 						},
@@ -5541,33 +5683,36 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "布林通道25",
+									"value": "布林通道123",
 									"description": "[required]",
 									"type": "text"
 								},
 								{
 									"key": "topicId",
-									"value": "25",
+									"value": "1",
 									"description": "[required] topic 類的 id",
 									"type": "text"
 								},
 								{
 									"key": "sort",
 									"value": "5",
-									"description": "[required]",
-									"type": "text"
+									"description": "integer, default: 0",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "hide",
 									"value": "true",
-									"description": "[required]",
-									"type": "text"
+									"description": "boolean, defult: false",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "isRecommended",
 									"value": "true",
 									"description": "[required] boolean",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -5708,15 +5853,17 @@
 								},
 								{
 									"key": "sort",
-									"value": "5",
-									"description": "[required] integer",
-									"type": "text"
+									"value": "0",
+									"description": "integer, default: 0",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "hide",
 									"value": "true",
-									"description": "[required] boolean",
-									"type": "text"
+									"description": "boolean, defult: false",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "isRecommended",
@@ -5747,7 +5894,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "719"
+									"value": "808"
 								}
 							]
 						}
@@ -5946,117 +6093,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"code\": 404,\n        \"name\": \"NotFoundError\",\n        \"message\": \"無法獲取 tag 資源\",\n        \"field\": \"tag\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "[未完成]後台  edit tags display setting",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "tags[0][id]",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "tags[0][name]",
-									"value": "a tag",
-									"type": "text"
-								},
-								{
-									"key": "tags[0][hide]",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "tags[1][id]",
-									"value": "3",
-									"type": "text"
-								},
-								{
-									"key": "tags[1][name]",
-									"value": "c tag",
-									"type": "text"
-								},
-								{
-									"key": "tags[1][hide]",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "tags[2][id]",
-									"value": "4",
-									"type": "text"
-								},
-								{
-									"key": "tags[2][name]",
-									"value": "b tag",
-									"type": "text"
-								},
-								{
-									"key": "tags[2][hide]",
-									"value": "false",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{internalPrefix}}",
-								"edit-tags-display-setting"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "edit tags display setting",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "tags",
-											"value": "",
-											"description": "[required]",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{domain}}/{{internalPrefix}}/edit-tags-display-setting",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{internalPrefix}}",
-										"edit-tags-display-setting"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
 						}
 					]
 				},
