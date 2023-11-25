@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: API 新增推薦 tag
-  version: 11.25.1222
+  description: API 新增推薦 tag。文章加上 companies 欄位。調整後台 文章/圖片 prefix
+  version: 11.25.1410
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -922,7 +922,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '11'
+          example: '1'
       responses:
         '200':
           description: OK
@@ -942,6 +942,13 @@ paths:
                       author:
                         name: Rick
                         id: 1
+                      companies:
+                        - id: 1
+                          code: '1101'
+                          name: 台泥
+                        - id: 2
+                          code: '1102'
+                          name: 亞泥
                       tags:
                         - name: 毛利
                           id: 1
@@ -959,6 +966,13 @@ paths:
                       author:
                         name: Rick
                         id: 1
+                      companies:
+                        - id: 1
+                          code: '1101'
+                          name: 台泥
+                        - id: 2
+                          code: '1102'
+                          name: 亞泥
                       tags:
                         - name: 毛利
                           id: 1
@@ -999,6 +1013,13 @@ paths:
                   author:
                     name: Rick
                     id: 1
+                  companies:
+                    - id: 1
+                      code: '1101'
+                      name: 台泥
+                    - id: 2
+                      code: '1102'
+                      name: 亞泥
                   tags:
                     - name: 毛利
                       id: 1
@@ -1072,6 +1093,12 @@ paths:
                   type: boolean
                   description: ''
                   example: 'false'
+                companies[0]:
+                  type: integer
+                  example: '3'
+                companies[1]:
+                  type: integer
+                  example: '4'
       parameters:
         - name: id
           in: path
@@ -1079,7 +1106,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '2'
+          example: '25'
       responses:
         '200':
           description: OK
@@ -1182,6 +1209,14 @@ paths:
                   type: boolean
                   description: ''
                   example: 'false'
+                companies[0]:
+                  type: integer
+                  example: '1'
+                companies[1]:
+                  type: integer
+                  example: '2'
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -1191,37 +1226,8 @@ paths:
                 type: object
               example:
                 data:
-                  id: 1
-                  title: 你好，世界
-                  fullContent: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                  rawContent: >-
-                    新手也能懂的 Kotlin Collection
-                    賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
-                    Collection 有關。Collection
-                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
-                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
-                    團隊深知資料處理的重要性，在標準函式庫（Stan…
-                  clippedContent: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                  topic:
-                    - id: 3
-                      name: 基本面
-                    - id: 4
-                      name: 籌碼
-                    - id: 5
-                      name: 技術
-                  tags:
-                    - id: 1
-                      name: 半導體
-                    - id: 2
-                      name: IC 設計
-                  isLimited: false
-                  isDraft: false
-                  publishedAt: '2023-11-21T16:11:23.000Z'
-  /api/image:
+                  id: 10
+  /api/dashboard/image:
     post:
       tags:
         - 後台 > 圖片
@@ -1236,7 +1242,7 @@ paths:
               properties:
                 file:
                   type: string
-                  description: ''
+                  description: '[檔案格式：jpg, jpeg, png]'
                   format: binary
                 '':
                   type: string
@@ -1253,16 +1259,15 @@ paths:
                 data:
                   message: 檔案上傳成功！
                   imageUrl: >-
-                    https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
-                    (1).png
+                    https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/75da1d23-c0ad-4ed2-bb20-2c53edfa75d2
                   image:
-                    id: 2
-                    name: 1700467448756-sticker (1).png
-                    path: 1700467448756-sticker (1).png
+                    id: 6
+                    name: sticker (1) (16).png
+                    path: 75da1d23-c0ad-4ed2-bb20-2c53edfa75d2
                     creatorType: User
-                    creatorId: 8
-                    updatedAt: '2023-11-20T08:04:09.443Z'
-                    createdAt: '2023-11-20T08:04:09.443Z'
+                    creatorId: 1
+                    updatedAt: '2023-11-25T05:58:12.320Z'
+                    createdAt: '2023-11-25T05:58:12.320Z'
   /api/dashboard/users:
     get:
       tags:

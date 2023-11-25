@@ -1524,7 +1524,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "11",
+									"value": "1",
 									"description": "[required] article id"
 								}
 							]
@@ -1561,7 +1561,7 @@
 							"_postman_previewlanguage": "json",
 							"header": null,
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -1606,12 +1606,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/article/:id",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{prefix}}",
+												"{{internalPrefix}}",
 												"article",
 												":id"
 											],
@@ -1627,13 +1628,23 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"companies\": [\n            {\n                \"id\": 1,\n                \"code\": \"1101\",\n                \"name\": \"台泥\"\n            },\n            {\n                \"id\": 2,\n                \"code\": \"1102\",\n                \"name\": \"亞泥\"\n            }\n        ],\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
 								}
 							]
 						},
 						{
 							"name": "create an article",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -1695,6 +1706,16 @@
 											"key": "isDraft",
 											"value": "false",
 											"description": "[required] ",
+											"type": "text"
+										},
+										{
+											"key": "companies[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "companies[1]",
+											"value": "2",
 											"type": "text"
 										}
 									]
@@ -1763,11 +1784,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/article",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"article"
 											]
@@ -1778,7 +1800,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"你好，世界\",\n        \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"rawContent\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n        \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topic\": [\n            {\n                \"id\": 3,\n                \"name\": \"基本面\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"籌碼\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"技術\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"半導體\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"IC 設計\"\n            }\n        ],\n        \"isLimited\": false,\n        \"isDraft\": false,\n        \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 10\n    }\n}"
 								}
 							]
 						},
@@ -1844,6 +1866,16 @@
 											"value": "false",
 											"description": "[required]",
 											"type": "text"
+										},
+										{
+											"key": "companies[0]",
+											"value": "3",
+											"type": "text"
+										},
+										{
+											"key": "companies[1]",
+											"value": "4",
+											"type": "text"
 										}
 									]
 								},
@@ -1861,7 +1893,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2",
+											"value": "25",
 											"description": "[required] article id"
 										}
 									]
@@ -1931,11 +1963,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"article",
 												":id"
@@ -1990,11 +2023,12 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/article/:id",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article/:id",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"article",
 												":id"
@@ -2062,9 +2096,9 @@
 									"formdata": [
 										{
 											"key": "file",
-											"description": "[required]",
+											"description": "[required][檔案格式：jpg, jpeg, png]",
 											"type": "file",
-											"src": "/Users/chang/Downloads/chang.jpg"
+											"src": "/Users/rui/Downloads/sticker (1) (16).png"
 										},
 										{
 											"key": "",
@@ -2075,12 +2109,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/image",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"image"
 									]
 								}
@@ -2103,11 +2138,12 @@
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{internalPrefix}}/image",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
+												"{{prefix}}",
 												"{{internalPrefix}}",
 												"image"
 											]
@@ -2118,7 +2154,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"message\": \"檔案上傳成功！\",\n        \"imageUrl\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\",\n        \"image\": {\n            \"id\": 2,\n            \"name\": \"1700467448756-sticker (1).png\",\n            \"path\": \"1700467448756-sticker (1).png\",\n            \"creatorType\": \"User\",\n            \"creatorId\": 8,\n            \"updatedAt\": \"2023-11-20T08:04:09.443Z\",\n            \"createdAt\": \"2023-11-20T08:04:09.443Z\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"檔案上傳成功！\",\n        \"imageUrl\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/75da1d23-c0ad-4ed2-bb20-2c53edfa75d2\",\n        \"image\": {\n            \"id\": 6,\n            \"name\": \"sticker (1) (16).png\",\n            \"path\": \"75da1d23-c0ad-4ed2-bb20-2c53edfa75d2\",\n            \"creatorType\": \"User\",\n            \"creatorId\": 1,\n            \"updatedAt\": \"2023-11-25T05:58:12.320Z\",\n            \"createdAt\": \"2023-11-25T05:58:12.320Z\"\n        }\n    }\n}"
 								}
 							]
 						}
