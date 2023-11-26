@@ -34,7 +34,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXkps1nnw7xGjupUsTXxRrycyPnJro_gqS5VuXD_NcCjb8cn-R_tIgr7aTIJK6ellA",
+									"value": "4/0AfJohXmoQ2AIfcD7kwlwgxAzvOPeR1B4K9jNoC5xfJSy-cNfsTBql5Pci53X2QdYepR-Hw",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
@@ -160,7 +160,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "rInpDPT9ywy7bhVdWgsS",
+									"value": "v4THGFQPOHeHXr5GT9pI",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -1190,7 +1190,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "109",
+									"value": "2",
 									"description": "[required] article id"
 								}
 							]
@@ -1215,16 +1215,51 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "123",
+											"value": "2",
 											"description": "[required] article id"
 										}
 									]
 								}
 							},
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "779"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30b-JDRZD9rmY6q8/bhkL13ldpj5wlk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 Nov 2023 10:08:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"companies\": [\n            {\n                \"id\": 1,\n                \"code\": \"1101\",\n                \"name\": \"台泥\"\n            },\n            {\n                \"id\": 2,\n                \"code\": \"1102\",\n                \"name\": \"亞泥\"\n            }\n        ],\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"title\": \"你好，世界\",\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 2\n        },\n        \"companies\": [\n            {\n                \"id\": 3,\n                \"code\": \"1103\",\n                \"name\": \"嘉泥\"\n            },\n            {\n                \"id\": 4,\n                \"code\": \"1104\",\n                \"name\": \"環泥\"\n            }\n        ],\n        \"topics\": [\n            {\n                \"id\": 3,\n                \"name\": \"基本面\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"籌碼面\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"技術面\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"半導體\",\n                \"isRecommended\": false\n            },\n            {\n                \"id\": 2,\n                \"name\": \"IC 設計\",\n                \"isRecommended\": false\n            }\n        ],\n        \"publishedAt\": \"2023-11-22T16:11:23.000Z\",\n        \"previewImage\": {\n            \"id\": 1,\n            \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n        },\n        \"type\": 1,\n        \"isLimited\": false,\n        \"source\": null,\n        \"isClipped\": false\n    }\n}"
 						}
 					]
 				},
@@ -1546,7 +1581,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "123",
+											"value": "1",
 											"description": "[required] article id"
 										}
 									]
@@ -1555,9 +1590,42 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1355"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54b-1U6BbM8xGUI0EsTXqnaRRyJCy+Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 Nov 2023 10:11:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\":1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"totalPage\": 0,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false,\n                        \"sort\": 0,\n                        \"hide\": true,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false,\n                        \"sort\": 1,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
@@ -1586,7 +1654,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=1&topic=3&tag=1",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=2&topic=3&tag=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -1613,7 +1681,7 @@
 										},
 										{
 											"key": "author",
-											"value": "1",
+											"value": "2",
 											"description": "[int]"
 										},
 										{
@@ -1718,7 +1786,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null,\n                \"views\": 4\n            }\n        ]\n    }\n}"
 								}
 							]
 						},
@@ -1776,7 +1844,7 @@
 									"_postman_previewlanguage": "json",
 									"header": null,
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"companies\": [\n            {\n                \"id\": 1,\n                \"code\": \"1101\",\n                \"name\": \"台泥\"\n            },\n            {\n                \"id\": 2,\n                \"code\": \"1102\",\n                \"name\": \"亞泥\"\n            }\n        ],\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\":123,\n        \"title\":\"你好，世界\",\n        \"content\":\"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"topics\":[\n            {\n                \"name\":\"基本面\",\n                \"id\":1\n            }\n        ],\n        \"author\":{\n            \"name\":\"Rick\",\n            \"id\": 1\n        },\n        \"companies\": [\n            {\n                \"id\": 1,\n                \"code\": \"1101\",\n                \"name\": \"台泥\"\n            },\n            {\n                \"id\": 2,\n                \"code\": \"1102\",\n                \"name\": \"亞泥\"\n            }\n        ],\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\":\"2023-05-02T00:00:00.000Z\",\n        \"previewImage\":{\n            \"id\": 1,\n            \"path\": \"path\"\n        },\n        \"type\":1, \n        \"isLimited\":true,\n        \"source\": null,\n        \"views\": 4\n    }\n}"
 								}
 							]
 						},
@@ -3725,7 +3793,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/dashboard/refund-bills",
+									"raw": "{{domain}}/api/dashboard/refund-bills?refund_status=",
 									"host": [
 										"{{domain}}"
 									],
@@ -3738,8 +3806,7 @@
 										{
 											"key": "refund_status",
 											"value": "",
-											"description": "`waiting` / `refunded`",
-											"disabled": true
+											"description": "`waiting` / `refunded`"
 										}
 									]
 								}

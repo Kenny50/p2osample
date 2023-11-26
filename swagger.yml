@@ -90,7 +90,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXkps1nnw7xGjupUsTXxRrycyPnJro_gqS5VuXD_NcCjb8cn-R_tIgr7aTIJK6ellA
+                    4/0AfJohXmoQ2AIfcD7kwlwgxAzvOPeR1B4K9jNoC5xfJSy-cNfsTBql5Pci53X2QdYepR-Hw
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -139,7 +139,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: rInpDPT9ywy7bhVdWgsS
+                  example: v4THGFQPOHeHXr5GT9pI
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -592,43 +592,88 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '109'
+          example: '2'
       responses:
-        undefined:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '779'
+            ETag:
+              schema:
+                type: string
+                example: W/"30b-JDRZD9rmY6q8/bhkL13ldpj5wlk"
+            Date:
+              schema:
+                type: string
+                example: Sun, 26 Nov 2023 10:08:44 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
-                  id: 123
-                  title: 你好，世界
+                  id: 2
                   content: >-
                     {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                     this editor instance exports its content as JSON."}]}]}
-                  topics:
-                    - name: 基本面
-                      id: 1
+                  title: 你好，世界
                   author:
                     name: Rick
-                    id: 1
+                    id: 2
                   companies:
-                    - id: 1
-                      code: '1101'
-                      name: 台泥
-                    - id: 2
-                      code: '1102'
-                      name: 亞泥
+                    - id: 3
+                      code: '1103'
+                      name: 嘉泥
+                    - id: 4
+                      code: '1104'
+                      name: 環泥
+                  topics:
+                    - id: 3
+                      name: 基本面
+                    - id: 4
+                      name: 籌碼面
+                    - id: 5
+                      name: 技術面
                   tags:
-                    - name: 毛利
-                      id: 1
-                  publishDate: '2023-05-02T00:00:00.000Z'
+                    - id: 1
+                      name: 半導體
+                      isRecommended: false
+                    - id: 2
+                      name: IC 設計
+                      isRecommended: false
+                  publishedAt: '2023-11-22T16:11:23.000Z'
                   previewImage:
                     id: 1
-                    path: path
+                    url: >-
+                      https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                      (1).png
                   type: 1
-                  isLimited: true
+                  isLimited: false
                   source: null
+                  isClipped: false
   /api/podcast/{id}:
     get:
       tags:
@@ -921,58 +966,92 @@ paths:
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1355'
+            ETag:
+              schema:
+                type: string
+                example: W/"54b-1U6BbM8xGUI0EsTXqnaRRyJCy+Y"
+            Date:
+              schema:
+                type: string
+                example: Sun, 26 Nov 2023 10:11:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
+                  totalPage: 0
                   articles:
-                    - id: 1
-                      title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 基本面
-                        id: 1
-                      author:
-                        name: Rick
-                        id: 1
-                      companies:
-                        - id: 1
-                          code: '1101'
-                          name: 台泥
-                        - id: 2
-                          code: '1102'
-                          name: 亞泥
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: true
-                      source: null
                     - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
                         name: Rick
-                        id: 1
+                        id: 2
                       companies:
-                        - id: 1
-                          code: '1101'
-                          name: 台泥
-                        - id: 2
-                          code: '1102'
-                          name: 亞泥
+                        - id: 3
+                          code: '1103'
+                          name: 嘉泥
+                        - id: 4
+                          code: '1104'
+                          name: 環泥
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼面
+                        - id: 5
+                          name: 技術面
                       tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                          sort: 0
+                          hide: true
+                          topicId: 1
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                          sort: 1
+                          hide: false
+                          topicId: 1
+                      publishDate: '2023-11-22T16:11:23.000Z'
+                      previewImage:
+                        id: 1
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       source: null
@@ -1017,7 +1096,7 @@ paths:
           schema:
             type: integer
           description: '[int]'
-          example: '1'
+          example: '2'
         - name: topic
           in: query
           schema:
@@ -1112,6 +1191,7 @@ paths:
                       type: 1
                       isLimited: false
                       source: null
+                      views: 4
     post:
       tags:
         - 後台 > 文章
@@ -1286,6 +1366,7 @@ paths:
                   type: 1
                   isLimited: true
                   source: null
+                  views: 4
     put:
       tags:
         - 後台 > 文章
@@ -1993,6 +2074,12 @@ paths:
       tags:
         - 後台 > 訂閱 & 發票
       summary: 取得退費清單
+      parameters:
+        - name: refund_status
+          in: query
+          schema:
+            type: string
+          description: '`waiting` / `refunded`'
       responses:
         '200':
           description: OK
