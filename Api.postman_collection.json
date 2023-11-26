@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -1208,7 +1190,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "109",
 									"description": "[required] article id"
 								}
 							]
@@ -1887,6 +1869,7 @@
 										{
 											"key": "previewImageId",
 											"value": "2",
+											"description": "[required] ",
 											"type": "text"
 										}
 									]
@@ -3836,7 +3819,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": 1,\n    \"subscriptionId\": 15,\n    \"amount\": 2888\n}",
+									"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5,\n    \"amount\": 18\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3863,7 +3846,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"memberId\": 1,\n    \"subscriptionId\": 15,\n    \"amount\": 2888\n}",
+											"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5,\n    \"amount\": 18\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3894,7 +3877,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"memberId\": 6,\n        \"isSubscribing\": false,\n        \"status\": \"canceled\",\n        \"isRefunded\": true,\n        \"plan\": \"month\",\n        \"amount\": 6888,\n        \"email\": \"test@gnim.com\",\n        \"nextRenewalDate\": \"2023-12-04\",\n        \"startAt\": \"2023-11-04T10:10:47.000Z\",\n        \"endAt\": null,\n        \"canceledAt\": \"2023-11-10T10:10:47.000Z\",\n        \"refundedAt\": \"2023-11-12T10:10:47.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-04T10:05:47.000Z\",\n        \"updatedAt\": \"2023-11-04T10:05:47.000Z\",\n        \"bills\": [\n            {\n                \"id\": 12,\n                \"memberId\": 6,\n                \"subscriptionId\": 4,\n                \"type\": \"refund\",\n                \"plan\": \"month\",\n                \"startAt\": null,\n                \"endAt\": null,\n                \"amount\": 2888,\n                \"taxAmount\": 300,\n                \"createdAt\": \"2023-10-04T10:05:47.000Z\"\n            },\n            {\n                \"id\": 10,\n                \"memberId\": 6,\n                \"subscriptionId\": 4,\n                \"type\": \"payment\",\n                \"plan\": \"month\",\n                \"startAt\": \"2023-10-04T10:10:47.000Z\",\n                \"endAt\": \"2023-11-04T10:10:47.000Z\",\n                \"amount\": 6888,\n                \"taxAmount\": 300,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"createdAt\": \"2023-10-04T10:05:47.000Z\"\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": false,\n        \"isRefunded\": true,\n        \"autoRenewal\": false,\n        \"status\": \"canceled\",\n        \"plan\": \"month\",\n        \"amount\": 170,\n        \"email\": \"no-reply@gmail.com\",\n        \"startAt\": \"2023-11-20T17:40:35.000Z\",\n        \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n        \"refundedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-20T17:39:50.000Z\",\n        \"updatedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"bills\": [\n            {\n                \"id\": 1,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"payment\",\n                \"amount\": 170,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"startAt\": \"2023-11-20T17:40:35.000Z\",\n                \"endAt\": \"2023-12-20T17:40:35.000Z\",\n                \"paymentPlatformNo\": \"mock_order_1700501990814_1\",\n                \"createdAt\": \"2023-11-20T17:40:35.000Z\",\n                \"updatedAt\": \"2023-11-20T17:40:35.000Z\"\n            },\n            {\n                \"id\": 6,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"refund\",\n                \"amount\": 18,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"createdByUserId\": 7,\n                \"createdAt\": \"2023-11-26T09:42:42.000Z\",\n                \"updatedAt\": \"2023-11-26T09:44:40.000Z\"\n            }\n        ]\n    }\n}"
 								}
 							]
 						}
@@ -5133,12 +5116,22 @@
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/2330台積電 野村 20221214 SB.pdf"
+											"src": "/Users/chang/Downloads/pdf sample/1710東聯 元富 20230512 OW.pdf"
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/2330台積電 野村 20211214 SB.pdf"
+											"src": "/Users/chang/Downloads/pdf sample/2049上銀 第一金 20230512 OW.pdf"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 永豐 20230512 N.pdf"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 宏遠 20230512 SB.pdf"
 										}
 									]
 								},
@@ -6285,14 +6278,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/news?tag=123",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"news"
 									],
 									"query": [
@@ -6364,7 +6355,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=台積電&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=28&page=0&size=30&topic=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -6376,7 +6367,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "台積電",
+									"value": "28",
 									"description": "[required]"
 								},
 								{
@@ -6500,14 +6491,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"author"
 									],
@@ -6603,14 +6592,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"search",
 										"tag"
 									],
@@ -6663,7 +6650,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/title?q=標題",
+							"raw": "{{domain}}/{{prefix}}/search/title?q=台積電",
 							"host": [
 								"{{domain}}"
 							],
@@ -6675,7 +6662,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "標題",
+									"value": "台積電",
 									"description": "[required]"
 								}
 							]
@@ -6714,12 +6701,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",

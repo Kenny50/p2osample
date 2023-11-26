@@ -592,7 +592,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '1'
+          example: '109'
       responses:
         undefined:
           content:
@@ -1130,6 +1130,7 @@ paths:
                 - topics[1]
                 - isLimited
                 - isDraft
+                - previewImageId
               properties:
                 title:
                   type: string
@@ -1189,6 +1190,7 @@ paths:
                   example: '2'
                 previewImageId:
                   type: integer
+                  description: ''
                   example: '2'
       security:
         - bearerAuth: []
@@ -2079,9 +2081,9 @@ paths:
             schema:
               type: object
               example:
-                memberId: 1
-                subscriptionId: 15
-                amount: 2888
+                memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                subscriptionId: 5
+                amount: 18
       responses:
         '200':
           headers:
@@ -2095,45 +2097,44 @@ paths:
                 type: object
               example:
                 data:
-                  id: 4
-                  memberId: 6
+                  id: 5
+                  memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
                   isSubscribing: false
-                  status: canceled
                   isRefunded: true
+                  autoRenewal: false
+                  status: canceled
                   plan: month
-                  amount: 6888
-                  email: test@gnim.com
-                  nextRenewalDate: '2023-12-04'
-                  startAt: '2023-11-04T10:10:47.000Z'
-                  endAt: null
-                  canceledAt: '2023-11-10T10:10:47.000Z'
-                  refundedAt: '2023-11-12T10:10:47.000Z'
-                  companyUniformSerialNo: '12345678'
+                  amount: 170
+                  email: no-reply@gmail.com
+                  startAt: '2023-11-20T17:40:35.000Z'
+                  canceledAt: '2023-11-24T18:49:05.000Z'
+                  refundedAt: '2023-11-26T09:42:42.000Z'
                   maskedCreditCardNo: 400022******1111
-                  createdAt: '2023-11-04T10:05:47.000Z'
-                  updatedAt: '2023-11-04T10:05:47.000Z'
+                  createdAt: '2023-11-20T17:39:50.000Z'
+                  updatedAt: '2023-11-26T09:42:42.000Z'
                   bills:
-                    - id: 12
-                      memberId: 6
-                      subscriptionId: 4
-                      type: refund
+                    - id: 1
+                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      subscriptionId: 5
                       plan: month
-                      startAt: null
-                      endAt: null
-                      amount: 2888
-                      taxAmount: 300
-                      createdAt: '2023-10-04T10:05:47.000Z'
-                    - id: 10
-                      memberId: 6
-                      subscriptionId: 4
                       type: payment
-                      plan: month
-                      startAt: '2023-10-04T10:10:47.000Z'
-                      endAt: '2023-11-04T10:10:47.000Z'
-                      amount: 6888
-                      taxAmount: 300
+                      amount: 170
                       maskedCreditCardNo: 400022******1111
-                      createdAt: '2023-10-04T10:05:47.000Z'
+                      startAt: '2023-11-20T17:40:35.000Z'
+                      endAt: '2023-12-20T17:40:35.000Z'
+                      paymentPlatformNo: mock_order_1700501990814_1
+                      createdAt: '2023-11-20T17:40:35.000Z'
+                      updatedAt: '2023-11-20T17:40:35.000Z'
+                    - id: 6
+                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      subscriptionId: 5
+                      plan: month
+                      type: refund
+                      amount: 18
+                      maskedCreditCardNo: 400022******1111
+                      createdByUserId: 7
+                      createdAt: '2023-11-26T09:42:42.000Z'
+                      updatedAt: '2023-11-26T09:44:40.000Z'
   /api/dashboard/pdf/trial:
     put:
       tags:
@@ -3829,10 +3830,10 @@ paths:
         - name: q
           in: query
           schema:
-            type: string
+            type: integer
           required: true
           description: ''
-          example: 台積電
+          example: '28'
         - name: page
           in: query
           schema:
@@ -4084,7 +4085,7 @@ paths:
             type: string
           required: true
           description: ''
-          example: 標題
+          example: 台積電
       responses:
         '200':
           description: Successful response
