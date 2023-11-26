@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -84,12 +84,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/google",
+									"raw": "http://localhost:3020/api/auth/google",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"google"
 									]
@@ -209,12 +211,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"raw": "http://localhost:3020/api/auth/line",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"line"
 									]
@@ -339,12 +343,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/refresh-token",
+									"raw": "http://localhost:3020/api/refresh-token",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"refresh-token"
 									]
 								}
@@ -429,12 +435,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"raw": "http://localhost:3020/api/member/update-information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"update-information"
 									]
@@ -522,12 +530,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"raw": "http://localhost:3020/api/member/sent-validate-email",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"sent-validate-email"
 									]
@@ -614,12 +624,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/information",
+									"raw": "http://localhost:3020/api/member/information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"information"
 									]
@@ -668,12 +680,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"raw": "http://localhost:3020/api/member/delete-account",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"delete-account"
 									]
@@ -777,12 +791,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -845,12 +861,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -6267,12 +6285,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/news?tag=123",
+									"raw": "http://localhost:3020/api/news?tag=123",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"news"
 									],
 									"query": [
@@ -6480,12 +6500,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "http://localhost:3020/api/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"author"
 									],
@@ -6581,12 +6603,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+									"raw": "http://localhost:3020/api/search/tag?tag=1&page=0&size=30&topic=0",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"search",
 										"tag"
 									],
@@ -6639,7 +6663,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/title?q=2023",
+							"raw": "{{domain}}/{{prefix}}/search/title?q=標題",
 							"host": [
 								"{{domain}}"
 							],
@@ -6651,7 +6675,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "2023",
+									"value": "標題",
 									"description": "[required]"
 								}
 							]
@@ -6690,10 +6714,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/latest-plan",
+									"raw": "http://localhost:3020/api/subscription/latest-plan",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
 										"api",
 										"subscription",

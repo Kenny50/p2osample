@@ -4081,10 +4081,10 @@ paths:
         - name: q
           in: query
           schema:
-            type: integer
+            type: string
           required: true
           description: ''
-          example: '2023'
+          example: 標題
       responses:
         '200':
           description: Successful response
