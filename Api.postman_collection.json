@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -1282,64 +1264,6 @@
 					]
 				},
 				{
-					"name": "get podcast content",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/podcast/:id",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"podcast",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "11",
-									"description": "[required] podcast id, not the one from spotify"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "get podcast content",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/podcast/:id",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"podcast",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1",
-											"description": "[required] podcast id, not the one from spotify"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"EP 89 | 科普就是在妖言惑眾 ft. 怪奇事務所所長\",\n        \"content\": \"{\\\"description\\\":\\\"你知道嗎？博恩可能把「信度」講錯了喔\\\",\\\"spotifyId\\\":\\\"2WJBISLc7sVsJFrSv3hVLk\\\",\\\"spotifyLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"applePodcastLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\",\\\"soundOnLink\\\":\\\"https://open.spotify.com/episode/2WJBISLc7sVsJFrSv3hVLk\\\"}\",\n        \"topic\": {\n            \"name\": \"基本面\",\n            \"id\": 1\n        },\n        \"tags\":[\n            {\n                \"name\":\"毛利\",\n                \"id\":1\n            }\n        ],\n        \"publishDate\": \"2023-05-02T00:00:00.000Z\",\n        \"previewImage\": null,\n        \"type\": 0,\n        \"isLimited\": false,\n        \"source\": null\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "get latest articles",
 					"request": {
 						"method": "GET",
@@ -1444,71 +1368,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 10,\n        \"totalCount\": 2,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            },\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\"\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "get latest podcasts",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/podcast?topic=0&size=30&page=0",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"podcast"
-							],
-							"query": [
-								{
-									"key": "topic",
-									"value": "0",
-									"description": "0 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
-								},
-								{
-									"key": "size",
-									"value": "30"
-								},
-								{
-									"key": "page",
-									"value": "0"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "get latest podcasts",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/podcast",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"podcast"
-									],
-									"query": [
-										{
-											"key": "topic",
-											"value": "1",
-											"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\":1,\n                \"title\":\"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"基本面\",\n                    \"id\":1\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n                \"previewImage\":null,\n                \"type\":1,\n                \"isLimited\":true,\n                \"source\": null\n            },\n            {\n                \"id\":2,\n                \"title\":\"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\":\"總經\",\n                    \"id\":2\n                },\n                \"author\": {\n                    \"name\":\"Rick\",\n                    \"id\": 1\n                },\n                \"tags\":[\n                    {\n                        \"name\":\"毛利\",\n                        \"id\":1\n                    }\n                ],\n                \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n                \"previewImage\":\"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\":false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1648,7 +1507,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
 		},
 		{
 			"name": "後台",
@@ -1672,7 +1531,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=2&topic=3&tag=1",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false",
 									"host": [
 										"{{domain}}"
 									],
@@ -1683,34 +1542,37 @@
 									],
 									"query": [
 										{
-											"key": "page",
-											"value": "0",
-											"description": "[required]"
-										},
-										{
-											"key": "size",
-											"value": "30",
-											"description": "[required]"
-										},
-										{
 											"key": "title",
-											"value": "世界",
+											"value": "你好",
 											"description": "[string]"
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "[int] 1: article, 2: ad"
+										},
+										{
+											"key": "isDraft",
+											"value": "false",
+											"description": "[boolean]"
 										},
 										{
 											"key": "author",
 											"value": "2",
-											"description": "[int]"
+											"description": "[int] author id",
+											"disabled": true
 										},
 										{
 											"key": "topic",
 											"value": "3",
-											"description": "[int]"
+											"description": "[int] topic id",
+											"disabled": true
 										},
 										{
 											"key": "tag",
 											"value": "1",
-											"description": "[int]"
+											"description": "[int] tag id",
+											"disabled": true
 										}
 									]
 								},
@@ -1723,7 +1585,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=30&title=世界&author=1&topic=3&tag=1",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false",
 											"host": [
 												"{{domain}}"
 											],
@@ -1734,34 +1596,37 @@
 											],
 											"query": [
 												{
-													"key": "page",
-													"value": "0",
-													"description": "[required]"
-												},
-												{
-													"key": "size",
-													"value": "30",
-													"description": "[required]"
-												},
-												{
 													"key": "title",
-													"value": "世界",
+													"value": "你好",
 													"description": "[string]"
 												},
 												{
-													"key": "author",
+													"key": "type",
 													"value": "1",
-													"description": "[int]"
+													"description": "[int] 1: article, 2: ad"
+												},
+												{
+													"key": "isDraft",
+													"value": "false",
+													"description": "[boolean]"
+												},
+												{
+													"key": "author",
+													"value": "2",
+													"description": "[int] author id",
+													"disabled": true
 												},
 												{
 													"key": "topic",
 													"value": "3",
-													"description": "[int]"
+													"description": "[int] topic id",
+													"disabled": true
 												},
 												{
 													"key": "tag",
 													"value": "1",
-													"description": "[int]"
+													"description": "[int] tag id",
+													"disabled": true
 												}
 											]
 										}
@@ -1784,15 +1649,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1218"
+											"value": "2441"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"4c2-Z7njMDjTF6qghD3WGwhCuNE5HWU\""
+											"value": "W/\"989-C5jDlDE1c45UyDR474JmgX4T5Ok\""
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 25 Nov 2023 18:38:11 GMT"
+											"value": "Mon, 27 Nov 2023 16:47:12 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1804,7 +1669,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null,\n                \"views\": 4\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"title\": \"你好，世界\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"籌碼面\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"技術面\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null,\n            \"views\": 13\n        },\n        {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null,\n            \"views\": 8\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -1887,7 +1752,7 @@
 										{
 											"key": "title",
 											"value": "標題",
-											"description": "[required]",
+											"description": "[required] [string]",
 											"type": "text"
 										},
 										{
@@ -1910,52 +1775,62 @@
 										},
 										{
 											"key": "topics[0]",
-											"value": "27",
-											"description": "[required]",
+											"value": "1",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "topics[1]",
-											"value": "30",
-											"description": "[required]",
+											"value": "2",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[0]",
-											"value": "179",
+											"value": "3",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[1]",
-											"value": "200",
+											"value": "4",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "isLimited",
 											"value": "false",
-											"description": "[required]",
+											"description": "[required] [boolean]",
 											"type": "text"
 										},
 										{
 											"key": "isDraft",
 											"value": "false",
-											"description": "[required] ",
+											"description": "[required] [boolean]",
 											"type": "text"
 										},
 										{
 											"key": "companies[0]",
 											"value": "1",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "companies[1]",
 											"value": "2",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "previewImageId",
 											"value": "2",
-											"description": "[required] ",
+											"description": "[required] [int] image id",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "[required] [int] 1: article, 2: ad",
 											"type": "text"
 										}
 									]
@@ -2121,7 +1996,7 @@
 										{
 											"key": "title",
 											"value": "你好",
-											"description": "[required]",
+											"description": "[required] [string]",
 											"type": "text"
 										},
 										{
@@ -2133,59 +2008,73 @@
 										{
 											"key": "rawContent",
 											"value": "<h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</",
-											"description": "[required]",
+											"description": "[required] article.html, podcast.description",
 											"type": "text"
 										},
 										{
 											"key": "clippedContent",
 											"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+											"description": "[required] json stringtify",
 											"type": "text"
 										},
 										{
 											"key": "topics[0]",
-											"value": "28",
+											"value": "1",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "topics[1]",
-											"value": "30",
+											"value": "2",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[0]",
-											"value": "188",
+											"value": "3",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[1]",
-											"value": "200",
+											"value": "4",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "isLimited",
 											"value": "false",
-											"description": "[required]",
+											"description": "[required] [boolean]",
 											"type": "text"
 										},
 										{
 											"key": "isDraft",
 											"value": "false",
-											"description": "[required]",
+											"description": "[required] [boolean]",
 											"type": "text"
 										},
 										{
 											"key": "companies[0]",
-											"value": "3",
+											"value": "4",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "companies[1]",
-											"value": "4",
+											"value": "3",
+											"description": "[int]",
 											"type": "text"
 										},
 										{
 											"key": "previewImageId",
 											"value": "2",
+											"description": "[required] [int] image id",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "1",
+											"description": "[required] [int] 1: article, 2: ad",
 											"type": "text"
 										}
 									]
@@ -2204,7 +2093,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1",
+											"value": "29",
 											"description": "[required] article id"
 										}
 									]
@@ -2432,6 +2321,429 @@
 									""
 								]
 							}
+						}
+					]
+				},
+				{
+					"name": "Banner",
+					"item": [
+						{
+							"name": "banner index",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"banner"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "banner index",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"banner"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1349"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"545-mPDhOuE/9s7ePfiQpZT6HQ7sKwk\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 Nov 2023 18:23:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"articleId\": 1,\n            \"article\": {\n                \"id\": 1,\n                \"title\": \"你好\",\n                \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 8,\n                \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 3,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 4,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 5,\n            \"articleId\": null,\n            \"article\": null\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "banner show",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"banner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "banner show",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"banner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1183"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"49f-y/2Fc5oik9mV/rassTxsF68Bfh8\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 Nov 2023 18:53:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"articleId\": 1,\n        \"article\": {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"isDraft\": false,\n            \"views\": 8,\n            \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "banner update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "articleId",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"banner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "banner update",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "articleId",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"banner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "17"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"11-xdVUgWdC6clJ2yPCm3LReGByAjI\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 Nov 2023 18:53:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 2\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "banner delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"banner",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "banner update Copy",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/banner/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"banner",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "2"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-gg3wPP4z6gLnesO4RqBhvtZJvGc\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 27 Nov 2023 18:54:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								}
+							]
 						}
 					]
 				},
@@ -6363,14 +6675,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/news?tag=123",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/news?tag=123",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"news"
 									],
 									"query": [
@@ -6894,7 +7204,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
 		},
 		{
 			"name": "訂閱",
@@ -6924,12 +7234,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
@@ -7430,7 +7738,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/media?source=jinyufengYt&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/media?source=gnimPodcast&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -7441,7 +7749,7 @@
 							"query": [
 								{
 									"key": "source",
-									"value": "jinyufengYt",
+									"value": "gnimPodcast",
 									"description": "[required] string\ngnimPodcast -> podcast\njinyufengYt -> yt"
 								},
 								{
