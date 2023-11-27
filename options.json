@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.26.0335",
-        "description": "tag 加上 isRecommended 欄位。新增後台 get latest articles"
+        "version": "11.27.0913",
+        "description": "article 加上 views 欄位"
     },
     "servers": [
         {

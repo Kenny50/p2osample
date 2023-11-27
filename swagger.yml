@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: tag 加上 isRecommended 欄位。新增後台 get latest articles
-  version: 11.26.0335
+  description: article 加上 views 欄位
+  version: 11.27.0913
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -2411,7 +2411,7 @@ paths:
           schema:
             type: string
           example: >-
-            AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK
+            AQBAfrew3U8M110kzuZE1zvmx4kajcVo2ofGTmUC4d3vf6jXHho69qIwXUwU6mh7dCXqJCi
       responses:
         '200':
           description: Successful response
@@ -3112,11 +3112,11 @@ paths:
                 oldName:
                   type: string
                   description: ''
-                  example: 2330台積電 野村 20211214 SB.pdf
+                  example: 6488環球晶 元富 20230504 SB.pdf
                 newName:
                   type: string
                   description: ''
-                  example: 2330台積電 野村 20211204 SB.pdf
+                  example: 6488環球晶 元富 20230504 SBSS.pdf
       responses:
         '200':
           description: Successful response
@@ -3917,10 +3917,10 @@ paths:
         - name: q
           in: query
           schema:
-            type: integer
+            type: string
           required: true
           description: ''
-          example: '28'
+          example: 世界
         - name: page
           in: query
           schema:
@@ -3946,10 +3946,38 @@ paths:
         '200':
           description: OK
           headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
             Content-Type:
               schema:
                 type: string
-                example: application/json
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1246'
+            ETag:
+              schema:
+                type: string
+                example: W/"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Nov 2023 10:14:06 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
@@ -3958,37 +3986,42 @@ paths:
                 data:
                   currentPage: 0
                   pageSize: 30
-                  totalCount: 515
-                  totalPage: 18
+                  totalCount: 1
+                  totalPage: 1
                   articles:
-                    - id: 1
-                      title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 基本面
-                        id: 1
-                      author:
-                        name: Rick
-                        id: 1
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: true
-                      source: null
                     - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
                         name: Rick
+                        id: 2
+                      companies: []
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼面
+                        - id: 5
+                          name: 技術面
+                      tags:
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                      publishDate: '2023-11-22T16:11:23.000Z'
+                      previewImage:
                         id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       source: null
@@ -4004,7 +4037,7 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '1'
+          example: '2'
         - name: page
           in: query
           schema:
@@ -4030,10 +4063,38 @@ paths:
         '200':
           description: OK
           headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
             Content-Type:
               schema:
                 type: string
-                example: application/json
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1190'
+            ETag:
+              schema:
+                type: string
+                example: W/"4a6-qpjajLEqKNAy3l5qsAmpTR5TEp0"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Nov 2023 10:14:54 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
@@ -4042,36 +4103,38 @@ paths:
                 data:
                   currentPage: 0
                   pageSize: 30
-                  totalCount: 515
+                  totalCount: 1
+                  totalPage: 1
                   articles:
-                    - id: 1
-                      title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 基本面
-                        id: 1
-                      author:
-                        name: Rick
-                        id: 1
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: true
-                      source: null
                     - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
                         name: Rick
+                        id: 2
+                      companies: []
+                      topics:
+                        - id: 3
+                          name: 基本面
+                      tags:
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                      publishDate: '2023-11-22T16:11:23.000Z'
+                      previewImage:
                         id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       source: null
@@ -4087,7 +4150,7 @@ paths:
             type: integer
           required: true
           description: tag id
-          example: '222'
+          example: '1'
         - name: page
           in: query
           schema:
@@ -4108,15 +4171,43 @@ paths:
             type: integer
           required: true
           description: ''
-          example: '4'
+          example: '0'
       responses:
         '200':
           description: OK
           headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
             Content-Type:
               schema:
                 type: string
-                example: application/json
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1246'
+            ETag:
+              schema:
+                type: string
+                example: W/"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Nov 2023 10:15:41 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
@@ -4125,36 +4216,42 @@ paths:
                 data:
                   currentPage: 0
                   pageSize: 30
-                  totalCount: 515
+                  totalCount: 1
+                  totalPage: 1
                   articles:
-                    - id: 1
-                      title: 你好，世界
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 基本面
-                        id: 1
-                      author:
-                        name: Rick
-                        id: 1
-                      tags:
-                        - name: 毛利
-                          id: 1
-                      publishDate: '2023-11-11T00:00:00.000Z'
-                      previewImage: null
-                      type: 1
-                      isLimited: true
-                      source: null
                     - id: 2
-                      title: 雪烏龍
-                      description: 揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點
-                      topic:
-                        name: 總經
-                        id: 2
+                      title: 你好，世界
+                      description: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
                       author:
                         name: Rick
+                        id: 2
+                      companies: []
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼面
+                        - id: 5
+                          name: 技術面
+                      tags:
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                      publishDate: '2023-11-22T16:11:23.000Z'
+                      previewImage:
                         id: 1
-                      publishDate: '2023-11-10T00:00:00.000Z'
-                      previewImage: https://path/to/image
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       source: null
@@ -4172,12 +4269,59 @@ paths:
             type: string
           required: true
           description: ''
-          example: 台積電
+          example: 標題
       responses:
         '200':
-          description: Successful response
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '145'
+            ETag:
+              schema:
+                type: string
+                example: W/"91-RIWeeHJLVtQDmDh7egvN8+w32tc"
+            Date:
+              schema:
+                type: string
+                example: Mon, 27 Nov 2023 10:27:20 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - title: 標題
+                    id: 27
+                  - title: 標題
+                    id: 26
+                  - title: 標題
+                    id: 16
+                  - title: 標題
+                    id: 13
+                  - title: 標題
+                    id: 10
   /api/subscription/latest-plan:
     get:
       tags:

@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -4258,7 +4258,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/callback?code=AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/podcast/callback?code=AQBAfrew3U8M110kzuZE1zvmx4kajcVo2ofGTmUC4d3vf6jXHho69qIwXUwU6mh7dCXqJCi",
 									"host": [
 										"{{domain}}"
 									],
@@ -4271,7 +4271,7 @@
 									"query": [
 										{
 											"key": "code",
-											"value": "AQCWh1OT9nfQZIWn3Wru_4IC0sGvedCEy7qF8fb-uAunk3D3SWnooHFaah55WfPGVc1U73lU1Tgew4pbUBeSftDoGbnQcfEKHhKHTIBrN4lVODeuC2vRxZlXUjyIufGr5stAeGGoVwCf9ubSv09lM0xIuuBdKfduuXTRftPGD8SBN805oQ_HH6X_BJVSA21jIBMk5l__pKkRR-ZjDX2w4CG4PjQ3qTak1vMIVVkCzRMIZLjmRXo7SuupWSTK"
+											"value": "AQBAfrew3U8M110kzuZE1zvmx4kajcVo2ofGTmUC4d3vf6jXHho69qIwXUwU6mh7dCXqJCi"
 										}
 									]
 								}
@@ -5227,13 +5227,13 @@
 									"formdata": [
 										{
 											"key": "oldName",
-											"value": "2330台積電 野村 20211214 SB.pdf",
+											"value": "6488環球晶 元富 20230504 SB.pdf",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
 											"key": "newName",
-											"value": "2330台積電 野村 20211204 SB.pdf",
+											"value": "6488環球晶 元富 20230504 SBSS.pdf",
 											"description": "[required]",
 											"type": "text"
 										}
@@ -6422,7 +6422,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=28&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30&topic=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -6434,7 +6434,7 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "28",
+									"value": "世界",
 									"description": "[required]"
 								},
 								{
@@ -6462,7 +6462,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/query?q=你好&page=0&size=30&topic=1",
+									"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30&topic=0",
 									"host": [
 										"{{domain}}"
 									],
@@ -6474,7 +6474,7 @@
 									"query": [
 										{
 											"key": "q",
-											"value": "你好",
+											"value": "世界",
 											"description": "[required]"
 										},
 										{
@@ -6489,7 +6489,7 @@
 										},
 										{
 											"key": "topic",
-											"value": "1",
+											"value": "0",
 											"description": "[required]"
 										}
 									]
@@ -6500,15 +6500,40 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Nov 2023 10:14:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"totalPage\": 18,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -6518,7 +6543,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/author?author=1&page=0&size=30&topic=1",
+							"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30&topic=1",
 							"host": [
 								"{{domain}}"
 							],
@@ -6530,7 +6555,7 @@
 							"query": [
 								{
 									"key": "author",
-									"value": "1",
+									"value": "2",
 									"description": "[required]"
 								},
 								{
@@ -6558,7 +6583,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/author?q=你好&page=0&size=30&topic=1&type=article",
+									"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30&topic=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -6569,8 +6594,8 @@
 									],
 									"query": [
 										{
-											"key": "q",
-											"value": "你好",
+											"key": "author",
+											"value": "2",
 											"description": "[required]"
 										},
 										{
@@ -6587,11 +6612,6 @@
 											"key": "topic",
 											"value": "1",
 											"description": "[required]"
-										},
-										{
-											"key": "type",
-											"value": "article",
-											"description": "[required] article, podcast"
 										}
 									]
 								}
@@ -6601,15 +6621,40 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1190"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a6-qpjajLEqKNAy3l5qsAmpTR5TEp0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Nov 2023 10:14:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -6619,7 +6664,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/tag?tag=222&page=0&size=30&topic=4",
+							"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -6631,7 +6676,7 @@
 							"query": [
 								{
 									"key": "tag",
-									"value": "222",
+									"value": "1",
 									"description": "[required] tag id"
 								},
 								{
@@ -6646,7 +6691,7 @@
 								},
 								{
 									"key": "topic",
-									"value": "4",
+									"value": "0",
 									"description": "[required]"
 								}
 							]
@@ -6686,7 +6731,8 @@
 										},
 										{
 											"key": "topic",
-											"value": "0"
+											"value": "0",
+											"description": "[required]"
 										}
 									]
 								}
@@ -6696,15 +6742,40 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1246"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Nov 2023 10:15:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 515,\n        \"articles\": [\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"基本面\",\n                    \"id\": 1\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"tags\": [\n                    {\n                        \"name\": \"毛利\",\n                        \"id\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-11T00:00:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": true,\n                \"source\": null\n            },\n            {\n                \"id\": 2,\n                \"title\": \"雪烏龍\",\n                \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n                \"topic\": {\n                    \"name\": \"總經\",\n                    \"id\": 2\n                },\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 1\n                },\n                \"publishDate\": \"2023-11-10T00:00:00.000Z\",\n                \"previewImage\": \"https://path/to/image\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -6717,7 +6788,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/title?q=台積電",
+							"raw": "{{domain}}/{{prefix}}/search/title?q=標題",
 							"host": [
 								"{{domain}}"
 							],
@@ -6729,13 +6800,78 @@
 							"query": [
 								{
 									"key": "q",
-									"value": "台積電",
+									"value": "標題",
 									"description": "[required]"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "search by title",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/search/title?q=標題",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"search",
+										"title"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "標題",
+											"description": "[required]"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-RIWeeHJLVtQDmDh7egvN8+w32tc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 27 Nov 2023 10:27:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"title\": \"標題\",\n            \"id\": 27\n        },\n        {\n            \"title\": \"標題\",\n            \"id\": 26\n        },\n        {\n            \"title\": \"標題\",\n            \"id\": 16\n        },\n        {\n            \"title\": \"標題\",\n            \"id\": 13\n        },\n        {\n            \"title\": \"標題\",\n            \"id\": 10\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "type 是指資料類型， source 指某類型的來源(針對 youtube 類型，每個頻道都是一種 source)\n\narticle type:  \n0 -> podcast, 1 -> tiptap article, 2 -> youtube, 3 -> news\n\nsource:  \nnull -> 文章、podcast, 0 -> 金玉峰 yt 頻道, 1 -> 股耐 yt 頻道\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
