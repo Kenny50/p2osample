@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -84,12 +84,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/google",
+									"raw": "http://localhost:3020/api/auth/google",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"google"
 									]
@@ -209,12 +211,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/auth/line",
+									"raw": "http://localhost:3020/api/auth/line",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"auth",
 										"line"
 									]
@@ -339,12 +343,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/refresh-token",
+									"raw": "http://localhost:3020/api/refresh-token",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"refresh-token"
 									]
 								}
@@ -429,12 +435,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/update-information",
+									"raw": "http://localhost:3020/api/member/update-information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"update-information"
 									]
@@ -522,12 +530,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
+									"raw": "http://localhost:3020/api/member/sent-validate-email",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"sent-validate-email"
 									]
@@ -614,12 +624,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/information",
+									"raw": "http://localhost:3020/api/member/information",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"information"
 									]
@@ -668,12 +680,14 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/delete-account",
+									"raw": "http://localhost:3020/api/member/delete-account",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"delete-account"
 									]
@@ -777,12 +791,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -845,12 +861,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
+									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"member",
 										"validate-email"
 									],
@@ -6345,12 +6363,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/news?tag=123",
+									"raw": "http://localhost:3020/api/news?tag=123",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
-										"{{prefix}}",
+										"api",
 										"news"
 									],
 									"query": [
@@ -6904,10 +6924,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/subscription/latest-plan",
+									"raw": "http://localhost:3020/api/subscription/latest-plan",
+									"protocol": "http",
 									"host": [
-										"{{domain}}"
+										"localhost"
 									],
+									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
@@ -7394,6 +7416,95 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/trial.pdf\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "媒體影音",
+			"item": [
+				{
+					"name": "get media by type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/media?source=jinyufengYt&page=0&size=30",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"media"
+							],
+							"query": [
+								{
+									"key": "source",
+									"value": "jinyufengYt",
+									"description": "[required] string\ngnimPodcast -> podcast\njinyufengYt -> yt"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"description": "[required]"
+								},
+								{
+									"key": "size",
+									"value": "30",
+									"description": "[required]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get media by type",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/media?source=jinyufengYt&page=0&size=30",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"media"
+									],
+									"query": [
+										{
+											"key": "source",
+											"value": "jinyufengYt",
+											"description": "[required] string\ngnimPodcast -> podcast\njinyufengYt -> yt"
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[required]"
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"description": "[required]"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 474,\n        \"totalPage\": 16,\n        \"media\": [\n            {\n                \"id\": 1,\n                \"title\": \"【雷老闆】節目《從0鑽豹》｜日報《雷老闆雷霆鑽豹》｜看盤軟體《股海羅盤》｜金玉峰投資證券顧問股份有限公司【服務專線 04-22914915】\",\n                \"youtubeId\": \"Fk5oo33amsM\",\n                \"previewImage\": \"https://i.ytimg.com/vi/Fk5oo33amsM/hqdefault.jpg\",\n                \"description\": \"關注雷老闆，讓你從0鑽豹 #智富月刊專訪:https://www.youtube.com/watch?v=JXZXEoLpT48 #Money錢 ...\",\n                \"publishedAt\": \"2023-11-27T09:25:38.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"20231127 1500 雷老闆《從0鑽豹》【肺炎回來了？醫療類股怎麼看？萬7大震盪，留下來或我跟你走？】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"nKVPSPJe8Cc\",\n                \"previewImage\": \"https://i.ytimg.com/vi/nKVPSPJe8Cc/hqdefault.jpg\",\n                \"description\": \"投資不迷路  老闆幫你顧！！ 黑色星期五銷售創佳績   「黑色星期五」感恩購物節登場，優惠的折扣吸引消費者，成功締造98億 ...\",\n                \"publishedAt\": \"2023-11-27T07:02:21.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"20231124 1500 股市金玉峰 KEN 直播第 822 集【四九流年運不通！！！當記斯言必無凶！！！】｜雷老闆《從0鑽豹》【綠能產業大噴發你上車了嗎？】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"aZ97X06tXE8\",\n                \"previewImage\": \"https://i.ytimg.com/vi/aZ97X06tXE8/hqdefault.jpg\",\n                \"description\": \"PC／NB／手機／雙D（４５） ＃哥的最後一堂課11/25台中#哥祝大家操作順心賺大錢！！！ KEN六脈神劍不傳絕學～緣起緣滅～ ...\",\n                \"publishedAt\": \"2023-11-24T08:49:29.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"20231123 1500 股市金玉峰 KEN 直播第 821 集【聯發科狂飆 6485 漲停！！】｜雷老闆《從0鑽豹》【櫃買回新高，台股萬7震盪，你受得了嗎？】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"s75yYlstwgg\",\n                \"previewImage\": \"https://i.ytimg.com/vi/s75yYlstwgg/hqdefault.jpg\",\n                \"description\": \"ＩＣ設計還是ＩＣ設計！！！ PC／NB／手機／雙D（４４） ＃哥的最後一堂課11/25台中#哥祝大家操作順心賺大錢！！！ KEN六脈 ...\",\n                \"publishedAt\": \"2023-11-23T08:35:48.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"20231122 1500股市金玉峰KEN直播第820集【2454千元之約～】｜雷老闆《從0鑽豹》【Nvidia財報公告，說好的大漲呢？我又被套在高點嗎...？】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"hjqS7nW5Xws\",\n                \"previewImage\": \"https://i.ytimg.com/vi/hjqS7nW5Xws/hqdefault.jpg\",\n                \"description\": \"叫我ＩＣ設計王！！！ PC／NB／手機／雙D（４３） ＃哥的最後一堂課11/25台中#哥祝大家操作順心賺大錢！！！ KEN六脈神劍不 ...\",\n                \"publishedAt\": \"2023-11-22T08:31:04.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 6,\n                \"title\": \"20231121 1500 股市金玉峰 KEN 直播第 819 集【900ㄟ 1000 倒數了！！！】｜雷老闆《從0鑽豹》【台股回萬7，做夢行情怎麼看？】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"x8SvEfYxCoo\",\n                \"previewImage\": \"https://i.ytimg.com/vi/x8SvEfYxCoo/hqdefault.jpg\",\n                \"description\": \"叫我ＩＣ設計王！！！ PC／NB／手機／雙D（４２） ＃哥的最後一堂課11/25台中#哥祝大家操作順心賺大錢！！！ KEN六脈神劍不 ...\",\n                \"publishedAt\": \"2023-11-21T08:47:43.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 7,\n                \"title\": \"【產業回溫，矽晶圓底部翻揚？矽晶圓產業終迎反轉契機？】雷老闆《從0鑽豹》直播，服務諮詢專線（04）2291-4915－20231102\",\n                \"youtubeId\": \"zlQp9KmK8kI\",\n                \"previewImage\": \"https://i.ytimg.com/vi/zlQp9KmK8kI/hqdefault.jpg\",\n                \"description\": \"公告：本節目14:59~16:55 VCR標題更正為「穩懋漲停送幸福」特此公告！ 00:00 開始01:15 開頭01:47 日報、11/18分享見面 ...\",\n                \"publishedAt\": \"2023-11-02T20:31:42.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 8,\n                \"title\": \"20231025 1500 股市金玉峰 KEN 直播第 800 集【16163 破 16182，週MA2＝16061 撐起來 （２）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"B-UeNlEaRnE\",\n                \"previewImage\": \"https://i.ytimg.com/vi/B-UeNlEaRnE/hqdefault.jpg\",\n                \"description\": \"祥碩漲停板，我的ＩＣ設計股!! PC／NB／手機／雙D＆BDI （２４） 羅盤１＋１＋上課（11/19台北、11/25台中） 羅盤祝大家操作 ...\",\n                \"publishedAt\": \"2023-10-25T08:25:59.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 9,\n                \"title\": \"20230912 1500 股市金玉峰 KEN 直播第 772 集【本週觀週 MA3 攤牌（３）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"vzqhT0pxoZc\",\n                \"previewImage\": \"https://i.ytimg.com/vi/vzqhT0pxoZc/hqdefault.jpg\",\n                \"description\": \"緯創、廣達、創意、緯穎明有低搶！！！ ＡＩ南下列車～祝大家賺大錢！！！ 生技MA2 、MA3、MA4 壓力賣（１０） PC／NB／ ...\",\n                \"publishedAt\": \"2023-09-12T09:41:10.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 10,\n                \"title\": \"20230906 1500 股市金玉峰 KEN 直播第 768 集【本週觀週 MA１壓 （３）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"1iGuL3nIoC4\",\n                \"previewImage\": \"https://i.ytimg.com/vi/1iGuL3nIoC4/hqdefault.jpg\",\n                \"description\": \"ＡＩ融資６０萬張的省思～ ９月選股選健康！！！ 生技MA2 、MA3、MA4 壓力賣（６） 美元站上MA2 週攻擊關卡價！！！ 別再 ...\",\n                \"publishedAt\": \"2023-09-06T09:51:01.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 11,\n                \"title\": \"20230901 1500 股市金玉峰 KEN 直播第 765 集【大盤 MA3 支撐反彈幾天（１３）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"5vk7yWWs4z4\",\n                \"previewImage\": \"https://i.ytimg.com/vi/5vk7yWWs4z4/hqdefault.jpg\",\n                \"description\": \"８月ＡＩ做頭！！！ ９月新主流跳出來！！！ 祝大家週末愉快！！！ 生技MA2 、MA3、MA4 壓力賣（３） ９月健康權值股站起來 ...\",\n                \"publishedAt\": \"2023-09-01T09:36:31.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 12,\n                \"title\": \"20230821 1500 股市金玉峰 KEN 直播第 757 集【大盤 MA3 支撐反彈幾天（５）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"SaEFTgSJZJw\",\n                \"previewImage\": \"https://i.ytimg.com/vi/SaEFTgSJZJw/hqdefault.jpg\",\n                \"description\": \"ＡＩ第１次雙陰買訊！！！ ＡＩ鏈南下列車／突擊兵作戰！！！ 生技MA1 壓加減賣！！！ 預告：藥華藥MA3、MA6 壓力賣！\",\n                \"publishedAt\": \"2023-08-21T09:11:32.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 13,\n                \"title\": \"20230816 1500 股市金玉峰 KEN 直播第 754 集【大盤 MA3 支撐反彈幾天（２）】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"--ggOKBGSE4\",\n                \"previewImage\": \"https://i.ytimg.com/vi/--ggOKBGSE4/hqdefault.jpg\",\n                \"description\": \"ＡＩ今敗，明報仇！！！ 藥華藥漲停321.5 遲來的正義！！！ 8/14 抄底部位賣！！！ ＡＩ鏈南下列車／突擊兵作戰！！！ ＃活到老 ...\",\n                \"publishedAt\": \"2023-08-16T08:38:00.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 14,\n                \"title\": \"20230814 1500 股市金玉峰 KEN 直播第 752 集【大盤 16000 點先來／驗證！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"66qe22wM0i8\",\n                \"previewImage\": \"https://i.ytimg.com/vi/66qe22wM0i8/hqdefault.jpg\",\n                \"description\": \"台積電537 元／半年線驗證！！！ 長聖MA8 參數沒到價／沒買到第4/9 部位！！！反彈180～182 先賣再來低買！！！ ＡＩ鏈南下 ...\",\n                \"publishedAt\": \"2023-08-14T08:43:07.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 15,\n                \"title\": \"20230811 1630 虎膽妙算/股海羅盤 KEN 直播第 597 集【藥華藥破底翻訊號】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"zOETGN_kCbc\",\n                \"previewImage\": \"https://i.ytimg.com/vi/zOETGN_kCbc/hqdefault.jpg\",\n                \"description\": \"不受後有，是什麼意思？！ ８月迄今９天當沖做４９單！！！ 鑽石當沖９天賺１６０萬５０００元( 未扣手續費) ！！！ 翡翠當沖９ ...\",\n                \"publishedAt\": \"2023-08-11T10:01:40.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 16,\n                \"title\": \"20230808 1630 虎膽妙算/股海羅盤 KEN 直播第 594 集【育世博掀生技市值排名大戰？！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"ZbaKj5lEoGQ\",\n                \"previewImage\": \"https://i.ytimg.com/vi/ZbaKj5lEoGQ/hqdefault.jpg\",\n                \"description\": \"我身已盡，是什麼意思？！ ８月迄今６天當沖做２５單！！！ 鑽石當沖６天賺８１萬３０００元( 未扣手續費) ！！！ 翡翠當沖６天 ...\",\n                \"publishedAt\": \"2023-08-08T10:16:51.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 17,\n                \"title\": \"20230726 1630 虎膽妙算/股海羅盤 KEN 直播第 586 集【緯創 7/27 然後呢？！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"qYALsssonhI\",\n                \"previewImage\": \"https://i.ytimg.com/vi/qYALsssonhI/hqdefault.jpg\",\n                \"description\": \"佛問圓通，我無選擇！！！ ７月１８天當沖做１５０單！！！ 鑽石當沖１８天賺３８１萬８０００元( 未扣手續費) ！！！ 翡翠當 ...\",\n                \"publishedAt\": \"2023-07-26T10:06:44.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 18,\n                \"title\": \"20230726 1500 股市金玉峰 KEN 直播第 740 集【電子 -0.63% VS 生技 -3.3% 】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"uMXPPCaENNs\",\n                \"previewImage\": \"https://i.ytimg.com/vi/uMXPPCaENNs/hqdefault.jpg\",\n                \"description\": \"保瑞6472 跌停！！！ 長佳6841 跌停！！！ 智原3035 跌停！！！ 緯創～明7/27 能平安出關嗎？ 還是加重20 分鐘一盤？\",\n                \"publishedAt\": \"2023-07-26T08:19:17.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 19,\n                \"title\": \"20230724 1500 股市金玉峰 KEN 直播第 738 集【電子 +0.42% V.S 生技 -0.16%】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"MsLgznZ82gI\",\n                \"previewImage\": \"https://i.ytimg.com/vi/MsLgznZ82gI/hqdefault.jpg\",\n                \"description\": \"華安6657 再度亮燈漲停！！！ 保瑞6472 收盤1010 元大千金！！！ ＃緯創下週四之前宣布分盤20 分鐘即是再空回時機！！！ ＃活 ...\",\n                \"publishedAt\": \"2023-07-24T08:25:49.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 20,\n                \"title\": \"20230629 1630 虎膽妙算/股海羅盤 KEN 直播第 568 集【南韓季線保衛戰！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"YcsReEBgF0k\",\n                \"previewImage\": \"https://i.ytimg.com/vi/YcsReEBgF0k/hqdefault.jpg\",\n                \"description\": \"長榮會填息？自營商狂掃貨！！！ 姐１９天當沖做177 單！！！ 鑽石當沖１９天賺３１０萬８０００元( 未扣手續費) ！！！ 翡翠當 ...\",\n                \"publishedAt\": \"2023-06-29T10:19:20.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 21,\n                \"title\": \"20230629 1500 股市金玉峰 KEN 直播第 721 集【電子漲 0.2% V.S 生技 +1.8% 】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"uTxLyQfCSik\",\n                \"previewImage\": \"https://i.ytimg.com/vi/uTxLyQfCSik/hqdefault.jpg\",\n                \"description\": \"２天大陸浪潮AI 股重挫19% ！！！ ＃歸隊！！！禮遇優惠最後２天！！！ １.舊會員續約KEN 哥哥禮遇專案( 全線多送２個月) 6/30 ...\",\n                \"publishedAt\": \"2023-06-29T07:57:48.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 22,\n                \"title\": \"20230628 1500 股市金玉峰 KEN 直播第 720 集【電子漲 0.3% V.S 生技 +1.1%】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"HdRv1oQROQI\",\n                \"previewImage\": \"https://i.ytimg.com/vi/HdRv1oQROQI/hqdefault.jpg\",\n                \"description\": \"緯創廣達技嘉英業達創意世芯要割韭菜囉！！！ 歸隊！！！趨吉避凶！！！ １.舊會員續約KEN 哥哥禮遇專案( 全線多送２個月) 6/30 ...\",\n                \"publishedAt\": \"2023-06-28T07:52:57.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 23,\n                \"title\": \"​20230627 1330 股海羅盤/軟體教學 - 第 30 課【垃圾變黃金】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"_ZG5NX1FFpI\",\n                \"previewImage\": \"https://i.ytimg.com/vi/_ZG5NX1FFpI/hqdefault.jpg\",\n                \"description\": \"第30 課【＃垃圾變黃金】 02:11 申請進群組：股市金玉峰～程序06:45 垃圾變黃金主題開始＃接續之前的碳權議題，所謂的碳足跡， ...\",\n                \"publishedAt\": \"2023-06-27T18:13:16.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 24,\n                \"title\": \"20230627 1630 虎膽妙算/股海羅盤 KEN 直播第 566 集【主人 ( EPS ) 與狗 ( 股價 ) 理論！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"GaYCfNDptIw\",\n                \"previewImage\": \"https://i.ytimg.com/vi/GaYCfNDptIw/hqdefault.jpg\",\n                \"description\": \"日Ｋ週Ｋ月Ｋ一起跌就代誌大條了！！！ 姐１７天當沖做164 單！！！ 鑽石當沖１７天賺２８０萬元( 未扣手續費) ！！！ 翡翠當 ...\",\n                \"publishedAt\": \"2023-06-27T09:51:21.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 25,\n                \"title\": \"20230627 1500 股市金玉峰 KEN 直播第 719 集【電子跌 1.2% V.S 生技 +2.3% 要割散戶韭菜了！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"7ziEhHcmQ1M\",\n                \"previewImage\": \"https://i.ytimg.com/vi/7ziEhHcmQ1M/hqdefault.jpg\",\n                \"description\": \"歸隊！！！趨吉避凶！！！ １.舊會員續約KEN 哥哥禮遇專案( 全線多送２個月) 6/30 止！！！ ２.活到老學到老（六脈神劍） Ａ.\",\n                \"publishedAt\": \"2023-06-27T08:01:10.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 26,\n                \"title\": \"20230626 1630 虎膽妙算/股海羅盤 KEN 直播第 565 集【保瑞力爭上游！！！藥王３天不創新低量！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"rCq7ILn3Cu8\",\n                \"previewImage\": \"https://i.ytimg.com/vi/rCq7ILn3Cu8/hqdefault.jpg\",\n                \"description\": \"姐１６天當沖做154 單！！！ 鑽石當沖１６天賺２５６萬４０００元( 未扣手續費) ！！！ 翡翠當沖１６天賺６７萬４０００元！\",\n                \"publishedAt\": \"2023-06-26T10:01:40.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 27,\n                \"title\": \"20230626 1500 股市金玉峰 KEN 直播第 718 集【融資增幅 28.3% V.S 指數增幅 12% 】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"vREONNiT3T4\",\n                \"previewImage\": \"https://i.ytimg.com/vi/vREONNiT3T4/hqdefault.jpg\",\n                \"description\": \"先軋空後殺多！！！ 居高思危趨吉避凶！！！ １.舊會員續約KEN 哥哥禮遇專案( 全線多送２個月) 6/30 止！！！ ２.活到老學到老（ ...\",\n                \"publishedAt\": \"2023-06-26T08:04:06.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 28,\n                \"title\": \"20230621 1430 股海羅盤/軟體教學 - 第 29 課【電動車產業】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"oDkzlJw3TLw\",\n                \"previewImage\": \"https://i.ytimg.com/vi/oDkzlJw3TLw/hqdefault.jpg\",\n                \"description\": \"第29 課【電動車產業】 ＃電動車核心產業全台灣2021 年至2022 年電動車交車量增加了128%，代表整體電動車產業準備開始進入 ...\",\n                \"publishedAt\": \"2023-06-21T18:00:16.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 29,\n                \"title\": \"20230621 1630 虎膽妙算/股海羅盤 KEN 直播第 564 集【今年股市太畸型！！！】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"_u6HyKjbN3w\",\n                \"previewImage\": \"https://i.ytimg.com/vi/_u6HyKjbN3w/hqdefault.jpg\",\n                \"description\": \"端午節快樂！！！ 姐１５天當沖做143 單！！！ 鑽石當沖１５天賺２２９萬元( 未扣手續費) ！！！ 翡翠當沖１５天賺６３萬元！\",\n                \"publishedAt\": \"2023-06-21T10:02:23.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            },\n            {\n                \"id\": 30,\n                \"title\": \"20230621 1500 股市金玉峰 KEN 直播第 717 集【美超微電腦跌 16% 的省思～】服務諮詢專線（04）2291-4915\",\n                \"youtubeId\": \"sjk7geyEdc8\",\n                \"previewImage\": \"https://i.ytimg.com/vi/sjk7geyEdc8/hqdefault.jpg\",\n                \"description\": \"聲明啟事：右邊側標應為【美超微跌18% 省思】，誤植為16%。 且節目中所提及之16% 皆應為【18%】。 對於【美超微電腦跌18% ...\",\n                \"publishedAt\": \"2023-06-21T08:07:10.000Z\",\n                \"source\": \"jinyufengYt\",\n                \"type\": \"youtube\"\n            }\n        ]\n    }\n}"
 						}
 					]
 				}

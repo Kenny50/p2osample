@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.27.0913",
-        "description": "article 加上 views 欄位"
+        "version": "11.27.2204",
+        "description": "新增 media 第三方資源， youtube, podcast"
     },
     "servers": [
         {
