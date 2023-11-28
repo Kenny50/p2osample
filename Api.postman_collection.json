@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -4139,7 +4139,8 @@
 											"description": "`waiting` / `refunded`"
 										}
 									]
-								}
+								},
+								"description": "發票欄位：\n\n- \\* `status` 開立狀態: \\[`new` 未開立, `issued` 已開立\\]\n    \n- \\* `taxAmount`: 稅金金額\n- \\* `uniformInvoiceNo`: 發票號碼\n- \\* `uniformInvoiceRandomNo`: 發票隨機碼\n- \\* `eInvoicePlatformNo`: 發票平台自訂編號\n- `companyUniformSerialNo`: 買受人公司統一編號"
 							},
 							"response": [
 								{
@@ -4205,7 +4206,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 2,\n    \"totalCount\": 2,\n    \"data\": [\n        {\n            \"id\": 5,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"plan\": \"month\",\n            \"email\": \"no-reply@gmail.com\",\n            \"isRefunded\": true,\n            \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n            \"refundedAt\": \"2023-11-20T17:40:35.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"refund\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-20T17:40:35.000Z\",\n            \"endAt\": \"2023-12-20T17:40:35.000Z\",\n            \"createdByUserId\": 7,\n            \"paymentPlatformNo\": \"mock_order_1700501990814_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-20T17:40:35.000Z\",\n            \"updatedAt\": \"2023-11-20T17:40:35.000Z\"\n        },\n        {\n            \"id\": 7,\n            \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n            \"plan\": \"month\",\n            \"email\": \"yot4106@gmail.com\",\n            \"isRefunded\": false,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-21T16:44:27.000Z\",\n            \"endAt\": \"2023-12-21T16:44:27.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"mock_order_1700585052751_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n            \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n        }\n    ]\n}"
+									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 2,\n    \"totalCount\": 2,\n    \"data\": [\n        {\n            \"id\": 5,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"plan\": \"month\",\n            \"email\": \"no-reply@gmail.com\",\n            \"isRefunded\": true,\n            \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n            \"refundedAt\": \"2023-11-26T09:42:42.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdByUserId\": 7,\n            \"paymentPlatformNo\": null,\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-26T09:42:42.000Z\",\n            \"updatedAt\": \"2023-11-26T09:44:40.000Z\",\n            \"invoice\": {\n                \"id\": 1,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"billId\": 6,\n                \"status\": \"issued\",\n                \"amount\": 188,\n                \"taxAmount\": 9,\n                \"uniformInvoiceNo\": \"AB00000001\",\n                \"uniformInvoiceRandomNo\": \"6342\",\n                \"email\": \"no-reply@gmail.com\",\n                \"companyUniformSerialNo\": \"12345678\",\n                \"eInvoicePlatformNo\": \"testing_invoice_1212\",\n                \"requestPayload\": {},\n                \"responsePayload\": {},\n                \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n                \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n            \"plan\": \"month\",\n            \"email\": \"yot4106@gmail.com\",\n            \"isRefunded\": false,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-21T16:44:27.000Z\",\n            \"endAt\": \"2023-12-21T16:44:27.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"mock_order_1700585052751_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n            \"updatedAt\": \"2023-11-21T16:44:27.000Z\",\n            \"invoice\": {\n                \"id\": 1,\n                \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n                \"billId\": 4,\n                \"status\": \"issued\",\n                \"amount\": 188,\n                \"taxAmount\": 9,\n                \"uniformInvoiceNo\": \"AB00000001\",\n                \"uniformInvoiceRandomNo\": \"6342\",\n                \"email\": \"no-reply@gmail.com\",\n                \"companyUniformSerialNo\": \"12345678\",\n                \"eInvoicePlatformNo\": \"testing_invoice_1212\",\n                \"requestPayload\": {},\n                \"responsePayload\": {},\n                \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n                \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -5557,13 +5558,13 @@
 									"formdata": [
 										{
 											"key": "oldName",
-											"value": "6488環球晶 元富 20230504 SB.pdf",
+											"value": "2330台積電 野村 20230414 SB.pdf",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
 											"key": "newName",
-											"value": "6488環球晶 元富 20230504 SBSS.pdf",
+											"value": "2330台積電 野村 20230414 SBSS.pdf",
 											"description": "[required]",
 											"type": "text"
 										}
@@ -5730,6 +5731,65 @@
 											"value": "260",
 											"description": "[required] firm id"
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "爬蟲",
+					"item": [
+						{
+							"name": "新聞爬蟲",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/crawler/news-trigger",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"crawler",
+										"news-trigger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "yt 刷新",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/crawler/youtube-jinyufeng-trigger",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"crawler",
+										"youtube-jinyufeng-trigger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "podcast 刷新",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/crawler/podcast-gnim-trigger",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"crawler",
+										"podcast-gnim-trigger"
 									]
 								}
 							},

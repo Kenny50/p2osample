@@ -45,6 +45,7 @@ tags:
   - name: 後台 > 產業
   - name: 後台 > pdf
   - name: 後台 > 卷商
+  - name: 後台 > 爬蟲
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -2290,6 +2291,16 @@ paths:
       tags:
         - 後台 > 訂閱 & 發票
       summary: 取得退費清單
+      description: |-
+        發票欄位：
+
+        - \* `status` 開立狀態: \[`new` 未開立, `issued` 已開立\]
+            
+        - \* `taxAmount`: 稅金金額
+        - \* `uniformInvoiceNo`: 發票號碼
+        - \* `uniformInvoiceRandomNo`: 發票隨機碼
+        - \* `eInvoicePlatformNo`: 發票平台自訂編號
+        - `companyUniformSerialNo`: 買受人公司統一編號
       parameters:
         - name: refund_status
           in: query
@@ -2347,17 +2358,33 @@ paths:
                     email: no-reply@gmail.com
                     isRefunded: true
                     canceledAt: '2023-11-24T18:49:05.000Z'
-                    refundedAt: '2023-11-20T17:40:35.000Z'
+                    refundedAt: '2023-11-26T09:42:42.000Z'
                     maskedCreditCardNo: 400022******1111
                     type: refund
-                    amount: 170
-                    startAt: '2023-11-20T17:40:35.000Z'
-                    endAt: '2023-12-20T17:40:35.000Z'
+                    amount: 18
+                    startAt: null
+                    endAt: null
                     createdByUserId: 7
-                    paymentPlatformNo: mock_order_1700501990814_1
+                    paymentPlatformNo: null
                     paymentResponsePayload: null
-                    createdAt: '2023-11-20T17:40:35.000Z'
-                    updatedAt: '2023-11-20T17:40:35.000Z'
+                    createdAt: '2023-11-26T09:42:42.000Z'
+                    updatedAt: '2023-11-26T09:44:40.000Z'
+                    invoice:
+                      id: 1
+                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      billId: 6
+                      status: issued
+                      amount: 188
+                      taxAmount: 9
+                      uniformInvoiceNo: AB00000001
+                      uniformInvoiceRandomNo: '6342'
+                      email: no-reply@gmail.com
+                      companyUniformSerialNo: '12345678'
+                      eInvoicePlatformNo: testing_invoice_1212
+                      requestPayload: {}
+                      responsePayload: {}
+                      createdAt: '2023-11-21T16:44:27.000Z'
+                      updatedAt: '2023-11-21T16:44:27.000Z'
                   - id: 7
                     memberId: 6a518ce9-8bcd-41d4-911e-e849b3b21cf6
                     plan: month
@@ -2373,6 +2400,22 @@ paths:
                     paymentResponsePayload: null
                     createdAt: '2023-11-21T16:44:27.000Z'
                     updatedAt: '2023-11-21T16:44:27.000Z'
+                    invoice:
+                      id: 1
+                      memberId: 6a518ce9-8bcd-41d4-911e-e849b3b21cf6
+                      billId: 4
+                      status: issued
+                      amount: 188
+                      taxAmount: 9
+                      uniformInvoiceNo: AB00000001
+                      uniformInvoiceRandomNo: '6342'
+                      email: no-reply@gmail.com
+                      companyUniformSerialNo: '12345678'
+                      eInvoicePlatformNo: testing_invoice_1212
+                      requestPayload: {}
+                      responsePayload: {}
+                      createdAt: '2023-11-21T16:44:27.000Z'
+                      updatedAt: '2023-11-21T16:44:27.000Z'
   /api/dashboard/upsert-refund-amount:
     post:
       tags:
@@ -3328,11 +3371,11 @@ paths:
                 oldName:
                   type: string
                   description: ''
-                  example: 6488環球晶 元富 20230504 SB.pdf
+                  example: 2330台積電 野村 20230414 SB.pdf
                 newName:
                   type: string
                   description: ''
-                  example: 6488環球晶 元富 20230504 SBSS.pdf
+                  example: 2330台積電 野村 20230414 SBSS.pdf
       responses:
         '200':
           description: Successful response
@@ -3407,6 +3450,36 @@ paths:
           required: true
           description: '[required] firm id'
           example: '260'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /crawler/news-trigger:
+    get:
+      tags:
+        - 後台 > 爬蟲
+      summary: 新聞爬蟲
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /crawler/youtube-jinyufeng-trigger:
+    get:
+      tags:
+        - 後台 > 爬蟲
+      summary: yt 刷新
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /crawler/podcast-gnim-trigger:
+    get:
+      tags:
+        - 後台 > 爬蟲
+      summary: podcast 刷新
       responses:
         '200':
           description: Successful response
