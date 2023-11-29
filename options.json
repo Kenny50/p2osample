@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.29.1230",
-        "description": "後台 banner response 調整"
+        "version": "11.29.1402",
+        "description": "後台 banner response 調整, podcast 資源換成 從 0 鑽報"
     },
     "servers": [
         {

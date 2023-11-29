@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 後台 banner response 調整
-  version: 11.29.1230
+  description: 後台 banner response 調整, podcast 資源換成 從 0 鑽報
+  version: 11.29.1402
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -4925,6 +4925,7 @@ paths:
               type: object
               example:
                 plan: month
+                autoRenewal: true
                 companyUniformSerialNo: '12345678'
                 returnUrl: https://gnim.com.tw/payment-completed
                 backUrl: https://gnim.com.tw/payment-canceled
@@ -5175,7 +5176,7 @@ paths:
           required: true
           description: |-
             string
-            gnimPodcast -> podcast
+            jinyufengPodcast -> podcast
             jinyufengYt -> yt
           example: jinyufengYt
         - name: page
