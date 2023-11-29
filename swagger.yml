@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 後台 banner response 調整, podcast 資源換成 從 0 鑽報
+  description: 後台 banner response 調整, podcast 資源換成 從 0 鑽報, api 觸發爬蟲
   version: 11.29.1402
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
@@ -3548,7 +3548,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /crawler/news-trigger:
+  /news-trigger:
     get:
       tags:
         - 後台 > 爬蟲
@@ -3558,7 +3558,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /crawler/youtube-jinyufeng-trigger:
+  /youtube-jinyufeng-trigger:
     get:
       tags:
         - 後台 > 爬蟲
@@ -3568,7 +3568,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /crawler/podcast-gnim-trigger:
+  /podcast-gnim-trigger:
     get:
       tags:
         - 後台 > 爬蟲
@@ -5168,6 +5168,8 @@ paths:
       tags:
         - 媒體影音
       summary: get media by type
+      security:
+        - noauthAuth: []
       parameters:
         - name: source
           in: query
@@ -5178,7 +5180,7 @@ paths:
             string
             jinyufengPodcast -> podcast
             jinyufengYt -> yt
-          example: jinyufengYt
+          example: jinyufengPodcast
         - name: page
           in: query
           schema:

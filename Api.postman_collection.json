@@ -5770,12 +5770,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/crawler/news-trigger",
+									"raw": "https://crawler-dev.gnim.com.tw/news-trigger",
+									"protocol": "https",
 									"host": [
-										"{{domain}}"
+										"crawler-dev",
+										"gnim",
+										"com",
+										"tw"
 									],
 									"path": [
-										"crawler",
 										"news-trigger"
 									]
 								}
@@ -5788,12 +5791,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/crawler/youtube-jinyufeng-trigger",
+									"raw": "https://crawler-dev.gnim.com.tw/youtube-jinyufeng-trigger",
+									"protocol": "https",
 									"host": [
-										"{{domain}}"
+										"crawler-dev",
+										"gnim",
+										"com",
+										"tw"
 									],
 									"path": [
-										"crawler",
 										"youtube-jinyufeng-trigger"
 									]
 								}
@@ -5806,12 +5812,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/crawler/podcast-gnim-trigger",
+									"raw": "https://crawler-dev.gnim.com.tw/podcast-gnim-trigger",
+									"protocol": "https",
 									"host": [
-										"{{domain}}"
+										"crawler-dev",
+										"gnim",
+										"com",
+										"tw"
 									],
 									"path": [
-										"crawler",
 										"podcast-gnim-trigger"
 									]
 								}
@@ -7993,10 +8002,13 @@
 				{
 					"name": "get media by type",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/media?source=jinyufengYt&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/media?source=jinyufengPodcast&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -8007,7 +8019,7 @@
 							"query": [
 								{
 									"key": "source",
-									"value": "jinyufengYt",
+									"value": "jinyufengPodcast",
 									"description": "[required] string\njinyufengPodcast -> podcast\njinyufengYt -> yt"
 								},
 								{
