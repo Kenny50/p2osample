@@ -3578,6 +3578,16 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /twse-json:
+    get:
+      tags:
+        - 後台 > 爬蟲
+      summary: twse
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/topic:
     get:
       tags:

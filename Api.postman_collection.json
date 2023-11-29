@@ -5826,6 +5826,27 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "twse",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://crawler-dev.gnim.com.tw/twse-json",
+									"protocol": "https",
+									"host": [
+										"crawler-dev",
+										"gnim",
+										"com",
+										"tw"
+									],
+									"path": [
+										"twse-json"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
