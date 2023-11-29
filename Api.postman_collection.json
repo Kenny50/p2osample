@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -379,13 +379,13 @@
 								{
 									"key": "name",
 									"value": "永翰",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "email",
 									"value": "yunghancareer@gmail.com",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "phone",
@@ -2019,13 +2019,13 @@
 										},
 										{
 											"key": "topics[0]",
-											"value": "1",
+											"value": "3",
 											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "topics[1]",
-											"value": "2",
+											"value": "4",
 											"description": "[required] [int]",
 											"type": "text"
 										},
@@ -2390,15 +2390,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1349"
+											"value": "3288"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"545-mPDhOuE/9s7ePfiQpZT6HQ7sKwk\""
+											"value": "W/\"cd8-+hDWpw71Tl6I/as8gS4B+rQgIKw\""
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 27 Nov 2023 18:23:18 GMT"
+											"value": "Wed, 29 Nov 2023 04:22:26 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2410,7 +2410,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"articleId\": 1,\n            \"article\": {\n                \"id\": 1,\n                \"title\": \"你好\",\n                \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 8,\n                \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 3,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 4,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 5,\n            \"articleId\": null,\n            \"article\": null\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 2,\n            \"articleId\": 1,\n            \"article\": {\n                \"id\": 1,\n                \"title\": \"你好\",\n                \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"產業\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 2,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 8,\n                \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 4,\n            \"articleId\": 2,\n            \"article\": {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON！！！\\\"}]}]}\",\n                \"rawContent\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 13,\n                \"publishedAt\": \"2023-11-22T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"articleId\": null,\n            \"article\": null\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -2443,7 +2443,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "2"
 										}
 									]
 								}
@@ -2468,7 +2468,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "1"
+													"value": "2"
 												}
 											]
 										}
@@ -2491,15 +2491,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1183"
+											"value": "1546"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"49f-y/2Fc5oik9mV/rassTxsF68Bfh8\""
+											"value": "W/\"60a-qngqGzp23l2FKp3h/TRTU466cro\""
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 27 Nov 2023 18:53:16 GMT"
+											"value": "Wed, 29 Nov 2023 04:24:01 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2511,7 +2511,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"articleId\": 1,\n        \"article\": {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"type\": 1,\n            \"isLimited\": false,\n            \"isDraft\": false,\n            \"views\": 8,\n            \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"articleId\": 1,\n        \"article\": {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"isDraft\": false,\n            \"views\": 8,\n            \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -3525,6 +3525,9 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -3798,13 +3801,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/user",
+									"raw": "{{domain}}/api/dashboard/user",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
-										"{{prefix}}",
-										"{{internalPrefix}}",
+										"api",
+										"dashboard",
 										"user"
 									]
 								}
@@ -5524,12 +5527,14 @@
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 永豐 20230512 N.pdf"
+											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 永豐 20230512 N.pdf",
+											"disabled": true
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 宏遠 20230512 SB.pdf"
+											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 宏遠 20230512 SB.pdf",
+											"disabled": true
 										}
 									]
 								},
@@ -5558,13 +5563,13 @@
 									"formdata": [
 										{
 											"key": "oldName",
-											"value": "2330台積電 野村 20230414 SB.pdf",
+											"value": "2049上銀 第一金 20230512 OW.pdf",
 											"description": "[required]",
 											"type": "text"
 										},
 										{
 											"key": "newName",
-											"value": "2330台積電 野村 20230414 SBSS.pdf",
+											"value": "2049上銀 第一金 20230612 OW.pdf",
 											"description": "[required]",
 											"type": "text"
 										}
@@ -6686,14 +6691,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/banner",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/banner",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"banner"
 									]
 								}
@@ -6701,9 +6704,42 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"148c-1PRKigo/4UZBPI9C6uKWb8LqpNY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 15:53:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\": 28,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"28\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [],\n            \"publishDate\": \"2023-11-23T05:54:35.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 25,\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"title\": \"你好\",\n            \"topics\": [\n                {\n                    \"id\": 28,\n                    \"name\": \"籌碼\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 188,\n                    \"name\": \"IPC\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T04:13:01.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 19,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"19\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:02:16.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 18,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"18\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 188,\n                    \"name\": \"IPC\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:01:18.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 17,\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"title\": \"17\",\n            \"topics\": [\n                {\n                    \"id\": 27,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 30,\n                    \"name\": \"其他\"\n                }\n            ],\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"tags\": [\n                {\n                    \"id\": 179,\n                    \"name\": \"半導體\"\n                },\n                {\n                    \"id\": 200,\n                    \"name\": \"非農就業\"\n                }\n            ],\n            \"publishDate\": \"2023-11-23T03:01:02.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 26,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T18:41:26.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 16,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T05:31:35.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"你好，世界\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"籌碼面\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"技術面\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 13,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [],\n            \"topics\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"總經\"\n                }\n            ],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T05:27:24.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -7670,7 +7706,97 @@
 					},
 					"response": [
 						{
-							"name": "啟用或關閉自動續訂",
+							"name": "啟用自動續訂",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/configure-auto-renewal",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"configure-auto-renewal"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 13:51:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-NkdaRQMXgVLqRTCOYqxqRAS+PAY\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=oEW1sGv8VfYyaus7lud84S4BPaKb1nfVvd%2Bh50SQPtjXgZaYba3%2FJGUHF%2Buyhs8q8uIcAG7NybDB5tll7LdbvGDMk2wecznn8WKqZCILq9AVYJ3HM%2F6hAAIw9KYvY5AamIQ%2FmsnVwyIEJXBeBA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "82d3162b2aec2b94-LAX"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": true,\n        \"status\": \"active\",\n        \"plan\": \"quarter\",\n        \"amount\": 18888,\n        \"email\": \"louis222220@gmail.com\",\n        \"nextRenewalDate\": \"2024-02-28\",\n        \"startAt\": \"2023-11-27T18:35:00.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-27T18:34:14.000Z\",\n        \"updatedAt\": \"2023-11-28T13:51:36.995Z\"\n    }\n}"
+						},
+						{
+							"name": "關閉自動續訂",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -7695,19 +7821,69 @@
 									]
 								}
 							},
+							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
+									"key": "Date",
+									"value": "Tue, 28 Nov 2023 13:53:13 GMT"
+								},
+								{
 									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ca-o5pS3m+4ln9gpiWj/Q/bI2L+b1I\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=%2F5VFeRL4ii4pANZNYSlatuBNzqy4dOFsujU2nXNubyzPwWcZ1gCenNxgxlczKorLo9UMc9yr0t2tNj2QnxZUBvcEkFpQAc%2FEmp3FTTMf0oV6G98IRLIVaHWEyCvLTzXWhFsgkJC%2FDRut5ZR8cA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "82d3188178c62b94-LAX"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n\t\t\"status\": \"subscription-status-string\",\n\t\t\"plan\": \"month\",\n\t\t\"autoRenewal\": false,\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": false,\n        \"status\": \"renewal_disabled\",\n        \"plan\": \"quarter\",\n        \"amount\": 18888,\n        \"email\": \"louis222220@gmail.com\",\n        \"nextRenewalDate\": \"2024-02-28\",\n        \"startAt\": \"2023-11-27T18:35:00.000Z\",\n        \"endAt\": \"2024-02-27T15:59:59.999Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-27T18:34:14.000Z\",\n        \"updatedAt\": \"2023-11-28T13:53:12.964Z\"\n    }\n}"
 						}
 					]
 				},
@@ -7798,7 +7974,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/media?source=gnimPodcast&page=0&size=30",
+							"raw": "{{domain}}/{{prefix}}/media?source=jinyufengYt&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -7809,7 +7985,7 @@
 							"query": [
 								{
 									"key": "source",
-									"value": "gnimPodcast",
+									"value": "jinyufengYt",
 									"description": "[required] string\ngnimPodcast -> podcast\njinyufengYt -> yt"
 								},
 								{

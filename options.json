@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "11.28.0300",
-        "description": "新增後台 banner 的 index, show, update, delete 功能"
+        "version": "11.29.1230",
+        "description": "後台 banner response 調整"
     },
     "servers": [
         {

@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 新增後台 banner 的 index, show, update, delete 功能
-  version: 11.28.0300
+  description: 後台 banner response 調整
+  version: 11.29.1230
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -1335,11 +1335,11 @@ paths:
                 topics[0]:
                   type: integer
                   description: '[int]'
-                  example: '1'
+                  example: '3'
                 topics[1]:
                   type: integer
                   description: '[int]'
-                  example: '2'
+                  example: '4'
                 tags[0]:
                   type: integer
                   description: '[int]'
@@ -1471,15 +1471,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '1349'
+                example: '3288'
             ETag:
               schema:
                 type: string
-                example: W/"545-mPDhOuE/9s7ePfiQpZT6HQ7sKwk"
+                example: W/"cd8-+hDWpw71Tl6I/as8gS4B+rQgIKw"
             Date:
               schema:
                 type: string
-                example: Mon, 27 Nov 2023 18:23:18 GMT
+                example: Wed, 29 Nov 2023 04:22:26 GMT
             Connection:
               schema:
                 type: string
@@ -1495,6 +1495,9 @@ paths:
               example:
                 data:
                   - id: 1
+                    articleId: null
+                    article: null
+                  - id: 2
                     articleId: 1
                     article:
                       id: 1
@@ -1512,20 +1515,86 @@ paths:
                       clippedContent: >-
                         {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                         this editor instance exports its content as JSON."}]}]}
+                      companies:
+                        - id: 3
+                          code: '1103'
+                          name: 嘉泥
+                        - id: 4
+                          code: '1104'
+                          name: 環泥
+                      topics:
+                        - id: 1
+                          name: 產業
+                      tags:
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                      previewImage:
+                        id: 2
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                          (1).png
                       type: 1
                       isLimited: false
                       isDraft: false
                       views: 8
                       publishedAt: '2023-11-21T16:11:23.000Z'
-                  - id: 2
-                    articleId: null
-                    article: null
                   - id: 3
                     articleId: null
                     article: null
                   - id: 4
-                    articleId: null
-                    article: null
+                    articleId: 2
+                    article:
+                      id: 2
+                      title: 你好，世界
+                      fullContent: >-
+                        {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                        this editor instance exports its content as
+                        JSON！！！"}]}]}
+                      rawContent: >-
+                        新手也能懂的 Kotlin Collection
+                        賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                        Collection 有關。Collection
+                        簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                        List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                        團隊深知資料處理的重要性，在標準函式庫（Stan…
+                      clippedContent: >-
+                        {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                        this editor instance exports its content as JSON."}]}]}
+                      companies:
+                        - id: 3
+                          code: '1103'
+                          name: 嘉泥
+                        - id: 4
+                          code: '1104'
+                          name: 環泥
+                      topics:
+                        - id: 3
+                          name: 基本面
+                        - id: 4
+                          name: 籌碼面
+                        - id: 5
+                          name: 技術面
+                      tags:
+                        - id: 1
+                          name: 半導體
+                          isRecommended: false
+                        - id: 2
+                          name: IC 設計
+                          isRecommended: false
+                      previewImage:
+                        id: 1
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                          (1).png
+                      type: 1
+                      isLimited: false
+                      isDraft: false
+                      views: 13
+                      publishedAt: '2023-11-22T16:11:23.000Z'
                   - id: 5
                     articleId: null
                     article: null
@@ -1542,7 +1611,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '2'
       responses:
         '200':
           description: OK
@@ -1562,15 +1631,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '1183'
+                example: '1546'
             ETag:
               schema:
                 type: string
-                example: W/"49f-y/2Fc5oik9mV/rassTxsF68Bfh8"
+                example: W/"60a-qngqGzp23l2FKp3h/TRTU466cro"
             Date:
               schema:
                 type: string
-                example: Mon, 27 Nov 2023 18:53:16 GMT
+                example: Wed, 29 Nov 2023 04:24:01 GMT
             Connection:
               schema:
                 type: string
@@ -1585,7 +1654,7 @@ paths:
                 type: object
               example:
                 data:
-                  id: 1
+                  id: 2
                   articleId: 1
                   article:
                     id: 1
@@ -1603,6 +1672,28 @@ paths:
                     clippedContent: >-
                       {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
                       this editor instance exports its content as JSON."}]}]}
+                    companies:
+                      - id: 3
+                        code: '1103'
+                        name: 嘉泥
+                      - id: 4
+                        code: '1104'
+                        name: 環泥
+                    topics:
+                      - id: 1
+                        name: 產業
+                    tags:
+                      - id: 1
+                        name: 半導體
+                        isRecommended: false
+                      - id: 2
+                        name: IC 設計
+                        isRecommended: false
+                    previewImage:
+                      id: 2
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                        (1).png
                     type: 1
                     isLimited: false
                     isDraft: false
@@ -2096,6 +2187,8 @@ paths:
                   type: string
                   description: 最少六位英數
                   example: hashpassword
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: OK
@@ -3371,11 +3464,11 @@ paths:
                 oldName:
                   type: string
                   description: ''
-                  example: 2330台積電 野村 20230414 SB.pdf
+                  example: 2049上銀 第一金 20230512 OW.pdf
                 newName:
                   type: string
                   description: ''
-                  example: 2330台積電 野村 20230414 SBSS.pdf
+                  example: 2049上銀 第一金 20230612 OW.pdf
       responses:
         '200':
           description: Successful response
@@ -4006,13 +4099,47 @@ paths:
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '5260'
+            ETag:
+              schema:
+                type: string
+                example: W/"148c-1PRKigo/4UZBPI9C6uKWb8LqpNY"
+            Date:
+              schema:
+                type: string
+                example: Tue, 28 Nov 2023 15:53:22 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
-                  - id: 28
+                  - id: 26
+                    title: 標題
                     description: >-
                       新手也能懂的 Kotlin Collection
                       賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
@@ -4020,20 +4147,29 @@ paths:
                       簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                       List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
                       團隊深知資料處理的重要性，在標準函式庫（Stan…
-                    title: '28'
-                    topics:
-                      - id: 27
-                        name: 基本面
                     author:
                       name: Rick
                       id: 2
+                    companies:
+                      - id: 1
+                        code: '1101'
+                        name: 台泥
+                      - id: 2
+                        code: '1102'
+                        name: 亞泥
+                    topics: []
                     tags: []
-                    publishDate: '2023-11-23T05:54:35.000Z'
-                    previewImage: null
+                    publishDate: '2023-11-25T18:41:26.000Z'
+                    previewImage:
+                      id: 2
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                        (1).png
                     type: 1
                     isLimited: false
                     source: null
-                  - id: 25
+                  - id: 1
+                    title: 你好
                     description: >-
                       也能懂的 Kotlin Collection
                       賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
@@ -4041,26 +4177,37 @@ paths:
                       簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                       List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
                       團隊深知資料處理的重要性，在標準函式庫（Stan…</
-                    title: 你好
-                    topics:
-                      - id: 28
-                        name: 籌碼
-                      - id: 30
-                        name: 其他
                     author:
                       name: Rick
                       id: 2
+                    companies:
+                      - id: 3
+                        code: '1103'
+                        name: 嘉泥
+                      - id: 4
+                        code: '1104'
+                        name: 環泥
+                    topics:
+                      - id: 1
+                        name: 產業
                     tags:
-                      - id: 188
-                        name: IPC
-                      - id: 200
-                        name: 非農就業
-                    publishDate: '2023-11-23T04:13:01.000Z'
-                    previewImage: null
+                      - id: 1
+                        name: 半導體
+                        isRecommended: false
+                      - id: 2
+                        name: IC 設計
+                        isRecommended: false
+                    publishDate: '2023-11-21T16:11:23.000Z'
+                    previewImage:
+                      id: 2
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                        (1).png
                     type: 1
                     isLimited: false
                     source: null
-                  - id: 19
+                  - id: 16
+                    title: 標題
                     description: >-
                       新手也能懂的 Kotlin Collection
                       賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
@@ -4068,26 +4215,21 @@ paths:
                       簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                       List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
                       團隊深知資料處理的重要性，在標準函式庫（Stan…
-                    title: '19'
-                    topics:
-                      - id: 27
-                        name: 基本面
-                      - id: 30
-                        name: 其他
                     author:
-                      name: Rick
-                      id: 2
-                    tags:
-                      - id: 179
-                        name: 半導體
-                      - id: 200
-                        name: 非農就業
-                    publishDate: '2023-11-23T03:02:16.000Z'
+                      name: Remus
+                      id: 1
+                    companies: []
+                    topics:
+                      - id: 3
+                        name: 基本面
+                    tags: []
+                    publishDate: '2023-11-25T05:31:35.000Z'
                     previewImage: null
                     type: 1
                     isLimited: false
                     source: null
-                  - id: 18
+                  - id: 2
+                    title: 你好，世界
                     description: >-
                       新手也能懂的 Kotlin Collection
                       賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
@@ -4095,28 +4237,41 @@ paths:
                       簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                       List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
                       團隊深知資料處理的重要性，在標準函式庫（Stan…
-                    title: '18'
-                    topics:
-                      - id: 27
-                        name: 基本面
-                      - id: 30
-                        name: 其他
                     author:
                       name: Rick
                       id: 2
+                    companies:
+                      - id: 3
+                        code: '1103'
+                        name: 嘉泥
+                      - id: 4
+                        code: '1104'
+                        name: 環泥
+                    topics:
+                      - id: 3
+                        name: 基本面
+                      - id: 4
+                        name: 籌碼面
+                      - id: 5
+                        name: 技術面
                     tags:
-                      - id: 179
+                      - id: 1
                         name: 半導體
-                      - id: 188
-                        name: IPC
-                      - id: 200
-                        name: 非農就業
-                    publishDate: '2023-11-23T03:01:18.000Z'
-                    previewImage: null
+                        isRecommended: false
+                      - id: 2
+                        name: IC 設計
+                        isRecommended: false
+                    publishDate: '2023-11-22T16:11:23.000Z'
+                    previewImage:
+                      id: 1
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
+                        (1).png
                     type: 1
                     isLimited: false
                     source: null
-                  - id: 17
+                  - id: 13
+                    title: 標題
                     description: >-
                       新手也能懂的 Kotlin Collection
                       賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
@@ -4124,21 +4279,15 @@ paths:
                       簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
                       List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
                       團隊深知資料處理的重要性，在標準函式庫（Stan…
-                    title: '17'
-                    topics:
-                      - id: 27
-                        name: 基本面
-                      - id: 30
-                        name: 其他
                     author:
-                      name: Rick
-                      id: 2
-                    tags:
-                      - id: 179
-                        name: 半導體
-                      - id: 200
-                        name: 非農就業
-                    publishDate: '2023-11-23T03:01:02.000Z'
+                      name: Remus
+                      id: 1
+                    companies: []
+                    topics:
+                      - id: 2
+                        name: 總經
+                    tags: []
+                    publishDate: '2023-11-25T05:27:24.000Z'
                     previewImage: null
                     type: 1
                     isLimited: false
@@ -4880,31 +5029,107 @@ paths:
                 active: true
       responses:
         '200':
+          description: OK
           headers:
+            Date:
+              schema:
+                type: string
+                example: Tue, 28 Nov 2023 13:51:37 GMT
             Content-Type:
               schema:
                 type: string
-                example: application/json
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              schema:
+                type: string
+                example: W/"19c-NkdaRQMXgVLqRTCOYqxqRAS+PAY"
+            CF-Cache-Status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Report-To:
+              schema:
+                type: string
+                example: >-
+                  {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=oEW1sGv8VfYyaus7lud84S4BPaKb1nfVvd%2Bh50SQPtjXgZaYba3%2FJGUHF%2Buyhs8q8uIcAG7NybDB5tll7LdbvGDMk2wecznn8WKqZCILq9AVYJ3HM%2F6hAAIw9KYvY5AamIQ%2FmsnVwyIEJXBeBA%3D%3D"}],"group":"cf-nel","max_age":604800}
+            NEL:
+              schema:
+                type: string
+                example: '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            CF-RAY:
+              schema:
+                type: string
+                example: 82d3162b2aec2b94-LAX
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
           content:
             application/json:
               schema:
                 type: object
-              example:
-                data:
-                  id: 3
-                  memberId: 5
-                  status: subscription-status-string
-                  plan: month
-                  autoRenewal: false
-                  amount: 6888
-                  email: test@gnim.com
-                  nextRenewalDate: '2023-12-04'
-                  startAt: '2023-11-04T10:10:47.000Z'
-                  endAt: null
-                  companyUniformSerialNo: '12345678'
-                  maskedCreditCardNo: 400022******1111
-                  createdAt: '2023-11-04T10:05:47.000Z'
-                  updatedAt: '2023-11-04T10:05:47.000Z'
+              examples:
+                example-0:
+                  summary: 啟用自動續訂
+                  value:
+                    data:
+                      id: 10
+                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      isSubscribing: true
+                      autoRenewal: true
+                      status: active
+                      plan: quarter
+                      amount: 18888
+                      email: louis222220@gmail.com
+                      nextRenewalDate: '2024-02-28'
+                      startAt: '2023-11-27T18:35:00.000Z'
+                      companyUniformSerialNo: '12345678'
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-11-27T18:34:14.000Z'
+                      updatedAt: '2023-11-28T13:51:36.995Z'
+                example-1:
+                  summary: 關閉自動續訂
+                  value:
+                    data:
+                      id: 10
+                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      isSubscribing: true
+                      autoRenewal: false
+                      status: renewal_disabled
+                      plan: quarter
+                      amount: 18888
+                      email: louis222220@gmail.com
+                      nextRenewalDate: '2024-02-28'
+                      startAt: '2023-11-27T18:35:00.000Z'
+                      endAt: '2024-02-27T15:59:59.999Z'
+                      companyUniformSerialNo: '12345678'
+                      maskedCreditCardNo: 400022******1111
+                      createdAt: '2023-11-27T18:34:14.000Z'
+                      updatedAt: '2023-11-28T13:53:12.964Z'
   /api/subscription/cancel-and-request-refund:
     post:
       tags:
@@ -4952,7 +5177,7 @@ paths:
             string
             gnimPodcast -> podcast
             jinyufengYt -> yt
-          example: gnimPodcast
+          example: jinyufengYt
         - name: page
           in: query
           schema:
