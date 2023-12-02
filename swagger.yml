@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 後台 banner response 調整, podcast 資源換成 從 0 鑽報, api 觸發爬蟲
-  version: 11.29.1402
+  description: 後台圖片上傳 endpoint 調整
+  version: 12.03.0500
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -136,7 +136,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: v4THGFQPOHeHXr5GT9pI
+                  example: XSM0qrUq8Tq5GlErGmcp
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -1820,7 +1820,7 @@ paths:
               example:
                 data:
                   message: success
-  /api/dashboard/image:
+  /api/dashboard/image/{imageType}:
     post:
       tags:
         - 後台 > 圖片
@@ -1839,9 +1839,50 @@ paths:
                   format: binary
       security:
         - bearerAuth: []
+      parameters:
+        - name: imageType
+          in: path
+          schema:
+            type: string
+          required: true
+          description: '[required] [article, preview-image]'
+          example: preview-image
       responses:
         '200':
           description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '393'
+            ETag:
+              schema:
+                type: string
+                example: W/"189-9Wpyo94KehfVlJ6i7h5sFukL78k"
+            Date:
+              schema:
+                type: string
+                example: Sat, 02 Dec 2023 08:05:48 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
@@ -1850,15 +1891,15 @@ paths:
                 data:
                   message: 檔案上傳成功！
                   imageUrl: >-
-                    https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/75da1d23-c0ad-4ed2-bb20-2c53edfa75d2
+                    https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/32e9ee2e-8799-48a5-b33c-850a5e84bad3
                   image:
-                    id: 6
+                    id: 12
                     name: sticker (1) (16).png
-                    path: 75da1d23-c0ad-4ed2-bb20-2c53edfa75d2
+                    path: preview-image/32e9ee2e-8799-48a5-b33c-850a5e84bad3
                     creatorType: User
-                    creatorId: 1
-                    updatedAt: '2023-11-25T05:58:12.320Z'
-                    createdAt: '2023-11-25T05:58:12.320Z'
+                    creatorId: 2
+                    updatedAt: '2023-12-02T08:05:48.547Z'
+                    createdAt: '2023-12-02T08:05:48.547Z'
   /api/dashboard/users:
     get:
       tags:
@@ -2223,6 +2264,8 @@ paths:
                 refreshToken:
                   type: string
                   example: '{{refresh_token}}'
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: OK
@@ -3568,21 +3611,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /podcast-gnim-trigger:
+  /podcast-jinyufeng-trigger:
     get:
       tags:
         - 後台 > 爬蟲
       summary: podcast 刷新
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /twse-json:
-    get:
-      tags:
-        - 後台 > 爬蟲
-      summary: twse
       responses:
         '200':
           description: Successful response
@@ -5525,7 +5558,7 @@ paths:
                 plan: month
                 autoRenewal: true
                 companyUniformSerialNo: '12345678'
-                returnUrl: https://gnim.com.tw/payment-completed
+                returnUrl: https://www.google.com
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
         '200':
@@ -5562,8 +5595,8 @@ paths:
             schema:
               type: object
               example:
-                companyUniformSerialNo: '12345678'
-                returnUrl: https://gnim.com.tw/payment-completed
+                companyUniformSerialNo: null
+                returnUrl: https://www.google.com
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
         '200':

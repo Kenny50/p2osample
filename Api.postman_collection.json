@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -84,14 +84,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/google",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/google",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"google"
 									]
@@ -162,7 +160,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "v4THGFQPOHeHXr5GT9pI",
+									"value": "XSM0qrUq8Tq5GlErGmcp",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -211,14 +209,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/auth/line",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/auth/line",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"auth",
 										"line"
 									]
@@ -343,14 +339,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/refresh-token",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/refresh-token",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"refresh-token"
 									]
 								}
@@ -435,14 +429,12 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:3020/api/member/update-information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/update-information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"update-information"
 									]
@@ -530,14 +522,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/sent-validate-email",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"sent-validate-email"
 									]
@@ -624,14 +614,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/information",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/information",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"information"
 									]
@@ -680,14 +668,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/delete-account",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/delete-account",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"delete-account"
 									]
@@ -791,14 +777,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -861,14 +845,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/member/validate-email?signature=string",
-									"protocol": "http",
+									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
-										"api",
+										"{{prefix}}",
 										"member",
 										"validate-email"
 									],
@@ -2795,20 +2777,28 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image/:imageType",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
 										"{{internalPrefix}}",
-										"image"
+										"image",
+										":imageType"
+									],
+									"variable": [
+										{
+											"key": "imageType",
+											"value": "preview-image",
+											"description": "[required] [article, preview-image]"
+										}
 									]
 								}
 							},
 							"response": [
 								{
-									"name": "upload image for article",
+									"name": "upload image",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -2816,31 +2806,72 @@
 											"mode": "formdata",
 											"formdata": [
 												{
-													"key": "image",
-													"description": "[required]",
+													"key": "file",
+													"description": "[required][檔案格式：jpg, jpeg, png]",
 													"type": "file",
-													"src": []
+													"src": "/Users/rui/Downloads/sticker (1) (16).png"
 												}
 											]
 										},
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/image/:imageType",
 											"host": [
 												"{{domain}}"
 											],
 											"path": [
 												"{{prefix}}",
 												"{{internalPrefix}}",
-												"image"
+												"image",
+												":imageType"
+											],
+											"variable": [
+												{
+													"key": "imageType",
+													"value": "preview-image",
+													"description": "[required] [article, preview-image]"
+												}
 											]
 										}
 									},
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "json",
-									"header": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "393"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"189-9Wpyo94KehfVlJ6i7h5sFukL78k\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 02 Dec 2023 08:05:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"message\": \"檔案上傳成功！\",\n        \"imageUrl\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/75da1d23-c0ad-4ed2-bb20-2c53edfa75d2\",\n        \"image\": {\n            \"id\": 6,\n            \"name\": \"sticker (1) (16).png\",\n            \"path\": \"75da1d23-c0ad-4ed2-bb20-2c53edfa75d2\",\n            \"creatorType\": \"User\",\n            \"creatorId\": 1,\n            \"updatedAt\": \"2023-11-25T05:58:12.320Z\",\n            \"createdAt\": \"2023-11-25T05:58:12.320Z\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"message\": \"檔案上傳成功！\",\n        \"imageUrl\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/32e9ee2e-8799-48a5-b33c-850a5e84bad3\",\n        \"image\": {\n            \"id\": 12,\n            \"name\": \"sticker (1) (16).png\",\n            \"path\": \"preview-image/32e9ee2e-8799-48a5-b33c-850a5e84bad3\",\n            \"creatorType\": \"User\",\n            \"creatorId\": 2,\n            \"updatedAt\": \"2023-12-02T08:05:48.547Z\",\n            \"createdAt\": \"2023-12-02T08:05:48.547Z\"\n        }\n    }\n}"
 								}
 							]
 						}
@@ -3674,6 +3705,9 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "noauth"
+								},
 								"method": "POST",
 								"header": [],
 								"body": {
@@ -4317,7 +4351,7 @@
 											"key": "file",
 											"description": "[required] upload",
 											"type": "file",
-											"src": "/Users/chang/Downloads/000.pdf"
+											"src": "/Users/chang/Downloads/各券商報告/本土券商/4994傳奇 合庫 20221219 20_.pdf"
 										}
 									]
 								},
@@ -5812,7 +5846,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://crawler-dev.gnim.com.tw/podcast-gnim-trigger",
+									"raw": "https://crawler-dev.gnim.com.tw/podcast-jinyufeng-trigger",
 									"protocol": "https",
 									"host": [
 										"crawler-dev",
@@ -5821,7 +5855,7 @@
 										"tw"
 									],
 									"path": [
-										"podcast-gnim-trigger"
+										"podcast-jinyufeng-trigger"
 									]
 								}
 							},
@@ -5831,20 +5865,7 @@
 							"name": "twse",
 							"request": {
 								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "https://crawler-dev.gnim.com.tw/twse-json",
-									"protocol": "https",
-									"host": [
-										"crawler-dev",
-										"gnim",
-										"com",
-										"tw"
-									],
-									"path": [
-										"twse-json"
-									]
-								}
+								"header": []
 							},
 							"response": []
 						}
@@ -7380,12 +7401,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3020/api/subscription/latest-plan",
-									"protocol": "http",
+									"raw": "{{domain}}/api/subscription/latest-plan",
 									"host": [
-										"localhost"
+										"{{domain}}"
 									],
-									"port": "3020",
 									"path": [
 										"api",
 										"subscription",
@@ -7560,7 +7579,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"plan\": \"month\",\n    \"autoRenewal\": true,\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n\t\"plan\": \"month\",\n    \"autoRenewal\": true,\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7630,7 +7649,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://gnim.com.tw/payment-completed\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n    \"companyUniformSerialNo\": null,\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
