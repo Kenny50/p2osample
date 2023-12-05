@@ -2,7 +2,7 @@
     "info": {
         "title": "金玉峰投顧 api",
         "version": "12.03.0500",
-        "description": "後台圖片上傳 endpoint 調整"
+        "description": "調整 /api/tag/recommend 的 endpoint"
     },
     "servers": [
         {

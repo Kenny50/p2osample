@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 後台圖片上傳 endpoint 調整
+  description: 調整 /api/tag/recommend 的 endpoint
   version: 12.03.0500
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
@@ -4046,7 +4046,7 @@ paths:
                   name: NotFoundError
                   message: 無法獲取 tag 資源
                   field: tag
-  /api/tag/recommand:
+  /api/tag/recommend:
     get:
       tags:
         - 標籤、主題

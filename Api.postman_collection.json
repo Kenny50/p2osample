@@ -6647,14 +6647,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/tag/recommand",
+							"raw": "{{domain}}/{{prefix}}/tag/recommend",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"{{prefix}}",
 								"tag",
-								"recommand"
+								"recommend"
 							],
 							"query": [
 								{
