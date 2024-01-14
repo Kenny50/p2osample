@@ -46,6 +46,7 @@ tags:
   - name: 後台 > pdf
   - name: 後台 > 卷商
   - name: 後台 > 爬蟲
+  - name: 後台 > 靜態文件
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -63,6 +64,7 @@ tags:
   - name: 訂閱
   - name: 試閱
   - name: 媒體影音
+  - name: 靜態文件
 paths:
   /api/login/google:
     post:
@@ -136,7 +138,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: XSM0qrUq8Tq5GlErGmcp
+                  example: tiZHAHyjPA7YiYXZ86qD
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3621,6 +3623,64 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /twse-json:
+    get:
+      tags:
+        - 後台 > 爬蟲
+      summary: twse
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf/anti-money-laundering:
+    put:
+      tags:
+        - 後台 > 靜態文件
+      summary: 上傳洗錢防制 PDF
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  description: upload
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf/sign-contract:
+    put:
+      tags:
+        - 後台 > 靜態文件
+      summary: 上傳簽訂契約 PDF
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  description: upload
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/topic:
     get:
       tags:
@@ -6205,3 +6265,99 @@ paths:
                       publishedAt: '2023-06-21T08:07:10.000Z'
                       source: jinyufengYt
                       type: youtube
+  /api/pdf/anti-money-laundering:
+    get:
+      tags:
+        - 靜態文件
+      summary: 取得洗錢防制 PDF
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '100'
+            ETag:
+              schema:
+                type: string
+                example: W/"64-i7rT1w9ebs09awNJwvsFGsZl5Jw"
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Jan 2024 15:03:02 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/anti-money-laundering.pdf
+  /api/pdf/sign-contract:
+    get:
+      tags:
+        - 靜態文件
+      summary: 取得簽訂契約 PDF
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '92'
+            ETag:
+              schema:
+                type: string
+                example: W/"5c-po10ctN3txnAbS7R7WM1AoE9llE"
+            Date:
+              schema:
+                type: string
+                example: Sun, 14 Jan 2024 15:03:20 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf
