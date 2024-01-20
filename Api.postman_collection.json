@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://web.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -4333,6 +4333,86 @@
 									"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": false,\n        \"isRefunded\": true,\n        \"autoRenewal\": false,\n        \"status\": \"canceled\",\n        \"plan\": \"month\",\n        \"amount\": 170,\n        \"email\": \"no-reply@gmail.com\",\n        \"startAt\": \"2023-11-20T17:40:35.000Z\",\n        \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n        \"refundedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-20T17:39:50.000Z\",\n        \"updatedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"bills\": [\n            {\n                \"id\": 1,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"payment\",\n                \"amount\": 170,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"startAt\": \"2023-11-20T17:40:35.000Z\",\n                \"endAt\": \"2023-12-20T17:40:35.000Z\",\n                \"paymentPlatformNo\": \"mock_order_1700501990814_1\",\n                \"createdAt\": \"2023-11-20T17:40:35.000Z\",\n                \"updatedAt\": \"2023-11-20T17:40:35.000Z\"\n            },\n            {\n                \"id\": 6,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"refund\",\n                \"amount\": 18,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"createdByUserId\": 7,\n                \"createdAt\": \"2023-11-26T09:42:42.000Z\",\n                \"updatedAt\": \"2023-11-26T09:44:40.000Z\"\n            }\n        ]\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "取得未開通會員清單",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/dashboard/pending-subscription-members",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"pending-subscription-members"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "開通會員訂閱",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/dashboard/approve-subscription",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"approve-subscription"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "開通會員訂閱",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{domain}}/api/dashboard/approve-subscription",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"dashboard",
+												"approve-subscription"
+											]
+										}
+									},
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
 						}
 					]
 				},
@@ -5964,6 +6044,237 @@
 										"{{internalPrefix}}",
 										"pdf",
 										"sign-contract"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "網站內容",
+					"item": [
+						{
+							"name": "create an analytics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "{}",
+											"description": "[required] json editor",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ken",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "nickName",
+											"value": "Kenny",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "imageUrl",
+											"value": "https://",
+											"description": "[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/create-analytics",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"create-analytics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update an analytics",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "{}",
+											"description": "[required] json editor",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Ken",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "nickName",
+											"value": "Kenny",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "imageUrl",
+											"value": "https://",
+											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] [int]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/update-analytics",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"update-analytics"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-purchase-tutorial",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "{\"type\":\"article\"}",
+											"description": "[required] json editor format",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/update-purchase-tutorial",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"update-purchase-tutorial"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-member-package",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "{\"type\":\"article\"}",
+											"description": "[required] json editor format",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/update-member-package",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"update-member-package"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete an analytics",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/analytics/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"analytics",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3",
+											"description": "[required] [int]"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "policy",
+					"item": [
+						{
+							"name": "update policy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "\"{}\"",
+											"description": "[required] json from editor",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/update-term/:term",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"update-term",
+										":term"
+									],
+									"variable": [
+										{
+											"key": "term",
+											"value": "privacy",
+											"description": "[required] privacy, user, subscribe"
+										}
 									]
 								}
 							},
@@ -8382,6 +8693,195 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "網站內容",
+			"item": [
+				{
+					"name": "get all analytics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/all-analytics",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"all-analytics"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all analytics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/all-analytics",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"all-analytics"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenny\",\n            \"content\": \"{}\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenn\",\n            \"content\": \"{}\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get analytics by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/analytics/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"analytics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1",
+									"description": "[required] [int]"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get analytics by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/analytics/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"analytics",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "[required] [int]"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Ken\",\n        \"nickName\": \"Kenny\",\n        \"content\": \"{}\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "member-package",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/member-package",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"member-package"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "member-package",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member-package",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member-package"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"content\": \"{\\\"type\\\":\\\"article\\\"}\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "purchase-tutorial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/purchase-tutorial",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"purchase-tutorial"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "purchase-tutorial",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/purchase-tutorial",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"purchase-tutorial"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"content\": \"{\\\"type\\\":\\\"article\\\"}\"\n    }\n}"
 						}
 					]
 				}

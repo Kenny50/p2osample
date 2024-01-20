@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 調整 /api/tag/recommend 的 endpoint
-  version: 12.03.0500
+  description: 新增 網頁內容 api, 修改條款格式為 json
+  version: 01.20.2201
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -47,6 +47,8 @@ tags:
   - name: 後台 > 卷商
   - name: 後台 > 爬蟲
   - name: 後台 > 靜態文件
+  - name: 後台 > 網站內容
+  - name: 後台 > policy
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -65,6 +67,7 @@ tags:
   - name: 試閱
   - name: 媒體影音
   - name: 靜態文件
+  - name: 網站內容
 paths:
   /api/login/google:
     post:
@@ -2619,6 +2622,36 @@ paths:
                       createdByUserId: 7
                       createdAt: '2023-11-26T09:42:42.000Z'
                       updatedAt: '2023-11-26T09:44:40.000Z'
+  /api/dashboard/pending-subscription-members:
+    get:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 取得未開通會員清單
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/approve-subscription:
+    post:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 開通會員訂閱
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                subscriptionId: 5
+      responses:
+        '200':
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
   /api/dashboard/pdf/trial:
     put:
       tags:
@@ -3676,6 +3709,205 @@ paths:
                   format: binary
       security:
         - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/create-analytics:
+    post:
+      tags:
+        - 後台 > 網站內容
+      summary: create an analytics
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - content
+                - name
+                - nickName
+                - imageUrl
+              properties:
+                content:
+                  type: string
+                  description: json editor
+                  example: '{}'
+                name:
+                  type: string
+                  description: ''
+                  example: Ken
+                nickName:
+                  type: string
+                  description: ''
+                  example: Kenny
+                imageUrl:
+                  type: string
+                  description: ''
+                  example: https://
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/update-analytics:
+    post:
+      tags:
+        - 後台 > 網站內容
+      summary: update an analytics
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - content
+                - name
+                - nickName
+                - imageUrl
+                - id
+              properties:
+                content:
+                  type: string
+                  description: json editor
+                  example: '{}'
+                name:
+                  type: string
+                  description: ''
+                  example: Ken
+                nickName:
+                  type: string
+                  description: ''
+                  example: Kenny
+                imageUrl:
+                  type: string
+                  description: ''
+                  example: https://
+                id:
+                  type: integer
+                  description: '[int]'
+                  example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/update-purchase-tutorial:
+    post:
+      tags:
+        - 後台 > 網站內容
+      summary: update-purchase-tutorial
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - content
+              properties:
+                content:
+                  type: string
+                  description: json editor format
+                  example: '{"type":"article"}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/update-member-package:
+    post:
+      tags:
+        - 後台 > 網站內容
+      summary: update-member-package
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - content
+              properties:
+                content:
+                  type: string
+                  description: json editor format
+                  example: '{"type":"article"}'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/analytics/{id}:
+    delete:
+      tags:
+        - 後台 > 網站內容
+      summary: delete an analytics
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] [int]'
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - 網站內容
+      summary: get analytics by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] [int]'
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "data": {
+                        "id": 1,
+                        "name": "Ken",
+                        "nickName": "Kenny",
+                        "content": "{}"
+                    }
+                }
+  /api/update-term/{term}:
+    post:
+      tags:
+        - 後台 > policy
+      summary: update policy
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - content
+              properties:
+                content:
+                  type: string
+                  description: json from editor
+                  example: '"{}"'
+      parameters:
+        - name: term
+          in: path
+          schema:
+            type: string
+          required: true
+          description: '[required] privacy, user, subscribe'
+          example: privacy
       responses:
         '200':
           description: Successful response
@@ -6361,3 +6593,70 @@ paths:
               example:
                 data: >-
                   https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf
+  /api/all-analytics:
+    get:
+      tags:
+        - 網站內容
+      summary: get all analytics
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "data": [
+                        {
+                            "id": 1,
+                            "name": "Ken",
+                            "nickName": "Kenny",
+                            "content": "{}"
+                        },
+                        {
+                            "id": 2,
+                            "name": "Ken",
+                            "nickName": "Kenn",
+                            "content": "{}"
+                        }
+                    ]
+                }
+  /api/member-package:
+    get:
+      tags:
+        - 網站內容
+      summary: member-package
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "data": {
+                        "id": 5,
+                        "content": "{\"type\":\"article\"}"
+                    }
+                }
+  /api/purchase-tutorial:
+    get:
+      tags:
+        - 網站內容
+      summary: purchase-tutorial
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |-
+                {
+                    "data": {
+                        "id": 4,
+                        "content": "{\"type\":\"article\"}"
+                    }
+                }

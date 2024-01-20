@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "01.14.2330",
-        "description": "新增靜態文件上傳相關 API 之文件"
+        "version": "01.20.2201",
+        "description": "新增 網頁內容 api, 修改條款格式為 json"
     },
     "servers": [
         {
