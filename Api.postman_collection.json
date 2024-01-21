@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30479654",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
 	},
 	"item": [
 		{
@@ -4340,18 +4340,76 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/dashboard/pending-subscription-members",
+									"raw": "{{domain}}/api/dashboard/pending-subscriptions",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"api",
 										"dashboard",
-										"pending-subscription-members"
+										"pending-subscriptions"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "取得未開通會員清單",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/api/dashboard/pending-subscriptions",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"api",
+												"dashboard",
+												"pending-subscriptions"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1356"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"54c-VCc7XDH9gi9qbWUOVCGuov7IpH8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 21 Jan 2024 07:26:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 1,\n    \"totalCount\": 1,\n    \"data\": [\n        {\n            \"id\": 28,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"isSubscribing\": false,\n            \"autoRenewal\": false,\n            \"status\": \"pending\",\n            \"plan\": \"month\",\n            \"amount\": 6888,\n            \"email\": \"louis@gmail.com\",\n            \"nextRenewalDate\": \"2024-03-31\",\n            \"startAt\": \"2023-12-30T08:35:25.000Z\",\n            \"companyUniformSerialNo\": \"12345678\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"createdAt\": \"2023-12-30T08:35:01.000Z\",\n            \"updatedAt\": \"2023-12-30T10:01:21.000Z\",\n            \"paymentPlatformNo\": \"neweb_louislo_1703925301720\",\n            \"paymentResponsePayload\": {\n                \"Result\": {\n                    \"CardNo\": \"400022******1111\",\n                    \"TradeNo\": \"23123016352490296\",\n                    \"AuthBank\": \"KGI\",\n                    \"AuthCode\": \"336421\",\n                    \"AuthTime\": \"20231230163525\",\n                    \"PeriodNo\": \"P231230163524QrJe6Q\",\n                    \"AuthTimes\": 2,\n                    \"DateArray\": \"2023-12-30,2024-01-30\",\n                    \"PeriodAmt\": \"6888\",\n                    \"EscrowBank\": \"HNCB\",\n                    \"MerchantID\": \"MS350610354\",\n                    \"PeriodType\": \"M\",\n                    \"RespondCode\": \"00\",\n                    \"PaymentMethod\": \"CREDIT\",\n                    \"MerchantOrderNo\": \"neweb_louislo_1703925301720\"\n                },\n                \"Status\": \"SUCCESS\",\n                \"Message\": \"委託單成立，且首次授權成功\"\n            },\n            \"member\": {\n                \"id\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"name\": \"Louis\",\n                \"email\": \"louis@gmail.com\",\n                \"avatar\": \"https://profile.line-scdn.net/0hT4vTh6dbCxtbLSL6LPd1ZCt9CHF4XFIJdUwWf20tUyxmHB8fcE5AeT19AnxhG0hJdRxDKj1-UXhXPnx9RXv3L1wdVipnHUtKdE1H_Q\",\n                \"loginType\": \"line\",\n                \"thirdPartyIdentifier\": \"U41d6b8cf0cae1003d85ec7f0c5772c0d\",\n                \"isEmailValidate\": false,\n                \"isSubscribing\": false,\n                \"phone\": \"\",\n                \"isPhoneValidate\": false\n            }\n        }\n    ]\n}"
+								}
+							]
 						},
 						{
 							"name": "開通會員訂閱",
@@ -6044,6 +6102,47 @@
 										"{{internalPrefix}}",
 										"pdf",
 										"sign-contract"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "上傳簽訂契約範本 PDF",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "[required] upload",
+											"type": "file",
+											"src": "/Users/rui/Downloads/官網契約簽署範本.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf/sign-contract-example",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf",
+										"sign-contract-example"
 									]
 								}
 							},
@@ -8693,6 +8792,83 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf\"\n}"
+						}
+					]
+				},
+				{
+					"name": "取得簽訂契約範本 PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/pdf/sign-contract-example",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"pdf",
+								"sign-contract-example"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "取得簽訂契約範本 PDF",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/pdf/sign-contract-example",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"pdf",
+										"sign-contract-example"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-+pTuHtB8Z4lC4OSmRuFM4H9+LAY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 Jan 2024 06:09:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract-example.pdf\"\n}"
 						}
 					]
 				}

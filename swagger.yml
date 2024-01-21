@@ -2622,16 +2622,102 @@ paths:
                       createdByUserId: 7
                       createdAt: '2023-11-26T09:42:42.000Z'
                       updatedAt: '2023-11-26T09:44:40.000Z'
-  /api/dashboard/pending-subscription-members:
+  /api/dashboard/pending-subscriptions:
     get:
       tags:
         - 後台 > 訂閱 & 發票
       summary: 取得未開通會員清單
       responses:
         '200':
-          description: Successful response
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1356'
+            ETag:
+              schema:
+                type: string
+                example: W/"54c-VCc7XDH9gi9qbWUOVCGuov7IpH8"
+            Date:
+              schema:
+                type: string
+                example: Sun, 21 Jan 2024 07:26:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
-            application/json: {}
+            application/json:
+              schema:
+                type: object
+              example:
+                currentPage: 1
+                pageSize: 1
+                totalCount: 1
+                data:
+                  - id: 28
+                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                    isSubscribing: false
+                    autoRenewal: false
+                    status: pending
+                    plan: month
+                    amount: 6888
+                    email: louis@gmail.com
+                    nextRenewalDate: '2024-03-31'
+                    startAt: '2023-12-30T08:35:25.000Z'
+                    companyUniformSerialNo: '12345678'
+                    maskedCreditCardNo: 400022******1111
+                    createdAt: '2023-12-30T08:35:01.000Z'
+                    updatedAt: '2023-12-30T10:01:21.000Z'
+                    paymentPlatformNo: neweb_louislo_1703925301720
+                    paymentResponsePayload:
+                      Result:
+                        CardNo: 400022******1111
+                        TradeNo: '23123016352490296'
+                        AuthBank: KGI
+                        AuthCode: '336421'
+                        AuthTime: '20231230163525'
+                        PeriodNo: P231230163524QrJe6Q
+                        AuthTimes: 2
+                        DateArray: 2023-12-30,2024-01-30
+                        PeriodAmt: '6888'
+                        EscrowBank: HNCB
+                        MerchantID: MS350610354
+                        PeriodType: M
+                        RespondCode: '00'
+                        PaymentMethod: CREDIT
+                        MerchantOrderNo: neweb_louislo_1703925301720
+                      Status: SUCCESS
+                      Message: 委託單成立，且首次授權成功
+                    member:
+                      id: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                      name: Louis
+                      email: louis@gmail.com
+                      avatar: >-
+                        https://profile.line-scdn.net/0hT4vTh6dbCxtbLSL6LPd1ZCt9CHF4XFIJdUwWf20tUyxmHB8fcE5AeT19AnxhG0hJdRxDKj1-UXhXPnx9RXv3L1wdVipnHUtKdE1H_Q
+                      loginType: line
+                      thirdPartyIdentifier: U41d6b8cf0cae1003d85ec7f0c5772c0d
+                      isEmailValidate: false
+                      isSubscribing: false
+                      phone: ''
+                      isPhoneValidate: false
   /api/dashboard/approve-subscription:
     post:
       tags:
@@ -3695,6 +3781,30 @@ paths:
       tags:
         - 後台 > 靜態文件
       summary: 上傳簽訂契約 PDF
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  description: upload
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf/sign-contract-example:
+    put:
+      tags:
+        - 後台 > 靜態文件
+      summary: 上傳簽訂契約範本 PDF
       requestBody:
         content:
           multipart/form-data:
@@ -6593,6 +6703,54 @@ paths:
               example:
                 data: >-
                   https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf
+  /api/pdf/sign-contract-example:
+    get:
+      tags:
+        - 靜態文件
+      summary: 取得簽訂契約範本 PDF
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '100'
+            ETag:
+              schema:
+                type: string
+                example: W/"64-+pTuHtB8Z4lC4OSmRuFM4H9+LAY"
+            Date:
+              schema:
+                type: string
+                example: Sun, 21 Jan 2024 06:09:26 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract-example.pdf
   /api/all-analytics:
     get:
       tags:
