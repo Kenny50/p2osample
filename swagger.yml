@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 新增 網頁內容 api, 修改條款格式為 json
-  version: 01.20.2201
+  description: 調整後台文章建立、更新，加入 level、columnId、researchResource。新增 專欄 CRUD
+  version: 01.24.0042
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -30,6 +30,12 @@ tags:
       topic:
 
       0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他
+
+      level:  
+      1 -> 訪客, 2 -> 會員, 3 -> 訂閱者
+
+      researchResource:  
+      1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告
   - name: 後台
   - name: 後台 > 文章
   - name: 後台 > Banner
@@ -74,11 +80,8 @@ tags:
       研究資源代號：
 
       - 日報 -> 1
-          
       - 專題研究 -> 2
-          
       - 個股報告 -> 3
-          
       - 產業報告 -> 4
 paths:
   /api/login/google:
@@ -1205,6 +1208,18 @@ paths:
                   type: integer
                   description: '[int] 1: article, 2: ad'
                   example: '1'
+                level:
+                  type: integer
+                  description: '[int] 1: 訪客, 2: 會員, 3: 訂閱'
+                  example: '2'
+                columnId:
+                  type: integer
+                  description: '[int]'
+                  example: '1'
+                researchResource:
+                  type: integer
+                  description: '[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告'
+                  example: '1'
       security:
         - bearerAuth: []
       responses:
@@ -1230,11 +1245,11 @@ paths:
             ETag:
               schema:
                 type: string
-                example: W/"12-KZIEXCqq4aVJNVtebn2QvkzdD6s"
+                example: W/"12-X5ioGUDD8jzA+gJESmzArPT2RWE"
             Date:
               schema:
                 type: string
-                example: Sat, 25 Nov 2023 18:42:39 GMT
+                example: Tue, 23 Jan 2024 16:14:17 GMT
             Connection:
               schema:
                 type: string
@@ -1249,7 +1264,7 @@ paths:
                 type: object
               example:
                 data:
-                  id: 27
+                  id: 32
   /api/dashboard/article/{id}:
     get:
       tags:
@@ -1389,6 +1404,17 @@ paths:
                   type: integer
                   description: '[int] 1: article, 2: ad'
                   example: '1'
+                level:
+                  type: integer
+                  description: '[int] 1: 訪客, 2: 會員, 3: 訂閱'
+                  example: '2'
+                columnId:
+                  type: integer
+                  description: '[int]'
+                  example: '1'
+                researchResource:
+                  type: string
+                  description: '[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告'
       parameters:
         - name: id
           in: path
@@ -1396,7 +1422,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '29'
+          example: '32'
       responses:
         '200':
           description: OK
@@ -1416,15 +1442,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '17'
+                example: '18'
             ETag:
               schema:
                 type: string
-                example: W/"11-mhIzk+6CZQ0xNbkxdoJWFe0RFnY"
+                example: W/"12-X5ioGUDD8jzA+gJESmzArPT2RWE"
             Date:
               schema:
                 type: string
-                example: Sat, 25 Nov 2023 18:42:05 GMT
+                example: Tue, 23 Jan 2024 16:21:00 GMT
             Connection:
               schema:
                 type: string
@@ -1439,7 +1465,7 @@ paths:
                 type: object
               example:
                 data:
-                  id: 1
+                  id: 32
     delete:
       tags:
         - 後台 > 文章

@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -1507,7 +1507,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他\n\nlevel:  \n1 -> 訪客, 2 -> 會員, 3 -> 訂閱者\n\nresearchResource:  \n1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告"
 		},
 		{
 			"name": "後台",
@@ -1832,6 +1832,25 @@
 											"value": "1",
 											"description": "[required] [int] 1: article, 2: ad",
 											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "2",
+											"description": "[int] 1: 訪客, 2: 會員, 3: 訂閱",
+											"type": "text"
+										},
+										{
+											"key": "columnId",
+											"value": "1",
+											"description": "[int]",
+											"type": "text"
+										},
+										{
+											"key": "researchResource",
+											"value": "1",
+											"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -1859,7 +1878,7 @@
 												{
 													"key": "title",
 													"value": "標題",
-													"description": "[required]",
+													"description": "[required] [string]",
 													"type": "text"
 												},
 												{
@@ -1882,52 +1901,82 @@
 												},
 												{
 													"key": "topics[0]",
-													"value": "27",
-													"description": "[required]",
+													"value": "1",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "topics[1]",
-													"value": "30",
-													"description": "[required]",
+													"value": "2",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[0]",
-													"value": "179",
+													"value": "3",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[1]",
-													"value": "200",
+													"value": "4",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "isLimited",
 													"value": "false",
-													"description": "[required]",
+													"description": "[required] [boolean]",
 													"type": "text"
 												},
 												{
 													"key": "isDraft",
 													"value": "false",
-													"description": "[required] ",
+													"description": "[required] [boolean]",
 													"type": "text"
 												},
 												{
 													"key": "companies[0]",
 													"value": "1",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "companies[1]",
 													"value": "2",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "previewImageId",
 													"value": "2",
+													"description": "[required] [int] image id",
 													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "1",
+													"description": "[required] [int] 1: article, 2: ad",
+													"type": "text"
+												},
+												{
+													"key": "level",
+													"value": "2",
+													"description": "[int] 1: 訪客, 2: 會員, 3: 訂閱",
+													"type": "text"
+												},
+												{
+													"key": "columnId",
+													"value": "1",
+													"description": "[int]",
+													"type": "text"
+												},
+												{
+													"key": "researchResource",
+													"value": "1",
+													"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -1965,11 +2014,11 @@
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"12-KZIEXCqq4aVJNVtebn2QvkzdD6s\""
+											"value": "W/\"12-X5ioGUDD8jzA+gJESmzArPT2RWE\""
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 25 Nov 2023 18:42:39 GMT"
+											"value": "Tue, 23 Jan 2024 16:14:17 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1981,7 +2030,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 27\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 32\n    }\n}"
 								}
 							]
 						},
@@ -2076,6 +2125,25 @@
 											"value": "1",
 											"description": "[required] [int] 1: article, 2: ad",
 											"type": "text"
+										},
+										{
+											"key": "level",
+											"value": "2",
+											"description": "[int] 1: 訪客, 2: 會員, 3: 訂閱",
+											"type": "text"
+										},
+										{
+											"key": "columnId",
+											"value": "1",
+											"description": "[int]",
+											"type": "text"
+										},
+										{
+											"key": "researchResource",
+											"value": "",
+											"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -2093,7 +2161,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "29",
+											"value": "32",
 											"description": "[required] article id"
 										}
 									]
@@ -2111,7 +2179,7 @@
 												{
 													"key": "title",
 													"value": "你好",
-													"description": "[required]",
+													"description": "[required] [string]",
 													"type": "text"
 												},
 												{
@@ -2123,60 +2191,93 @@
 												{
 													"key": "rawContent",
 													"value": "<h2><strong>也能懂的 Kotlin Collection 賞玩門道</strong></h2><img src=\"https://i.imgur.com/2vCuMM9.jpeg\"  alt=\"canyon\" width=\"500\" height=\"600\"><p>在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。</p><p>Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</",
-													"description": "[required]",
+													"description": "[required] article.html, podcast.description",
 													"type": "text"
 												},
 												{
 													"key": "clippedContent",
 													"value": "{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Wow, this editor instance exports its content as JSON.\"}]}]}",
+													"description": "[required] json stringtify",
 													"type": "text"
 												},
 												{
 													"key": "topics[0]",
-													"value": "28",
+													"value": "3",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "topics[1]",
-													"value": "30",
+													"value": "4",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[0]",
-													"value": "188",
+													"value": "3",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[1]",
-													"value": "200",
+													"value": "4",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "isLimited",
 													"value": "false",
-													"description": "[required]",
+													"description": "[required] [boolean]",
 													"type": "text"
 												},
 												{
 													"key": "isDraft",
 													"value": "false",
-													"description": "[required]",
+													"description": "[required] [boolean]",
 													"type": "text"
 												},
 												{
 													"key": "companies[0]",
-													"value": "3",
+													"value": "4",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "companies[1]",
-													"value": "4",
+													"value": "3",
+													"description": "[int]",
 													"type": "text"
 												},
 												{
 													"key": "previewImageId",
 													"value": "2",
+													"description": "[required] [int] image id",
 													"type": "text"
+												},
+												{
+													"key": "type",
+													"value": "1",
+													"description": "[required] [int] 1: article, 2: ad",
+													"type": "text"
+												},
+												{
+													"key": "level",
+													"value": "2",
+													"description": "[int] 1: 訪客, 2: 會員, 3: 訂閱",
+													"type": "text"
+												},
+												{
+													"key": "columnId",
+													"value": "1",
+													"description": "[int]",
+													"type": "text"
+												},
+												{
+													"key": "researchResource",
+													"value": "",
+													"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告",
+													"type": "text",
+													"disabled": true
 												}
 											]
 										},
@@ -2194,7 +2295,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "1",
+													"value": "32",
 													"description": "[required] article id"
 												}
 											]
@@ -2218,15 +2319,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "17"
+											"value": "18"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"11-mhIzk+6CZQ0xNbkxdoJWFe0RFnY\""
+											"value": "W/\"12-X5ioGUDD8jzA+gJESmzArPT2RWE\""
 										},
 										{
 											"key": "Date",
-											"value": "Sat, 25 Nov 2023 18:42:05 GMT"
+											"value": "Tue, 23 Jan 2024 16:21:00 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2238,7 +2339,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 1\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 32\n    }\n}"
 								}
 							]
 						},
@@ -9677,7 +9778,7 @@
 		{
 			"name": "研究資源",
 			"item": [],
-			"description": "研究資源代號：\n\n- 日報 -> 1\n    \n- 專題研究 -> 2\n    \n- 個股報告 -> 3\n    \n- 產業報告 -> 4"
+			"description": "研究資源代號：\n\n- 日報 -> 1\n- 專題研究 -> 2\n- 個股報告 -> 3\n- 產業報告 -> 4"
 		}
 	],
 	"auth": {
