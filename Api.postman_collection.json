@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30479654",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30479654"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -6175,7 +6175,7 @@
 										},
 										{
 											"key": "nickName",
-											"value": "Kenny",
+											"value": "Kenn",
 											"description": "[required]",
 											"type": "text"
 										},
@@ -6183,6 +6183,16 @@
 											"key": "imageUrl",
 											"value": "https://",
 											"description": "[required]",
+											"type": "text"
+										},
+										{
+											"key": "facebookLink",
+											"value": "fb",
+											"type": "text"
+										},
+										{
+											"key": "instagramLink",
+											"value": "ig",
 											"type": "text"
 										}
 									]
@@ -6198,7 +6208,78 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "create an analytics",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "content",
+													"value": "{}",
+													"description": "[required] json editor",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Ken",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "nickName",
+													"value": "Kenn",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "imageUrl",
+													"value": "https://",
+													"description": "[required]",
+													"type": "text"
+												},
+												{
+													"key": "facebookLink",
+													"value": "fb",
+													"type": "text"
+												},
+												{
+													"key": "instagramLink",
+													"value": "ig",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/create-analytics",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"create-analytics"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "update an analytics",
@@ -6236,6 +6317,16 @@
 											"key": "id",
 											"value": "1",
 											"description": "[required] [int]",
+											"type": "text"
+										},
+										{
+											"key": "facebookLink",
+											"value": "fb",
+											"type": "text"
+										},
+										{
+											"key": "instagramLink",
+											"value": "ig",
 											"type": "text"
 										}
 									]
@@ -8912,10 +9003,18 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenny\",\n            \"content\": \"{}\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenn\",\n            \"content\": \"{}\"\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenny\",\n            \"content\": \"{}\",\n            \"facebookLink\": \"fb\",\n            \"instagramLink\": \"ig\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenn\",\n            \"content\": \"{}\",\n            \"facebookLink\": null,\n            \"instagramLink\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenny\",\n            \"content\": \"{}\",\n            \"facebookLink\": null,\n            \"instagramLink\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenny\",\n            \"content\": \"{}\",\n            \"facebookLink\": \"fb\",\n            \"instagramLink\": \"ig\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Ken\",\n            \"nickName\": \"Kenn\",\n            \"content\": \"{}\",\n            \"facebookLink\": \"fb\",\n            \"instagramLink\": \"ig\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -8970,10 +9069,18 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Ken\",\n        \"nickName\": \"Kenny\",\n        \"content\": \"{}\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Ken\",\n        \"nickName\": \"Kenny\",\n        \"content\": \"{}\",\n        \"facebookLink\": \"fb\",\n        \"instagramLink\": \"ig\"\n    }\n}"
 						}
 					]
 				},
@@ -9012,8 +9119,16 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"content\": \"{\\\"type\\\":\\\"article\\\"}\"\n    }\n}"
 						}
@@ -9054,14 +9169,515 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": null,
-							"header": null,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"content\": \"{\\\"type\\\":\\\"article\\\"}\"\n    }\n}"
 						}
 					]
 				}
 			]
+		},
+		{
+			"name": "專欄",
+			"item": [
+				{
+					"name": "取得所有專欄",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/column",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"column"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "新增專欄 Copy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/column",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"column"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-+EHmSTpR0+q8p2+gPFbH6nooIsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 17:23:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"專欄一\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"專欄二\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"專欄三\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "透過 id 取得指定專欄",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/column/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"column",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "透過 id 取得指定專欄",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/column/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"column",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-kTz6maXCPAB/5tFhvZPI3TtelAI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 17:23:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"專欄一\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 新增專欄",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "專欄一",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"column"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 新增專欄",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "專欄一",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"column"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24-kTz6maXCPAB/5tFhvZPI3TtelAI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 17:22:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"專欄一\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 更新專欄",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "更新專欄一",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"column",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 更新專欄",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "更新專欄一",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"column",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-Ipl0e2skyrwAKfMq4LlTjh7Q82U\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 17:24:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"更新專欄一\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "後台 刪除專欄",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column/:id",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"{{prefix}}",
+								"{{internalPrefix}}",
+								"column",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "後台 刪除專欄",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"column",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-gg3wPP4z6gLnesO4RqBhvtZJvGc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 17:24:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "研究資源",
+			"item": [],
+			"description": "研究資源代號：\n\n- 日報 -> 1\n    \n- 專題研究 -> 2\n    \n- 個股報告 -> 3\n    \n- 產業報告 -> 4"
 		}
 	],
 	"auth": {
