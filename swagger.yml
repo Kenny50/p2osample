@@ -609,7 +609,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '2'
+          example: '32'
       responses:
         '200':
           description: OK
@@ -726,6 +726,14 @@ paths:
           required: true
           description: ''
           example: '30'
+        - name: researchResource
+          in: query
+          schema:
+            type: integer
+          description: |-
+            [int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告
+            tips: 與 columnId 互斥，不可與 columnId 同時使用
+          example: '1'
       responses:
         '200':
           description: OK
@@ -1135,7 +1143,6 @@ paths:
                 - clippedContent
                 - topics[0]
                 - topics[1]
-                - isLimited
                 - isDraft
                 - previewImageId
                 - type
@@ -1184,10 +1191,6 @@ paths:
                   type: integer
                   description: '[int]'
                   example: '4'
-                isLimited:
-                  type: boolean
-                  description: '[boolean]'
-                  example: 'false'
                 isDraft:
                   type: boolean
                   description: '[boolean]'
@@ -1277,44 +1280,100 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '1'
+          example: '32'
       responses:
-        undefined:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '1621'
+            ETag:
+              schema:
+                type: string
+                example: W/"655-D0lkt6wcYmepEDX62rT8fW+Vn/w"
+            Date:
+              schema:
+                type: string
+                example: Tue, 23 Jan 2024 16:56:00 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
           content:
             application/json:
               schema:
                 type: object
               example:
                 data:
-                  id: 123
-                  title: 你好，世界
-                  content: >-
-                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
-                    this editor instance exports its content as JSON."}]}]}
-                  topics:
-                    - name: 基本面
-                      id: 1
+                  id: 32
+                  title: 你好
                   author:
                     name: Rick
-                    id: 1
+                    id: 2
+                  fullContent: >-
+                    {"type":"dpooc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
+                  rawContent: >-
+                    也能懂的 Kotlin Collection
+                    賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                    Collection 有關。Collection
+                    簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                    List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                    團隊深知資料處理的重要性，在標準函式庫（Stan…</
+                  clippedContent: >-
+                    {"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Wow,
+                    this editor instance exports its content as JSON."}]}]}
                   companies:
-                    - id: 1
-                      code: '1101'
-                      name: 台泥
-                    - id: 2
-                      code: '1102'
-                      name: 亞泥
+                    - id: 4
+                      code: '1104'
+                      name: 環泥
+                    - id: 3
+                      code: '1103'
+                      name: 嘉泥
+                  topics:
+                    - id: 3
+                      name: 基本面
+                    - id: 4
+                      name: 籌碼面
                   tags:
-                    - name: 毛利
-                      id: 1
-                  publishDate: '2023-05-02T00:00:00.000Z'
+                    - id: 3
+                      name: 車用
+                      isRecommended: false
+                    - id: 4
+                      name: 綠能
+                      isRecommended: false
                   previewImage:
-                    id: 1
-                    path: path
+                    id: 2
+                    url: >-
+                      https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                      (1).png
                   type: 1
-                  isLimited: true
-                  source: null
-                  views: 4
+                  isLimited: false
+                  isDraft: false
+                  views: null
+                  level: 2
+                  column:
+                    id: 2
+                    name: 專欄二
+                  publishedAt: '2024-01-23T16:14:17.000Z'
     put:
       tags:
         - 後台 > 文章
@@ -1331,7 +1390,6 @@ paths:
                 - clippedContent
                 - topics[0]
                 - topics[1]
-                - isLimited
                 - isDraft
                 - previewImageId
                 - type
@@ -1380,10 +1438,6 @@ paths:
                   type: integer
                   description: '[int]'
                   example: '4'
-                isLimited:
-                  type: boolean
-                  description: '[boolean]'
-                  example: 'false'
                 isDraft:
                   type: boolean
                   description: '[boolean]'
@@ -6001,13 +6055,15 @@ paths:
         Request 參數：
 
 
-        1. \* plan: 訂閱方案, valid inputs: \["month", "quarter", "year"\]
-
-        2. \* returnUrl: 完成藍新付款後要前往的前端 URL
-
-        3. \* backUrl: 取消付款後要前往的前端 URL
+        1. \* `plan`: 訂閱方案, valid inputs: \["month", "quarter", "year"\]
             
-        4. companyUniformSerialNo: 公司發票統編
+        2. \* `returnUrl`: 完成藍新付款後要前往的前端 URL
+            
+        3. \* `backUrl`: 取消付款後要前往的前端 URL
+            
+        4. `companyUniformSerialNo`: 公司發票統編
+            
+        5. `autoRenewal`: 訂閱開通後是否自動續訂
             
 
         Response：將兩個回傳參數直接以 POST Form 表單帶往藍新的付款 URL  
