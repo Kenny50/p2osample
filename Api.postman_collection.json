@@ -2921,7 +2921,7 @@
 										{
 											"key": "imageType",
 											"value": "preview-image",
-											"description": "[required] [article, preview-image]"
+											"description": "[required] [article, preview-image, web-content]"
 										}
 									]
 								}
@@ -9799,6 +9799,70 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+						},
+						{
+							"name": "後台 刪除專欄",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/column/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"column",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-b3eyQAHSjewzNsfEeeRyLb14nYs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Jan 2024 02:13:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"code\": 422,\n        \"name\": \"UnprocessableEntity\",\n        \"message\": \"The column cannot be deleted as it contains articles\"\n    }\n}"
 						}
 					]
 				}
