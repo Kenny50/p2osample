@@ -1269,7 +1269,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&researchResource=1",
+							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&columnId=2&researchResource=1",
 							"host": [
 								"{{domain}}"
 							],
@@ -1296,8 +1296,7 @@
 								{
 									"key": "columnId",
 									"value": "2",
-									"description": "[int]\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用",
-									"disabled": true
+									"description": "[int]\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用"
 								},
 								{
 									"key": "researchResource",
@@ -1553,7 +1552,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false&author=2&topic=3&tag=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -1581,20 +1580,17 @@
 										{
 											"key": "author",
 											"value": "2",
-											"description": "[int] author id",
-											"disabled": true
+											"description": "[int] author id"
 										},
 										{
 											"key": "topic",
 											"value": "3",
-											"description": "[int] topic id",
-											"disabled": true
+											"description": "[int] topic id"
 										},
 										{
 											"key": "tag",
 											"value": "1",
-											"description": "[int] tag id",
-											"disabled": true
+											"description": "[int] tag id"
 										}
 									]
 								},

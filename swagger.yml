@@ -726,6 +726,14 @@ paths:
           required: true
           description: ''
           example: '30'
+        - name: columnId
+          in: query
+          schema:
+            type: integer
+          description: |-
+            [int]
+            tips: 與 researchResource 互斥，不可與 researchResource 同時使用
+          example: '2'
         - name: researchResource
           in: query
           schema:
@@ -1003,6 +1011,24 @@ paths:
             type: boolean
           description: '[boolean]'
           example: 'false'
+        - name: author
+          in: query
+          schema:
+            type: integer
+          description: '[int] author id'
+          example: '2'
+        - name: topic
+          in: query
+          schema:
+            type: integer
+          description: '[int] topic id'
+          example: '3'
+        - name: tag
+          in: query
+          schema:
+            type: integer
+          description: '[int] tag id'
+          example: '1'
       responses:
         '200':
           description: OK
