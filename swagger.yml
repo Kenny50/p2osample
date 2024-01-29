@@ -4848,6 +4848,8 @@ paths:
       tags:
         - 新聞
       summary: 新聞列表
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: OK
