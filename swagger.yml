@@ -1050,15 +1050,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '2441'
+                example: '3634'
             ETag:
               schema:
                 type: string
-                example: W/"989-C5jDlDE1c45UyDR474JmgX4T5Ok"
+                example: W/"e32-bFFYWXXyfFDHHVMqz1ltI695WN8"
             Date:
               schema:
                 type: string
-                example: Mon, 27 Nov 2023 16:47:12 GMT
+                example: Mon, 29 Jan 2024 16:37:52 GMT
             Connection:
               schema:
                 type: string
@@ -1073,6 +1073,47 @@ paths:
                 type: object
               example:
                 data:
+                  - id: 32
+                    title: 你好
+                    description: >-
+                      也能懂的 Kotlin Collection
+                      賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟
+                      Collection 有關。Collection
+                      簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的
+                      List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin
+                      團隊深知資料處理的重要性，在標準函式庫（Stan…</
+                    author:
+                      name: Rick
+                      id: 2
+                    companies:
+                      - id: 4
+                        code: '1104'
+                        name: 環泥
+                      - id: 3
+                        code: '1103'
+                        name: 嘉泥
+                    topics:
+                      - id: 3
+                        name: 基本面
+                      - id: 4
+                        name: 籌碼面
+                    tags:
+                      - id: 3
+                        name: 車用
+                        isRecommended: false
+                      - id: 4
+                        name: 綠能
+                        isRecommended: false
+                    previewImage:
+                      id: 2
+                      url: >-
+                        https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
+                        (1).png
+                    type: 1
+                    isDraft: false
+                    views: 5
+                    level: 2
+                    publishDate: '2024-01-23T16:14:17.000Z'
                   - id: 2
                     title: 你好，世界
                     description: >-
@@ -1106,16 +1147,16 @@ paths:
                       - id: 2
                         name: IC 設計
                         isRecommended: false
-                    publishDate: '2023-11-22T16:11:23.000Z'
                     previewImage:
                       id: 1
                       url: >-
                         https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker
                         (1).png
                     type: 1
-                    isLimited: false
-                    source: null
-                    views: 13
+                    isDraft: false
+                    views: 17
+                    level: null
+                    publishDate: '2023-11-22T16:11:23.000Z'
                   - id: 1
                     title: 你好
                     description: >-
@@ -1145,16 +1186,16 @@ paths:
                       - id: 2
                         name: IC 設計
                         isRecommended: false
-                    publishDate: '2023-11-21T16:11:23.000Z'
                     previewImage:
                       id: 2
                       url: >-
                         https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker
                         (1).png
                     type: 1
-                    isLimited: false
-                    source: null
+                    isDraft: false
                     views: 8
+                    level: null
+                    publishDate: '2023-11-21T16:11:23.000Z'
     post:
       tags:
         - 後台 > 文章
