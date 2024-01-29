@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -6305,7 +6305,7 @@
 										},
 										{
 											"key": "nickName",
-											"value": "Kenn",
+											"value": "Kenn5",
 											"description": "[required]",
 											"type": "text"
 										},
@@ -6328,12 +6328,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/create-analytics",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/create-analytics",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"create-analytics"
 									]
 								}
@@ -6462,12 +6463,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/update-analytics",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/update-analytics",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"update-analytics"
 									]
 								}
@@ -6491,12 +6493,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/update-purchase-tutorial",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/update-purchase-tutorial",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"update-purchase-tutorial"
 									]
 								}
@@ -6520,12 +6523,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/update-member-package",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/update-member-package",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"update-member-package"
 									]
 								}
@@ -6538,12 +6542,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/analytics/:id",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/analytics/:id",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"analytics",
 										":id"
 									],
@@ -6580,12 +6585,13 @@
 									]
 								},
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/update-term/:term",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/update-term/:term",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
+										"{{internalPrefix}}",
 										"update-term",
 										":term"
 									],

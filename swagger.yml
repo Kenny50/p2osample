@@ -1,8 +1,10 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 調整後台文章建立、更新，加入 level、columnId、researchResource。新增 專欄 CRUD
-  version: 01.24.0042
+  description: >-
+    調整後台文章建立、更新，加入 level、columnId、researchResource。新增 專欄 CRUD, 修正 webcontent,
+    policy 後台 path
+  version: 01.29.0042
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -3942,7 +3944,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/create-analytics:
+  /api/dashboard/create-analytics:
     post:
       tags:
         - 後台 > 網站內容
@@ -3969,7 +3971,7 @@ paths:
                 nickName:
                   type: string
                   description: ''
-                  example: Kenn
+                  example: Kenn5
                 imageUrl:
                   type: string
                   description: ''
@@ -3995,7 +3997,7 @@ paths:
               example:
                 data:
                   message: success
-  /api/update-analytics:
+  /api/dashboard/update-analytics:
     post:
       tags:
         - 後台 > 網站內容
@@ -4043,7 +4045,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/update-purchase-tutorial:
+  /api/dashboard/update-purchase-tutorial:
     post:
       tags:
         - 後台 > 網站內容
@@ -4065,7 +4067,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/update-member-package:
+  /api/dashboard/update-member-package:
     post:
       tags:
         - 後台 > 網站內容
@@ -4087,7 +4089,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/analytics/{id}:
+  /api/dashboard/analytics/{id}:
     delete:
       tags:
         - 後台 > 網站內容
@@ -4105,39 +4107,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    get:
-      tags:
-        - 網站內容
-      summary: get analytics by id
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          description: '[required] [int]'
-          example: '1'
-      responses:
-        '200':
-          description: OK
-          headers:
-            Content-Type:
-              schema:
-                type: string
-                example: application/json
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  id: 1
-                  name: Ken
-                  nickName: Kenny
-                  content: '{}'
-                  facebookLink: fb
-                  instagramLink: ig
-  /api/update-term/{term}:
+  /api/dashboard/update-term/{term}:
     post:
       tags:
         - 後台 > policy
@@ -6946,6 +6916,39 @@ paths:
                     content: '{}'
                     facebookLink: fb
                     instagramLink: ig
+  /api/analytics/{id}:
+    get:
+      tags:
+        - 網站內容
+      summary: get analytics by id
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: '[required] [int]'
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1
+                  name: Ken
+                  nickName: Kenny
+                  content: '{}'
+                  facebookLink: fb
+                  instagramLink: ig
   /api/member-package:
     get:
       tags:
