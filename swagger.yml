@@ -733,15 +733,15 @@ paths:
           schema:
             type: integer
           description: |-
-            [int]
+            [int] 若要全部文章，請帶入 0。
             tips: 與 researchResource 互斥，不可與 researchResource 同時使用
-          example: '2'
+          example: '0'
         - name: researchResource
           in: query
           schema:
             type: integer
           description: |-
-            [int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告
+            [int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告。
             tips: 與 columnId 互斥，不可與 columnId 同時使用
           example: '1'
       responses:

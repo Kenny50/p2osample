@@ -1269,7 +1269,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&columnId=2&researchResource=1",
+							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&columnId=0&researchResource=1",
 							"host": [
 								"{{domain}}"
 							],
@@ -1295,13 +1295,13 @@
 								},
 								{
 									"key": "columnId",
-									"value": "2",
-									"description": "[int]\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用"
+									"value": "0",
+									"description": "[int] 若要全部文章，請帶入 0。\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用"
 								},
 								{
 									"key": "researchResource",
 									"value": "1",
-									"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告\ntips: 與 columnId 互斥，不可與 columnId 同時使用"
+									"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告。\ntips: 與 columnId 互斥，不可與 columnId 同時使用"
 								}
 							]
 						},
@@ -1314,7 +1314,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10&researchResource=1",
+									"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10&columnId=2&researchResource=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -1339,13 +1339,12 @@
 										{
 											"key": "columnId",
 											"value": "2",
-											"description": "[int]\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用",
-											"disabled": true
+											"description": "[int]若要全部文章，請帶入 0。\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用"
 										},
 										{
 											"key": "researchResource",
 											"value": "1",
-											"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告\ntips: 與 columnId 互斥，不可與 columnId 同時使用"
+											"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告。\ntips: 與 columnId 互斥，不可與 columnId 同時使用"
 										}
 									]
 								}
