@@ -34,7 +34,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AfJohXmoQ2AIfcD7kwlwgxAzvOPeR1B4K9jNoC5xfJSy-cNfsTBql5Pci53X2QdYepR-Hw",
+									"value": "4%2F0AfJohXk4q_cgIxVtkbWK_80rZ_ulMfC8GaUcTzis_Vwmm5ioS3Ndx3dW1sPckDl_1z6aUw",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
@@ -160,7 +160,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "tiZHAHyjPA7YiYXZ86qD",
+									"value": "xqfJgwfjSAkFAjJ9PW8T",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -6276,6 +6276,47 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "上傳客戶資料填寫表 PDF",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "[required] upload",
+											"type": "file",
+											"src": "/Users/rui/Downloads/0測試檔案.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf/customer-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf",
+										"customer-information"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -8722,6 +8763,25 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "刪除訂閱資料 (測試用)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/delete-subscription-for-testing",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"delete-subscription-for-testing"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -9105,6 +9165,83 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract-example.pdf\"\n}"
+						}
+					]
+				},
+				{
+					"name": "取得客戶資料填寫表 PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/pdf/customer-information",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"pdf",
+								"customer-information"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "取得客戶資料填寫表 PDF",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/pdf/customer-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"pdf",
+										"customer-information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-xRiC+1ePXPOQvOI2z+sN3cyxYjo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 Feb 2024 17:24:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/customer-information.pdf\"\n}"
 						}
 					]
 				}

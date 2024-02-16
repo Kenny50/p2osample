@@ -109,7 +109,7 @@ paths:
                   type: string
                   description: google response code in query
                   example: >-
-                    4/0AfJohXmoQ2AIfcD7kwlwgxAzvOPeR1B4K9jNoC5xfJSy-cNfsTBql5Pci53X2QdYepR-Hw
+                    4%2F0AfJohXk4q_cgIxVtkbWK_80rZ_ulMfC8GaUcTzis_Vwmm5ioS3Ndx3dW1sPckDl_1z6aUw
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -158,7 +158,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: tiZHAHyjPA7YiYXZ86qD
+                  example: xqfJgwfjSAkFAjJ9PW8T
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3985,6 +3985,30 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/dashboard/pdf/customer-information:
+    put:
+      tags:
+        - 後台 > 靜態文件
+      summary: 上傳客戶資料填寫表 PDF
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  description: upload
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/dashboard/create-analytics:
     post:
       tags:
@@ -6335,6 +6359,18 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/subscription/delete-subscription-for-testing:
+    post:
+      tags:
+        - 訂閱
+      summary: 刪除訂閱資料 (測試用)
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/pdf/trial:
     get:
       tags:
@@ -6910,6 +6946,54 @@ paths:
               example:
                 data: >-
                   https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract-example.pdf
+  /api/pdf/customer-information:
+    get:
+      tags:
+        - 靜態文件
+      summary: 取得客戶資料填寫表 PDF
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '99'
+            ETag:
+              schema:
+                type: string
+                example: W/"63-xRiC+1ePXPOQvOI2z+sN3cyxYjo"
+            Date:
+              schema:
+                type: string
+                example: Fri, 16 Feb 2024 17:24:30 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/customer-information.pdf
   /api/all-analytics:
     get:
       tags:
