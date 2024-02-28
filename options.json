@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "02.17.0128",
-        "description": "新增客戶資料填寫表 PDF 相關 API"
+        "version": "02.28.1845",
+        "description": "更新首頁八篇文章 API、移除文章的 topic"
     },
     "servers": [
         {

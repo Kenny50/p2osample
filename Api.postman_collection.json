@@ -1129,46 +1129,79 @@
 			"name": "文章",
 			"item": [
 				{
-					"name": "首頁文章各主題最新清單",
+					"name": "首頁八篇文章",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article/all-topic-latest",
+							"raw": "{{domain}}/{{prefix}}/article/get-homepage-recommended-articles",
 							"host": [
 								"{{domain}}"
 							],
 							"path": [
 								"{{prefix}}",
 								"article",
-								"all-topic-latest"
+								"get-homepage-recommended-articles"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "首頁文章",
+							"name": "首頁文章各主題最新清單",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article/all-topic-latest",
+									"raw": "{{domain}}/{{prefix}}/article/get-homepage-recommended-articles",
 									"host": [
 										"{{domain}}"
 									],
 									"path": [
 										"{{prefix}}",
 										"article",
-										"all-topic-latest"
+										"get-homepage-recommended-articles"
 									]
 								}
 							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7880"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ec8-sT7aKeCUGp+WU+9yz3t8jHMspoE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 Feb 2024 10:22:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\":1,\n            \"title\":\"你好，世界\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-11T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":true,\n            \"source\": null\n        },\n        {\n            \"id\":2,\n            \"title\":\"雪烏龍\",\n            \"description\": \"揭示股市投資中的基本面因素，包括公司財務狀況、產品競爭力、行業趨勢等，為投資者提供深入了解企業價值的觀點\",\n            \"author\": {\n                \"name\":\"Rick\",\n                \"id\": 1\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\":[\n                {\n                    \"name\":\"毛利\",\n                    \"id\":1\n                }\n            ],\n            \"publishDate\":\"2023-11-10T00:00:00.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\":1,\n            \"isLimited\":false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 162,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                },\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"車用\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"綠能\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-28T09:34:52.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700449535082-S__4382796_0.jpg\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"level\": 2,\n            \"source\": null\n        },\n        {\n            \"id\": 161,\n            \"title\": \"fdsafsadf\",\n            \"description\": \"fdsafdsaf\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 6,\n                    \"code\": \"1109\",\n                    \"name\": \"信大\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 6,\n                    \"name\": \"AI\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"工具機\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-08T14:14:08.000Z\",\n            \"previewImage\": {\n                \"id\": 330,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/3a5b8984-0a73-4222-bd84-3532336d81a9\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"level\": 2,\n            \"column\": {\n                \"id\": 5,\n                \"name\": \"VossCG\"\n            },\n            \"source\": null\n        },\n        {\n            \"id\": 159,\n            \"title\": \"訂閱文章 - 日報\",\n            \"description\": \"訂閱內文\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 6,\n                    \"code\": \"1109\",\n                    \"name\": \"信大\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 138,\n                    \"name\": \"fdsafdsaf\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-07T06:49:27.000Z\",\n            \"previewImage\": {\n                \"id\": 324,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/33450269-b574-4032-b667-a05db16aa3c8\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"level\": 2,\n            \"column\": {\n                \"id\": 8,\n                \"name\": \"Remus\"\n            },\n            \"source\": null\n        },\n        {\n            \"id\": 157,\n            \"title\": \"訪客文章\",\n            \"description\": \"旺得富理財網 黃順德】上周台股創波段新高後又戲劇性拉回，站上萬八；觀察法人單周資金動向，外資及自營商同站買方市場，分別買超390.04億元、16.03億元，投信則賣超29.15億元，三大法人合計買超金額376.92億元。法人表示，盤面上仍以AI個股、散熱概念股表現最強，加上權王台積電（2330）撐盤，不僅站上所有均線之上，且均線呈多頭排列，預估農曆年假期間，只要國際股市不出現重大利空，台股新春開紅盤，資金量能回籠有望拉抬指數重啟攻勢。明（5）日開始有致新（8081）、穩懋（3105），6日是力旺（3529）、新唐（4919）、華邦電（2344）、原相（3227）、聯詠（3034）等，7日有譜瑞\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 7,\n                    \"code\": \"1110\",\n                    \"name\": \"東泥\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 134,\n                    \"name\": \"測試標籤\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 135,\n                    \"name\": \"測試新增\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-05T09:08:55.000Z\",\n            \"previewImage\": {\n                \"id\": 308,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/63b051aa-0761-4a26-9ff4-2ae9a5baa35a\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"level\": 2,\n            \"column\": {\n                \"id\": 4,\n                \"name\": \"Elvis\"\n            },\n            \"source\": null\n        },\n        {\n            \"id\": 155,\n            \"title\": \"訂閱文章\",\n            \"description\": \"旺得富理財網 黃順德】上周台股創波段新高後又戲劇性拉回，站上萬八；觀察法人單周資金動向，外資及自營商同站買方市場，分別買超390.04億元、16.03億元，投信則賣超29.15億元，三大法人合計買超金額376.92億元。法人表示，盤面上仍以AI個股、散熱概念股表現最強，加上權王台積電（2330）撐盤，不僅站上所有均線之上，且均線呈多頭排列，預估農曆年假期間，只要國際股市不出現重大利空，台股新春開紅盤，資金量能回籠有望拉抬指數重啟攻勢。明（5）日開始有致新（8081）、穩懋（3105），6日是力旺（3529）、新唐（4919）、華邦電（2344）、原相（3227）、聯詠（3034）等，7日有譜瑞\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 6,\n                    \"code\": \"1109\",\n                    \"name\": \"信大\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 134,\n                    \"name\": \"測試標籤\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 135,\n                    \"name\": \"測試新增\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-05T09:07:36.000Z\",\n            \"previewImage\": {\n                \"id\": 306,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/2200741a-34ff-453d-a4d2-ca6bbed1cc3a\"\n            },\n            \"type\": 1,\n            \"isLimited\": true,\n            \"level\": 3,\n            \"researchResource\": 1,\n            \"source\": null\n        },\n        {\n            \"id\": 115,\n            \"title\": \"fdsadf\",\n            \"description\": \"fdsafsdfaf\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 5,\n                    \"code\": \"1108\",\n                    \"name\": \"幸福\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 138,\n                    \"name\": \"fdsafdsaf\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-01-31T13:56:32.000Z\",\n            \"previewImage\": {\n                \"id\": 233,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/16ea1bcc-eb8e-4f0a-9242-f520766049b7\"\n            },\n            \"type\": 1,\n            \"isLimited\": true,\n            \"level\": 3,\n            \"researchResource\": 1,\n            \"source\": null\n        },\n        {\n            \"id\": 158,\n            \"title\": \"最新文章測試 title\",\n            \"description\": \"TOOCON 介紹TOOCON 是由 GDG 高雄主辦，堅持大順路以南的中小型軟體相關交流聚會，因為活動跟二有關連，而且都在晚上舉辦，所以用 TWO 的諧音 TOO，於是中文名稱就叫「天黑黑月會」。從 2023 年開始，每個月第二週的星期二晚上七點到九點，二個小時，二位講者，主題包含前端、後端、手機、設計、維運、Side Project、文章分享和工程師幹話等軟體相關主題。我希望高雄除了年底的大型研討會外，每個月都能有中小型聚會讓軟體人交流；歡迎上台練功分享。你的參加就是讓 TOOCON 能繼續辦下去的活力。活動資訊日期：2024.03.05（星期二）時間：19:00 ~ 21:00地點：大港\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 5,\n                    \"code\": \"1108\",\n                    \"name\": \"幸福\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 143,\n                    \"name\": \"fdsafsafdsaf\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2024-02-07T05:18:32.000Z\",\n            \"previewImage\": {\n                \"id\": 321,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/475bb19c-b0ac-4215-9fca-df762136d7c1\"\n            },\n            \"type\": 1,\n            \"isLimited\": true,\n            \"level\": 3,\n            \"researchResource\": 3,\n            \"source\": null\n        },\n        {\n            \"id\": 72,\n            \"title\": \"中華電打造5G應用 攻智慧海港與智慧醫療\",\n            \"description\": \"中華電信打造5G創新應用，今天宣布攜手台灣港務公司打造智慧海港及自動化櫃場試驗場域，並與新竹台大分院發展5G MR智慧醫療輔助教育，同時與盛弘醫藥集團等合作發表「台灣基層診所視訊診療系統」。中華電信透過新聞稿宣布，積極投入港口自動化應用研發，協助港務營運轉型，今天參與台灣港務公司在高雄展覽館舉辦的「未來港灣峰會」，展示112年推動「智慧海港」及「自動化港灣」試驗場域相關成果，董事長郭水義親自參與座談，分享推動淨零數位雙軸轉型的經驗。中華電信表示，「5G智慧海港2.0及創新觀光應用計畫」於台南安平港、安平港遊艇碼頭及高雄港愛河灣等場域，導入無人載具陸海空三維全新巡檢5G應用，運用新興資通訊科技，\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 10,\n                    \"code\": \"1210\",\n                    \"name\": \"大成\"\n                },\n                {\n                    \"id\": 11,\n                    \"code\": \"1213\",\n                    \"name\": \"大飲\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 113,\n                    \"name\": \"醫療\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 115,\n                    \"name\": \"5G\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-28T18:09:31.000Z\",\n            \"previewImage\": {\n                \"id\": 83,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d62d29bc-9027-4b58-a4db-d955ebd612da\"\n            },\n            \"type\": 1,\n            \"isLimited\": true,\n            \"level\": 3,\n            \"researchResource\": 3,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -1190,7 +1223,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "32",
+									"value": "161",
 									"description": "[required] article id"
 								}
 							]
@@ -1215,7 +1248,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2",
+											"value": "161",
 											"description": "[required] article id"
 										}
 									]
@@ -1239,15 +1272,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "779"
+									"value": "682"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"30b-JDRZD9rmY6q8/bhkL13ldpj5wlk\""
+									"value": "W/\"2aa-cqe6OO6jeyrQFQ82MATZQjtfrUs\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 26 Nov 2023 10:08:44 GMT"
+									"value": "Wed, 28 Feb 2024 09:19:51 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1259,7 +1292,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"title\": \"你好，世界\",\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 2\n        },\n        \"companies\": [\n            {\n                \"id\": 3,\n                \"code\": \"1103\",\n                \"name\": \"嘉泥\"\n            },\n            {\n                \"id\": 4,\n                \"code\": \"1104\",\n                \"name\": \"環泥\"\n            }\n        ],\n        \"topics\": [\n            {\n                \"id\": 3,\n                \"name\": \"基本面\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"籌碼面\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"技術面\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 1,\n                \"name\": \"半導體\",\n                \"isRecommended\": false\n            },\n            {\n                \"id\": 2,\n                \"name\": \"IC 設計\",\n                \"isRecommended\": false\n            }\n        ],\n        \"publishedAt\": \"2023-11-22T16:11:23.000Z\",\n        \"previewImage\": {\n            \"id\": 1,\n            \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n        },\n        \"type\": 1,\n        \"isLimited\": false,\n        \"source\": null,\n        \"isClipped\": false\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 161,\n        \"content\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"fdsafdsaf\\\"}]}]}\",\n        \"title\": \"fdsafsadf\",\n        \"author\": {\n            \"name\": \"Voss\",\n            \"id\": 3\n        },\n        \"companies\": [\n            {\n                \"id\": 6,\n                \"code\": \"1109\",\n                \"name\": \"信大\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 6,\n                \"name\": \"AI\",\n                \"isRecommended\": false\n            },\n            {\n                \"id\": 7,\n                \"name\": \"工具機\",\n                \"isRecommended\": false\n            }\n        ],\n        \"publishedAt\": \"2024-02-08T14:14:08.000Z\",\n        \"previewImage\": {\n            \"id\": 330,\n            \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/3a5b8984-0a73-4222-bd84-3532336d81a9\"\n        },\n        \"type\": \"1\",\n        \"isLimited\": false,\n        \"level\": 2,\n        \"source\": null,\n        \"isClipped\": true,\n        \"column\": {\n            \"id\": 5,\n            \"name\": \"VossCG\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -1269,7 +1302,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/article?topic=0&page=0&size=30&columnId=0&researchResource=0",
+							"raw": "{{domain}}/{{prefix}}/article?page=0&size=30&columnId=0&researchResource=0",
 							"host": [
 								"{{domain}}"
 							],
@@ -1278,11 +1311,6 @@
 								"article"
 							],
 							"query": [
-								{
-									"key": "topic",
-									"value": "0",
-									"description": "[required]"
-								},
 								{
 									"key": "page",
 									"value": "0",
@@ -1314,7 +1342,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/article?topic=1&page=0&size=10&columnId=2&researchResource=1",
+									"raw": "{{domain}}/{{prefix}}/article?page=0&size=30&researchResource=0",
 									"host": [
 										"{{domain}}"
 									],
@@ -1324,26 +1352,24 @@
 									],
 									"query": [
 										{
-											"key": "topic",
-											"value": "1",
-											"description": "不傳 -> 全部\n1 -> 基本面（基本面、總經）\n2 -> 技術面\n3 -> 籌碼面\n4 -> 其他"
-										},
-										{
 											"key": "page",
-											"value": "0"
+											"value": "0",
+											"description": "[required]"
 										},
 										{
 											"key": "size",
-											"value": "10"
+											"value": "30",
+											"description": "[required]"
 										},
 										{
 											"key": "columnId",
-											"value": "2",
-											"description": "[int]若要全部文章，請帶入 0。\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用"
+											"value": "0",
+											"description": "[int] 若要全部文章，請帶入 0。\ntips: 與 researchResource 互斥，不可與 researchResource 同時使用",
+											"disabled": true
 										},
 										{
 											"key": "researchResource",
-											"value": "1",
+											"value": "0",
 											"description": "[int]0: 全部, 1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告。\ntips: 與 columnId 互斥，不可與 columnId 同時使用"
 										}
 									]
@@ -1367,15 +1393,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "2122"
+									"value": "11340"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"84a-HRIF84rN7FbJmiDHFsL6xKxH3kc\""
+									"value": "W/\"2c4c-MECzH6s9Py+vtxSY7iqIS/xw1ak\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 24 Nov 2023 19:23:06 GMT"
+									"value": "Wed, 28 Feb 2024 09:20:42 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1387,7 +1413,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 10,\n        \"totalCount\": 2,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            },\n            {\n                \"id\": 1,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Remus\",\n                    \"id\": 1\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\"\n                    }\n                ],\n                \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 10,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 158,\n                \"title\": \"最新文章測試 title\",\n                \"description\": \"TOOCON 介紹TOOCON 是由 GDG 高雄主辦，堅持大順路以南的中小型軟體相關交流聚會，因為活動跟二有關連，而且都在晚上舉辦，所以用 TWO 的諧音 TOO，於是中文名稱就叫「天黑黑月會」。從 2023 年開始，每個月第二週的星期二晚上七點到九點，二個小時，二位講者，主題包含前端、後端、手機、設計、維運、Side Project、文章分享和工程師幹話等軟體相關主題。我希望高雄除了年底的大型研討會外，每個月都能有中小型聚會讓軟體人交流；歡迎上台練功分享。你的參加就是讓 TOOCON 能繼續辦下去的活力。活動資訊日期：2024.03.05（星期二）時間：19:00 ~ 21:00地點：大港\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 5,\n                        \"code\": \"1108\",\n                        \"name\": \"幸福\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 143,\n                        \"name\": \"fdsafsafdsaf\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2024-02-07T05:18:32.000Z\",\n                \"previewImage\": {\n                    \"id\": 321,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/475bb19c-b0ac-4215-9fca-df762136d7c1\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 155,\n                \"title\": \"訂閱文章\",\n                \"description\": \"旺得富理財網 黃順德】上周台股創波段新高後又戲劇性拉回，站上萬八；觀察法人單周資金動向，外資及自營商同站買方市場，分別買超390.04億元、16.03億元，投信則賣超29.15億元，三大法人合計買超金額376.92億元。法人表示，盤面上仍以AI個股、散熱概念股表現最強，加上權王台積電（2330）撐盤，不僅站上所有均線之上，且均線呈多頭排列，預估農曆年假期間，只要國際股市不出現重大利空，台股新春開紅盤，資金量能回籠有望拉抬指數重啟攻勢。明（5）日開始有致新（8081）、穩懋（3105），6日是力旺（3529）、新唐（4919）、華邦電（2344）、原相（3227）、聯詠（3034）等，7日有譜瑞\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [\n                    {\n                        \"id\": 6,\n                        \"code\": \"1109\",\n                        \"name\": \"信大\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 134,\n                        \"name\": \"測試標籤\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 135,\n                        \"name\": \"測試新增\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2024-02-05T09:07:36.000Z\",\n                \"previewImage\": {\n                    \"id\": 306,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/2200741a-34ff-453d-a4d2-ca6bbed1cc3a\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 115,\n                \"title\": \"fdsadf\",\n                \"description\": \"fdsafsdfaf\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 5,\n                        \"code\": \"1108\",\n                        \"name\": \"幸福\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 138,\n                        \"name\": \"fdsafdsaf\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2024-01-31T13:56:32.000Z\",\n                \"previewImage\": {\n                    \"id\": 233,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/16ea1bcc-eb8e-4f0a-9242-f520766049b7\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 77,\n                \"title\": \"週報 測試\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 112,\n                        \"code\": \"1513\",\n                        \"name\": \"中興電\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 86,\n                        \"name\": \"波段\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 121,\n                        \"name\": \"重電\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-29T04:14:09.000Z\",\n                \"previewImage\": {\n                    \"id\": 99,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/9f2368a0-0f14-4799-847b-6844a5d0e934\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 72,\n                \"title\": \"中華電打造5G應用 攻智慧海港與智慧醫療\",\n                \"description\": \"中華電信打造5G創新應用，今天宣布攜手台灣港務公司打造智慧海港及自動化櫃場試驗場域，並與新竹台大分院發展5G MR智慧醫療輔助教育，同時與盛弘醫藥集團等合作發表「台灣基層診所視訊診療系統」。中華電信透過新聞稿宣布，積極投入港口自動化應用研發，協助港務營運轉型，今天參與台灣港務公司在高雄展覽館舉辦的「未來港灣峰會」，展示112年推動「智慧海港」及「自動化港灣」試驗場域相關成果，董事長郭水義親自參與座談，分享推動淨零數位雙軸轉型的經驗。中華電信表示，「5G智慧海港2.0及創新觀光應用計畫」於台南安平港、安平港遊艇碼頭及高雄港愛河灣等場域，導入無人載具陸海空三維全新巡檢5G應用，運用新興資通訊科技，\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 10,\n                        \"code\": \"1210\",\n                        \"name\": \"大成\"\n                    },\n                    {\n                        \"id\": 11,\n                        \"code\": \"1213\",\n                        \"name\": \"大飲\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 113,\n                        \"name\": \"醫療\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 115,\n                        \"name\": \"5G\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-28T18:09:31.000Z\",\n                \"previewImage\": {\n                    \"id\": 83,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d62d29bc-9027-4b58-a4db-d955ebd612da\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 69,\n                \"title\": \"10/12 日報\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 12,\n                        \"name\": \"生技\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 66,\n                        \"name\": \"技術型態\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-28T18:02:42.000Z\",\n                \"previewImage\": {\n                    \"id\": 80,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/e3c08ff3-a7db-4a26-88a0-90fa08d96569\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 59,\n                \"title\": \"大戶退票狂飆 10月退票近40億、創兩年新高\",\n                \"description\": \"中央銀行27日公布10月存款不足退票統計，雖然全月營業日僅20日，但有2個月底峰日，退票張數大幅上升至4,444張，創近七個月新高，且在單月大戶退票高達7戶、8.9億元下，使整體退票金額狂升至39.4億元，創下2021年12月以來新高、近兩年新高；前八個月合計退票金額已達293.96億元。根據央行統計，10月票據交換張數達604萬575張，較9月大增57.32％；票據交換金額為1兆1,590億元，也較9月增加22.69％，主因9月完全沒有月底峰日，而10月有2個月底峰日，致使票據交換張數及金額均增加。央行官員表示，10月除2個月底峰日帶動，反映在整體票據交換量提高，更關鍵是大戶退票集中在10月\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 36,\n                        \"name\": \"資本支出\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 38,\n                        \"name\": \"訂單\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-27T18:59:04.000Z\",\n                \"previewImage\": {\n                    \"id\": 61,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/5b2b3354-c6cd-4a7a-ba6e-ed954f82775d\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 54,\n                \"title\": \"引言  台灣經濟在過去幾十年經歷了驚人的成長與轉變\",\n                \"description\": \"引言台灣經濟在過去幾十年經歷了驚人的成長與轉變，由農業社會轉型為高科技製造業主導，然而，隨著國際經濟環境的變遷，以及全球供應鏈的調整，台灣面臨著新的挑戰。本論文將探討台灣經濟的演變，分析當前面臨的問題，並提出可能的因應策略。一、經濟轉型的歷程台灣經濟起初以農業為主，但在20世紀後半，隨著政府的產業政策調整，進入了工業化階段。電子、半導體、資訊科技等高科技產業的崛起，使得台灣在全球經濟中扮演重要的角色。然而，這也使得台灣高度依賴出口，特別是對中國的出口，這在當今全球政經格局中帶來一些風險。二、全球供應鏈的變遷全球供應鏈的調整是當前台灣經濟面臨的重要挑戰之一。隨著國際貿易局勢的變動，一些企業開始尋\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 312,\n                        \"code\": \"2330\",\n                        \"name\": \"台積電\"\n                    },\n                    {\n                        \"id\": 313,\n                        \"code\": \"2331\",\n                        \"name\": \"精英\"\n                    },\n                    {\n                        \"id\": 314,\n                        \"code\": \"2332\",\n                        \"name\": \"友訊\"\n                    },\n                    {\n                        \"id\": 323,\n                        \"code\": \"2349\",\n                        \"name\": \"錸德\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 97,\n                        \"name\": \"美金\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 98,\n                        \"name\": \"台幣\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-26T07:01:52.000Z\",\n                \"previewImage\": {\n                    \"id\": 54,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/df286d43-9044-4ddd-b6f0-b6853ad8a879\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 52,\n                \"title\": \"現代台灣經濟的轉變與挑戰\",\n                \"description\": \"引言台灣經濟在過去幾十年經歷了驚人的成長與轉變，由農業社會轉型為高科技製造業主導，然而，隨著國際經濟環境的變遷，以及全球供應鏈的調整，台灣面臨著新的挑戰。本論文將探討台灣經濟的演變，分析當前面臨的問題，並提出可能的因應策略。一、經濟轉型的歷程台灣經濟起初以農業為主，但在20世紀後半，隨著政府的產業政策調整，進入了工業化階段。電子、半導體、資訊科技等高科技產業的崛起，使得台灣在全球經濟中扮演重要的角色。然而，這也使得台灣高度依賴出口，特別是對中國的出口，這在當今全球政經格局中帶來一些風險。二、全球供應鏈的變遷全球供應鏈的調整是當前台灣經濟面臨的重要挑戰之一。隨著國際貿易局勢的變動，一些企業開始尋\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 312,\n                        \"code\": \"2330\",\n                        \"name\": \"台積電\"\n                    },\n                    {\n                        \"id\": 323,\n                        \"code\": \"2349\",\n                        \"name\": \"錸德\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 97,\n                        \"name\": \"美金\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 98,\n                        \"name\": \"台幣\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-26T07:00:39.000Z\",\n                \"previewImage\": {\n                    \"id\": 50,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/88402a48-2760-41e1-ab8a-e2fd5073c44d\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 51,\n                \"title\": \"尼采：上帝之死的思想探索\",\n                \"description\": \"在哲學史上，弗里德里希·尼采（Friedrich Nietzsche）被視為一位具有深遠影響的思想家，他的名言「上帝已死」（God is dead）成為他思想體系的一個核心概念。這句話並非單純地描述一種宗教信仰的崩潰，更是尼采對於現代社會、道德觀念以及人類存在意義的深刻反思。本文將深入探討尼采對於「上帝已死」的哲學觀點及其對當代思考的啟示。尼采的這個說法最初出現於他的《查拉圖斯特拉如是說》（Thus Spoke Zarathustra）中，其中一位「瘋人」宣告上帝之死。這並非指某位具體的神祇死去，而是指人們對於上帝存在的信仰已經瓦解。上帝作為絕對價值和道德的依歸不再被廣泛接受，人類的價值體系因\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [\n                    {\n                        \"id\": 1,\n                        \"code\": \"1101\",\n                        \"name\": \"台泥\"\n                    },\n                    {\n                        \"id\": 2,\n                        \"code\": \"1102\",\n                        \"name\": \"亞泥\"\n                    },\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 57,\n                        \"name\": \"總股東人數\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-26T06:55:08.000Z\",\n                \"previewImage\": {\n                    \"id\": 49,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/63d8587b-f603-48ae-b3a6-4c6e67211615\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -1452,7 +1478,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "161",
 									"description": "[required] article id"
 								}
 							]
@@ -1478,7 +1504,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1",
+											"value": "161",
 											"description": "[required] article id"
 										}
 									]
@@ -1502,15 +1528,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1355"
+									"value": "2136"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"54b-1U6BbM8xGUI0EsTXqnaRRyJCy+Y\""
+									"value": "W/\"858-slm7zFkGmFvEPA9QF0+K7R4cpPM\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 26 Nov 2023 10:11:00 GMT"
+									"value": "Wed, 28 Feb 2024 09:21:44 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1522,12 +1548,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"totalPage\": 0,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false,\n                        \"sort\": 0,\n                        \"hide\": true,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false,\n                        \"sort\": 1,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"totalPage\": 0,\n        \"articles\": [\n            {\n                \"id\": 17,\n                \"title\": \"台積電即將在今天10/19舉辦【Q3法說會】\",\n                \"description\": \"台積電在Q3的實際營收表現十分亮眼，遠超市場的初步預期。部分營收增長可以歸因於美元的上揚，而從目前台幣的弱勢尚未出現轉機，這意味著毛利率和營業利益率「雙率」在未來仍有機會繼續受益，加上業外匯兌的正面貢獻，營收有望持續增長。雷老闆列出了幾個觀察重點給大家參考1. N3製程的量產進度2. 毛利率是否維持3. 海外擴廠進度4. AI產業帶來的效益最後更新，昨日艾司摩爾（ASML）昨日公布Q3財報及明年展望，其中最重要的資訊是，公司表示由於客戶對復甦仍存在不確定性，預估明年營收與今\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"車用\",\n                        \"isRecommended\": false,\n                        \"sort\": 2,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 7,\n                        \"name\": \"工具機\",\n                        \"isRecommended\": false,\n                        \"sort\": 0,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    }\n                ],\n                \"publishDate\": \"2023-11-23T11:57:57.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 37,\n                \"title\": \"老闆幫你顧，台積電，法說會\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false,\n                        \"sort\": 3,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 6,\n                        \"name\": \"AI\",\n                        \"isRecommended\": false,\n                        \"sort\": 5,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 8,\n                        \"name\": \"資安\",\n                        \"isRecommended\": false,\n                        \"sort\": 7,\n                        \"hide\": false,\n                        \"topicId\": 1\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false,\n                        \"sort\": 0,\n                        \"hide\": false,\n                        \"topicId\": 2\n                    },\n                    {\n                        \"id\": 21,\n                        \"name\": \"通膨\",\n                        \"isRecommended\": false,\n                        \"sort\": 5,\n                        \"hide\": false,\n                        \"topicId\": 2\n                    },\n                    {\n                        \"id\": 23,\n                        \"name\": \"個人消費支出\",\n                        \"isRecommended\": false,\n                        \"sort\": 7,\n                        \"hide\": false,\n                        \"topicId\": 2\n                    },\n                    {\n                        \"id\": 24,\n                        \"name\": \"消費者信心指數\",\n                        \"isRecommended\": false,\n                        \"sort\": 8,\n                        \"hide\": false,\n                        \"topicId\": 2\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false,\n                        \"sort\": 12,\n                        \"hide\": false,\n                        \"topicId\": 2\n                    },\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false,\n                        \"sort\": 4,\n                        \"hide\": false,\n                        \"topicId\": 3\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T17:14:40.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				}
 			],
-			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他\n\nlevel:  \n1 -> 訪客, 2 -> 會員, 3 -> 訂閱者\n\nresearchResource:  \n1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\nlevel:  \n1 -> 訪客, 2 -> 會員, 3 -> 訂閱者\n\nresearchResource:  \n1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告"
 		},
 		{
 			"name": "後台",
@@ -1551,7 +1577,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false&author=2&topic=3&tag=1",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false&author=2&tag=2",
 									"host": [
 										"{{domain}}"
 									],
@@ -1582,13 +1608,8 @@
 											"description": "[int] author id"
 										},
 										{
-											"key": "topic",
-											"value": "3",
-											"description": "[int] topic id"
-										},
-										{
 											"key": "tag",
-											"value": "1",
+											"value": "2",
 											"description": "[int] tag id"
 										}
 									]
@@ -1602,7 +1623,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false",
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?tag=2",
 											"host": [
 												"{{domain}}"
 											],
@@ -1615,17 +1636,20 @@
 												{
 													"key": "title",
 													"value": "你好",
-													"description": "[string]"
+													"description": "[string]",
+													"disabled": true
 												},
 												{
 													"key": "type",
 													"value": "1",
-													"description": "[int] 1: article, 2: ad"
+													"description": "[int] 1: article, 2: ad",
+													"disabled": true
 												},
 												{
 													"key": "isDraft",
 													"value": "false",
-													"description": "[boolean]"
+													"description": "[boolean]",
+													"disabled": true
 												},
 												{
 													"key": "author",
@@ -1634,16 +1658,9 @@
 													"disabled": true
 												},
 												{
-													"key": "topic",
-													"value": "3",
-													"description": "[int] topic id",
-													"disabled": true
-												},
-												{
 													"key": "tag",
-													"value": "1",
-													"description": "[int] tag id",
-													"disabled": true
+													"value": "2",
+													"description": "[int] tag id"
 												}
 											]
 										}
@@ -1666,15 +1683,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "3634"
+											"value": "557"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"e32-bFFYWXXyfFDHHVMqz1ltI695WN8\""
+											"value": "W/\"22d-Ffs//JV3WLyW4hkcY2WInA91LKM\""
 										},
 										{
 											"key": "Date",
-											"value": "Mon, 29 Jan 2024 16:37:52 GMT"
+											"value": "Wed, 28 Feb 2024 09:32:57 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1686,7 +1703,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 32,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                },\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"籌碼面\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"車用\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"綠能\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isDraft\": false,\n            \"views\": 5,\n            \"level\": 2,\n            \"publishDate\": \"2024-01-23T16:14:17.000Z\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"你好，世界\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"籌碼面\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"技術面\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isDraft\": false,\n            \"views\": 17,\n            \"level\": null,\n            \"publishDate\": \"2023-11-22T16:11:23.000Z\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isDraft\": false,\n            \"views\": 8,\n            \"level\": null,\n            \"publishDate\": \"2023-11-21T16:11:23.000Z\"\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 108,\n            \"title\": \"標題是你不是我\",\n            \"description\": \"測試內文fdsafdsaffdsafdsfaffdsafdsffdsafdfdsfdsfafdsafdsffdsafdsaf\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [\n                {\n                    \"id\": 282,\n                    \"code\": \"2211\",\n                    \"name\": \"長榮鋼\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 178,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/cb85404c-55b7-41b5-9b94-415ddf17eb85\"\n            },\n            \"type\": 1,\n            \"isDraft\": false,\n            \"views\": 33,\n            \"level\": 2,\n            \"column\": {\n                \"id\": 2,\n                \"name\": \"Rick\"\n            },\n            \"publishDate\": \"2023-12-14T09:37:04.000Z\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -1709,7 +1726,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "32",
+											"value": "161",
 											"description": "[required] article id"
 										}
 									]
@@ -1735,7 +1752,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "32",
+													"value": "161",
 													"description": "[required] article id"
 												}
 											]
@@ -1759,15 +1776,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1621"
+											"value": "855"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"655-D0lkt6wcYmepEDX62rT8fW+Vn/w\""
+											"value": "W/\"357-grX+bnySUTxXu8fBn3uV9eIeVnA\""
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 23 Jan 2024 16:56:00 GMT"
+											"value": "Wed, 28 Feb 2024 09:34:11 GMT"
 										},
 										{
 											"key": "Connection",
@@ -1779,7 +1796,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 32,\n        \"title\": \"你好\",\n        \"author\": {\n            \"name\": \"Rick\",\n            \"id\": 2\n        },\n        \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n        \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n        \"companies\": [\n            {\n                \"id\": 4,\n                \"code\": \"1104\",\n                \"name\": \"環泥\"\n            },\n            {\n                \"id\": 3,\n                \"code\": \"1103\",\n                \"name\": \"嘉泥\"\n            }\n        ],\n        \"topics\": [\n            {\n                \"id\": 3,\n                \"name\": \"基本面\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"籌碼面\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 3,\n                \"name\": \"車用\",\n                \"isRecommended\": false\n            },\n            {\n                \"id\": 4,\n                \"name\": \"綠能\",\n                \"isRecommended\": false\n            }\n        ],\n        \"previewImage\": {\n            \"id\": 2,\n            \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n        },\n        \"type\": 1,\n        \"isLimited\": false,\n        \"isDraft\": false,\n        \"views\": null,\n        \"level\": 2,\n        \"column\": {\n            \"id\": 2,\n            \"name\": \"專欄二\"\n        },\n        \"publishedAt\": \"2024-01-23T16:14:17.000Z\"\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 161,\n        \"title\": \"fdsafsadf\",\n        \"author\": {\n            \"name\": \"Voss\",\n            \"id\": 3\n        },\n        \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"fdsafdsaf\\\"}]}]}\",\n        \"rawContent\": \"fdsafdsaf\",\n        \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"fdsafdsaf\\\"}]}]}\",\n        \"companies\": [\n            {\n                \"id\": 6,\n                \"code\": \"1109\",\n                \"name\": \"信大\"\n            }\n        ],\n        \"tags\": [\n            {\n                \"id\": 6,\n                \"name\": \"AI\",\n                \"isRecommended\": false\n            },\n            {\n                \"id\": 7,\n                \"name\": \"工具機\",\n                \"isRecommended\": false\n            }\n        ],\n        \"previewImage\": {\n            \"id\": 330,\n            \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/3a5b8984-0a73-4222-bd84-3532336d81a9\"\n        },\n        \"type\": 1,\n        \"isDraft\": false,\n        \"views\": 2,\n        \"level\": 2,\n        \"column\": {\n            \"id\": 5,\n            \"name\": \"VossCG\"\n        },\n        \"publishedAt\": \"2024-02-08T14:14:08.000Z\"\n    }\n}"
 								}
 							]
 						},
@@ -1826,27 +1843,15 @@
 											"type": "text"
 										},
 										{
-											"key": "topics[0]",
-											"value": "1",
-											"description": "[required] [int]",
-											"type": "text"
-										},
-										{
-											"key": "topics[1]",
-											"value": "2",
-											"description": "[required] [int]",
-											"type": "text"
-										},
-										{
 											"key": "tags[0]",
 											"value": "3",
-											"description": "[int]",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[1]",
 											"value": "4",
-											"description": "[int]",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
@@ -1946,31 +1951,19 @@
 													"type": "text"
 												},
 												{
-													"key": "topics[0]",
-													"value": "1",
-													"description": "[required] [int]",
-													"type": "text"
-												},
-												{
-													"key": "topics[1]",
-													"value": "2",
-													"description": "[required] [int]",
-													"type": "text"
-												},
-												{
 													"key": "tags[0]",
 													"value": "3",
-													"description": "[int]",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[1]",
 													"value": "4",
-													"description": "[int]",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
-													"key": "isLimited",
+													"key": "isDraft",
 													"value": "false",
 													"description": "[required] [boolean]",
 													"type": "text"
@@ -2050,15 +2043,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "18"
+											"value": "19"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"12-X5ioGUDD8jzA+gJESmzArPT2RWE\""
+											"value": "W/\"13-gpGzIGZsONdswRY7Bg2lcfS1DLE\""
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 23 Jan 2024 16:14:17 GMT"
+											"value": "Wed, 28 Feb 2024 09:34:52 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2070,7 +2063,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 32\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 162\n    }\n}"
 								}
 							]
 						},
@@ -2107,27 +2100,15 @@
 											"type": "text"
 										},
 										{
-											"key": "topics[0]",
-											"value": "3",
-											"description": "[required] [int]",
-											"type": "text"
-										},
-										{
-											"key": "topics[1]",
-											"value": "4",
-											"description": "[required] [int]",
-											"type": "text"
-										},
-										{
 											"key": "tags[0]",
 											"value": "3",
-											"description": "[int]",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
 											"key": "tags[1]",
 											"value": "4",
-											"description": "[int]",
+											"description": "[required] [int]",
 											"type": "text"
 										},
 										{
@@ -2195,7 +2176,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "32",
+											"value": "162",
 											"description": "[required] article id"
 										}
 									]
@@ -2235,27 +2216,15 @@
 													"type": "text"
 												},
 												{
-													"key": "topics[0]",
-													"value": "3",
-													"description": "[required] [int]",
-													"type": "text"
-												},
-												{
-													"key": "topics[1]",
-													"value": "4",
-													"description": "[required] [int]",
-													"type": "text"
-												},
-												{
 													"key": "tags[0]",
 													"value": "3",
-													"description": "[int]",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
 													"key": "tags[1]",
 													"value": "4",
-													"description": "[int]",
+													"description": "[required] [int]",
 													"type": "text"
 												},
 												{
@@ -2323,7 +2292,7 @@
 											"variable": [
 												{
 													"key": "id",
-													"value": "32",
+													"value": "162",
 													"description": "[required] article id"
 												}
 											]
@@ -2347,15 +2316,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "18"
+											"value": "19"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"12-X5ioGUDD8jzA+gJESmzArPT2RWE\""
+											"value": "W/\"13-gpGzIGZsONdswRY7Bg2lcfS1DLE\""
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 23 Jan 2024 16:21:00 GMT"
+											"value": "Wed, 28 Feb 2024 09:35:48 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2367,7 +2336,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 32\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 162\n    }\n}"
 								}
 							]
 						},
@@ -2519,15 +2488,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "3288"
+											"value": "39764"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"cd8-+hDWpw71Tl6I/as8gS4B+rQgIKw\""
+											"value": "W/\"9b54-cTHZ+j4/K5GNMdi+E7g8L6iBWc0\""
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 Nov 2023 04:22:26 GMT"
+											"value": "Wed, 28 Feb 2024 09:37:07 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2539,7 +2508,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 2,\n            \"articleId\": 1,\n            \"article\": {\n                \"id\": 1,\n                \"title\": \"你好\",\n                \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"產業\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 2,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 8,\n                \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"articleId\": null,\n            \"article\": null\n        },\n        {\n            \"id\": 4,\n            \"articleId\": 2,\n            \"article\": {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON！！！\\\"}]}]}\",\n                \"rawContent\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n                \"companies\": [\n                    {\n                        \"id\": 3,\n                        \"code\": \"1103\",\n                        \"name\": \"嘉泥\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"code\": \"1104\",\n                        \"name\": \"環泥\"\n                    }\n                ],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"isDraft\": false,\n                \"views\": 13,\n                \"publishedAt\": \"2023-11-22T16:11:23.000Z\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"articleId\": null,\n            \"article\": null\n        }\n    ]\n}"
+									"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"articleId\": 83,\n            \"article\": {\n                \"id\": 83,\n                \"title\": \"廣告文 3\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和🪡\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🎉恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"💶獲利【超過(one)(zero)(%)】💶\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。🥇🥈🥉\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。🏄🏻\\u200d♀️\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"跟著雷老闆的節奏\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"佈局操作沒煩惱✨\\\"}]}]}\",\n                \"rawContent\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\\u200d♀️跟著雷老闆的節奏佈局操作沒煩惱✨\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?獲利【超過(one)(zero)(%)】?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成…\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 111,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/eeef068d-05cd-4e4b-ac16-80905459c2a4\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 12,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-30T05:01:53.000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"articleId\": 78,\n            \"article\": {\n                \"id\": 78,\n                \"title\": \"? 雷老闆YouTube將於15:00左右上線\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"#871717\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢😊\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎🚄\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n                \"rawContent\": \"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?中興電昨天休息一下，今天繼續上攻雷老闆一直提醒受惠政策加持的重電族群你上車了嗎?投資不迷路，老闆幫你顧我們線上見‼️\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"rgb(135, 23, 23)\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 79,\n                        \"name\": \"空頭\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 80,\n                        \"name\": \"多頭\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 101,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/8c56f473-3332-446e-ae44-b02105972866\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 15,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-29T05:26:47.000Z\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"articleId\": 86,\n            \"article\": {\n                \"id\": 86,\n                \"title\": \"廣告文 4\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"📢鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲🙏  但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  \\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" 於官方帳號聊天室內輸入【雷老闆老鐵】 \\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\\\"}]}]}]}]}\",\n                \"rawContent\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲? 但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love) 請大家按照以下步驟\\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"於官方帳號聊天室內輸入【雷老闆老鐵】\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底 (Intense Cat cell phone)手刀點擊加入： https://li…\\\"}]}]}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 117,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 9,\n                \"level\": null,\n                \"publishedAt\": \"2023-12-01T02:02:59.000Z\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"articleId\": 86,\n            \"article\": {\n                \"id\": 86,\n                \"title\": \"廣告文 4\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"📢鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲🙏  但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  \\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" 於官方帳號聊天室內輸入【雷老闆老鐵】 \\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\\\"}]}]}]}]}\",\n                \"rawContent\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲? 但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love) 請大家按照以下步驟\\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"於官方帳號聊天室內輸入【雷老闆老鐵】\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底 (Intense Cat cell phone)手刀點擊加入： https://li…\\\"}]}]}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 117,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 9,\n                \"level\": null,\n                \"publishedAt\": \"2023-12-01T02:02:59.000Z\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"articleId\": 78,\n            \"article\": {\n                \"id\": 78,\n                \"title\": \"? 雷老闆YouTube將於15:00左右上線\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"#871717\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢😊\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎🚄\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n                \"rawContent\": \"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?中興電昨天休息一下，今天繼續上攻雷老闆一直提醒受惠政策加持的重電族群你上車了嗎?投資不迷路，老闆幫你顧我們線上見‼️\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"rgb(135, 23, 23)\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 79,\n                        \"name\": \"空頭\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 80,\n                        \"name\": \"多頭\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 101,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/8c56f473-3332-446e-ae44-b02105972866\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 15,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-29T05:26:47.000Z\"\n            }\n        },\n        {\n            \"id\": 6,\n            \"articleId\": 80,\n            \"article\": {\n                \"id\": 80,\n                \"title\": \"廣告文 2\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和🪡\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🎉恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"💶獲利【超過(one)(zero)(%)】💶\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。🥇🥈🥉\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。🏄🏻\\u200d♀️\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"跟著雷老闆的節奏\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"佈局操作沒煩惱✨\\\"}]}]}\",\n                \"rawContent\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\\u200d♀️跟著雷老闆的節奏佈局操作沒煩惱✨\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?獲利【超過(one)(zero)(%)】?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成…\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 103,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 26,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-29T08:02:41.000Z\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"articleId\": 80,\n            \"article\": {\n                \"id\": 80,\n                \"title\": \"廣告文 2\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和🪡\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🎉恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"💶獲利【超過(one)(zero)(%)】💶\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。🥇🥈🥉\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。🏄🏻\\u200d♀️\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"跟著雷老闆的節奏\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"佈局操作沒煩惱✨\\\"}]}]}\",\n                \"rawContent\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\\u200d♀️跟著雷老闆的節奏佈局操作沒煩惱✨\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?獲利【超過(one)(zero)(%)】?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成…\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 103,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 26,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-29T08:02:41.000Z\"\n            }\n        },\n        {\n            \"id\": 8,\n            \"articleId\": 83,\n            \"article\": {\n                \"id\": 83,\n                \"title\": \"廣告文 3\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和🪡\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🎉恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"💶獲利【超過(one)(zero)(%)】💶\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。🥇🥈🥉\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。🏄🏻\\u200d♀️\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"跟著雷老闆的節奏\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"佈局操作沒煩惱✨\\\"}]}]}\",\n                \"rawContent\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\\u200d♀️跟著雷老闆的節奏佈局操作沒煩惱✨\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?獲利【超過(one)(zero)(%)】?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成…\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 111,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/eeef068d-05cd-4e4b-ac16-80905459c2a4\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 12,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-30T05:01:53.000Z\"\n            }\n        },\n        {\n            \"id\": 9,\n            \"articleId\": 86,\n            \"article\": {\n                \"id\": 86,\n                \"title\": \"廣告文 4\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"📢鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲🙏  但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  \\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\" 於官方帳號聊天室內輸入【雷老闆老鐵】 \\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\\\"}]}]}]}]}\",\n                \"rawContent\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP32q/?accountId=396rwhia\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"heading\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\",\\\"level\\\":4},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?鑽豹編公告：\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲? 但雷老闆沒有忘記給大家的承諾\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love) 請大家按照以下步驟\\\"}]},{\\\"type\\\":\\\"orderedList\\\",\\\"attrs\\\":{\\\"start\\\":1},\\\"content\\\":[{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"加入雷老闆(LINE messenger)官方帳號\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"於官方帳號聊天室內輸入【雷老闆老鐵】\\\"}]}]},{\\\"type\\\":\\\"listItem\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底 (Intense Cat cell phone)手刀點擊加入： https://li…\\\"}]}]}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 117,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 9,\n                \"level\": null,\n                \"publishedAt\": \"2023-12-01T02:02:59.000Z\"\n            }\n        },\n        {\n            \"id\": 10,\n            \"articleId\": 80,\n            \"article\": {\n                \"id\": 80,\n                \"title\": \"廣告文 2\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和🪡\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"🎉恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"💶獲利【超過(one)(zero)(%)】💶\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。🥇🥈🥉\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。🏄🏻\\u200d♀️\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"跟著雷老闆的節奏\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"佈局操作沒煩惱✨\\\"}]}]}\",\n                \"rawContent\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\\u200d♀️跟著雷老闆的節奏佈局操作沒煩惱✨\",\n                \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"【10/11日報】 9938 百和?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?恭喜call訊會員、日報同學\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"?獲利【超過(one)(zero)(%)】?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成…\\\"}]}]}\",\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 118,\n                        \"name\": \"廣告文\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"previewImage\": {\n                    \"id\": 103,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n                },\n                \"type\": 2,\n                \"isDraft\": false,\n                \"views\": 26,\n                \"level\": null,\n                \"publishedAt\": \"2023-11-29T08:02:41.000Z\"\n            }\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -2620,15 +2589,15 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1546"
+											"value": "2789"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"60a-qngqGzp23l2FKp3h/TRTU466cro\""
+											"value": "W/\"ae5-FFHI0I9qKKlI3F+SWKNx+XmH6VQ\""
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 29 Nov 2023 04:24:01 GMT"
+											"value": "Wed, 28 Feb 2024 09:37:27 GMT"
 										},
 										{
 											"key": "Connection",
@@ -2640,7 +2609,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"articleId\": 1,\n        \"article\": {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"fullContent\": \"{\\\"type\\\":\\\"dpooc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"rawContent\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"Wow, this editor instance exports its content as JSON.\\\"}]}]}\",\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"isDraft\": false,\n            \"views\": 8,\n            \"publishedAt\": \"2023-11-21T16:11:23.000Z\"\n        }\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"articleId\": 78,\n        \"article\": {\n            \"id\": 78,\n            \"title\": \"? 雷老闆YouTube將於15:00左右上線\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"fullContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"#871717\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢😊\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎🚄\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n            \"rawContent\": \"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?中興電昨天休息一下，今天繼續上攻雷老闆一直提醒受惠政策加持的重電族群你上車了嗎?投資不迷路，老闆幫你顧我們線上見‼️\",\n            \"clippedContent\": \"{\\\"type\\\":\\\"doc\\\",\\\"content\\\":[{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"marks\\\":[{\\\"type\\\":\\\"textStyle\\\",\\\"attrs\\\":{\\\"color\\\":\\\"rgb(135, 23, 23)\\\"}}],\\\"text\\\":\\\"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"中興電昨天休息一下，今天繼續上攻\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"雷老闆一直提醒受惠政策加持的重電族群\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"你上車了嗎?\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"投資不迷路，老闆幫你顧\\\"}]},{\\\"type\\\":\\\"paragraph\\\",\\\"attrs\\\":{\\\"textAlign\\\":\\\"left\\\"},\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"我們線上見‼️\\\"}]}]}\",\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 79,\n                    \"name\": \"空頭\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 80,\n                    \"name\": \"多頭\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"previewImage\": {\n                \"id\": 101,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/8c56f473-3332-446e-ae44-b02105972866\"\n            },\n            \"type\": 2,\n            \"isDraft\": false,\n            \"views\": 15,\n            \"level\": null,\n            \"publishedAt\": \"2023-11-29T05:26:47.000Z\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -7565,15 +7534,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "5260"
+									"value": "10190"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"148c-1PRKigo/4UZBPI9C6uKWb8LqpNY\""
+									"value": "W/\"27ce-/o0rtiKC4+1wbPh5tV8gUZrj8E8\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 28 Nov 2023 15:53:22 GMT"
+									"value": "Wed, 28 Feb 2024 09:24:33 GMT"
 								},
 								{
 									"key": "Connection",
@@ -7585,7 +7554,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\": 26,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 1,\n                    \"code\": \"1101\",\n                    \"name\": \"台泥\"\n                },\n                {\n                    \"id\": 2,\n                    \"code\": \"1102\",\n                    \"name\": \"亞泥\"\n                }\n            ],\n            \"topics\": [],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T18:41:26.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 1,\n            \"title\": \"你好\",\n            \"description\": \"也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…</\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"產業\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-21T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 2,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700467448756-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 16,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                }\n            ],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T05:31:35.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 2,\n            \"title\": \"你好，世界\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Rick\",\n                \"id\": 2\n            },\n            \"companies\": [\n                {\n                    \"id\": 3,\n                    \"code\": \"1103\",\n                    \"name\": \"嘉泥\"\n                },\n                {\n                    \"id\": 4,\n                    \"code\": \"1104\",\n                    \"name\": \"環泥\"\n                }\n            ],\n            \"topics\": [\n                {\n                    \"id\": 3,\n                    \"name\": \"基本面\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"籌碼面\"\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"技術面\"\n                }\n            ],\n            \"tags\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"半導體\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"IC 設計\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n            \"previewImage\": {\n                \"id\": 1,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n            },\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        },\n        {\n            \"id\": 13,\n            \"title\": \"標題\",\n            \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n            \"author\": {\n                \"name\": \"Remus\",\n                \"id\": 1\n            },\n            \"companies\": [],\n            \"topics\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"總經\"\n                }\n            ],\n            \"tags\": [],\n            \"publishDate\": \"2023-11-25T05:27:24.000Z\",\n            \"previewImage\": null,\n            \"type\": 1,\n            \"isLimited\": false,\n            \"source\": null\n        }\n    ]\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 83,\n            \"title\": \"廣告文 3\",\n            \"description\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-30T05:01:53.000Z\",\n            \"previewImage\": {\n                \"id\": 111,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/eeef068d-05cd-4e4b-ac16-80905459c2a4\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 78,\n            \"title\": \"? 雷老闆YouTube將於15:00左右上線\",\n            \"description\": \"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?中興電昨天休息一下，今天繼續上攻雷老闆一直提醒受惠政策加持的重電族群你上車了嗎?投資不迷路，老闆幫你顧我們線上見‼️\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 79,\n                    \"name\": \"空頭\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 80,\n                    \"name\": \"多頭\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-29T05:26:47.000Z\",\n            \"previewImage\": {\n                \"id\": 101,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/8c56f473-3332-446e-ae44-b02105972866\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 86,\n            \"title\": \"廣告文 4\",\n            \"description\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP3\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-12-01T02:02:59.000Z\",\n            \"previewImage\": {\n                \"id\": 117,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 86,\n            \"title\": \"廣告文 4\",\n            \"description\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP3\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-12-01T02:02:59.000Z\",\n            \"previewImage\": {\n                \"id\": 117,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 78,\n            \"title\": \"? 雷老闆YouTube將於15:00左右上線\",\n            \"description\": \"中美晶今天挾量衝向前高，恭喜call訊會員開開心心收錢?中興電昨天休息一下，今天繼續上攻雷老闆一直提醒受惠政策加持的重電族群你上車了嗎?投資不迷路，老闆幫你顧我們線上見‼️\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 79,\n                    \"name\": \"空頭\",\n                    \"isRecommended\": false\n                },\n                {\n                    \"id\": 80,\n                    \"name\": \"多頭\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-29T05:26:47.000Z\",\n            \"previewImage\": {\n                \"id\": 101,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/8c56f473-3332-446e-ae44-b02105972866\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 80,\n            \"title\": \"廣告文 2\",\n            \"description\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-29T08:02:41.000Z\",\n            \"previewImage\": {\n                \"id\": 103,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 80,\n            \"title\": \"廣告文 2\",\n            \"description\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-29T08:02:41.000Z\",\n            \"previewImage\": {\n                \"id\": 103,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 83,\n            \"title\": \"廣告文 3\",\n            \"description\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-30T05:01:53.000Z\",\n            \"previewImage\": {\n                \"id\": 111,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/eeef068d-05cd-4e4b-ac16-80905459c2a4\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 86,\n            \"title\": \"廣告文 4\",\n            \"description\": \"?鑽豹編公告：感謝各位老鐵們這半年的支持，在大家陪伴下，我們即將進入老鐵群的尾聲?  但雷老闆沒有忘記給大家的承諾為了回饋大家這半年的支持，老鐵群結束服務後，將額外贈送【週報】到2024年1月底，此為老鐵們獨享喔(Intense Cat love)  請大家按照以下步驟  加入雷老闆(LINE messenger)官方帳號 於官方帳號聊天室內輸入【雷老闆老鐵】 雷老闆專屬助理確定為老鐵後，於1月開始，就會一對一傳送【免費週報】給老鐵們到2024年1月底  (Intense Cat cell phone)手刀點擊加入： https://liff.line.me/1645278921-kWRPP3\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-12-01T02:02:59.000Z\",\n            \"previewImage\": {\n                \"id\": 117,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d87046eb-e64e-4a0f-954f-7faa91079cc2\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        },\n        {\n            \"id\": 80,\n            \"title\": \"廣告文 2\",\n            \"description\": \"【10/11日報】 9938 百和??恭喜call訊會員、日報同學?獲利【超過(one)(zero)(%)】?春江水暖鴨先知，雷老闆帶會員未卜先知，百和今日再度創下近期新高，但是雷老闆早在11月初的CALL訊中，就帶領會員布局，中間的回檔也順利低接(red check mark)台灣百和 2024 年客戶訂單將受惠奧運商機而恢復成長態勢，加上子公司百和興業由虧轉盈，預期2024 年營運將恢復成長動能。???在國際運動品牌採用提花網布比例持續增加在客戶大量採用緹花網布，如歐系國際運動品牌，美系國際品牌廠商，訂單量持續增加，帶動經編網布營收成長，預估 2024 年經編網布營收金額 20 億元。??\",\n            \"author\": {\n                \"name\": \"Voss\",\n                \"id\": 3\n            },\n            \"companies\": [],\n            \"tags\": [\n                {\n                    \"id\": 118,\n                    \"name\": \"廣告文\",\n                    \"isRecommended\": false\n                }\n            ],\n            \"publishDate\": \"2023-11-29T08:02:41.000Z\",\n            \"previewImage\": {\n                \"id\": 103,\n                \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/fa81ee75-77fa-4aa5-8cac-03db699bff6b\"\n            },\n            \"type\": 2,\n            \"isLimited\": false,\n            \"level\": null,\n            \"source\": null\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -7706,7 +7675,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -7730,11 +7699,6 @@
 									"key": "size",
 									"value": "30",
 									"description": "[required]"
-								},
-								{
-									"key": "topic",
-									"value": "0",
-									"description": "[required]"
 								}
 							]
 						}
@@ -7746,7 +7710,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30&topic=0",
+									"raw": "{{domain}}/{{prefix}}/search/query?q=世界&page=0&size=30",
 									"host": [
 										"{{domain}}"
 									],
@@ -7770,11 +7734,6 @@
 											"key": "size",
 											"value": "30",
 											"description": "[required]"
-										},
-										{
-											"key": "topic",
-											"value": "0",
-											"description": "[required]"
 										}
 									]
 								}
@@ -7797,15 +7756,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1246"
+									"value": "3968"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8\""
+									"value": "W/\"f80-GXY+Okpue8tzK8jVw/ljHBSEfQw\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 27 Nov 2023 10:14:06 GMT"
+									"value": "Wed, 28 Feb 2024 09:28:29 GMT"
 								},
 								{
 									"key": "Connection",
@@ -7817,7 +7776,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 3,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 70,\n                \"title\": \"台泥布局低碳水泥 砸266億擴大投資土耳其、葡萄牙\",\n                \"description\": \"台泥今晚11時30分召開重大訊息記者會，宣布擴大投資歐、亞、非洲低碳水泥市場，計劃將土耳其OYAK水泥合資公司持股由40%提高到60%，葡萄牙Cimpor水泥合資公司持股從40%增加至100%台泥表示，此次擴大持股案，目標於2024年第1季底前完成交易程序，董事會授權金額約新台幣266億元內；此次擴大持股，主要著眼於OYAK及Cimpor的低碳水泥研發與生產技術。台泥董事長張安平透過新聞稿指出，低碳絕對是國際化市場，不懂得碳的公司，未來是無法生存的，台泥可望透過增加投資OYAK及Cimpor水泥，成為全球少數能提供最低碳水泥的主要供應商之一，具備高度碳競爭力。台泥2018年與土耳其OYAK成立\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 89,\n                        \"name\": \"水位控制\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 102,\n                        \"name\": \"水泥\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-28T18:05:16.000Z\",\n                \"previewImage\": {\n                    \"id\": 81,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/38397afe-db8f-4d60-8f73-9faeca8b8d2b\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": 2,\n                \"source\": null\n            },\n            {\n                \"id\": 55,\n                \"title\": \"台泥斥266億元擴大投資土耳其、葡萄牙 布局全球低碳水泥市場\",\n                \"description\": \"台泥 (1101-TW)27 日深夜召開重訊，宣布擴大歐亞非低碳水泥布局，擬將土耳其 OYAK 水泥合資子公司持股由 40% 提高為 60%；將葡萄牙 Cimpor 水泥合資子公司持股從 40% 增加為 100%，總金額 266 億元內，預計明年第一季結束前完成交易。台泥董事長張安平表示，未來不懂得碳的公司是無法生存的，而低碳絕對是國際化市場，相信台泥透過增加投資 OYAK 水泥以及 Cimpor 水泥，未來可望成為全球少數能提供最低碳水泥的主要供應商之一，具備高度碳競爭力。據了解，歐洲水泥市場，進口水泥長年佔一定比例，未來歐盟實施碳邊境稅 CBAM，不管本地水泥或者進口水泥，低碳都將成為進軍\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 12,\n                        \"name\": \"生技\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 66,\n                        \"name\": \"技術型態\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 89,\n                        \"name\": \"水位控制\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 102,\n                        \"name\": \"水泥\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-27T17:26:38.000Z\",\n                \"previewImage\": {\n                    \"id\": 69,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/d9485996-378e-414e-a623-01cd697a31a6\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": 2,\n                \"source\": null\n            },\n            {\n                \"id\": 51,\n                \"title\": \"尼采：上帝之死的思想探索\",\n                \"description\": \"在哲學史上，弗里德里希·尼采（Friedrich Nietzsche）被視為一位具有深遠影響的思想家，他的名言「上帝已死」（God is dead）成為他思想體系的一個核心概念。這句話並非單純地描述一種宗教信仰的崩潰，更是尼采對於現代社會、道德觀念以及人類存在意義的深刻反思。本文將深入探討尼采對於「上帝已死」的哲學觀點及其對當代思考的啟示。尼采的這個說法最初出現於他的《查拉圖斯特拉如是說》（Thus Spoke Zarathustra）中，其中一位「瘋人」宣告上帝之死。這並非指某位具體的神祇死去，而是指人們對於上帝存在的信仰已經瓦解。上帝作為絕對價值和道德的依歸不再被廣泛接受，人類的價值體系因\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 57,\n                        \"name\": \"總股東人數\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-26T06:55:08.000Z\",\n                \"previewImage\": {\n                    \"id\": 49,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/63d8587b-f603-48ae-b3a6-4c6e67211615\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -7827,7 +7786,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30&topic=1",
+							"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -7851,11 +7810,6 @@
 									"key": "size",
 									"value": "30",
 									"description": "[required]"
-								},
-								{
-									"key": "topic",
-									"value": "1",
-									"description": "[required]"
 								}
 							]
 						}
@@ -7867,7 +7821,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30&topic=1",
+									"raw": "{{domain}}/{{prefix}}/search/author?author=2&page=0&size=30",
 									"host": [
 										"{{domain}}"
 									],
@@ -7891,11 +7845,6 @@
 											"key": "size",
 											"value": "30",
 											"description": "[required]"
-										},
-										{
-											"key": "topic",
-											"value": "1",
-											"description": "[required]"
 										}
 									]
 								}
@@ -7918,15 +7867,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1190"
+									"value": "14973"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4a6-qpjajLEqKNAy3l5qsAmpTR5TEp0\""
+									"value": "W/\"3a7d-LgDEPgyHxk2wMRfjmRnDzZl3bGo\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 27 Nov 2023 10:14:54 GMT"
+									"value": "Wed, 28 Feb 2024 09:29:28 GMT"
 								},
 								{
 									"key": "Connection",
@@ -7938,7 +7887,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 18,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 155,\n                \"title\": \"訂閱文章\",\n                \"description\": \"旺得富理財網 黃順德】上周台股創波段新高後又戲劇性拉回，站上萬八；觀察法人單周資金動向，外資及自營商同站買方市場，分別買超390.04億元、16.03億元，投信則賣超29.15億元，三大法人合計買超金額376.92億元。法人表示，盤面上仍以AI個股、散熱概念股表現最強，加上權王台積電（2330）撐盤，不僅站上所有均線之上，且均線呈多頭排列，預估農曆年假期間，只要國際股市不出現重大利空，台股新春開紅盤，資金量能回籠有望拉抬指數重啟攻勢。明（5）日開始有致新（8081）、穩懋（3105），6日是力旺（3529）、新唐（4919）、華邦電（2344）、原相（3227）、聯詠（3034）等，7日有譜瑞\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 134,\n                        \"name\": \"測試標籤\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 135,\n                        \"name\": \"測試新增\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2024-02-05T09:07:36.000Z\",\n                \"previewImage\": {\n                    \"id\": 306,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/2200741a-34ff-453d-a4d2-ca6bbed1cc3a\"\n                },\n                \"type\": 1,\n                \"isLimited\": true,\n                \"level\": 3,\n                \"source\": null\n            },\n            {\n                \"id\": 49,\n                \"title\": \"00934 中信成長高股息 ETF｜成分股？配息？優缺點？\",\n                \"description\": \"ETF 學習00934 中信成長高股息 ETF｜成分股？配息？優缺點？2023 年 11 月 1 日文章來源股感商品研究室作者股感商品研究室&nbsp;高股息 ETF 是近年來很受歡迎的主題型 ETF，已有不少投信推出相關的 ETF 產品，從一開始僅考慮 成分股 的歷史 股息 率，到後來加入了其他的因子，像是低波動、 ESG 等。而 中信投信 即將推出的「 00934 中信 成長 高股息 ETF」，除了高股息外，加入高成長、高品質因子，以及考量 填息 能力，結合了高股息和高報酬。00934預計於2023/10/16~2023/10/18公開募集。這篇文章整理了 00934 的基本介紹、成分股、\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 100,\n                        \"name\": \"ETF\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-25T11:04:34.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 47,\n                \"title\": \"現在適合買美金嗎？美金匯率走勢？美金台幣未來走勢分析！\",\n                \"description\": \"以當前局勢推估未來雖然目前的美金價格確實較疫情期間（2020 年 – 2021 年）來得高，但是當前的環境究竟是否買入美金呢？接下來會透過簡單的 分析 來針對這個問題進行回答。美國目前（2023/09）的通膨問題已經逐漸緩和，美國升息腳步有所趨緩，但是台幣受到出口力道減弱以及台美利差擴大導致資金不斷外流等因素影響，造成台幣自 2023 年 2 月的高點 29.68 元一路貶至最低 32 元，貶值將近 7%。但是在美國通膨問題有所收斂，以及新增就業由疫情後的火熱水準回歸至疫情前原先的水準，預計美國 2023 年將將利率區間固定在當前的水平，而 2024 年則有望能夠再見降息的發生，當美國的 貨幣\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 97,\n                        \"name\": \"美金\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 98,\n                        \"name\": \"台幣\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-25T09:41:36.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 37,\n                \"title\": \"老闆幫你顧，台積電，法說會\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 6,\n                        \"name\": \"AI\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 8,\n                        \"name\": \"資安\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 21,\n                        \"name\": \"通膨\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 23,\n                        \"name\": \"個人消費支出\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 24,\n                        \"name\": \"消費者信心指數\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T17:14:40.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 36,\n                \"title\": \"老闆幫你顧，台積電，法說會\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 21,\n                        \"name\": \"通膨\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 30,\n                        \"name\": \"毛利\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T17:14:34.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 35,\n                \"title\": \"老闆幫你顧，台積電，法說會\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 21,\n                        \"name\": \"通膨\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 30,\n                        \"name\": \"毛利\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T17:14:23.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 34,\n                \"title\": \"台積電，法說會\",\n                \"description\": \"\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 17,\n                        \"name\": \"美元\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 21,\n                        \"name\": \"通膨\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 30,\n                        \"name\": \"毛利\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 33,\n                        \"name\": \"EPS\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T17:13:44.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 29,\n                \"title\": \"【此為長文請耐心閱讀】\",\n                \"description\": \"這怎麼可以！上週耐編已經讓荷包大失血了，因為去了最近新開的裕隆城怒逛一波，但買個飲料都要排15分鐘左右，現場真的是人山人海，不過在裡面可以一次滿足消費、娛樂、閱讀，傳統的百貨公司真的逐漸沒落…… 查看更多\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 20,\n                        \"name\": \"聯準會\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 26,\n                        \"name\": \"耐久財\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 31,\n                        \"name\": \"高毛利\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T06:05:24.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 28,\n                \"title\": \"【此為長文請耐心閱讀】\",\n                \"description\": \"這怎麼可以！上週耐編已經讓荷包大失血了，因為去了最近新開的裕隆城怒逛一波，但買個飲料都要排15分鐘左右，現場真的是人山人海，不過在裡面可以一次滿足消費、娛樂、閱讀，傳統的百貨公司真的逐漸沒落…… 查看更多\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 20,\n                        \"name\": \"聯準會\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 26,\n                        \"name\": \"耐久財\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 31,\n                        \"name\": \"高毛利\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T06:02:55.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 27,\n                \"title\": \"當中原因還是脫離不了近期的以巴戰爭\",\n                \"description\": \"或許11月的聯準會會升息的機率就會降低並且受益於強勁的就業市場17日公布的零售銷售穩健上升年底的消費旺季有機會再帶動零售成長本週總經注意事項本週一費城聯儲執行長哈克表示在還不能確定今年底是否確定升息的情況下能夠確定的是高利率環境肯定更久。\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 18,\n                        \"name\": \"匯率\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 20,\n                        \"name\": \"聯準會\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 22,\n                        \"name\": \"非農就業\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 26,\n                        \"name\": \"耐久財\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 31,\n                        \"name\": \"高毛利\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T06:01:39.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 23,\n                \"title\": \"美國科技股財報週即將到來❗️❗️\",\n                \"description\": \"台積電即將在今天10/19舉辦【Q3法說會】台積電在Q3的實際營收表現十分亮眼，遠超市場的初步預期。部分營收增長可以歸因於美元的上揚，而從目前台幣的弱勢尚未出現轉機，這意味著毛利率和營業利益率「雙率」在未來仍有機會繼續受益，加上業外匯兌的正面貢獻，營收有望持續增長。\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 18,\n                        \"name\": \"匯率\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 20,\n                        \"name\": \"聯準會\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 22,\n                        \"name\": \"非農就業\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 26,\n                        \"name\": \"耐久財\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 28,\n                        \"name\": \"中國\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 31,\n                        \"name\": \"高毛利\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T05:57:33.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 20,\n                \"title\": \"投資不迷路?老闆幫你顧‼️\",\n                \"description\": \"fdsafdsfasfdasfasfsafsadfdsaf\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 4,\n                        \"name\": \"綠能\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"充電樁\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 8,\n                        \"name\": \"資安\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 14,\n                        \"name\": \"導線架\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 20,\n                        \"name\": \"聯準會\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 22,\n                        \"name\": \"非農就業\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-24T05:47:00.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 12,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T09:25:33.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 11,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T08:27:27.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 10,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T08:27:26.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 8,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T08:27:25.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 9,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T08:27:25.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            },\n            {\n                \"id\": 7,\n                \"title\": \"28\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"tags\": [],\n                \"publishDate\": \"2023-11-23T08:27:24.000Z\",\n                \"previewImage\": null,\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": null,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -7948,7 +7897,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+							"raw": "{{domain}}/{{prefix}}/search/tag?tag=2&page=0&size=30",
 							"host": [
 								"{{domain}}"
 							],
@@ -7960,7 +7909,7 @@
 							"query": [
 								{
 									"key": "tag",
-									"value": "1",
+									"value": "2",
 									"description": "[required] tag id"
 								},
 								{
@@ -7971,11 +7920,6 @@
 								{
 									"key": "size",
 									"value": "30",
-									"description": "[required]"
-								},
-								{
-									"key": "topic",
-									"value": "0",
 									"description": "[required]"
 								}
 							]
@@ -7988,7 +7932,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/search/tag?tag=1&page=0&size=30&topic=0",
+									"raw": "{{domain}}/{{prefix}}/search/tag?tag=2&page=0&size=30",
 									"host": [
 										"{{domain}}"
 									],
@@ -8000,7 +7944,7 @@
 									"query": [
 										{
 											"key": "tag",
-											"value": "1",
+											"value": "2",
 											"description": "[required] tag id"
 										},
 										{
@@ -8011,11 +7955,6 @@
 										{
 											"key": "size",
 											"value": "30",
-											"description": "[required]"
-										},
-										{
-											"key": "topic",
-											"value": "0",
 											"description": "[required]"
 										}
 									]
@@ -8039,15 +7978,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1246"
+									"value": "659"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"4de-R5rEWY8hwf5PrJL5gO6BxN2Ll/8\""
+									"value": "W/\"293-lEda/93dT44qESXUTqXSmGYgwl0\""
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 27 Nov 2023 10:15:41 GMT"
+									"value": "Wed, 28 Feb 2024 09:30:03 GMT"
 								},
 								{
 									"key": "Connection",
@@ -8059,7 +7998,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 2,\n                \"title\": \"你好，世界\",\n                \"description\": \"新手也能懂的 Kotlin Collection 賞玩門道在開發者的每日工作裡，其實有很大一塊都是在做資料處理。我們抓取、截取、爬取資料，對資料做整理、過濾、轉格式，最後輸出成有系統、有意義的資訊。而在資料處理這一塊，有很大一部份的工作都是跟 Collection 有關。Collection 簡單來說，就是一群相關聯資料的集合，是個在各程式語言裡普遍常見的資料類型，從最原始的 Array，到重複與否的 List、Set，以及 Key-Value 對應的 Map 都屬於這種物件。Kotlin 團隊深知資料處理的重要性，在標準函式庫（Stan…\",\n                \"author\": {\n                    \"name\": \"Rick\",\n                    \"id\": 2\n                },\n                \"companies\": [],\n                \"topics\": [\n                    {\n                        \"id\": 3,\n                        \"name\": \"基本面\"\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"籌碼面\"\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"技術面\"\n                    }\n                ],\n                \"tags\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"半導體\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-11-22T16:11:23.000Z\",\n                \"previewImage\": {\n                    \"id\": 1,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/1700385855903-sticker (1).png\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"source\": null\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"currentPage\": 0,\n        \"pageSize\": 30,\n        \"totalCount\": 1,\n        \"totalPage\": 1,\n        \"articles\": [\n            {\n                \"id\": 108,\n                \"title\": \"標題是你不是我\",\n                \"description\": \"測試內文fdsafdsaffdsafdsfaffdsafdsffdsafdfdsfdsfafdsafdsffdsafdsaf\",\n                \"author\": {\n                    \"name\": \"Voss\",\n                    \"id\": 3\n                },\n                \"companies\": [],\n                \"tags\": [\n                    {\n                        \"id\": 16,\n                        \"name\": \"總經\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"IC 設計\",\n                        \"isRecommended\": false\n                    },\n                    {\n                        \"id\": 126,\n                        \"name\": \"設計業\",\n                        \"isRecommended\": false\n                    }\n                ],\n                \"publishDate\": \"2023-12-14T09:37:04.000Z\",\n                \"previewImage\": {\n                    \"id\": 178,\n                    \"url\": \"https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/cb85404c-55b7-41b5-9b94-415ddf17eb85\"\n                },\n                \"type\": 1,\n                \"isLimited\": false,\n                \"level\": 2,\n                \"source\": null\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
@@ -8158,7 +8097,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\ntopic:\n\n0->全部, 1 -> 基礎面, 2 -> 技術面,3 -> 籌碼面,4 -> 其他"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad"
 		},
 		{
 			"name": "訂閱",
