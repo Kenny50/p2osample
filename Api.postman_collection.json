@@ -8208,6 +8208,83 @@
 			"name": "訂閱",
 			"item": [
 				{
+					"name": "首次付款啟用狀態",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/first-payment-availability",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"first-payment-availability"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "首次付款啟用狀態",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/dashboard/first-payment-availability",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"first-payment-availability"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-jamexjgsEI2aCjHBj2m4jnhRISM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 05 Mar 2024 11:14:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"available\": false\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "取得會員訂閱狀態",
 					"request": {
 						"method": "GET",
