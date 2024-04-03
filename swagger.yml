@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 更新首頁八篇文章 API、移除文章的 topic
-  version: 02.28.1845
+  description: 更新 search article by company 與 article create 與 update 的 validation
+  version: 04.03.1225
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -98,8 +98,11 @@ paths:
                 idToken:
                   type: string
                   description: google response code in query
-                  example: >-
-                    4%2F0AfJohXk4q_cgIxVtkbWK_80rZ_ulMfC8GaUcTzis_Vwmm5ioS3Ndx3dW1sPckDl_1z6aUw
+                  example: >+
+                    4/0AeaYSHB--0ilEyeLh1EwM7CFsXrGvu--GWNvS-3HBm9mS3X7qs6wlVlcUboD0T8d89L_XA
+
+
+
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -148,7 +151,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: xqfJgwfjSAkFAjJ9PW8T
+                  example: laUACRSYOPSleRms2C6o
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -1670,7 +1673,7 @@ paths:
                   example: '2'
                 columnId:
                   type: integer
-                  description: '[int]'
+                  description: '[int]當 level 為 1 時 columnId 非必填，當 level 為 2 時 columnId 為必填'
                   example: '1'
                 researchResource:
                   type: integer
@@ -1891,11 +1894,12 @@ paths:
                   example: '2'
                 columnId:
                   type: integer
-                  description: '[int]'
+                  description: '[int]當 level 為 1 時 columnId 非必填，當 level 為 2 時 columnId 為必填'
                   example: '1'
                 researchResource:
-                  type: string
+                  type: integer
                   description: '[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告'
+                  example: '1'
       parameters:
         - name: id
           in: path
@@ -1903,7 +1907,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '162'
+          example: '163'
       responses:
         '200':
           description: OK
@@ -7242,6 +7246,179 @@ paths:
                       type: 1
                       isLimited: false
                       level: 2
+                      source: null
+  /api/search/company:
+    get:
+      tags:
+        - 搜尋
+      summary: get by company
+      parameters:
+        - name: company
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: company id
+          example: '2'
+        - name: page
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          required: true
+          description: ''
+          example: '30'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '3613'
+            ETag:
+              schema:
+                type: string
+                example: W/"e1d-uHeF9N4CbSEM6dPE4gbRpEPt+c8"
+            Date:
+              schema:
+                type: string
+                example: Tue, 02 Apr 2024 15:31:50 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  currentPage: 0
+                  pageSize: 30
+                  totalCount: 4
+                  totalPage: 1
+                  articles:
+                    - id: 153
+                      title: Tiptap
+                      description: >-
+                        What does “headless” mean?There is no provided user
+                        interface, you are absolutely free to build whatever
+                        interface you want. No need to overwrite any class, to
+                        use !important or other hacks, just write whatever you
+                        like in the setup you are used to.#Why should I use
+                        Tiptap?ProseMirror is a well-writ
+                      author:
+                        name: Voss
+                        id: 3
+                      companies:
+                        - id: 2
+                          name: 亞泥
+                      tags: []
+                      publishDate: '2024-02-04T14:04:17.000Z'
+                      previewImage:
+                        id: 291
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/preview-image/191d7bb7-d06d-41e5-bede-0390ace85023
+                      type: 1
+                      isLimited: false
+                      level: 2
+                      source: null
+                    - id: 69
+                      title: 10/12 日報
+                      description: ''
+                      author:
+                        name: Voss
+                        id: 3
+                      companies:
+                        - id: 1
+                          name: 台泥
+                        - id: 2
+                          name: 亞泥
+                        - id: 3
+                          name: 嘉泥
+                      tags: []
+                      publishDate: '2023-11-28T18:02:42.000Z'
+                      previewImage:
+                        id: 80
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/e3c08ff3-a7db-4a26-88a0-90fa08d96569
+                      type: 1
+                      isLimited: true
+                      level: 3
+                      researchResource: 3
+                      source: null
+                    - id: 59
+                      title: 大戶退票狂飆 10月退票近40億、創兩年新高
+                      description: >-
+                        中央銀行27日公布10月存款不足退票統計，雖然全月營業日僅20日，但有2個月底峰日，退票張數大幅上升至4,444張，創近七個月新高，且在單月大戶退票高達7戶、8.9億元下，使整體退票金額狂升至39.4億元，創下2021年12月以來新高、近兩年新高；前八個月合計退票金額已達293.96億元。根據央行統計，10月票據交換張數達604萬575張，較9月大增57.32％；票據交換金額為1兆1,590億元，也較9月增加22.69％，主因9月完全沒有月底峰日，而10月有2個月底峰日，致使票據交換張數及金額均增加。央行官員表示，10月除2個月底峰日帶動，反映在整體票據交換量提高，更關鍵是大戶退票集中在10月
+                      author:
+                        name: Voss
+                        id: 3
+                      companies:
+                        - id: 2
+                          name: 亞泥
+                      tags: []
+                      publishDate: '2023-11-27T18:59:04.000Z'
+                      previewImage:
+                        id: 61
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/5b2b3354-c6cd-4a7a-ba6e-ed954f82775d
+                      type: 1
+                      isLimited: true
+                      level: 3
+                      researchResource: 4
+                      source: null
+                    - id: 51
+                      title: 尼采：上帝之死的思想探索
+                      description: >-
+                        在哲學史上，弗里德里希·尼采（Friedrich
+                        Nietzsche）被視為一位具有深遠影響的思想家，他的名言「上帝已死」（God is
+                        dead）成為他思想體系的一個核心概念。這句話並非單純地描述一種宗教信仰的崩潰，更是尼采對於現代社會、道德觀念以及人類存在意義的深刻反思。本文將深入探討尼采對於「上帝已死」的哲學觀點及其對當代思考的啟示。尼采的這個說法最初出現於他的《查拉圖斯特拉如是說》（Thus
+                        Spoke
+                        Zarathustra）中，其中一位「瘋人」宣告上帝之死。這並非指某位具體的神祇死去，而是指人們對於上帝存在的信仰已經瓦解。上帝作為絕對價值和道德的依歸不再被廣泛接受，人類的價值體系因
+                      author:
+                        name: Voss
+                        id: 3
+                      companies:
+                        - id: 1
+                          name: 台泥
+                        - id: 2
+                          name: 亞泥
+                        - id: 3
+                          name: 嘉泥
+                      tags: []
+                      publishDate: '2023-11-26T06:55:08.000Z'
+                      previewImage:
+                        id: 49
+                        url: >-
+                          https://jin-yu-feng-file-bucket.s3.ap-northeast-1.amazonaws.com/63d8587b-f603-48ae-b3a6-4c6e67211615
+                      type: 1
+                      isLimited: true
+                      level: 3
+                      researchResource: 4
                       source: null
   /api/search/title:
     get:
