@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "04.03.1225",
-        "description": "新增 search article by company，更新 article create 與 update 的 validation"
+        "version": "04.10.2130",
+        "description": "調整 search article by company 與 search article by tag 的 response"
     },
     "servers": [
         {

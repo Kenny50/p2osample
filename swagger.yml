@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 更新 search article by company 與 article create 與 update 的 validation
-  version: 04.03.1225
+  description: 調整 search article by company 與 search article by tag 的 response
+  version: 04.10.2130
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -7192,15 +7192,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '659'
+                example: '688'
             ETag:
               schema:
                 type: string
-                example: W/"293-lEda/93dT44qESXUTqXSmGYgwl0"
+                example: W/"2b0-gDFydyYDZ8N/yJ4+ErAF8PzBlOQ"
             Date:
               schema:
                 type: string
-                example: Wed, 28 Feb 2024 09:30:03 GMT
+                example: Wed, 10 Apr 2024 13:22:00 GMT
             Connection:
               schema:
                 type: string
@@ -7227,7 +7227,9 @@ paths:
                       author:
                         name: Voss
                         id: 3
-                      companies: []
+                      companies:
+                        - id: 282
+                          name: 長榮鋼
                       tags:
                         - id: 16
                           name: 總經
@@ -7293,15 +7295,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '3613'
+                example: '4018'
             ETag:
               schema:
                 type: string
-                example: W/"e1d-uHeF9N4CbSEM6dPE4gbRpEPt+c8"
+                example: W/"fb2-RPNySfa5SWtfPHZ5SramVayomlU"
             Date:
               schema:
                 type: string
-                example: Tue, 02 Apr 2024 15:31:50 GMT
+                example: Wed, 10 Apr 2024 13:21:44 GMT
             Connection:
               schema:
                 type: string
@@ -7336,7 +7338,10 @@ paths:
                       companies:
                         - id: 2
                           name: 亞泥
-                      tags: []
+                      tags:
+                        - id: 139
+                          name: fdsafdsfa
+                          isRecommended: false
                       publishDate: '2024-02-04T14:04:17.000Z'
                       previewImage:
                         id: 291
@@ -7359,7 +7364,16 @@ paths:
                           name: 亞泥
                         - id: 3
                           name: 嘉泥
-                      tags: []
+                      tags:
+                        - id: 12
+                          name: 生技
+                          isRecommended: false
+                        - id: 16
+                          name: 總經
+                          isRecommended: false
+                        - id: 66
+                          name: 技術型態
+                          isRecommended: false
                       publishDate: '2023-11-28T18:02:42.000Z'
                       previewImage:
                         id: 80
@@ -7380,7 +7394,13 @@ paths:
                       companies:
                         - id: 2
                           name: 亞泥
-                      tags: []
+                      tags:
+                        - id: 36
+                          name: 資本支出
+                          isRecommended: false
+                        - id: 38
+                          name: 訂單
+                          isRecommended: false
                       publishDate: '2023-11-27T18:59:04.000Z'
                       previewImage:
                         id: 61
@@ -7409,7 +7429,13 @@ paths:
                           name: 亞泥
                         - id: 3
                           name: 嘉泥
-                      tags: []
+                      tags:
+                        - id: 16
+                          name: 總經
+                          isRecommended: false
+                        - id: 57
+                          name: 總股東人數
+                          isRecommended: false
                       publishDate: '2023-11-26T06:55:08.000Z'
                       previewImage:
                         id: 49
