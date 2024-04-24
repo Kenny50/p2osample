@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 調整 search article by company 與 search article by tag 的 response
-  version: 04.10.2130
+  description: 調整靜態文件的 response
+  version: 04.24.1900
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -8461,15 +8461,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '92'
+                example: '100'
             ETag:
               schema:
                 type: string
-                example: W/"5c-po10ctN3txnAbS7R7WM1AoE9llE"
+                example: W/"64-dPatsjsZ7RhFCaLjgfPdL2EY/h4"
             Date:
               schema:
                 type: string
-                example: Sun, 14 Jan 2024 15:03:20 GMT
+                example: Wed, 24 Apr 2024 10:47:07 GMT
             Connection:
               schema:
                 type: string
@@ -8484,7 +8484,7 @@ paths:
                 type: object
               example:
                 data: >-
-                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract.pdf
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/金玉峰官網契約.pdf
   /api/pdf/sign-contract-example:
     get:
       tags:
@@ -8509,15 +8509,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '100'
+                example: '103'
             ETag:
               schema:
                 type: string
-                example: W/"64-+pTuHtB8Z4lC4OSmRuFM4H9+LAY"
+                example: W/"67-ijHKN28Hr3M8G8iT3+ev7luXtwQ"
             Date:
               schema:
                 type: string
-                example: Sun, 21 Jan 2024 06:09:26 GMT
+                example: Wed, 24 Apr 2024 10:47:14 GMT
             Connection:
               schema:
                 type: string
@@ -8532,7 +8532,7 @@ paths:
                 type: object
               example:
                 data: >-
-                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/sign-contract-example.pdf
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/官網契約簽署範本.pdf
   /api/pdf/customer-information:
     get:
       tags:
@@ -8557,15 +8557,15 @@ paths:
             Content-Length:
               schema:
                 type: integer
-                example: '99'
+                example: '94'
             ETag:
               schema:
                 type: string
-                example: W/"63-xRiC+1ePXPOQvOI2z+sN3cyxYjo"
+                example: W/"5e-w/LRimBG0/fzEHnM+E3qjk86Iac"
             Date:
               schema:
                 type: string
-                example: Fri, 16 Feb 2024 17:24:30 GMT
+                example: Wed, 24 Apr 2024 10:47:56 GMT
             Connection:
               schema:
                 type: string
@@ -8580,7 +8580,7 @@ paths:
                 type: object
               example:
                 data: >-
-                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/customer-information.pdf
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/客戶資料表.pdf
   /api/all-analytics:
     get:
       tags:

@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "04.10.2130",
-        "description": "調整 search article by company 與 search article by tag 的 response"
+        "version": "04.24.1900",
+        "description": "調整靜態文件的 response"
     },
     "servers": [
         {
