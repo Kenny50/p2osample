@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -5450,21 +5450,22 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "台泥",
+											"value": "台泥36",
 											"description": "[required] 公司名稱",
 											"type": "text"
 										},
 										{
 											"key": "code",
-											"value": "1101",
+											"value": "11036",
 											"description": "[required] 股票代碼",
 											"type": "text"
 										},
 										{
 											"key": "industry",
 											"value": "1",
-											"description": "[required] 產業 id ",
-											"type": "text"
+											"description": "產業 id ",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -5480,7 +5481,177 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "create new company",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "台泥9",
+													"description": "[required] 公司名稱",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "11019",
+													"description": "[required] 股票代碼",
+													"type": "text"
+												},
+												{
+													"key": "industry",
+													"value": "1",
+													"description": "產業 id ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"company"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 1790,\n        \"code\": \"11019\",\n        \"name\": \"台泥9\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update company",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "台泥",
+											"description": "[required] 公司名稱",
+											"type": "text"
+										},
+										{
+											"key": "code",
+											"value": "9995",
+											"description": "[required] 股票代碼",
+											"type": "text"
+										},
+										{
+											"key": "industry",
+											"value": "1",
+											"description": "產業 id ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"company",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1789",
+											"description": "公司 id"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update company",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "台泥7",
+													"description": "[required] 公司名稱",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "11017",
+													"description": "[required] 股票代碼",
+													"type": "text"
+												},
+												{
+													"key": "industry",
+													"value": "1",
+													"description": "產業 id ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/company/:id",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"company",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "1789",
+													"description": "公司 id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"message\": \"success\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "get company by id",

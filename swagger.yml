@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 調整靜態文件的 response
-  version: 04.24.1900
+  description: company 更新與創建
+  version: 04.26.2121
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -4275,7 +4275,49 @@ paths:
               required:
                 - name
                 - code
-                - industry
+              properties:
+                name:
+                  type: string
+                  description: 公司名稱
+                  example: 台泥36
+                code:
+                  type: integer
+                  description: 股票代碼
+                  example: '11036'
+                industry:
+                  type: integer
+                  description: '產業 id '
+                  example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  id: 1790
+                  code: '11019'
+                  name: 台泥9
+  /api/dashboard/company/{id}:
+    put:
+      tags:
+        - 後台 > 公司
+      summary: update company
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - name
+                - code
               properties:
                 name:
                   type: string
@@ -4284,17 +4326,34 @@ paths:
                 code:
                   type: integer
                   description: 股票代碼
-                  example: '1101'
+                  example: '9995'
                 industry:
                   type: integer
                   description: '產業 id '
                   example: '1'
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          description: 公司 id
+          example: '1789'
       responses:
         '200':
-          description: Successful response
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
           content:
-            application/json: {}
-  /api/dashboard/company/{id}:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  message: success
     get:
       tags:
         - 後台 > 公司
