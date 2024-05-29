@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_exporter_id": "30444893",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
 	},
 	"item": [
 		{
@@ -161,7 +161,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "laUACRSYOPSleRms2C6o",
+									"value": "eaoryaCTcIKnAwvDmemP",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -1554,7 +1554,7 @@
 					]
 				}
 			],
-			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\nlevel:  \n1 -> 訪客, 2 -> 會員, 3 -> 訂閱者\n\nresearchResource:  \n1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告"
+			"description": "type 是指資料類型\n\narticle type:  \n1 -> tiptap article, 2 -> ad\n\nlevel:  \n1 -> 訪客, 2 -> 會員, 3 -> 訂閱者\n\nresearchResource:\n\n1 -> 日報, 2 → 個股報告, 3 -> 小資功課, 4 -> 獨家專欄"
 		},
 		{
 			"name": "後台",
@@ -10425,7 +10425,7 @@
 		{
 			"name": "研究資源",
 			"item": [],
-			"description": "研究資源代號：\n\n- 日報 -> 1\n- 專題研究 -> 2\n- 個股報告 -> 3\n- 產業報告 -> 4"
+			"description": "研究資源代號：\n\n- 日報 -> 1\n- 個股報告 -> 2\n    \n- 小資功課 -> 3\n    \n- 獨家專欄 -> 4"
 		}
 	],
 	"auth": {

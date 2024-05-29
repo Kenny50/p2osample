@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "04.26.2121",
-        "description": "company 更新與創建"
+        "version": "05.29.2110",
+        "description": "文章 researchResource 代號調整"
     },
     "servers": [
         {

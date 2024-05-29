@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: company 更新與創建
-  version: 04.26.2121
+  description: 文章 researchResource 代號調整
+  version: 05.29.2110
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -30,8 +30,9 @@ tags:
       level:  
       1 -> 訪客, 2 -> 會員, 3 -> 訂閱者
 
-      researchResource:  
-      1 -> 日報, 2 -> 專題研究, 3 -> 個股報告, 4 -> 產業報告
+      researchResource:
+
+      1 -> 日報, 2 → 個股報告, 3 -> 小資功課, 4 -> 獨家專欄
   - name: 後台
   - name: 後台 > 文章
   - name: 後台 > Banner
@@ -72,9 +73,11 @@ tags:
       研究資源代號：
 
       - 日報 -> 1
-      - 專題研究 -> 2
-      - 個股報告 -> 3
-      - 產業報告 -> 4
+      - 個股報告 -> 2
+          
+      - 小資功課 -> 3
+          
+      - 獨家專欄 -> 4
 paths:
   /api/login/google:
     post:
@@ -151,7 +154,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: laUACRSYOPSleRms2C6o
+                  example: eaoryaCTcIKnAwvDmemP
                 redirectUrl:
                   type: string
                   example: https://www.google.com
