@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 文章 researchResource 代號調整
-  version: 05.29.2110
+  description: 新增金融友善 pdf
+  version: 07.27.1450
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -101,11 +101,8 @@ paths:
                 idToken:
                   type: string
                   description: google response code in query
-                  example: >+
-                    4/0AeaYSHB--0ilEyeLh1EwM7CFsXrGvu--GWNvS-3HBm9mS3X7qs6wlVlcUboD0T8d89L_XA
-
-
-
+                  example: >-
+                    4/0ATx3LY7TSLaY7zvkYXN-6DgtRUGbnfi_1a9BLKP8C2V1MHhrAh2WN7mgfBB_ODLZjoOXGg
                 redirectUrl:
                   type: string
                   example: http://localhost:5173
@@ -154,7 +151,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: eaoryaCTcIKnAwvDmemP
+                  example: 7fFtGfMQjJc93I6lU1Jj
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -388,7 +385,7 @@ paths:
             type: integer
           required: true
           description: link from email, 要有個前端專門處理驗證的畫面
-          example: '982677'
+          example: '528786'
       responses:
         '200':
           description: OK
@@ -1598,6 +1595,10 @@ paths:
       tags:
         - 後台 > 文章
       summary: create an article
+      description: |-
+        當 level 1 允許 columnId 欄位
+
+        當 level 3 允許 researchResource 欄位
       requestBody:
         content:
           multipart/form-data:
@@ -1965,7 +1966,7 @@ paths:
             type: integer
           required: true
           description: '[required] article id'
-          example: '2'
+          example: '163'
       responses:
         '200':
           description: OK
@@ -2692,7 +2693,6 @@ paths:
               properties:
                 file:
                   type: string
-                  description: '[檔案格式：jpg, jpeg, png]'
                   format: binary
       security:
         - bearerAuth: []
@@ -2762,6 +2762,8 @@ paths:
       tags:
         - 後台 > 帳戶 > Admin（後台管理員-管理後台帳號）
       summary: 後台帳號 list
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: OK
@@ -4663,6 +4665,7 @@ paths:
                 name:
                   type: string
                   description: ''
+                  example: dsd
       responses:
         '200':
           description: Successful response
@@ -4805,6 +4808,30 @@ paths:
       tags:
         - 後台 > 靜態文件
       summary: 上傳客戶資料填寫表 PDF
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  description: upload
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/pdf/financial-friendly:
+    put:
+      tags:
+        - 後台 > 靜態文件
+      summary: 上傳金融友善 PDF
       requestBody:
         content:
           multipart/form-data:
@@ -4981,7 +5008,7 @@ paths:
             type: integer
           required: true
           description: '[required] [int]'
-          example: '3'
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -8600,6 +8627,54 @@ paths:
       tags:
         - 靜態文件
       summary: 取得客戶資料填寫表 PDF
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '94'
+            ETag:
+              schema:
+                type: string
+                example: W/"5e-w/LRimBG0/fzEHnM+E3qjk86Iac"
+            Date:
+              schema:
+                type: string
+                example: Wed, 24 Apr 2024 10:47:56 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data: >-
+                  https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/客戶資料表.pdf
+  /api/pdf/financial-friendly:
+    get:
+      tags:
+        - 靜態文件
+      summary: 取得金融友善 PDF
       responses:
         '200':
           description: OK

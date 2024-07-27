@@ -4,8 +4,8 @@
 		"name": "Api",
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30444893",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30444893"
+		"_exporter_id": "30381842",
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -22,7 +22,8 @@
 									"pm.environment.set(\"access_token\", jsonData.data.accessToken);",
 									"pm.environment.set(\"refresh_token\", jsonData.data.refreshToken);"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -34,7 +35,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "4/0AeaYSHB--0ilEyeLh1EwM7CFsXrGvu--GWNvS-3HBm9mS3X7qs6wlVlcUboD0T8d89L_XA\n\n\n\n",
+									"value": "4/0ATx3LY7TSLaY7zvkYXN-6DgtRUGbnfi_1a9BLKP8C2V1MHhrAh2WN7mgfBB_ODLZjoOXGg",
 									"description": "[required] google response code in query",
 									"type": "text"
 								},
@@ -161,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "eaoryaCTcIKnAwvDmemP",
+									"value": "7fFtGfMQjJc93I6lU1Jj",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -753,7 +754,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=982677",
+							"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=528786",
 							"host": [
 								"{{domain}}"
 							],
@@ -765,7 +766,7 @@
 							"query": [
 								{
 									"key": "signature",
-									"value": "982677",
+									"value": "528786",
 									"description": "[required] link from email, 要有個前端專門處理驗證的畫面"
 								}
 							]
@@ -1086,7 +1087,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": []
+									"src": "/Users/chang/Desktop/IMG20221116133957_3.jpg"
 								}
 							]
 						},
@@ -1901,7 +1902,8 @@
 											"key": "researchResource",
 											"value": "1",
 											"description": "[int]1: 日報, 2: 專題研究, 3: 個股報告, 4: 產業報告",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -1915,7 +1917,8 @@
 										"{{internalPrefix}}",
 										"article"
 									]
-								}
+								},
+								"description": "當 level 1 允許 columnId 欄位\n\n當 level 3 允許 researchResource 欄位"
 							},
 							"response": [
 								{
@@ -2358,7 +2361,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2",
+											"value": "163",
 											"description": "[required] article id"
 										}
 									]
@@ -2869,7 +2872,13 @@
 											"key": "file",
 											"description": "[required][檔案格式：jpg, jpeg, png]",
 											"type": "file",
-											"src": "/Users/rui/Downloads/sticker (1) (16).png"
+											"src": "/Users/rui/Downloads/sticker (1) (16).png",
+											"disabled": true
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/chang/Desktop/IMG20221116133957_3.jpg"
 										}
 									]
 								},
@@ -2983,6 +2992,16 @@
 								{
 									"name": "後台帳號 list",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{refresh_token}}",
+													"type": "string"
+												}
+											]
+										},
 										"method": "GET",
 										"header": [],
 										"url": {
@@ -4113,7 +4132,7 @@
 											"key": "file",
 											"description": "user avatar",
 											"type": "file",
-											"src": "/Users/rui/Downloads/sticker (1).png"
+											"src": "/Users/chang/Desktop/IMG20221116133957_3.jpg"
 										}
 									]
 								},
@@ -6080,23 +6099,23 @@
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/1710東聯 元富 20230512 OW.pdf"
+											"src": "/Users/chang/Downloads/1476儒鴻 第一金 20230522 SB.pdf"
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/2049上銀 第一金 20230512 OW.pdf"
+											"src": "/Users/chang/Downloads/1476儒鴻 第一金 20230622 N.pdf"
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 永豐 20230512 N.pdf",
+											"src": [],
 											"disabled": true
 										},
 										{
 											"key": "files",
 											"type": "file",
-											"src": "/Users/chang/Downloads/pdf sample/2317鴻海 宏遠 20230512 SB.pdf",
+											"src": [],
 											"disabled": true
 										}
 									]
@@ -6254,7 +6273,7 @@
 									"formdata": [
 										{
 											"key": "name",
-											"value": "",
+											"value": "dsd",
 											"description": "[required]",
 											"type": "text"
 										}
@@ -6561,6 +6580,47 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "上傳金融友善 PDF",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"description": "[required] upload",
+											"type": "file",
+											"src": "/Users/chang/Downloads/金融友善.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/pdf/financial-friendly",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"pdf",
+										"financial-friendly"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -6839,7 +6899,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "3",
+											"value": "1",
 											"description": "[required] [int]"
 										}
 									]
@@ -7274,8 +7334,7 @@
 									"key": "isRecommended",
 									"value": "true",
 									"description": "[required] boolean",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								}
 							]
 						},
@@ -7299,8 +7358,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/x-www-form-urlencoded",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -8895,8 +8954,8 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"name": "Content-Type",
 										"value": "application/json",
+										"name": "Content-Type",
 										"type": "text"
 									}
 								],
@@ -9584,6 +9643,83 @@
 								"api",
 								"pdf",
 								"customer-information"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "取得客戶資料填寫表 PDF",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/api/pdf/customer-information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"pdf",
+										"customer-information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-w/LRimBG0/fzEHnM+E3qjk86Iac\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Apr 2024 10:47:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"https://jing-yu-feng-pdf-bucket.s3.ap-northeast-1.amazonaws.com/客戶資料表.pdf\"\n}"
+						}
+					]
+				},
+				{
+					"name": "取得金融友善 PDF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/pdf/financial-friendly",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"pdf",
+								"financial-friendly"
 							]
 						}
 					},
