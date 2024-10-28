@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "7fFtGfMQjJc93I6lU1Jj",
+									"value": "KUSbUk3I7rfONEEjN5PX",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -1579,7 +1579,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?title=你好&type=1&isDraft=false&author=2&tag=2",
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/article?page=0&size=10&level=1",
 									"host": [
 										"{{domain}}"
 									],
@@ -1592,27 +1592,47 @@
 										{
 											"key": "title",
 											"value": "你好",
-											"description": "[string]"
+											"description": "[string]",
+											"disabled": true
 										},
 										{
 											"key": "type",
 											"value": "1",
-											"description": "[int] 1: article, 2: ad"
+											"description": "[int] 1: article, 2: ad",
+											"disabled": true
 										},
 										{
 											"key": "isDraft",
-											"value": "false",
-											"description": "[boolean]"
+											"value": "true",
+											"description": "[boolean]",
+											"disabled": true
 										},
 										{
 											"key": "author",
 											"value": "2",
-											"description": "[int] author id"
+											"description": "[int] author id",
+											"disabled": true
 										},
 										{
 											"key": "tag",
 											"value": "2",
-											"description": "[int] tag id"
+											"description": "[int] tag id",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "0",
+											"description": "[int] page number"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"description": "[int] size nuumber"
+										},
+										{
+											"key": "level",
+											"value": "1",
+											"description": "[int] level"
 										}
 									]
 								},
@@ -8827,7 +8847,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"plan\": \"month\",\n    \"autoRenewal\": true,\n    \"companyUniformSerialNo\": \"12345678\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n\t\"plan\": \"month\",\n    \"autoRenewal\": true,\n    \"companyUniformSerialNo\": \"12345678\",\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -8897,7 +8917,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"companyUniformSerialNo\": null,\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"raw": "{\n    \"companyUniformSerialNo\": null,\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

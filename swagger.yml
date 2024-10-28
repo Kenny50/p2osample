@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 新增金融友善 pdf
-  version: 07.27.1450
+  description: 要求藍新付款＆＆重新要求藍新付款 增加 公司抬頭 欄位
+  version: 10.28.1630
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -151,7 +151,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: 7fFtGfMQjJc93I6lU1Jj
+                  example: KUSbUk3I7rfONEEjN5PX
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -1492,36 +1492,24 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - name: title
-          in: query
-          schema:
-            type: string
-          description: '[string]'
-          example: 你好
-        - name: type
+        - name: page
           in: query
           schema:
             type: integer
-          description: '[int] 1: article, 2: ad'
+          description: '[int] page number'
+          example: '0'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          description: '[int] size nuumber'
+          example: '10'
+        - name: level
+          in: query
+          schema:
+            type: integer
+          description: '[int] level'
           example: '1'
-        - name: isDraft
-          in: query
-          schema:
-            type: boolean
-          description: '[boolean]'
-          example: 'false'
-        - name: author
-          in: query
-          schema:
-            type: integer
-          description: '[int] author id'
-          example: '2'
-        - name: tag
-          in: query
-          schema:
-            type: integer
-          description: '[int] tag id'
-          example: '2'
       responses:
         '200':
           description: OK
@@ -7819,6 +7807,7 @@ paths:
                 plan: month
                 autoRenewal: true
                 companyUniformSerialNo: '12345678'
+                customerName: 狂客多媒體公司
                 returnUrl: https://www.google.com
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
@@ -7857,6 +7846,7 @@ paths:
               type: object
               example:
                 companyUniformSerialNo: null
+                customerName: 狂客多媒體公司
                 returnUrl: https://www.google.com
                 backUrl: https://gnim.com.tw/payment-canceled
       responses:
