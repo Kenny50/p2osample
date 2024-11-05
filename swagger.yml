@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 要求藍新付款＆＆重新要求藍新付款 增加 公司抬頭 欄位
-  version: 10.28.1630
+  description: 轉帳開通功能
+  version: 1501.05.16
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -78,6 +78,7 @@ tags:
       - 小資功課 -> 3
           
       - 獨家專欄 -> 4
+  - name: 轉帳訂閱
 paths:
   /api/login/google:
     post:
@@ -151,7 +152,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: KUSbUk3I7rfONEEjN5PX
+                  example: UDSLebjFPT0vBlBaSy52
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3290,6 +3291,7 @@ paths:
           schema:
             type: string
           description: '`waiting` / `refunded`'
+          example: waiting
       responses:
         '200':
           description: OK
@@ -3332,73 +3334,149 @@ paths:
                 type: object
               example:
                 currentPage: 0
-                pageSize: 2
-                totalCount: 2
+                pageSize: 3
+                totalCount: 3
                 data:
-                  - id: 5
-                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                  - id: 136
+                    memberId: JYF-027x792
                     plan: month
-                    email: no-reply@gmail.com
-                    isRefunded: true
-                    canceledAt: '2023-11-24T18:49:05.000Z'
-                    refundedAt: '2023-11-26T09:42:42.000Z'
-                    maskedCreditCardNo: 400022******1111
-                    type: refund
-                    amount: 18
-                    startAt: null
-                    endAt: null
-                    createdByUserId: 7
-                    paymentPlatformNo: null
-                    paymentResponsePayload: null
-                    createdAt: '2023-11-26T09:42:42.000Z'
-                    updatedAt: '2023-11-26T09:44:40.000Z'
-                    invoice:
-                      id: 1
-                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                      billId: 6
-                      status: issued
-                      amount: 188
-                      taxAmount: 9
-                      uniformInvoiceNo: AB00000001
-                      uniformInvoiceRandomNo: '6342'
-                      email: no-reply@gmail.com
-                      companyUniformSerialNo: '12345678'
-                      eInvoicePlatformNo: testing_invoice_1212
-                      requestPayload: {}
-                      responsePayload: {}
-                      createdAt: '2023-11-21T16:44:27.000Z'
-                      updatedAt: '2023-11-21T16:44:27.000Z'
-                  - id: 7
-                    memberId: 6a518ce9-8bcd-41d4-911e-e849b3b21cf6
-                    plan: month
-                    email: yot4106@gmail.com
+                    email: kennethchangla@gmail.com
                     isRefunded: false
+                    canceledAt: '2024-11-05T08:38:33.000Z'
+                    companyUniformSerialNo: '12345678'
                     maskedCreditCardNo: 400022******1111
                     type: payment
-                    amount: 170
-                    startAt: '2023-11-21T16:44:27.000Z'
-                    endAt: '2023-12-21T16:44:27.000Z'
+                    amount: 10000
+                    firstPaidAt: '2024-11-05T08:33:33.000Z'
+                    fullyRefundable: true
+                    approvedAt: '2024-11-05T08:34:38.000Z'
+                    startAt: '2024-11-05T08:34:38.000Z'
+                    endAt: '2024-12-04T15:59:59.000Z'
                     createdByUserId: null
-                    paymentPlatformNo: mock_order_1700585052751_1
+                    paymentPlatformNo: neweb_louislo_1730795585287_1
                     paymentResponsePayload: null
-                    createdAt: '2023-11-21T16:44:27.000Z'
-                    updatedAt: '2023-11-21T16:44:27.000Z'
+                    createdAt: '2024-11-05T08:33:34.000Z'
+                    updatedAt: '2024-11-05T08:34:38.000Z'
                     invoice:
-                      id: 1
-                      memberId: 6a518ce9-8bcd-41d4-911e-e849b3b21cf6
-                      billId: 4
-                      status: issued
-                      amount: 188
-                      taxAmount: 9
-                      uniformInvoiceNo: AB00000001
-                      uniformInvoiceRandomNo: '6342'
-                      email: no-reply@gmail.com
+                      id: 66
+                      memberId: JYF-027x792
+                      subscriptionId: 136
+                      billId: 135
+                      amount: 10000
+                      taxAmount: 196
+                      uniformInvoiceNo: FF66600105
+                      email: kennethchangla@gmail.com
                       companyUniformSerialNo: '12345678'
-                      eInvoicePlatformNo: testing_invoice_1212
-                      requestPayload: {}
-                      responsePayload: {}
-                      createdAt: '2023-11-21T16:44:27.000Z'
-                      updatedAt: '2023-11-21T16:44:27.000Z'
+                      requestPayload:
+                        idno: Giveme05
+                        sign: D93F346353BCD114C95F7689696A2248
+                        email: kennethchangla@gmail.com
+                        items:
+                          - name: 顧問費(日報月訂閱)
+                            money: 9804
+                            number: 1
+                        phone: '12345678'
+                        sales: 9804
+                        amount: 196
+                        uncode: '53418005'
+                        content: jinyufeng_local
+                        taxType: 0
+                        datetime: '2024-11-05'
+                        taxState: '1'
+                        totalFee: 10000
+                        timeStamp: 1730795614117
+                        customerName: 狂客多媒體公司
+                      responsePayload:
+                        msg: 開立成功！
+                        code: FF66600105
+                        phone: '12345678'
+                        success: 'true'
+                        totalFee: 10000元
+                      createdAt: '2024-11-05T08:33:34.000Z'
+                      updatedAt: '2024-11-05T08:33:35.000Z'
+                    paymentType: creditCard
+                  - id: 120
+                    memberId: 418b26c1-0073-4c20-a478-80b50202b3a5
+                    plan: year
+                    email: smilerex5566@gmail.com
+                    isRefunded: false
+                    canceledAt: '2024-03-10T14:23:50.000Z'
+                    maskedCreditCardNo: 400022******1111
+                    type: payment
+                    amount: 60000
+                    fullyRefundable: false
+                    startAt: null
+                    endAt: null
+                    createdByUserId: null
+                    paymentPlatformNo: neweb_dev_1710080597576_1
+                    paymentResponsePayload: null
+                    createdAt: '2024-03-10T14:23:34.000Z'
+                    updatedAt: '2024-03-10T14:23:34.000Z'
+                    paymentType: creditCard
+                  - id: 96
+                    memberId: 66d31d71-8151-4059-b291-fd5cc7d19e86
+                    plan: quarter
+                    email: otavio.wang@gmail.com
+                    isRefunded: false
+                    canceledAt: '2024-02-05T12:46:35.000Z'
+                    maskedCreditCardNo: 400022******1111
+                    type: payment
+                    amount: 18888
+                    fullyRefundable: false
+                    approvedAt: '2024-02-05T12:44:50.000Z'
+                    startAt: '2024-02-05T12:44:50.000Z'
+                    endAt: '2024-05-06T15:59:59.000Z'
+                    createdByUserId: null
+                    paymentPlatformNo: neweb_dev_1707132291004_1
+                    paymentResponsePayload: null
+                    createdAt: '2024-02-05T11:25:40.000Z'
+                    updatedAt: '2024-02-05T12:44:50.000Z'
+                    invoice:
+                      id: 38
+                      memberId: 66d31d71-8151-4059-b291-fd5cc7d19e86
+                      subscriptionId: 96
+                      billId: 91
+                      amount: 18888
+                      taxAmount: 944
+                      uniformInvoiceNo: AC00000013
+                      uniformInvoiceRandomNo: '3834'
+                      email: otavio.wang@gmail.com
+                      eInvoicePlatformNo: ez_dev_1707132340
+                      requestPayload:
+                        Amt: 17944
+                        Status: 1
+                        TaxAmt: 944
+                        ItemAmt: 18888
+                        TaxRate: 5
+                        TaxType: 1
+                        Version: '1.5'
+                        Category: B2C
+                        ItemName: 金玉峰季訂閱
+                        ItemUnit: 期
+                        TotalAmt: 18888
+                        BuyerName: AWei
+                        ItemCount: 1
+                        ItemPrice: 18888
+                        PrintFlag: 'N'
+                        TimeStamp: 1707132340
+                        BuyerEmail: otavio.wang@gmail.com
+                        CarrierNum: otavio.wang@gmail.com
+                        CarrierType: 2
+                        RespondType: JSON
+                        MerchantOrderNo: ez_dev_1707132340
+                      responsePayload:
+                        TotalAmt: 18888
+                        CheckCode: >-
+                          9ABFA542200EC03929BB971DA01802D7940F966C89C672921985780B54E27B1F
+                        RandomNum: '3834'
+                        CreateTime: '2024-02-05 19:25:41'
+                        MerchantID: '35712141'
+                        InvoiceNumber: AC00000013
+                        InvoiceTransNo: '24020519254117458'
+                        MerchantOrderNo: ez_dev_1707132340
+                      createdAt: '2024-02-05T11:25:40.000Z'
+                      updatedAt: '2024-02-05T11:25:41.000Z'
+                    paymentType: creditCard
   /api/dashboard/upsert-refund-amount:
     post:
       tags:
@@ -3410,8 +3488,8 @@ paths:
             schema:
               type: object
               example:
-                memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                subscriptionId: 5
+                memberId: JYF-027x792
+                subscriptionId: 136
                 amount: 18
       responses:
         '200':
@@ -3426,44 +3504,73 @@ paths:
                 type: object
               example:
                 data:
-                  id: 5
-                  memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                  id: 136
+                  memberId: JYF-027x792
                   isSubscribing: false
                   isRefunded: true
                   autoRenewal: false
                   status: canceled
                   plan: month
-                  amount: 170
-                  email: no-reply@gmail.com
-                  startAt: '2023-11-20T17:40:35.000Z'
-                  canceledAt: '2023-11-24T18:49:05.000Z'
-                  refundedAt: '2023-11-26T09:42:42.000Z'
+                  amount: 10000
+                  email: kennethchangla@gmail.com
+                  startAt: '2024-11-05T08:34:38.000Z'
+                  endAt: '2024-11-05T08:33:33.000Z'
+                  canceledAt: '2024-11-05T08:38:33.000Z'
+                  refundedAt: '2024-11-05T08:39:12.000Z'
+                  approvedAt: '2024-11-05T08:34:38.000Z'
+                  companyUniformSerialNo: '12345678'
                   maskedCreditCardNo: 400022******1111
-                  createdAt: '2023-11-20T17:39:50.000Z'
-                  updatedAt: '2023-11-26T09:42:42.000Z'
+                  createdAt: '2024-11-05T08:33:05.000Z'
+                  updatedAt: '2024-11-05T08:39:12.000Z'
+                  paymentPlatformNo: neweb_louislo_1730795585287
+                  paymentResponsePayload:
+                    Result:
+                      CardNo: 400022******1111
+                      TradeNo: '24110516333266949'
+                      AuthBank: Taishin
+                      AuthCode: '795612'
+                      AuthTime: '20241105163332'
+                      PeriodNo: P241105163332eB65yD
+                      AuthTimes: '2'
+                      DateArray: 2024-11-05,2024-12-05
+                      PeriodAmt: '10000'
+                      EscrowBank: HNCB
+                      MerchantID: MS350610354
+                      PeriodType: M
+                      RespondCode: '00'
+                      PaymentMethod: CREDIT
+                      MerchantOrderNo: neweb_louislo_1730795585287
+                    Status: SUCCESS
+                    Message: 委託單成立，且首次授權成功(00)
                   bills:
-                    - id: 1
-                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                      subscriptionId: 5
+                    - id: 135
+                      memberId: JYF-027x792
+                      subscriptionId: 136
                       plan: month
                       type: payment
-                      amount: 170
+                      amount: 10000
                       maskedCreditCardNo: 400022******1111
-                      startAt: '2023-11-20T17:40:35.000Z'
-                      endAt: '2023-12-20T17:40:35.000Z'
-                      paymentPlatformNo: mock_order_1700501990814_1
-                      createdAt: '2023-11-20T17:40:35.000Z'
-                      updatedAt: '2023-11-20T17:40:35.000Z'
-                    - id: 6
-                      memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                      subscriptionId: 5
+                      startAt: '2024-11-05T08:34:38.000Z'
+                      endAt: '2024-12-04T15:59:59.000Z'
+                      paymentPlatformNo: neweb_louislo_1730795585287_1
+                      createdAt: '2024-11-05T08:33:34.000Z'
+                      updatedAt: '2024-11-05T08:34:38.000Z'
+                      paymentType: creditCard
+                    - id: 136
+                      memberId: JYF-027x792
+                      subscriptionId: 136
                       plan: month
                       type: refund
                       amount: 18
                       maskedCreditCardNo: 400022******1111
-                      createdByUserId: 7
-                      createdAt: '2023-11-26T09:42:42.000Z'
-                      updatedAt: '2023-11-26T09:44:40.000Z'
+                      startAt: '2024-11-05T08:34:38.000Z'
+                      endAt: '2024-11-05T08:33:33.000Z'
+                      createdByUserId: 2
+                      paymentPlatformNo: neweb_louislo_1730795585287_1
+                      createdAt: '2024-11-05T08:39:12.000Z'
+                      updatedAt: '2024-11-05T08:39:12.000Z'
+                      paymentType: creditCard
+                  paymentType: creditCard
   /api/dashboard/pending-subscriptions:
     get:
       tags:
@@ -3514,52 +3621,31 @@ paths:
                 pageSize: 1
                 totalCount: 1
                 data:
-                  - id: 28
-                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                  - id: 134
+                    memberId: JYF-027x792
                     isSubscribing: false
                     autoRenewal: false
                     status: pending
-                    plan: month
-                    amount: 6888
-                    email: louis@gmail.com
-                    nextRenewalDate: '2024-03-31'
-                    startAt: '2023-12-30T08:35:25.000Z'
-                    companyUniformSerialNo: '12345678'
-                    maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-12-30T08:35:01.000Z'
-                    updatedAt: '2023-12-30T10:01:21.000Z'
-                    paymentPlatformNo: neweb_louislo_1703925301720
-                    paymentResponsePayload:
-                      Result:
-                        CardNo: 400022******1111
-                        TradeNo: '23123016352490296'
-                        AuthBank: KGI
-                        AuthCode: '336421'
-                        AuthTime: '20231230163525'
-                        PeriodNo: P231230163524QrJe6Q
-                        AuthTimes: 2
-                        DateArray: 2023-12-30,2024-01-30
-                        PeriodAmt: '6888'
-                        EscrowBank: HNCB
-                        MerchantID: MS350610354
-                        PeriodType: M
-                        RespondCode: '00'
-                        PaymentMethod: CREDIT
-                        MerchantOrderNo: neweb_louislo_1703925301720
-                      Status: SUCCESS
-                      Message: 委託單成立，且首次授權成功
+                    plan: 2day
+                    amount: 111
+                    email: kennethchangla@gmail.com
+                    createdAt: '2024-11-05T08:26:48.000Z'
+                    updatedAt: '2024-11-05T08:26:48.000Z'
+                    paymentPlatformNo: transfer_1730795208761
                     member:
-                      id: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                      name: Louis
-                      email: louis@gmail.com
+                      id: JYF-027x792
+                      name: 永翰
+                      email: kennethchangla@gmail.com
                       avatar: >-
-                        https://profile.line-scdn.net/0hT4vTh6dbCxtbLSL6LPd1ZCt9CHF4XFIJdUwWf20tUyxmHB8fcE5AeT19AnxhG0hJdRxDKj1-UXhXPnx9RXv3L1wdVipnHUtKdE1H_Q
+                        https://profile.line-scdn.net/0h9kRtoS0HZkR_DXZzY0YYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog
                       loginType: line
-                      thirdPartyIdentifier: U41d6b8cf0cae1003d85ec7f0c5772c0d
-                      isEmailValidate: false
+                      thirdPartyIdentifier: U6ab58c3a7cd561d905a0a91bcc83d161
+                      isEmailValidate: true
                       isSubscribing: false
-                      phone: ''
-                      isPhoneValidate: false
+                      phone: '0936965814'
+                      isPhoneValidate: true
+                    bills: []
+                    paymentType: transfer
   /api/dashboard/approve-subscription:
     post:
       tags:
@@ -3571,8 +3657,8 @@ paths:
             schema:
               type: object
               example:
-                memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                subscriptionId: 5
+                memberId: JYF-027x792
+                subscriptionId: 132
       responses:
         '200':
           content:
@@ -3640,6 +3726,24 @@ paths:
               type: object
               example:
                 available: false
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/approve-transfer-subscription:
+    post:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: dashboard 審核開通轉帳訂閱
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                memberId: JYF-027x792
+                subscriptionId: 134
       responses:
         '200':
           description: Successful response
@@ -7670,20 +7774,24 @@ paths:
                   summary: 使用者訂閱中
                   value:
                     data:
-                      id: 3
-                      memberId: 5
+                      id: 136
+                      memberId: JYF-027x792
                       isSubscribing: true
+                      autoRenewal: true
                       status: active
                       plan: month
-                      amount: 6888
-                      email: test@gnim.com
-                      nextRenewalDate: '2023-12-04'
-                      startAt: '2023-11-04T10:10:47.000Z'
-                      endAt: null
+                      amount: 10000
+                      email: kennethchangla@gmail.com
+                      nextRenewalDate: '2024-12-05'
+                      firstPaidAt: '2024-11-05T08:33:33.000Z'
+                      fullyRefundable: true
+                      approvedAt: '2024-11-05T08:34:38.000Z'
+                      startAt: '2024-11-05T08:34:38.000Z'
                       companyUniformSerialNo: '12345678'
                       maskedCreditCardNo: 400022******1111
-                      createdAt: '2023-11-04T10:05:47.000Z'
-                      updatedAt: '2023-11-04T10:05:47.000Z'
+                      createdAt: '2024-11-05T08:33:05.000Z'
+                      updatedAt: '2024-11-05T08:34:39.000Z'
+                      paymentType: creditCard
                 example-1:
                   summary: 使用者取消訂閱，未退款未到期
                   value:
@@ -7747,32 +7855,165 @@ paths:
               schema:
                 type: object
               example:
-                currentPage: 0
-                pageSize: 30
-                totalCount: 515
+                currentPage: 1
+                pageSize: 10
+                totalCount: 15
                 data:
-                  - id: 14
-                    memberId: 5
-                    subscriptionId: 3
+                  - id: 132
+                    memberId: JYF-027x792
+                    subscriptionId: 133
+                    plan: 2day
+                    type: refund
+                    amount: 18
+                    startAt: '2024-11-05T08:17:40.000Z'
+                    endAt: '2024-12-05T15:59:59.000Z'
+                    isChargedSystemFee: false
+                    isFullyRefunded: false
+                    createdAt: '2024-11-05T08:18:33.000Z'
+                    updatedAt: '2024-11-05T08:18:33.000Z'
+                    paymentType: transfer
+                  - id: 131
+                    memberId: JYF-027x792
+                    subscriptionId: 133
+                    plan: 2day
+                    type: payment
+                    amount: 111
+                    startAt: '2024-11-05T08:17:40.000Z'
+                    endAt: '2024-11-06T15:59:59.000Z'
+                    createdAt: '2024-11-05T08:17:40.000Z'
+                    updatedAt: '2024-11-05T08:17:40.000Z'
+                    paymentType: transfer
+                  - id: 130
+                    memberId: JYF-027x792
+                    subscriptionId: 132
+                    plan: 2day
+                    type: refund
+                    amount: 18
+                    startAt: '2024-11-04T04:45:56.000Z'
+                    endAt: '2024-12-04T15:59:59.000Z'
+                    isChargedSystemFee: false
+                    isFullyRefunded: false
+                    createdAt: '2024-11-04T04:47:23.000Z'
+                    updatedAt: '2024-11-04T04:47:23.000Z'
+                    paymentType: transfer
+                  - id: 129
+                    memberId: JYF-027x792
+                    subscriptionId: 132
+                    plan: 2day
+                    type: payment
+                    amount: 111
+                    startAt: '2024-11-04T04:45:56.000Z'
+                    endAt: '2024-11-05T15:59:59.000Z'
+                    createdAt: '2024-11-04T04:45:56.000Z'
+                    updatedAt: '2024-11-04T04:45:56.000Z'
+                    paymentType: transfer
+                  - id: 127
+                    memberId: JYF-027x792
+                    subscriptionId: 129
+                    plan: 2day
+                    type: refund
+                    amount: 18
+                    startAt: '2024-11-04T04:08:10.000Z'
+                    endAt: '2024-12-04T15:59:59.000Z'
+                    isChargedSystemFee: false
+                    isFullyRefunded: false
+                    createdAt: '2024-11-04T04:15:59.000Z'
+                    updatedAt: '2024-11-04T04:15:59.000Z'
+                    paymentType: transfer
+                  - id: 126
+                    memberId: JYF-027x792
+                    subscriptionId: 129
+                    plan: 2day
+                    type: payment
+                    amount: 111
+                    startAt: '2024-11-04T04:08:10.000Z'
+                    endAt: '2024-11-05T15:59:59.000Z'
+                    createdAt: '2024-11-04T04:08:10.000Z'
+                    updatedAt: '2024-11-04T04:08:10.000Z'
+                    paymentType: transfer
+                  - id: 125
+                    memberId: JYF-027x792
+                    subscriptionId: 128
+                    plan: 2day
+                    type: refund
+                    amount: 18
+                    startAt: '2024-11-04T03:42:57.000Z'
+                    endAt: '2024-12-04T15:59:59.000Z'
+                    isChargedSystemFee: false
+                    isFullyRefunded: false
+                    createdAt: '2024-11-04T04:00:55.000Z'
+                    updatedAt: '2024-11-04T04:00:55.000Z'
+                    paymentType: transfer
+                  - id: 124
+                    memberId: JYF-027x792
+                    subscriptionId: 128
+                    plan: 2day
+                    type: payment
+                    amount: 111
+                    startAt: '2024-11-04T03:42:57.000Z'
+                    endAt: '2024-11-05T15:59:59.000Z'
+                    createdAt: '2024-11-04T03:42:57.000Z'
+                    updatedAt: '2024-11-04T03:42:57.000Z'
+                    paymentType: transfer
+                  - id: 123
+                    memberId: JYF-027x792
+                    subscriptionId: 127
+                    plan: 2day
+                    type: payment
+                    amount: 111
+                    startAt: '2024-11-04T03:24:46.000Z'
+                    endAt: '2024-11-05T15:59:59.000Z'
+                    createdAt: '2024-11-04T03:24:46.000Z'
+                    updatedAt: '2024-11-04T03:24:46.000Z'
+                    paymentType: transfer
+                  - id: 122
+                    memberId: JYF-027x792
+                    subscriptionId: 124
                     plan: month
                     type: payment
-                    startAt: '2023-11-04T10:10:47.000Z'
-                    endAt: '2023-12-04T10:10:47.000Z'
-                    amount: 6888
-                    taxAmount: 300
+                    amount: 10000
                     maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-11-04T10:05:47.000Z'
-                  - id: 6
-                    memberId: 5
-                    subscriptionId: 3
+                    startAt: null
+                    endAt: null
+                    createdAt: '2024-10-25T08:06:38.000Z'
+                    updatedAt: '2024-10-25T08:06:39.000Z'
+                    paymentType: creditCard
+                  - id: 121
+                    memberId: JYF-027x792
+                    subscriptionId: 123
                     plan: month
                     type: payment
-                    startAt: '2023-10-04T10:10:47.000Z'
-                    endAt: '2023-11-04T10:10:47.000Z'
-                    amount: 6888
-                    taxAmount: 300
+                    amount: 10000
                     maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-10-04T10:05:47.000Z'
+                    startAt: null
+                    endAt: null
+                    createdAt: '2024-10-25T08:04:48.000Z'
+                    updatedAt: '2024-10-25T08:04:48.000Z'
+                    paymentType: creditCard
+                  - id: 120
+                    memberId: JYF-027x792
+                    subscriptionId: 122
+                    plan: month
+                    type: payment
+                    amount: 10000
+                    maskedCreditCardNo: 400022******1111
+                    startAt: null
+                    endAt: null
+                    createdAt: '2024-10-25T08:03:23.000Z'
+                    updatedAt: '2024-10-25T08:03:23.000Z'
+                    paymentType: creditCard
+                  - id: 119
+                    memberId: JYF-027x792
+                    subscriptionId: 121
+                    plan: month
+                    type: payment
+                    amount: 10000
+                    maskedCreditCardNo: 400022******1111
+                    startAt: null
+                    endAt: null
+                    createdAt: '2024-10-25T07:21:20.000Z'
+                    updatedAt: '2024-10-25T07:21:21.000Z'
+                    paymentType: creditCard
   /api/subscription/request-payment-payload:
     post:
       tags:
@@ -7894,6 +8135,22 @@ paths:
                   maskedCreditCardNo: 400022******1111
                   createdAt: '2023-11-04T10:05:47.000Z'
                   updatedAt: '2023-11-04T10:05:47.000Z'
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  code: 400
+                  name: InvalidArgumentError
+                  message: 轉帳付款無法啟用自動續訂
   /api/subscription/configure-auto-renewal:
     post:
       tags:
@@ -8013,6 +8270,22 @@ paths:
                       maskedCreditCardNo: 400022******1111
                       createdAt: '2023-11-27T18:34:14.000Z'
                       updatedAt: '2023-11-28T13:53:12.964Z'
+        '400':
+          description: Bad Request
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  code: 400
+                  name: InvalidArgumentError
+                  message: 轉帳付款無法啟用自動續訂
   /api/subscription/cancel-and-request-refund:
     post:
       tags:
@@ -8032,6 +8305,23 @@ paths:
       summary: 刪除訂閱資料 (測試用)
       requestBody:
         content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/subscription/request-transfer-subscription:
+    post:
+      tags:
+        - 訂閱
+      summary: 申請轉帳訂閱
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                plan: 2day
       responses:
         '200':
           description: Successful response

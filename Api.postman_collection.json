@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "KUSbUk3I7rfONEEjN5PX",
+									"value": "UDSLebjFPT0vBlBaSy52",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -4314,7 +4314,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{domain}}/api/dashboard/refund-bills?refund_status=",
+									"raw": "{{domain}}/api/dashboard/refund-bills?refund_status=waiting",
 									"host": [
 										"{{domain}}"
 									],
@@ -4326,7 +4326,7 @@
 									"query": [
 										{
 											"key": "refund_status",
-											"value": "",
+											"value": "waiting",
 											"description": "`waiting` / `refunded`"
 										}
 									]
@@ -4397,7 +4397,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 2,\n    \"totalCount\": 2,\n    \"data\": [\n        {\n            \"id\": 5,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"plan\": \"month\",\n            \"email\": \"no-reply@gmail.com\",\n            \"isRefunded\": true,\n            \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n            \"refundedAt\": \"2023-11-26T09:42:42.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdByUserId\": 7,\n            \"paymentPlatformNo\": null,\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-26T09:42:42.000Z\",\n            \"updatedAt\": \"2023-11-26T09:44:40.000Z\",\n            \"invoice\": {\n                \"id\": 1,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"billId\": 6,\n                \"status\": \"issued\",\n                \"amount\": 188,\n                \"taxAmount\": 9,\n                \"uniformInvoiceNo\": \"AB00000001\",\n                \"uniformInvoiceRandomNo\": \"6342\",\n                \"email\": \"no-reply@gmail.com\",\n                \"companyUniformSerialNo\": \"12345678\",\n                \"eInvoicePlatformNo\": \"testing_invoice_1212\",\n                \"requestPayload\": {},\n                \"responsePayload\": {},\n                \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n                \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n            }\n        },\n        {\n            \"id\": 7,\n            \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n            \"plan\": \"month\",\n            \"email\": \"yot4106@gmail.com\",\n            \"isRefunded\": false,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 170,\n            \"startAt\": \"2023-11-21T16:44:27.000Z\",\n            \"endAt\": \"2023-12-21T16:44:27.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"mock_order_1700585052751_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n            \"updatedAt\": \"2023-11-21T16:44:27.000Z\",\n            \"invoice\": {\n                \"id\": 1,\n                \"memberId\": \"6a518ce9-8bcd-41d4-911e-e849b3b21cf6\",\n                \"billId\": 4,\n                \"status\": \"issued\",\n                \"amount\": 188,\n                \"taxAmount\": 9,\n                \"uniformInvoiceNo\": \"AB00000001\",\n                \"uniformInvoiceRandomNo\": \"6342\",\n                \"email\": \"no-reply@gmail.com\",\n                \"companyUniformSerialNo\": \"12345678\",\n                \"eInvoicePlatformNo\": \"testing_invoice_1212\",\n                \"requestPayload\": {},\n                \"responsePayload\": {},\n                \"createdAt\": \"2023-11-21T16:44:27.000Z\",\n                \"updatedAt\": \"2023-11-21T16:44:27.000Z\"\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 3,\n    \"totalCount\": 3,\n    \"data\": [\n        {\n            \"id\": 136,\n            \"memberId\": \"JYF-027x792\",\n            \"plan\": \"month\",\n            \"email\": \"kennethchangla@gmail.com\",\n            \"isRefunded\": false,\n            \"canceledAt\": \"2024-11-05T08:38:33.000Z\",\n            \"companyUniformSerialNo\": \"12345678\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 10000,\n            \"firstPaidAt\": \"2024-11-05T08:33:33.000Z\",\n            \"fullyRefundable\": true,\n            \"approvedAt\": \"2024-11-05T08:34:38.000Z\",\n            \"startAt\": \"2024-11-05T08:34:38.000Z\",\n            \"endAt\": \"2024-12-04T15:59:59.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"neweb_louislo_1730795585287_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2024-11-05T08:33:34.000Z\",\n            \"updatedAt\": \"2024-11-05T08:34:38.000Z\",\n            \"invoice\": {\n                \"id\": 66,\n                \"memberId\": \"JYF-027x792\",\n                \"subscriptionId\": 136,\n                \"billId\": 135,\n                \"amount\": 10000,\n                \"taxAmount\": 196,\n                \"uniformInvoiceNo\": \"FF66600105\",\n                \"email\": \"kennethchangla@gmail.com\",\n                \"companyUniformSerialNo\": \"12345678\",\n                \"requestPayload\": {\n                    \"idno\": \"Giveme05\",\n                    \"sign\": \"D93F346353BCD114C95F7689696A2248\",\n                    \"email\": \"kennethchangla@gmail.com\",\n                    \"items\": [\n                        {\n                            \"name\": \"顧問費(日報月訂閱)\",\n                            \"money\": 9804,\n                            \"number\": 1\n                        }\n                    ],\n                    \"phone\": \"12345678\",\n                    \"sales\": 9804,\n                    \"amount\": 196,\n                    \"uncode\": \"53418005\",\n                    \"content\": \"jinyufeng_local\",\n                    \"taxType\": 0,\n                    \"datetime\": \"2024-11-05\",\n                    \"taxState\": \"1\",\n                    \"totalFee\": 10000,\n                    \"timeStamp\": 1730795614117,\n                    \"customerName\": \"狂客多媒體公司\"\n                },\n                \"responsePayload\": {\n                    \"msg\": \"開立成功！\",\n                    \"code\": \"FF66600105\",\n                    \"phone\": \"12345678\",\n                    \"success\": \"true\",\n                    \"totalFee\": \"10000元\"\n                },\n                \"createdAt\": \"2024-11-05T08:33:34.000Z\",\n                \"updatedAt\": \"2024-11-05T08:33:35.000Z\"\n            },\n            \"paymentType\": \"creditCard\"\n        },\n        {\n            \"id\": 120,\n            \"memberId\": \"418b26c1-0073-4c20-a478-80b50202b3a5\",\n            \"plan\": \"year\",\n            \"email\": \"smilerex5566@gmail.com\",\n            \"isRefunded\": false,\n            \"canceledAt\": \"2024-03-10T14:23:50.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 60000,\n            \"fullyRefundable\": false,\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"neweb_dev_1710080597576_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2024-03-10T14:23:34.000Z\",\n            \"updatedAt\": \"2024-03-10T14:23:34.000Z\",\n            \"paymentType\": \"creditCard\"\n        },\n        {\n            \"id\": 96,\n            \"memberId\": \"66d31d71-8151-4059-b291-fd5cc7d19e86\",\n            \"plan\": \"quarter\",\n            \"email\": \"otavio.wang@gmail.com\",\n            \"isRefunded\": false,\n            \"canceledAt\": \"2024-02-05T12:46:35.000Z\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"type\": \"payment\",\n            \"amount\": 18888,\n            \"fullyRefundable\": false,\n            \"approvedAt\": \"2024-02-05T12:44:50.000Z\",\n            \"startAt\": \"2024-02-05T12:44:50.000Z\",\n            \"endAt\": \"2024-05-06T15:59:59.000Z\",\n            \"createdByUserId\": null,\n            \"paymentPlatformNo\": \"neweb_dev_1707132291004_1\",\n            \"paymentResponsePayload\": null,\n            \"createdAt\": \"2024-02-05T11:25:40.000Z\",\n            \"updatedAt\": \"2024-02-05T12:44:50.000Z\",\n            \"invoice\": {\n                \"id\": 38,\n                \"memberId\": \"66d31d71-8151-4059-b291-fd5cc7d19e86\",\n                \"subscriptionId\": 96,\n                \"billId\": 91,\n                \"amount\": 18888,\n                \"taxAmount\": 944,\n                \"uniformInvoiceNo\": \"AC00000013\",\n                \"uniformInvoiceRandomNo\": \"3834\",\n                \"email\": \"otavio.wang@gmail.com\",\n                \"eInvoicePlatformNo\": \"ez_dev_1707132340\",\n                \"requestPayload\": {\n                    \"Amt\": 17944,\n                    \"Status\": 1,\n                    \"TaxAmt\": 944,\n                    \"ItemAmt\": 18888,\n                    \"TaxRate\": 5,\n                    \"TaxType\": 1,\n                    \"Version\": \"1.5\",\n                    \"Category\": \"B2C\",\n                    \"ItemName\": \"金玉峰季訂閱\",\n                    \"ItemUnit\": \"期\",\n                    \"TotalAmt\": 18888,\n                    \"BuyerName\": \"AWei\",\n                    \"ItemCount\": 1,\n                    \"ItemPrice\": 18888,\n                    \"PrintFlag\": \"N\",\n                    \"TimeStamp\": 1707132340,\n                    \"BuyerEmail\": \"otavio.wang@gmail.com\",\n                    \"CarrierNum\": \"otavio.wang@gmail.com\",\n                    \"CarrierType\": 2,\n                    \"RespondType\": \"JSON\",\n                    \"MerchantOrderNo\": \"ez_dev_1707132340\"\n                },\n                \"responsePayload\": {\n                    \"TotalAmt\": 18888,\n                    \"CheckCode\": \"9ABFA542200EC03929BB971DA01802D7940F966C89C672921985780B54E27B1F\",\n                    \"RandomNum\": \"3834\",\n                    \"CreateTime\": \"2024-02-05 19:25:41\",\n                    \"MerchantID\": \"35712141\",\n                    \"InvoiceNumber\": \"AC00000013\",\n                    \"InvoiceTransNo\": \"24020519254117458\",\n                    \"MerchantOrderNo\": \"ez_dev_1707132340\"\n                },\n                \"createdAt\": \"2024-02-05T11:25:40.000Z\",\n                \"updatedAt\": \"2024-02-05T11:25:41.000Z\"\n            },\n            \"paymentType\": \"creditCard\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -4408,7 +4408,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5,\n    \"amount\": 18\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 136,\n    \"amount\": 18\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4460,13 +4460,12 @@
 										{
 											"key": "Content-Type",
 											"value": "application/json",
-											"name": "Content-Type",
 											"description": "",
 											"type": "text"
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": false,\n        \"isRefunded\": true,\n        \"autoRenewal\": false,\n        \"status\": \"canceled\",\n        \"plan\": \"month\",\n        \"amount\": 170,\n        \"email\": \"no-reply@gmail.com\",\n        \"startAt\": \"2023-11-20T17:40:35.000Z\",\n        \"canceledAt\": \"2023-11-24T18:49:05.000Z\",\n        \"refundedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-20T17:39:50.000Z\",\n        \"updatedAt\": \"2023-11-26T09:42:42.000Z\",\n        \"bills\": [\n            {\n                \"id\": 1,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"payment\",\n                \"amount\": 170,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"startAt\": \"2023-11-20T17:40:35.000Z\",\n                \"endAt\": \"2023-12-20T17:40:35.000Z\",\n                \"paymentPlatformNo\": \"mock_order_1700501990814_1\",\n                \"createdAt\": \"2023-11-20T17:40:35.000Z\",\n                \"updatedAt\": \"2023-11-20T17:40:35.000Z\"\n            },\n            {\n                \"id\": 6,\n                \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"subscriptionId\": 5,\n                \"plan\": \"month\",\n                \"type\": \"refund\",\n                \"amount\": 18,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"createdByUserId\": 7,\n                \"createdAt\": \"2023-11-26T09:42:42.000Z\",\n                \"updatedAt\": \"2023-11-26T09:44:40.000Z\"\n            }\n        ]\n    }\n}"
+									"body": "{\n    \"data\": {\n        \"id\": 136,\n        \"memberId\": \"JYF-027x792\",\n        \"isSubscribing\": false,\n        \"isRefunded\": true,\n        \"autoRenewal\": false,\n        \"status\": \"canceled\",\n        \"plan\": \"month\",\n        \"amount\": 10000,\n        \"email\": \"kennethchangla@gmail.com\",\n        \"startAt\": \"2024-11-05T08:34:38.000Z\",\n        \"endAt\": \"2024-11-05T08:33:33.000Z\",\n        \"canceledAt\": \"2024-11-05T08:38:33.000Z\",\n        \"refundedAt\": \"2024-11-05T08:39:12.000Z\",\n        \"approvedAt\": \"2024-11-05T08:34:38.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2024-11-05T08:33:05.000Z\",\n        \"updatedAt\": \"2024-11-05T08:39:12.000Z\",\n        \"paymentPlatformNo\": \"neweb_louislo_1730795585287\",\n        \"paymentResponsePayload\": {\n            \"Result\": {\n                \"CardNo\": \"400022******1111\",\n                \"TradeNo\": \"24110516333266949\",\n                \"AuthBank\": \"Taishin\",\n                \"AuthCode\": \"795612\",\n                \"AuthTime\": \"20241105163332\",\n                \"PeriodNo\": \"P241105163332eB65yD\",\n                \"AuthTimes\": \"2\",\n                \"DateArray\": \"2024-11-05,2024-12-05\",\n                \"PeriodAmt\": \"10000\",\n                \"EscrowBank\": \"HNCB\",\n                \"MerchantID\": \"MS350610354\",\n                \"PeriodType\": \"M\",\n                \"RespondCode\": \"00\",\n                \"PaymentMethod\": \"CREDIT\",\n                \"MerchantOrderNo\": \"neweb_louislo_1730795585287\"\n            },\n            \"Status\": \"SUCCESS\",\n            \"Message\": \"委託單成立，且首次授權成功(00)\"\n        },\n        \"bills\": [\n            {\n                \"id\": 135,\n                \"memberId\": \"JYF-027x792\",\n                \"subscriptionId\": 136,\n                \"plan\": \"month\",\n                \"type\": \"payment\",\n                \"amount\": 10000,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"startAt\": \"2024-11-05T08:34:38.000Z\",\n                \"endAt\": \"2024-12-04T15:59:59.000Z\",\n                \"paymentPlatformNo\": \"neweb_louislo_1730795585287_1\",\n                \"createdAt\": \"2024-11-05T08:33:34.000Z\",\n                \"updatedAt\": \"2024-11-05T08:34:38.000Z\",\n                \"paymentType\": \"creditCard\"\n            },\n            {\n                \"id\": 136,\n                \"memberId\": \"JYF-027x792\",\n                \"subscriptionId\": 136,\n                \"plan\": \"month\",\n                \"type\": \"refund\",\n                \"amount\": 18,\n                \"maskedCreditCardNo\": \"400022******1111\",\n                \"startAt\": \"2024-11-05T08:34:38.000Z\",\n                \"endAt\": \"2024-11-05T08:33:33.000Z\",\n                \"createdByUserId\": 2,\n                \"paymentPlatformNo\": \"neweb_louislo_1730795585287_1\",\n                \"createdAt\": \"2024-11-05T08:39:12.000Z\",\n                \"updatedAt\": \"2024-11-05T08:39:12.000Z\",\n                \"paymentType\": \"creditCard\"\n            }\n        ],\n        \"paymentType\": \"creditCard\"\n    }\n}"
 								}
 							]
 						},
@@ -4543,7 +4542,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 1,\n    \"totalCount\": 1,\n    \"data\": [\n        {\n            \"id\": 28,\n            \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n            \"isSubscribing\": false,\n            \"autoRenewal\": false,\n            \"status\": \"pending\",\n            \"plan\": \"month\",\n            \"amount\": 6888,\n            \"email\": \"louis@gmail.com\",\n            \"nextRenewalDate\": \"2024-03-31\",\n            \"startAt\": \"2023-12-30T08:35:25.000Z\",\n            \"companyUniformSerialNo\": \"12345678\",\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"createdAt\": \"2023-12-30T08:35:01.000Z\",\n            \"updatedAt\": \"2023-12-30T10:01:21.000Z\",\n            \"paymentPlatformNo\": \"neweb_louislo_1703925301720\",\n            \"paymentResponsePayload\": {\n                \"Result\": {\n                    \"CardNo\": \"400022******1111\",\n                    \"TradeNo\": \"23123016352490296\",\n                    \"AuthBank\": \"KGI\",\n                    \"AuthCode\": \"336421\",\n                    \"AuthTime\": \"20231230163525\",\n                    \"PeriodNo\": \"P231230163524QrJe6Q\",\n                    \"AuthTimes\": 2,\n                    \"DateArray\": \"2023-12-30,2024-01-30\",\n                    \"PeriodAmt\": \"6888\",\n                    \"EscrowBank\": \"HNCB\",\n                    \"MerchantID\": \"MS350610354\",\n                    \"PeriodType\": \"M\",\n                    \"RespondCode\": \"00\",\n                    \"PaymentMethod\": \"CREDIT\",\n                    \"MerchantOrderNo\": \"neweb_louislo_1703925301720\"\n                },\n                \"Status\": \"SUCCESS\",\n                \"Message\": \"委託單成立，且首次授權成功\"\n            },\n            \"member\": {\n                \"id\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n                \"name\": \"Louis\",\n                \"email\": \"louis@gmail.com\",\n                \"avatar\": \"https://profile.line-scdn.net/0hT4vTh6dbCxtbLSL6LPd1ZCt9CHF4XFIJdUwWf20tUyxmHB8fcE5AeT19AnxhG0hJdRxDKj1-UXhXPnx9RXv3L1wdVipnHUtKdE1H_Q\",\n                \"loginType\": \"line\",\n                \"thirdPartyIdentifier\": \"U41d6b8cf0cae1003d85ec7f0c5772c0d\",\n                \"isEmailValidate\": false,\n                \"isSubscribing\": false,\n                \"phone\": \"\",\n                \"isPhoneValidate\": false\n            }\n        }\n    ]\n}"
+									"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 1,\n    \"totalCount\": 1,\n    \"data\": [\n        {\n            \"id\": 134,\n            \"memberId\": \"JYF-027x792\",\n            \"isSubscribing\": false,\n            \"autoRenewal\": false,\n            \"status\": \"pending\",\n            \"plan\": \"2day\",\n            \"amount\": 111,\n            \"email\": \"kennethchangla@gmail.com\",\n            \"createdAt\": \"2024-11-05T08:26:48.000Z\",\n            \"updatedAt\": \"2024-11-05T08:26:48.000Z\",\n            \"paymentPlatformNo\": \"transfer_1730795208761\",\n            \"member\": {\n                \"id\": \"JYF-027x792\",\n                \"name\": \"永翰\",\n                \"email\": \"kennethchangla@gmail.com\",\n                \"avatar\": \"https://profile.line-scdn.net/0h9kRtoS0HZkR_DXZzY0YYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog\",\n                \"loginType\": \"line\",\n                \"thirdPartyIdentifier\": \"U6ab58c3a7cd561d905a0a91bcc83d161\",\n                \"isEmailValidate\": true,\n                \"isSubscribing\": false,\n                \"phone\": \"0936965814\",\n                \"isPhoneValidate\": true\n            },\n            \"bills\": [],\n            \"paymentType\": \"transfer\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -4554,7 +4553,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n    \"subscriptionId\": 5\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 132\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4708,6 +4707,34 @@
 										"api",
 										"dashboard",
 										"configure-first-payment-availability"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dashboard 審核開通轉帳訂閱",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 134\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/dashboard/approve-transfer-subscription",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"approve-transfer-subscription"
 									]
 								}
 							},
@@ -8686,13 +8713,12 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}
 							],
 							"cookie": [],
-							"body": "{\n\t\"data\": {\n\t\t\"id\": 3,\n\t\t\"memberId\": 5,\n        \"isSubscribing\": true,\n\t\t\"status\": \"active\",\n\t\t\"plan\": \"month\",\n\t\t\"amount\": 6888,\n\t\t\"email\": \"test@gnim.com\",\n\t\t\"nextRenewalDate\": \"2023-12-04\",\n\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\"endAt\": null,\n\t\t\"companyUniformSerialNo\": \"12345678\",\n\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\",\n\t\t\"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n\t}\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 136,\n        \"memberId\": \"JYF-027x792\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": true,\n        \"status\": \"active\",\n        \"plan\": \"month\",\n        \"amount\": 10000,\n        \"email\": \"kennethchangla@gmail.com\",\n        \"nextRenewalDate\": \"2024-12-05\",\n        \"firstPaidAt\": \"2024-11-05T08:33:33.000Z\",\n        \"fullyRefundable\": true,\n        \"approvedAt\": \"2024-11-05T08:34:38.000Z\",\n        \"startAt\": \"2024-11-05T08:34:38.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2024-11-05T08:33:05.000Z\",\n        \"updatedAt\": \"2024-11-05T08:34:39.000Z\",\n        \"paymentType\": \"creditCard\"\n    }\n}"
 						},
 						{
 							"name": "使用者取消訂閱，未退款未到期",
@@ -8830,13 +8856,12 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"currentPage\": 0,\n    \"pageSize\": 30,\n    \"totalCount\": 515,\n\t\"data\": [\n\t\t{\n\t\t\t\"id\": 14,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n            \"plan\": \"month\",\n\t\t\t\"type\": \"payment\",\n\t\t\t\"startAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"endAt\": \"2023-12-04T10:10:47.000Z\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-04T10:05:47.000Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"memberId\": 5,\n\t\t\t\"subscriptionId\": 3,\n            \"plan\": \"month\",\n\t\t\t\"type\": \"payment\",\n\t\t\t\"startAt\": \"2023-10-04T10:10:47.000Z\",\n\t\t\t\"endAt\": \"2023-11-04T10:10:47.000Z\",\n\t\t\t\"amount\": 6888,\n\t\t\t\"taxAmount\": 300,\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-10-04T10:05:47.000Z\"\n\t\t}\n\t]\n}"
+							"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 10,\n    \"totalCount\": 15,\n    \"data\": [\n        {\n            \"id\": 132,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 133,\n            \"plan\": \"2day\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": \"2024-11-05T08:17:40.000Z\",\n            \"endAt\": \"2024-12-05T15:59:59.000Z\",\n            \"isChargedSystemFee\": false,\n            \"isFullyRefunded\": false,\n            \"createdAt\": \"2024-11-05T08:18:33.000Z\",\n            \"updatedAt\": \"2024-11-05T08:18:33.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 131,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 133,\n            \"plan\": \"2day\",\n            \"type\": \"payment\",\n            \"amount\": 111,\n            \"startAt\": \"2024-11-05T08:17:40.000Z\",\n            \"endAt\": \"2024-11-06T15:59:59.000Z\",\n            \"createdAt\": \"2024-11-05T08:17:40.000Z\",\n            \"updatedAt\": \"2024-11-05T08:17:40.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 130,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 132,\n            \"plan\": \"2day\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": \"2024-11-04T04:45:56.000Z\",\n            \"endAt\": \"2024-12-04T15:59:59.000Z\",\n            \"isChargedSystemFee\": false,\n            \"isFullyRefunded\": false,\n            \"createdAt\": \"2024-11-04T04:47:23.000Z\",\n            \"updatedAt\": \"2024-11-04T04:47:23.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 129,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 132,\n            \"plan\": \"2day\",\n            \"type\": \"payment\",\n            \"amount\": 111,\n            \"startAt\": \"2024-11-04T04:45:56.000Z\",\n            \"endAt\": \"2024-11-05T15:59:59.000Z\",\n            \"createdAt\": \"2024-11-04T04:45:56.000Z\",\n            \"updatedAt\": \"2024-11-04T04:45:56.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 127,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 129,\n            \"plan\": \"2day\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": \"2024-11-04T04:08:10.000Z\",\n            \"endAt\": \"2024-12-04T15:59:59.000Z\",\n            \"isChargedSystemFee\": false,\n            \"isFullyRefunded\": false,\n            \"createdAt\": \"2024-11-04T04:15:59.000Z\",\n            \"updatedAt\": \"2024-11-04T04:15:59.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 126,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 129,\n            \"plan\": \"2day\",\n            \"type\": \"payment\",\n            \"amount\": 111,\n            \"startAt\": \"2024-11-04T04:08:10.000Z\",\n            \"endAt\": \"2024-11-05T15:59:59.000Z\",\n            \"createdAt\": \"2024-11-04T04:08:10.000Z\",\n            \"updatedAt\": \"2024-11-04T04:08:10.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 125,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 128,\n            \"plan\": \"2day\",\n            \"type\": \"refund\",\n            \"amount\": 18,\n            \"startAt\": \"2024-11-04T03:42:57.000Z\",\n            \"endAt\": \"2024-12-04T15:59:59.000Z\",\n            \"isChargedSystemFee\": false,\n            \"isFullyRefunded\": false,\n            \"createdAt\": \"2024-11-04T04:00:55.000Z\",\n            \"updatedAt\": \"2024-11-04T04:00:55.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 124,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 128,\n            \"plan\": \"2day\",\n            \"type\": \"payment\",\n            \"amount\": 111,\n            \"startAt\": \"2024-11-04T03:42:57.000Z\",\n            \"endAt\": \"2024-11-05T15:59:59.000Z\",\n            \"createdAt\": \"2024-11-04T03:42:57.000Z\",\n            \"updatedAt\": \"2024-11-04T03:42:57.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 123,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 127,\n            \"plan\": \"2day\",\n            \"type\": \"payment\",\n            \"amount\": 111,\n            \"startAt\": \"2024-11-04T03:24:46.000Z\",\n            \"endAt\": \"2024-11-05T15:59:59.000Z\",\n            \"createdAt\": \"2024-11-04T03:24:46.000Z\",\n            \"updatedAt\": \"2024-11-04T03:24:46.000Z\",\n            \"paymentType\": \"transfer\"\n        },\n        {\n            \"id\": 122,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 124,\n            \"plan\": \"month\",\n            \"type\": \"payment\",\n            \"amount\": 10000,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdAt\": \"2024-10-25T08:06:38.000Z\",\n            \"updatedAt\": \"2024-10-25T08:06:39.000Z\",\n            \"paymentType\": \"creditCard\"\n        },\n        {\n            \"id\": 121,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 123,\n            \"plan\": \"month\",\n            \"type\": \"payment\",\n            \"amount\": 10000,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdAt\": \"2024-10-25T08:04:48.000Z\",\n            \"updatedAt\": \"2024-10-25T08:04:48.000Z\",\n            \"paymentType\": \"creditCard\"\n        },\n        {\n            \"id\": 120,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 122,\n            \"plan\": \"month\",\n            \"type\": \"payment\",\n            \"amount\": 10000,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdAt\": \"2024-10-25T08:03:23.000Z\",\n            \"updatedAt\": \"2024-10-25T08:03:23.000Z\",\n            \"paymentType\": \"creditCard\"\n        },\n        {\n            \"id\": 119,\n            \"memberId\": \"JYF-027x792\",\n            \"subscriptionId\": 121,\n            \"plan\": \"month\",\n            \"type\": \"payment\",\n            \"amount\": 10000,\n            \"maskedCreditCardNo\": \"400022******1111\",\n            \"startAt\": null,\n            \"endAt\": null,\n            \"createdAt\": \"2024-10-25T07:21:20.000Z\",\n            \"updatedAt\": \"2024-10-25T07:21:21.000Z\",\n            \"paymentType\": \"creditCard\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -9013,6 +9038,46 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"memberId\": 5,\n        \"status\": \"subscription-status-string\",\n        \"plan\": \"quarter\",\n        \"autoRenewal\": true,\n        \"amount\": 16888,\n        \"email\": \"test@gnim.com\",\n        \"nextRenewalDate\": \"2024-02-04\",\n        \"startAt\": \"2023-11-04T10:10:47.000Z\",\n        \"endAt\": null,\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-04T10:05:47.000Z\",\n        \"updatedAt\": \"2023-11-04T10:05:47.000Z\"\n    }\n}"
+						},
+						{
+							"name": "轉帳要求變更方案",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newPlan\": \"quarter\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/change-plan",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"change-plan"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"code\": 400,\n        \"name\": \"InvalidArgumentError\",\n        \"message\": \"轉帳付款無法啟用自動續訂\"\n    }\n}"
 						}
 					]
 				},
@@ -9223,6 +9288,46 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"id\": 10,\n        \"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": false,\n        \"status\": \"renewal_disabled\",\n        \"plan\": \"quarter\",\n        \"amount\": 18888,\n        \"email\": \"louis222220@gmail.com\",\n        \"nextRenewalDate\": \"2024-02-28\",\n        \"startAt\": \"2023-11-27T18:35:00.000Z\",\n        \"endAt\": \"2024-02-27T15:59:59.999Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2023-11-27T18:34:14.000Z\",\n        \"updatedAt\": \"2023-11-28T13:53:12.964Z\"\n    }\n}"
+						},
+						{
+							"name": "轉帳要求自動續訂",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/configure-auto-renewal",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"configure-auto-renewal"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"code\": 400,\n        \"name\": \"InvalidArgumentError\",\n        \"message\": \"轉帳付款無法啟用自動續訂\"\n    }\n}"
 						}
 					]
 				},
@@ -9259,6 +9364,34 @@
 								"api",
 								"subscription",
 								"delete-subscription-for-testing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "申請轉帳訂閱",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plan\": \"2day\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/request-transfer-subscription",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"request-transfer-subscription"
 							]
 						}
 					},
@@ -10582,6 +10715,10 @@
 			"name": "研究資源",
 			"item": [],
 			"description": "研究資源代號：\n\n- 日報 -> 1\n- 個股報告 -> 2\n    \n- 小資功課 -> 3\n    \n- 獨家專欄 -> 4"
+		},
+		{
+			"name": "轉帳訂閱",
+			"item": []
 		}
 	],
 	"auth": {

@@ -1,8 +1,8 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "10.28.1630",
-        "description": "要求藍新付款＆＆重新要求藍新付款 增加 公司抬頭 欄位"
+        "version": "1501.05.16",
+        "description": "轉帳開通功能"
     },
     "servers": [
         {
