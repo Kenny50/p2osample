@@ -4408,7 +4408,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 136,\n    \"amount\": 18\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 143,\n    \"amount\": 18\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4719,7 +4719,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 134\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 143\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4735,6 +4735,34 @@
 										"api",
 										"dashboard",
 										"approve-transfer-subscription"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取消轉帳的 pending 請求",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 142\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/dashboard/cancel-pending-transfer-subscription",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"dashboard",
+										"cancel-pending-transfer-subscription"
 									]
 								}
 							},
@@ -10715,10 +10743,6 @@
 			"name": "研究資源",
 			"item": [],
 			"description": "研究資源代號：\n\n- 日報 -> 1\n- 個股報告 -> 2\n    \n- 小資功課 -> 3\n    \n- 獨家專欄 -> 4"
-		},
-		{
-			"name": "轉帳訂閱",
-			"item": []
 		}
 	],
 	"auth": {

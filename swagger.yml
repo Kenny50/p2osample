@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 轉帳開通功能
-  version: 1501.05.16
+  description: 轉帳請求取消功能
+  version: 1108.19.14
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -78,7 +78,6 @@ tags:
       - 小資功課 -> 3
           
       - 獨家專欄 -> 4
-  - name: 轉帳訂閱
 paths:
   /api/login/google:
     post:
@@ -3489,7 +3488,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 136
+                subscriptionId: 143
                 amount: 18
       responses:
         '200':
@@ -3743,7 +3742,25 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 134
+                subscriptionId: 143
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/cancel-pending-transfer-subscription:
+    post:
+      tags:
+        - 後台 > 訂閱 & 發票
+      summary: 取消轉帳的 pending 請求
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                memberId: JYF-027x792
+                subscriptionId: 142
       responses:
         '200':
           description: Successful response
