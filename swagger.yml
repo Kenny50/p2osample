@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 轉帳請求取消功能
-  version: 1108.19.14
+  version: 1115.14.26
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -151,7 +151,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: UDSLebjFPT0vBlBaSy52
+                  example: tog9n60WmB7P4rfV0MBS
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3488,8 +3488,8 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 143
-                amount: 18
+                subscriptionId: 149
+                amount: 8888
       responses:
         '200':
           headers:
@@ -3742,7 +3742,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 143
+                subscriptionId: 149
       responses:
         '200':
           description: Successful response
@@ -7768,8 +7768,12 @@ paths:
         1\. 訂閱狀態 `status`:
 
         - 訂閱中 `active`
+            
         - 已取消 `canceled`
+            
         - 已關閉自動續訂 `renewal_disabled`
+            
+        - 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`
             
 
         2\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準
@@ -8338,7 +8342,19 @@ paths:
             schema:
               type: object
               example:
-                plan: 2day
+                plan: month
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/subscription/transfer-account-image:
+    get:
+      tags:
+        - 訂閱
+      summary: 獲取轉帳帳戶圖片資源
+      security:
+        - noauthAuth: []
       responses:
         '200':
           description: Successful response

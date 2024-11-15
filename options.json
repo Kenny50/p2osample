@@ -1,7 +1,7 @@
 {
     "info": {
         "title": "金玉峰投顧 api",
-        "version": "1108.19.14",
+        "version": "1115.14.26",
         "description": "轉帳請求取消功能"
     },
     "servers": [

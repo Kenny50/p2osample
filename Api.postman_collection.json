@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "UDSLebjFPT0vBlBaSy52",
+									"value": "tog9n60WmB7P4rfV0MBS",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -4408,7 +4408,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 143,\n    \"amount\": 18\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 149,\n    \"amount\": 8888\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4719,7 +4719,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 143\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 149\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8715,7 +8715,7 @@
 								"latest-plan"
 							]
 						},
-						"description": "1\\. 訂閱狀態 `status`:\n\n- 訂閱中 `active`\n- 已取消 `canceled`\n- 已關閉自動續訂 `renewal_disabled`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
+						"description": "1\\. 訂閱狀態 `status`:\n\n- 訂閱中 `active`\n    \n- 已取消 `canceled`\n    \n- 已關閉自動續訂 `renewal_disabled`\n    \n- 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
 					},
 					"response": [
 						{
@@ -9404,7 +9404,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"plan\": \"2day\"\n}",
+							"raw": "{\n    \"plan\": \"month\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -9420,6 +9420,28 @@
 								"api",
 								"subscription",
 								"request-transfer-subscription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "獲取轉帳帳戶圖片資源",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain}}/api/subscription/transfer-account-image",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"transfer-account-image"
 							]
 						}
 					},
