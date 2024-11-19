@@ -4553,7 +4553,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 132\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 151\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8715,7 +8715,7 @@
 								"latest-plan"
 							]
 						},
-						"description": "1\\. 訂閱狀態 `status`:\n\n- 訂閱中 `active`\n    \n- 已取消 `canceled`\n    \n- 已關閉自動續訂 `renewal_disabled`\n    \n- 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
+						"description": "1\\. 訂閱狀態 `status`:\n\n- 新建立且未付款完成 `new`\n    \n- 等待開通 `pending`\n    \n- 付款失敗 `failed`\n    \n- 訂閱中 `active`\n    \n- 已取消 `canceled`\n    \n- 已關閉自動續訂 `renewal_disabled`\n    \n- 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
 					},
 					"response": [
 						{
