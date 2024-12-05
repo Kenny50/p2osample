@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
-  description: 轉帳請求取消功能
-  version: 1115.14.26
+  description: 第三期更新
+  version: 1205.18.05
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -52,6 +52,7 @@ tags:
   - name: 後台 > 靜態文件
   - name: 後台 > 網站內容
   - name: 後台 > policy
+  - name: 後台 > 超級帳號
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -151,7 +152,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: tog9n60WmB7P4rfV0MBS
+                  example: ypJtbMZTbgaBlil99Ne3
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3488,8 +3489,8 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 149
-                amount: 8888
+                subscriptionId: 162
+                amount: 6666
       responses:
         '200':
           headers:
@@ -3657,7 +3658,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 132
+                subscriptionId: 167
       responses:
         '200':
           content:
@@ -3742,7 +3743,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 149
+                subscriptionId: 159
       responses:
         '200':
           description: Successful response
@@ -5153,6 +5154,61 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/dashboard/adjust-super-account/{id}:
+    post:
+      tags:
+        - 後台 > 超級帳號
+      summary: 修改超級帳號清單
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                isSuperAccount: true
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          description: 金玉峰前台會員 member id
+          example: JYF-027x792
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/dashboard/super-accounts:
+    get:
+      tags:
+        - 後台 > 超級帳號
+      summary: 取得超級帳號清單
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  - id: JYF-027x792
+                    name: 永翰
+                    email: kennethchangla@gmail.com
+                    avatar: >-
+                      https://profile.line-scdn.net/0h9kRtIL51ZkR_DXdkKzAYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog
+                    loginType: line
+                    thirdPartyIdentifier: U6ab58c3a7cd561d905a0a91bcc83d161
+                    isEmailValidate: true
+                    isSubscribing: false
+                    phone: '0936965814'
+                    isPhoneValidate: true
   /api/topic:
     get:
       tags:
@@ -7767,6 +7823,12 @@ paths:
       description: |-
         1\. 訂閱狀態 `status`:
 
+        - 新建立且未付款完成 `new`
+            
+        - 等待開通 `pending`
+            
+        - 付款失敗 `failed`
+            
         - 訂閱中 `active`
             
         - 已取消 `canceled`
@@ -8039,7 +8101,7 @@ paths:
     post:
       tags:
         - 訂閱
-      summary: 要求藍新付款  (使用者確認付款)
+      summary: 日報要求藍新付款  (使用者確認付款)
       description: >-
         Request 參數：
 
@@ -8092,7 +8154,7 @@ paths:
     post:
       tags:
         - 訂閱
-      summary: 重新要求藍新付款 (更新付款資料)
+      summary: 日報重新要求藍新付款 (更新付款資料)
       description: |-
         參數幾乎同「要求藍新付款」，
 
@@ -8187,7 +8249,7 @@ paths:
             schema:
               type: object
               example:
-                active: true
+                active: false
       responses:
         '200':
           description: OK
@@ -8312,8 +8374,16 @@ paths:
       tags:
         - 訂閱
       summary: 取消訂閱
+      description: |-
+        dailyReport  
+        rickColumn
       requestBody:
-        content: {}
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                type: rickColumn
       responses:
         '200':
           description: Successful response
@@ -8360,6 +8430,72 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /api/subscription/request-rick-column-payment:
+    post:
+      tags:
+        - 訂閱
+      summary: 睿克專欄 要求藍新付款（使用者確認付款）
+      description: autoRenewal 只能帶 true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                companyUniformSerialNo: '12345678'
+                customerName: 狂客多媒體公司
+                returnUrl: https://www.google.com
+                backUrl: https://gnim.com.tw/payment-canceled
+                autoRenewal: true
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  MerchantID_: MS350610354
+                  PostData_: >-
+                    fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e
+  /api/subscription/re-request-subscribe-rick-column-payment:
+    post:
+      tags:
+        - 訂閱
+      summary: 睿克專欄 重新要求藍新付款（更新付款資料）
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                companyUniformSerialNo: '12345678'
+                customerName: 狂客多媒體公司
+                returnUrl: https://www.google.com
+                backUrl: https://gnim.com.tw/payment-canceled
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                data:
+                  MerchantID_: MS350610354
+                  PostData_: >-
+                    fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e
   /api/pdf/trial:
     get:
       tags:

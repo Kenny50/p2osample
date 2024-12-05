@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "tog9n60WmB7P4rfV0MBS",
+									"value": "ypJtbMZTbgaBlil99Ne3",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -4408,7 +4408,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 149,\n    \"amount\": 8888\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 162,\n    \"amount\": 6666\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4553,7 +4553,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 151\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 167\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4719,7 +4719,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 149\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 159\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7026,6 +7026,99 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "超級帳號",
+					"item": [
+						{
+							"name": "修改超級帳號清單",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"isSuperAccount\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/adjust-super-account/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"adjust-super-account",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "JYF-027x792",
+											"description": "金玉峰前台會員 member id"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "取得超級帳號清單",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/super-accounts",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"super-accounts"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "取得超級帳號清單",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/super-accounts",
+											"host": [
+												"{{domain}}"
+											],
+											"path": [
+												"{{prefix}}",
+												"{{internalPrefix}}",
+												"super-accounts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"JYF-027x792\",\n            \"name\": \"永翰\",\n            \"email\": \"kennethchangla@gmail.com\",\n            \"avatar\": \"https://profile.line-scdn.net/0h9kRtIL51ZkR_DXdkKzAYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog\",\n            \"loginType\": \"line\",\n            \"thirdPartyIdentifier\": \"U6ab58c3a7cd561d905a0a91bcc83d161\",\n            \"isEmailValidate\": true,\n            \"isSubscribing\": false,\n            \"phone\": \"0936965814\",\n            \"isPhoneValidate\": true\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
 				}
 			],
 			"auth": {
@@ -8894,7 +8987,7 @@
 					]
 				},
 				{
-					"name": "要求藍新付款  (使用者確認付款)",
+					"name": "日報要求藍新付款  (使用者確認付款)",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -8964,7 +9057,7 @@
 					]
 				},
 				{
-					"name": "重新要求藍新付款 (更新付款資料)",
+					"name": "日報重新要求藍新付款 (更新付款資料)",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -9116,7 +9209,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"active\": true\n}",
+							"raw": "{\n    \"active\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -9364,6 +9457,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"rickColumn\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{domain}}/api/subscription/cancel-and-request-refund",
 							"host": [
@@ -9374,7 +9476,8 @@
 								"subscription",
 								"cancel-and-request-refund"
 							]
-						}
+						},
+						"description": "dailyReport  \nrickColumn"
 					},
 					"response": []
 				},
@@ -9446,6 +9549,147 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "睿克專欄 要求藍新付款（使用者確認付款）",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\",\n    \"autoRenewal\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/request-rick-column-payment",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"request-rick-column-payment"
+							]
+						},
+						"description": "autoRenewal 只能帶 true"
+					},
+					"response": [
+						{
+							"name": "睿克專欄 要求藍新付款（使用者確認付款）",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\",\n    \"autoRenewal\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/request-rick-column-payment",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"request-rick-column-payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"MerchantID_\": \"MS350610354\",\n        \"PostData_\": \"fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "睿克專欄 重新要求藍新付款（更新付款資料）",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/api/subscription/re-request-subscribe-rick-column-payment",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"api",
+								"subscription",
+								"re-request-subscribe-rick-column-payment"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "睿克專欄 重新要求藍新付款（更新付款資料）",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyUniformSerialNo\": \"12345678\",\n    \"customerName\": \"狂客多媒體公司\",\n\t\"returnUrl\": \"https://www.google.com\",\n\t\"backUrl\": \"https://gnim.com.tw/payment-canceled\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/api/subscription/re-request-subscribe-rick-column-payment",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"api",
+										"subscription",
+										"re-request-subscribe-rick-column-payment"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"MerchantID_\": \"MS350610354\",\n        \"PostData_\": \"fc22f8e6a80a8b168d990de07bb43dcf892da53d99a8a2cb1a4700c9ae26c4a2cdbfea96bdb02628359bdbcbe04c162f3182a0c434139330c073f22b11466143809966b521656e16f6a1f420492d860d992248eafc709e3aa70479ecf73f9f31ff3c509b82e1dc04f7a8a129a89eac69c61ada86d536dbfc9ce7dbb2e024b14677b3752bbc9fafd7d598b88321a72e8a54a9bbe7b93db91a9ecc87480d3ff6b497cd0801c21e6c2ad3cd78f9a434955c974845e59d1ec93415fac7ca7dfae2073deca4a978841ee96960fb28eee82b0102b7be84362d2f1e1c8091ab9a2e7c31d0b4865c3244b7fa8911b1b5a5323cda71467e986d270c32fe5cbaf976efd74a7b56ff9e7eab97e5e0979ee3f2b2c200993b9656ca7f6a88c06977d4abd6c30799ca90ca4051255855693a81ba98cbd0ee3d324cbadd8c7368530e9f3b0dbe1959db96506b9505d47a3a3f309569578e\"\n    }\n}"
+						}
+					]
 				}
 			]
 		},
