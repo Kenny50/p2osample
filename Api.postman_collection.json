@@ -5,7 +5,7 @@
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "ypJtbMZTbgaBlil99Ne3",
+									"value": "C0FymjLWatmpMW35HyFY",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -612,6 +612,30 @@
 					"response": [
 						{
 							"name": "個人資訊",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/member/information",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"member",
+										"information"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n\t\"data\": {\n\t\t\"name\": \"Chang Kenneth\",\n\t\t\"email\": \"kennethchangla@gmail.com\",\n\t\t\"id\": \"ea514474-4ed6-4e08-b59d-e7158c08fe92\",\n\t\t\"avatar\": \"https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c\",\n\t\t\"loginType\": \"google\",\n\t\t\"thirdPartyIdentifier\": \"112345303661950802160\",\n\t\t\"isEmailValidate\": true,\n\t\t\"isSubscribing\": false,\n\t\t\"phone\": \"\",\n\t\t\"isPhoneValidate\": false,\n\t\t\"latestSubscription\": {\n\t\t\t\"id\": 2,\n\t\t\t\"memberId\": \"1928297d-159b-43cc-9ea8-1560ba1a595b\",\n\t\t\t\"isSubscribing\": true,\n\t\t\t\"status\": \"active\",\n\t\t\t\"plan\": \"month\",\n\t\t\t\"amount\": 170,\n\t\t\t\"email\": \"kennethchangla@gmail.com\",\n\t\t\t\"nextRenewalDate\": \"2023-11-21\",\n\t\t\t\"startAt\": \"2023-11-20T17:40:35.000Z\",\n\t\t\t\"maskedCreditCardNo\": \"400022******1111\",\n\t\t\t\"createdAt\": \"2023-11-20T17:39:50.000Z\",\n\t\t\t\"updatedAt\": \"2023-11-20T17:40:36.000Z\"\n\t\t},\n\t\t\"createdAt\": \"2023-11-10T07:37:42.000Z\",\n\t\t\"updatedAt\": \"2023-11-10T07:37:42.000Z\"\n\t}\n}"
+						},
+						{
+							"name": "個人資訊 超級帳號",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -4408,7 +4432,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 162,\n    \"amount\": 6666\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 167,\n    \"amount\": 10000\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4553,7 +4577,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 167\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 168\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4719,7 +4743,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 159\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 168\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7108,7 +7132,6 @@
 										{
 											"key": "Content-Type",
 											"value": "application/json",
-											"name": "Content-Type",
 											"description": "",
 											"type": "text"
 										}
@@ -8808,7 +8831,7 @@
 								"latest-plan"
 							]
 						},
-						"description": "1\\. 訂閱狀態 `status`:\n\n- 新建立且未付款完成 `new`\n    \n- 等待開通 `pending`\n    \n- 付款失敗 `failed`\n    \n- 訂閱中 `active`\n    \n- 已取消 `canceled`\n    \n- 已關閉自動續訂 `renewal_disabled`\n    \n- 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準"
+						"description": "1\\. 訂閱狀態 `status`:\n\n- 新建立且未付款完成 `new`\n    \n- 等待開通 `pending`\n    \n- 付款失敗 `failed`\n    \n- 訂閱中 `active`\n    \n- 已取消 `canceled`\n    \n- 已關閉自動續訂 `renewal_disabled`\n    \n- 申請轉帳審核，尚未通過審核前取消 `withdraw_transfer_subscribe_request`\n    \n\n2\\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準\n\n3\\. 是否已退款：以 `isRefunded` 欄位為準\n\n4\\. \"productType\":\n\n- \"dailyReport\",\n    \n- \"rickColumn\""
 					},
 					"response": [
 						{
@@ -8839,7 +8862,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"id\": 136,\n        \"memberId\": \"JYF-027x792\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": true,\n        \"status\": \"active\",\n        \"plan\": \"month\",\n        \"amount\": 10000,\n        \"email\": \"kennethchangla@gmail.com\",\n        \"nextRenewalDate\": \"2024-12-05\",\n        \"firstPaidAt\": \"2024-11-05T08:33:33.000Z\",\n        \"fullyRefundable\": true,\n        \"approvedAt\": \"2024-11-05T08:34:38.000Z\",\n        \"startAt\": \"2024-11-05T08:34:38.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2024-11-05T08:33:05.000Z\",\n        \"updatedAt\": \"2024-11-05T08:34:39.000Z\",\n        \"paymentType\": \"creditCard\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 136,\n        \"memberId\": \"JYF-027x792\",\n        \"isSubscribing\": true,\n        \"autoRenewal\": true,\n        \"status\": \"active\",\n        \"plan\": \"month\",\n        \"amount\": 10000,\n        \"email\": \"kennethchangla@gmail.com\",\n        \"nextRenewalDate\": \"2024-12-05\",\n        \"firstPaidAt\": \"2024-11-05T08:33:33.000Z\",\n        \"fullyRefundable\": true,\n        \"approvedAt\": \"2024-11-05T08:34:38.000Z\",\n        \"startAt\": \"2024-11-05T08:34:38.000Z\",\n        \"companyUniformSerialNo\": \"12345678\",\n        \"maskedCreditCardNo\": \"400022******1111\",\n        \"createdAt\": \"2024-11-05T08:33:05.000Z\",\n        \"updatedAt\": \"2024-11-05T08:34:39.000Z\",\n        \"paymentType\": \"creditCard\",\n        \"productType\": \"dailyReport\"\n    }\n}"
 						},
 						{
 							"name": "使用者取消訂閱，未退款未到期",
@@ -9611,7 +9634,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}
@@ -9681,7 +9703,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								}

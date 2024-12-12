@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 第三期更新
-  version: 1205.18.05
+  version: 1212.11.05
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -152,7 +152,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: ypJtbMZTbgaBlil99Ne3
+                  example: C0FymjLWatmpMW35HyFY
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -308,34 +308,67 @@ paths:
             application/json:
               schema:
                 type: object
-              example:
-                data:
-                  name: Chang Kenneth
-                  email: kennethchangla@gmail.com
-                  id: ea514474-4ed6-4e08-b59d-e7158c08fe92
-                  avatar: >-
-                    https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
-                  loginType: google
-                  thirdPartyIdentifier: '112345303661950802160'
-                  isEmailValidate: true
-                  isSubscribing: false
-                  phone: ''
-                  isPhoneValidate: false
-                  latestSubscription:
-                    id: 2
-                    memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
-                    isSubscribing: true
-                    status: active
-                    plan: month
-                    amount: 170
-                    email: kennethchangla@gmail.com
-                    nextRenewalDate: '2023-11-21'
-                    startAt: '2023-11-20T17:40:35.000Z'
-                    maskedCreditCardNo: 400022******1111
-                    createdAt: '2023-11-20T17:39:50.000Z'
-                    updatedAt: '2023-11-20T17:40:36.000Z'
-                  createdAt: '2023-11-10T07:37:42.000Z'
-                  updatedAt: '2023-11-10T07:37:42.000Z'
+              examples:
+                example-0:
+                  summary: 個人資訊
+                  value:
+                    data:
+                      name: Chang Kenneth
+                      email: kennethchangla@gmail.com
+                      id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                      avatar: >-
+                        https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
+                      loginType: google
+                      thirdPartyIdentifier: '112345303661950802160'
+                      isEmailValidate: true
+                      isSubscribing: false
+                      phone: ''
+                      isPhoneValidate: false
+                      latestSubscription:
+                        id: 2
+                        memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                        isSubscribing: true
+                        status: active
+                        plan: month
+                        amount: 170
+                        email: kennethchangla@gmail.com
+                        nextRenewalDate: '2023-11-21'
+                        startAt: '2023-11-20T17:40:35.000Z'
+                        maskedCreditCardNo: 400022******1111
+                        createdAt: '2023-11-20T17:39:50.000Z'
+                        updatedAt: '2023-11-20T17:40:36.000Z'
+                      createdAt: '2023-11-10T07:37:42.000Z'
+                      updatedAt: '2023-11-10T07:37:42.000Z'
+                example-1:
+                  summary: 個人資訊 超級帳號
+                  value:
+                    data:
+                      name: Chang Kenneth
+                      email: kennethchangla@gmail.com
+                      id: ea514474-4ed6-4e08-b59d-e7158c08fe92
+                      avatar: >-
+                        https://lh3.googleusercontent.com/a/ACg8ocJdBkMHHg9SweA2gsH6kYGNG1hjwYK7yyWHESWZUd1Pgdo=s96-c
+                      loginType: google
+                      thirdPartyIdentifier: '112345303661950802160'
+                      isEmailValidate: true
+                      isSubscribing: false
+                      phone: ''
+                      isPhoneValidate: false
+                      latestSubscription:
+                        id: 2
+                        memberId: 1928297d-159b-43cc-9ea8-1560ba1a595b
+                        isSubscribing: true
+                        status: active
+                        plan: month
+                        amount: 170
+                        email: kennethchangla@gmail.com
+                        nextRenewalDate: '2023-11-21'
+                        startAt: '2023-11-20T17:40:35.000Z'
+                        maskedCreditCardNo: 400022******1111
+                        createdAt: '2023-11-20T17:39:50.000Z'
+                        updatedAt: '2023-11-20T17:40:36.000Z'
+                      createdAt: '2023-11-10T07:37:42.000Z'
+                      updatedAt: '2023-11-10T07:37:42.000Z'
   /api/member/delete-account:
     delete:
       tags:
@@ -3489,8 +3522,8 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 162
-                amount: 6666
+                subscriptionId: 167
+                amount: 10000
       responses:
         '200':
           headers:
@@ -3658,7 +3691,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 167
+                subscriptionId: 168
       responses:
         '200':
           content:
@@ -3743,7 +3776,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 159
+                subscriptionId: 168
       responses:
         '200':
           description: Successful response
@@ -7841,6 +7874,12 @@ paths:
         2\. 判斷是否在訂閱資格期間：以回傳欄位 `isSubscribing` 為準
 
         3\. 是否已退款：以 `isRefunded` 欄位為準
+
+        4\. "productType":
+
+        - "dailyReport",
+            
+        - "rickColumn"
       responses:
         '200':
           headers:
@@ -7875,6 +7914,7 @@ paths:
                       createdAt: '2024-11-05T08:33:05.000Z'
                       updatedAt: '2024-11-05T08:34:39.000Z'
                       paymentType: creditCard
+                      productType: dailyReport
                 example-1:
                   summary: 使用者取消訂閱，未退款未到期
                   value:
