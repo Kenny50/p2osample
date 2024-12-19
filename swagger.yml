@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 第三期更新
-  version: 1212.11.05
+  version: 1219.16.18
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -152,7 +152,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: C0FymjLWatmpMW35HyFY
+                  example: HtpMM7KHwto84x7pc1cD
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -3035,12 +3035,6 @@ paths:
       tags:
         - 後台 > 帳戶
       summary: 取得前台使用者列表
-      parameters:
-        - name: subscription
-          in: query
-          schema:
-            type: string
-          description: '`is_subscribing` / `renewal_disabled` / `finished` / `none`'
       responses:
         '200':
           description: Successful response
@@ -3522,7 +3516,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 167
+                subscriptionId: 168
                 amount: 10000
       responses:
         '200':
@@ -3654,31 +3648,31 @@ paths:
                 pageSize: 1
                 totalCount: 1
                 data:
-                  - id: 134
+                  - id: 170
                     memberId: JYF-027x792
                     isSubscribing: false
                     autoRenewal: false
                     status: pending
-                    plan: 2day
-                    amount: 111
+                    plan: month
+                    amount: 10000
                     email: kennethchangla@gmail.com
-                    createdAt: '2024-11-05T08:26:48.000Z'
-                    updatedAt: '2024-11-05T08:26:48.000Z'
-                    paymentPlatformNo: transfer_1730795208761
+                    createdAt: '2024-12-13T08:11:04.000Z'
+                    updatedAt: '2024-12-19T08:12:57.000Z'
+                    paymentPlatformNo: transfer_1734595977893
                     member:
                       id: JYF-027x792
                       name: 永翰
                       email: kennethchangla@gmail.com
                       avatar: >-
-                        https://profile.line-scdn.net/0h9kRtoS0HZkR_DXZzY0YYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog
+                        https://profile.line-scdn.net/0h9kRtIL51ZkR_DXdkKzAYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog
                       loginType: line
                       thirdPartyIdentifier: U6ab58c3a7cd561d905a0a91bcc83d161
                       isEmailValidate: true
-                      isSubscribing: false
                       phone: '0936965814'
                       isPhoneValidate: true
                     bills: []
                     paymentType: transfer
+                    productType: dailyReport
   /api/dashboard/approve-subscription:
     post:
       tags:
@@ -8423,7 +8417,7 @@ paths:
             schema:
               type: object
               example:
-                type: rickColumn
+                type: dailyReport
       responses:
         '200':
           description: Successful response

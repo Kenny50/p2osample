@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "C0FymjLWatmpMW35HyFY",
+									"value": "HtpMM7KHwto84x7pc1cD",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -3577,7 +3577,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{domain}}/api/dashboard/members?subscription=",
+									"raw": "{{domain}}/api/dashboard/members",
 									"host": [
 										"{{domain}}"
 									],
@@ -3590,7 +3590,8 @@
 										{
 											"key": "subscription",
 											"value": "",
-											"description": "`is_subscribing` / `renewal_disabled` / `finished` / `none`"
+											"description": "`is_subscribing` / `renewal_disabled` / `finished` / `none`",
+											"disabled": true
 										}
 									]
 								}
@@ -4432,7 +4433,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 167,\n    \"amount\": 10000\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 168,\n    \"amount\": 10000\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4566,7 +4567,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 1,\n    \"totalCount\": 1,\n    \"data\": [\n        {\n            \"id\": 134,\n            \"memberId\": \"JYF-027x792\",\n            \"isSubscribing\": false,\n            \"autoRenewal\": false,\n            \"status\": \"pending\",\n            \"plan\": \"2day\",\n            \"amount\": 111,\n            \"email\": \"kennethchangla@gmail.com\",\n            \"createdAt\": \"2024-11-05T08:26:48.000Z\",\n            \"updatedAt\": \"2024-11-05T08:26:48.000Z\",\n            \"paymentPlatformNo\": \"transfer_1730795208761\",\n            \"member\": {\n                \"id\": \"JYF-027x792\",\n                \"name\": \"永翰\",\n                \"email\": \"kennethchangla@gmail.com\",\n                \"avatar\": \"https://profile.line-scdn.net/0h9kRtoS0HZkR_DXZzY0YYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog\",\n                \"loginType\": \"line\",\n                \"thirdPartyIdentifier\": \"U6ab58c3a7cd561d905a0a91bcc83d161\",\n                \"isEmailValidate\": true,\n                \"isSubscribing\": false,\n                \"phone\": \"0936965814\",\n                \"isPhoneValidate\": true\n            },\n            \"bills\": [],\n            \"paymentType\": \"transfer\"\n        }\n    ]\n}"
+									"body": "{\n    \"currentPage\": 1,\n    \"pageSize\": 1,\n    \"totalCount\": 1,\n    \"data\": [\n        {\n            \"id\": 170,\n            \"memberId\": \"JYF-027x792\",\n            \"isSubscribing\": false,\n            \"autoRenewal\": false,\n            \"status\": \"pending\",\n            \"plan\": \"month\",\n            \"amount\": 10000,\n            \"email\": \"kennethchangla@gmail.com\",\n            \"createdAt\": \"2024-12-13T08:11:04.000Z\",\n            \"updatedAt\": \"2024-12-19T08:12:57.000Z\",\n            \"paymentPlatformNo\": \"transfer_1734595977893\",\n            \"member\": {\n                \"id\": \"JYF-027x792\",\n                \"name\": \"永翰\",\n                \"email\": \"kennethchangla@gmail.com\",\n                \"avatar\": \"https://profile.line-scdn.net/0h9kRtIL51ZkR_DXdkKzAYOw9dZS5cfD9WA24uIEJfa3JGNCQVA2khIxkNbSYRbyBCUG15dktfPnJzHhEiYVuacHg9O3VDPSYVUG0qog\",\n                \"loginType\": \"line\",\n                \"thirdPartyIdentifier\": \"U6ab58c3a7cd561d905a0a91bcc83d161\",\n                \"isEmailValidate\": true,\n                \"phone\": \"0936965814\",\n                \"isPhoneValidate\": true\n            },\n            \"bills\": [],\n            \"paymentType\": \"transfer\",\n            \"productType\": \"dailyReport\"\n        }\n    ]\n}"
 								}
 							]
 						},
@@ -9482,7 +9483,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"rickColumn\"\n}",
+							"raw": "{\n    \"type\": \"dailyReport\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
