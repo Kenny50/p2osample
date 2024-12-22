@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 第三期更新
-  version: 1219.16.18
+  version: 1222.10.35
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -7960,6 +7960,13 @@ paths:
       tags:
         - 訂閱
       summary: 取得付款紀錄
+      parameters:
+        - name: productType
+          in: query
+          schema:
+            type: string
+          description: rickColumn, dailyReport
+          example: dailyReport
       responses:
         '200':
           headers:

@@ -8966,7 +8966,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{domain}}/api/subscription/bills",
+							"raw": "{{domain}}/api/subscription/bills?productType=dailyReport",
 							"host": [
 								"{{domain}}"
 							],
@@ -8974,6 +8974,13 @@
 								"api",
 								"subscription",
 								"bills"
+							],
+							"query": [
+								{
+									"key": "productType",
+									"value": "dailyReport",
+									"description": "rickColumn, dailyReport"
+								}
 							]
 						}
 					},
