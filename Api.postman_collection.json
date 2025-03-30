@@ -5,7 +5,7 @@
 		"description": "dev, stage, production 三個站的 api 路徑規則會是  \n{{網域}/api/...",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "30381842",
-		"_collection_link": "https://gnim-backend.postman.co/workspace/%25E8%2582%25A1%25E8%2580%2590~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
+		"_collection_link": "https://gnim-backend.postman.co/workspace/%E8%82%A1%E8%80%90~32187cda-e29f-4bb3-bf99-c9966201dabf/collection/30381842-d4c9bc2b-1dbd-48d1-9deb-140a951fd07b?action=share&source=collection_link&creator=30381842"
 	},
 	"item": [
 		{
@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "HtpMM7KHwto84x7pc1cD",
+									"value": "Aj8V2yMJD0MBttzRS5mC",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -491,108 +491,6 @@
 					]
 				},
 				{
-					"name": "寄驗證簡訊",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/sent-validate-sms",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"member",
-								"sent-validate-sms"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "sent",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "Accepted",
-							"code": 202,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"validate sms has sent, please check out your phone\"\n    }\n}"
-						},
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"your email is already validated\"\n    }\n}"
-						},
-						{
-							"name": "email 空白",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/sent-validate-email",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"sent-validate-email"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"email field is empty\"\n    }\n}"
-						}
-					]
-				},
-				{
 					"name": "個人資訊",
 					"request": {
 						"method": "GET",
@@ -827,74 +725,6 @@
 							"header": null,
 							"cookie": [],
 							"body": "{\n    \"data\": {\n        \"message\": \"信箱驗證成功\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "sms validate",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{access_token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{domain}}/{{prefix}}/member/validate-sms?signature=604842",
-							"host": [
-								"{{domain}}"
-							],
-							"path": [
-								"{{prefix}}",
-								"member",
-								"validate-sms"
-							],
-							"query": [
-								{
-									"key": "signature",
-									"value": "604842",
-									"description": "[required] code for sms"
-								}
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "mail validate",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{domain}}/{{prefix}}/member/validate-email?signature=string",
-									"host": [
-										"{{domain}}"
-									],
-									"path": [
-										"{{prefix}}",
-										"member",
-										"validate-email"
-									],
-									"query": [
-										{
-											"key": "signature",
-											"value": "string",
-											"description": "[required] link from email"
-										}
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": null,
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"message\": \"手機號碼驗證成功\"\n    }\n}"
 						}
 					]
 				},
@@ -4433,7 +4263,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 168,\n    \"amount\": 10000\n}",
+									"raw": "{\n    \"memberId\": \"JYF-qx8bect\",\n    \"subscriptionId\": 318,\n    \"amount\": 10000\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4744,7 +4574,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 168\n}",
+									"raw": "{\n    \"memberId\": \"JYF-027x792\",\n    \"subscriptionId\": 170\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -9240,7 +9070,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"active\": false\n}",
+							"raw": "{\n    \"active\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -9490,7 +9320,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"dailyReport\"\n}",
+							"raw": "{\n    \"type\": \"rickColumn\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

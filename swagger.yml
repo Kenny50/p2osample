@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 第三期更新
-  version: 1222.10.35
+  version: 1342.03.30.2025
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -152,7 +152,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: HtpMM7KHwto84x7pc1cD
+                  example: Aj8V2yMJD0MBttzRS5mC
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -261,41 +261,6 @@ paths:
               example:
                 data:
                   message: 此電子郵箱已被使用
-  /api/member/sent-validate-sms:
-    get:
-      tags:
-        - 會員
-      summary: 寄驗證簡訊
-      security:
-        - bearerAuth: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: your email is already validated
-        '202':
-          description: Accepted
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: validate sms has sent, please check out your phone
-        '400':
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: email field is empty
   /api/member/information:
     get:
       tags:
@@ -430,31 +395,6 @@ paths:
               example:
                 data:
                   message: 信箱驗證成功
-  /api/member/validate-sms:
-    get:
-      tags:
-        - 會員
-      summary: sms validate
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: signature
-          in: query
-          schema:
-            type: integer
-          required: true
-          description: code for sms
-          example: '604842'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                data:
-                  message: 手機號碼驗證成功
   /api/member/term/{term}:
     post:
       tags:
@@ -3515,8 +3455,8 @@ paths:
             schema:
               type: object
               example:
-                memberId: JYF-027x792
-                subscriptionId: 168
+                memberId: JYF-qx8bect
+                subscriptionId: 318
                 amount: 10000
       responses:
         '200':
@@ -3770,7 +3710,7 @@ paths:
               type: object
               example:
                 memberId: JYF-027x792
-                subscriptionId: 168
+                subscriptionId: 170
       responses:
         '200':
           description: Successful response
@@ -8290,7 +8230,7 @@ paths:
             schema:
               type: object
               example:
-                active: false
+                active: true
       responses:
         '200':
           description: OK
@@ -8424,7 +8364,7 @@ paths:
             schema:
               type: object
               example:
-                type: dailyReport
+                type: rickColumn
       responses:
         '200':
           description: Successful response
