@@ -162,7 +162,7 @@
 							"formdata": [
 								{
 									"key": "idToken",
-									"value": "Aj8V2yMJD0MBttzRS5mC",
+									"value": "5smy5SBCfNFwvg95VVF4",
 									"description": "[required] line id token",
 									"type": "text"
 								},
@@ -6973,6 +6973,46 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "前台用戶管理",
+					"item": [
+						{
+							"name": "通過前台用戶電子郵件認證",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"happydog@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{domain}}/{{prefix}}/{{internalPrefix}}/approve-member-email-validate/:id",
+									"host": [
+										"{{domain}}"
+									],
+									"path": [
+										"{{prefix}}",
+										"{{internalPrefix}}",
+										"approve-member-email-validate",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "JYF-nfbr83b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			],
 			"auth": {
@@ -9320,7 +9360,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"rickColumn\"\n}",
+							"raw": "{\n    \"type\": \"dailyReport\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

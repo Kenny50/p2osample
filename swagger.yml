@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: 金玉峰投顧 api
   description: 第三期更新
-  version: 1342.03.30.2025
+  version: 1535.08.22.2025
 servers:
   - url: https://jinyufeng-dev-api.jinyufeng.com.tw
     description: dev
@@ -53,6 +53,7 @@ tags:
   - name: 後台 > 網站內容
   - name: 後台 > policy
   - name: 後台 > 超級帳號
+  - name: 後台 > 前台用戶管理
   - name: 標籤、主題
   - name: Banner
   - name: 新聞
@@ -152,7 +153,7 @@ paths:
                 idToken:
                   type: string
                   description: line id token
-                  example: Aj8V2yMJD0MBttzRS5mC
+                  example: 5smy5SBCfNFwvg95VVF4
                 redirectUrl:
                   type: string
                   example: https://www.google.com
@@ -5176,6 +5177,30 @@ paths:
                     isSubscribing: false
                     phone: '0936965814'
                     isPhoneValidate: true
+  /api/dashboard/approve-member-email-validate/{id}:
+    post:
+      tags:
+        - 後台 > 前台用戶管理
+      summary: 通過前台用戶電子郵件認證
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: happydog@gmail.com
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+          example: JYF-nfbr83b
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /api/topic:
     get:
       tags:
@@ -8364,7 +8389,7 @@ paths:
             schema:
               type: object
               example:
-                type: rickColumn
+                type: dailyReport
       responses:
         '200':
           description: Successful response
